@@ -1,7 +1,118 @@
 /*================================= IMPORTS ================================*/
 
-
 @import "./navigation.css";
 
-
 /*=============================== END IMPORTS =============================*/
+
+
+
+/*================================ GENERIC ================================*/
+
+* {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.25;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+h1 {
+	font-size: 45px;
+	max-width: 35ch;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 35px;
+}
+
+h4 {
+	font-size: 30px;
+	max-width: 35ch;
+}
+
+h5 {
+	font-size: 25px;
+}
+
+p,
+a {
+	font-size: 20px;
+}
+
+p {
+    max-width: 85ch;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+a:link {
+    color: var(--primary-color);
+}
+
+a:visited {
+    color: black;
+}
+
+ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/*=========== spacing ==========*/
+
+*+p, *+img, *+small, *+h1, *+h2, *+h3, *+h4, *+h5, *+h6 { 
+	margin-top: 20px; 
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.25;
+}
+
+/*=========== end spacing ==========*/
+
+
+/*============================ END GENERIC ================================*/
+
+
+
+
+/*=========================== COLOR PALETTE ===============================*/
+:root{
+
+    --primary-color: rgb(138, 135, 135);
+    --secondary-color: rgb(124, 123, 123);
+    --accent-color: rgb(201, 122, 249);
+    --background-color: rgb(0, 0, 0);
+}
+
+/*======================= END COLOR PALETTE ===============================*/
+
+

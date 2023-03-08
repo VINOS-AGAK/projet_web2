@@ -43,10 +43,18 @@ class CustomAuthController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|max:20'
+        ]);
+
         $user = new User;
         $user->fill($request->all());
         $user->password = Hash::make($request->password);
         $user->save();
+
+        return redirect()->back()->withSuccess('New user - Stored');
     }
 
     /**
@@ -92,5 +100,35 @@ class CustomAuthController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+    
+    /**
+     * authentication for user
+     *
+     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function authentication(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|exists:users',
+            'password' => 'required|min:6|max:20'
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (!Auth::validate($credentials)) :
+            return redirect(route('login'))
+                ->withErrors(trans('auth.failed'))
+                ->withInput();
+        endif;
+
+        $user = Auth::getProvider()->retrieveByCredentials($credentials);
+
+        Auth::login($user, $request->get('remember'));
+
+        return redirect()->intended('dashboard')->withSuccess('Signed in');
     }
 }

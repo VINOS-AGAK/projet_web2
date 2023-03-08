@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>vino</title>
 </head>
 <body>
     <nav  class="container-header">
-
           <div class="site-header">
             <!---------------- header et icons -------------->
             <div class="site-header-container">
@@ -256,7 +255,7 @@
 
     @yield('content')
 
-    
+
 </body>
 </html>
 

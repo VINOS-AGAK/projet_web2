@@ -21,6 +21,15 @@ class CustomAuthController extends Controller
      */
     public function index()
     {
+        // if(Auth::check()){
+        TODO:
+        // $bouteille = Bouteill::all();
+        //     return view('auth.index', ['bouteille' => $bouteille]); 
+        //     }
+        //     return redirect(route('login'))->withErrors('Vous n\'
+        //    êtes pas autorisé à accéder');
+        //     }
+
         return view('auth.index');
     }
 
@@ -32,7 +41,6 @@ class CustomAuthController extends Controller
     public function create()
     {
         return view('auth.create');
-
     }
 
     /**
@@ -102,7 +110,7 @@ class CustomAuthController extends Controller
         //
     }
 
-    
+
     /**
      * authentication for user
      *
@@ -129,6 +137,28 @@ class CustomAuthController extends Controller
 
         Auth::login($user, $request->get('remember'));
 
-        return redirect()->intended('dashboard')->withSuccess('Signed in');
+        return redirect()->intended('welcome')->withSuccess('Signed in');
+    }
+
+    /**
+     * authentication for user
+     *
+     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function welcome()
+    {
+        $name = 'Guest';
+        if (Auth::check()) {
+            $name = Auth::user()->name;
+        }
+        return view('welcome', ['name' => $name]);
+    }
+
+    public function logout(){
+        Session::flush();
+        Auth::logout();
+        return redirect(route('welcome'));
     }
 }

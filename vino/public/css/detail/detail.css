@@ -1,0 +1,86 @@
+.product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.product-image {
+    flex: 1;
+    max-width: 100%;
+    margin-right: 10px;
+    height: 65vh;
+}
+.product-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background-color: rgb(197, 195, 195);
+}
+.product-description {
+    flex: 1;
+    max-width: 100%;
+    margin-right: 10px
+}
+.product-description h1 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: rgba(195, 4, 4, 0.932);
+    font-weight: 800;
+}
+.product-description ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.product-description .soutitle{
+ font-size: 24px;
+}
+.product-description li {
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+.li-divider::after {
+    content: "";
+    display: block;
+    border-bottom: 2.5px solid rgb(111, 109, 109);
+    margin: 5px 0 ;
+  }
+strong{
+    font-size: 18px;
+} 
+.btn {
+    text-decoration: none;
+    color: #ccc;
+    background-color: rgba(195, 4, 4, 0.932);
+    font-size: 16px;
+    padding: 5px 40px;
+    
+}
+@media screen and (min-width: 768px){
+.product-description li{
+
+    font-size: 24px;
+} 
+.product-description {
+    max-width: 50%;
+}
+.product-description h1 {
+    font-size: 36px;
+}
+.product-image {
+    max-width: 50%;
+}
+.product-image img {
+    margin-left: auto;
+    padding-right: 40p;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+}

@@ -107,7 +107,7 @@
   li.list-item{
     font-size: 10px;
     font-weight: bold;
-    letter-spacing: 15px;
+    letter-spacing: 5px;
     text-transform: uppercase;
   }
   .list-item>a{

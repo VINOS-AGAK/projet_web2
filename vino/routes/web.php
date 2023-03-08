@@ -14,9 +14,9 @@ use App\Http\Controllers\CustomAuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/welcome', [CustomAuthController::class, 'welcome'])->name('welcome');
+
+
 
 Route::get('/detail', function () {
     return view('detail');
@@ -24,9 +24,9 @@ Route::get('/detail', function () {
 
 // Users sign in Sign up
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
-Route::post('/login', [CustomAuthController::class, 'authentication'])->name('user.auth');
+Route::post('login', [CustomAuthController::class, 'authentication'])->name('user.auth');
 Route::get('signup', [CustomAuthController::class, 'create'])->name('user.create');
-Route::post('/signup-store', [CustomAuthController::class, 'store'])->name('user.store');
+Route::post('signup-store', [CustomAuthController::class, 'store'])->name('user.store');
 Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 

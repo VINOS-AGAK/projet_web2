@@ -21,7 +21,11 @@
         </style>
     </head>
     <body class="antialiased">
-       <h1>Welcome</h1>
+       @guest
+       <h1>Welcome Guest</h1>
+       @else
+       <h1>Welcome {{ $name }}</h1>
+       @endguest 
        <p>Notre page principale de projet Vino-AGAK</p>
     </body>
 </html>

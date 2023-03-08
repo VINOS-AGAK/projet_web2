@@ -15,4 +15,9 @@ class CellierController extends Controller
     {
         return view('cellier.index');
     }
+
+    public function show()
+    {
+        return view('cellier.show');
+    }
 }

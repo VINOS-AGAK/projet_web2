@@ -15,9 +15,9 @@ use App\Http\Controllers\CellierController;
 |
 */
 
+Route::get('', [CustomAuthController::class, 'welcome'])->name('welcome');
+Route::get('/', [CustomAuthController::class, 'welcome'])->name('welcome');
 Route::get('/welcome', [CustomAuthController::class, 'welcome'])->name('welcome');
-
-
 
 
 

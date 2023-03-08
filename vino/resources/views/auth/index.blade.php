@@ -1,6 +1,6 @@
-{{-- @extends('layouts.app') --}}
+@extends('layouts.app')
 @section('title', 'Enregistrer')
-{{-- @section('content') --}}
+@section('content') 
 <main class="login-form">
     <div class="container">
         <div class="row justify-content-center">

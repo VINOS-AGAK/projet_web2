@@ -1,4 +1,5 @@
-
+<!-- <p>Page detail</p>
+создать страницу товара (вино) с фотографией слева и описанием справа (название, год сбора урожая, формат, страна, описание, дата приобретения, цена, количество  ) для мобильного экрана (HTML, CSS) и потом адаптивная для большого экрана где должна занимать  весь экран -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail vin</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
   </head> 
   <body>
     <div class="product-container">
@@ -13,17 +17,22 @@
         <img src="{{ asset('img/vin2.png')}}" alt="nom vin" />
       </div>
       <div class="product-description">
-        <h1>Nom</h1>
+        <h1>Riesling  Pinot gris Mosel</h1>
         <ul>
-          <li>Millesime: 2020</li>
-          <li>Format: 750 ml</li>
-          <li>Pays: Itali</li>
-          <li>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat numquam qui</li>
+          <li> 2017</li>
+          <li class="li-divider soutitle"  >White wine 750 ml</li>
+          <li class="li-divider">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat numquam qui</li>
+          <li class="li-divider soutitle">Italy</li> 
           <li>Date d'achat: 1 mars 2023 </li>
           <li>Prix: $20</li>
           <li>Quantite: 10</li>
         </ul>
+        <div>
+        <a class="btn" href="#">Voir SAQ</a>
+        </div>
       </div>
     </div>
   </body>
 </html>
+
+

@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Etudiant;
+use App\Models\Ville;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class CustomAuthController extends Controller
 {
@@ -14,7 +21,7 @@ class CustomAuthController extends Controller
      */
     public function index()
     {
-        //
+        return view('auth.index');
     }
 
     /**
@@ -24,7 +31,8 @@ class CustomAuthController extends Controller
      */
     public function create()
     {
-        //
+        return view('auth.create');
+
     }
 
     /**
@@ -35,7 +43,10 @@ class CustomAuthController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User;
+        $user->fill($request->all());
+        $user->password = Hash::make($request->password);
+        $user->save();
     }
 
     /**

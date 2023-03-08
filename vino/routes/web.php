@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Users sign in Sign up
+Route::get('/login', [CustomAuthController::class, 'index'])->name('login');
+Route::post('/login', [CustomAuthController::class, 'authentication'])->name('login.auth');
+Route::get('/signup', [CustomAuthController::class, 'create'])->name('user.create');
+Route::post('/signup-store', [CustomAuthController::class, 'store'])->name('user.store');
+Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
+

@@ -1,6 +1,7 @@
 /*================= palette de couleurs ==================*/
 
-:root{
+/* 1th variation */
+/* :root{
 
     --primary-color: rgb(138, 135, 135);
     --primary-color-variation: rgb(204, 204, 204);
@@ -14,4 +15,45 @@
     --color-dark: #201D1F;
     --color-white: #ffffff;
     
+} */
+
+/* 2 variation */
+:root{
+
+    --primary-color:  #EED971FF;
+    --primary-color-variation: rgb(204, 204, 204);
+
+    --secondary-color: #FFBE7BFF;
+    --secondary-color-variation: rgb(124, 123, 123);
+
+    --accent-color: #FFBE7BFF;
+    --accent-color-variation: #FFBE7BFF;
+
+    --color-dark: #201D1F;
+    --color-white: #ffffff;
+    
 }
+/* 3 variation */
+/* :root{
+
+    --primary-color:  #8A307F;
+    --primary-color-variation: rgb(204, 204, 204);
+
+    --secondary-color: #6883BC;
+    --secondary-color-variation: rgb(124, 123, 123);
+
+    --accent-color: #79A7D3;
+    --accent-color-variation: #FFBE7BFF;
+
+    --color-dark: #201D1F;
+    --color-white: #ffffff;
+    
+} */
+
+/* Hex codes: Pastel Orange #FFA351FF, Peach #FFBE7BFF, Custard #EED971FF
+Hex codes: Raspberry #8A307F, Blues #79A7D3 #6883BC
+Hex codes: Coral #FC766AFF, Spiced Apple #783937FF, Peach #F1AC88FF
+Hex codes: Light Purple #AA96DA, Mint #C5FAD5, Butter #FFFFD2 */
+
+
+

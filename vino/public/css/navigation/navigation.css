@@ -12,7 +12,7 @@
     }
 
     .site-header-container>a{
-      padding: 20px;
+      padding: 6px;
     }
 
     .header-icon-container{
@@ -155,7 +155,9 @@ div.container-header{
   text-transform: lowercase;
 }
 
-
-
-
-
+.logo-header {
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  max-width: 100px;
+}

@@ -32,7 +32,7 @@ Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 //================CELLIER================//
 Route::get('show', [CellierController::class , 'show'])->name('show');
-
+Route::get('liste', [CellierController::class , 'index'])->name('liste');
 
 
 

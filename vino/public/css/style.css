@@ -9,6 +9,7 @@
 @import "./detail/detail.css";
 @import "./accueil/accueil.css";
 @import "./navigation/navigation.css";
+@import "./liste/liste.css";
 
 body {
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -16,6 +17,9 @@ body {
     padding: 0;
   }
 
+
+
+  
 
 
   

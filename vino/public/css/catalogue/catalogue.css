@@ -17,8 +17,8 @@
 }
 .catalogue-image img {
     background-color:  var(--primary-color);
-    width: inherit;
-    height:inherit;
+    /* width: inherit;
+    height:inherit; */
 }
 .catalogue-description {
     flex: 1;

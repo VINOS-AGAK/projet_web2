@@ -15,18 +15,18 @@ use App\Http\Controllers\CellierController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/welcome', [CustomAuthController::class, 'welcome'])->name('welcome');
+
+
 
 
 
 
 //============================================= CUSTOMAUTHCONTROLLER================================================\\
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
-Route::post('/login', [CustomAuthController::class, 'authentication'])->name('user.auth');
+Route::post('login', [CustomAuthController::class, 'authentication'])->name('user.auth');
 Route::get('signup', [CustomAuthController::class, 'create'])->name('user.create');
-Route::post('/signup-store', [CustomAuthController::class, 'store'])->name('user.store');
+Route::post('signup-store', [CustomAuthController::class, 'store'])->name('user.store');
 Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 

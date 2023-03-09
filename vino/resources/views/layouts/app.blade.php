@@ -246,10 +246,10 @@
           <!-------------- items menu-deroulant -------------->
           <input type="checkbox" id="menu-toggle"/>
           <ul id="menu">
-            <li class="list-item"><a href="#"></a>menu item 1</li>
-            <li class="list-item"><a href="#"></a>menu item 2</li>
-            <li class="list-item"><a href="#"></a>menu item 3</li>
-            <li class="list-item"><a href="#"></a>menu item 4</li>
+            <li class="list-item"><a href="#"></a>configuration</li>
+            <li class="list-item"><a href="#"></a>help & support</li>
+            <li class="list-item"><a href="#"></a>share the app</li>
+            <li class="list-item"><a href="#"></a>privacy settings</li>
           </ul>
     </nav>
 

@@ -1,22 +1,19 @@
 
- 
-
-
-
-
-
 @extends('layouts.app')
 @section('content') 
       
-       <div class="welcome-container">
-        <div class="welcome-overlay">
+       <div class="accueil-container">
+        <div class="accueil-overlay">
            @guest
-          <h1>Welcome Guest</h1>
-          @else
-          <h1>Welcome {{ $name }}</h1>
-          @endguest 
+          <h1 class="accueil-titre">Welcome Guest</h1>
           <p>Notre page principale de projet Vino-AGAK</p>
-          <button class="welcome-button">Enregistrer</button>
+          <button class="accueil-button">Se connecter</button>
+          @else
+          <h1 class="accueil-titre">Welcome {{ $name }}</h1>
+          <p>Ton vin a soif de toi</p>
+          <button class="accueil-button">Voir cellier</button>
+          @endguest 
+          
         </div>
     </div>
 @endsection

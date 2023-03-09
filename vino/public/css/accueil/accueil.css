@@ -1,13 +1,13 @@
  
 
-  .welcome-container {
+.accueil-container {
     position: relative;
     height: 100vh;
-    background-image: url('https://www.example.com/image.jpg');
+    background-image: url('https://st2.depositphotos.com/1177973/6257/i/600/depositphotos_62572249-stock-photo-pouring-red-wine-from-bottle.jpg');
     background-size: cover;
     background-position: center;
 }
-.welcome-overlay {
+.accueil-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -19,91 +19,59 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    
 }
-h1 {
-    color: #fff;
-    font-size: 24px;
+.accueil-titre {
+    color: var(--accent-color);
+    font-size: 28px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
+    font-family:  var(--font-primary);
 }
 p {
-    color: #fff;
+    color: var(--color-white);
     font-size: 16px;
     text-align: center;
     margin-bottom: 20px;
 }
-.welcome-button {
-    background-color: #fff;
-    color: #000;
-    padding: 10px 20px;
+.accueil-button {
+    color: var(--color-white);
+    background-color: var(--accent-color);
+    padding: 10px 40px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
 }
+
+.accueil-button:hover {
+    
+    background-color: var(--accent-color-variation);
+    
+}
 @media screen and (min-width: 768px) {
-.welcome-container {
+.accueil-container {
 background-size: contain;
 background-repeat: no-repeat;
-background-image: url('https://www.example.com/image.jpg');
+background-image: url('https://st2.depositphotos.com/1177973/6257/i/600/depositphotos_62572249-stock-photo-pouring-red-wine-from-bottle.jpg');
 }
-.welcome-overlay {
-max-width: 800px;
+.accueil-overlay {
 margin: 0 auto;
 padding: 50px;
 }
-h1 {
-font-size: 36px;
+.accueil-titre {
+font-size: 40px;
 margin-bottom: 30px;
 }
 p {
 font-size: 20px;
 margin-bottom: 30px;
 }
-.welcome-button {
+.accueil-button {
 font-size: 20px;
 padding: 15px 30px;
 }
 }
 
 
-/* Set navigation styles */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  nav li {
-    margin-right: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: rgb(21, 20, 20);
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  nav a:hover {
-    color: #ccc;
-  }
-  
-  /* Set logo styles */
-  .logo {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  
-  .logo img {
-    width: 100px;
-    height: 100px;
-  }

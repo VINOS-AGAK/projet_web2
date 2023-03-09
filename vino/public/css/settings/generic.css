@@ -51,7 +51,7 @@ a {
 
 p {
     max-width: 85ch;
-    color: white;
+    color: var(--color-dark);
 }
 
 a {

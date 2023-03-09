@@ -6,23 +6,19 @@
 
     <div class="header-form">
         <h3>Sign up</h3>
-        <a href="{{ route('welcome') }}" class=""> Back to welcome</a>
     </div>
 
     <div class="container-form">
-        @if(@session('success'))
-        <div class="">
-            session('success')
-        </div>
 
-        <div class="">
-            <strong>Holy guacamole! {{session('success')}}</strong>
-            <button type="button" class="" aria-label="Close"></button>
-        </div>
-        @endif
         <form action="{{ route('user.store')}}" method="post">
             @csrf
-            <p>Create an account to create a wine cellar</p>
+
+            @if(@session('success'))
+            <p class="text-form">{{session('success')}}</p>
+            @else 
+            <p class="text-form">Create an account to create a wine cellar</p>
+   
+
             <!-- {{-- NAME--}} -->
             <div class="">
                 <input class="name" type="text" name="name" id="" placeholder="name" value="name">
@@ -58,7 +54,10 @@
             <div class="">
                 <input class="submit" type="submit" value="submit">
             </div>
+            <p class="text-form">Already have an account? Click <a class="text-login" href="{{ route('user.auth')}}">here</a> to login.</p>
         </form>
+        
+        @endif
     </div>
 
 </main>

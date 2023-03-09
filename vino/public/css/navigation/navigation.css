@@ -76,6 +76,10 @@
     display: none;
   }
   
+  li>a{
+    font-size: 10px;
+  }
+
   #menu {
     overflow: hidden;
     height: 30vh;
@@ -106,15 +110,14 @@
     height: 100%;
     padding: 10px;
   }
+  
   li.list-item{
     font-size: 10px;
     font-weight: bold;
     letter-spacing: 5px;
     text-transform: uppercase;
   }
-  .list-item>a{
-    font-size: 20px;
-  }
+
 
 /* =============== fin toggle-menu  ===========*/
         

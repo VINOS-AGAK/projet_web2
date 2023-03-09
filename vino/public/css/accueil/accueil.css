@@ -32,7 +32,7 @@
     margin-bottom: 20px;
     font-family:  var(--font-primary);
 }
-p {
+.accueil-container>p {
     color: var(--color-white);
     font-size: 16px;
     text-align: center;
@@ -49,10 +49,16 @@ p {
 }
 
 .accueil-button:hover {
-    
     background-color: var(--accent-color-variation);
-    
 }
+
+p.accueil-paragraph{
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: var(--color-white);
+}
+
+
 @media screen and (min-width: 768px) {
 .accueil-container {
 background-size: contain;
@@ -67,13 +73,12 @@ padding: 50px;
 font-size: 40px;
 margin-bottom: 30px;
 }
-p {
-font-size: 20px;
-margin-bottom: 30px;
-}
+
+
 .accueil-button {
 font-size: 20px;
 padding: 15px 30px;
+
 }
 }
 

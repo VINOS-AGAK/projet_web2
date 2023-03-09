@@ -20,4 +20,12 @@ class CellierController extends Controller
     {
         return view('cellier.show');
     }
+
+    public function create(){
+        //creer un cellier
+    }
+
+    public function store(){
+
+    }
 }

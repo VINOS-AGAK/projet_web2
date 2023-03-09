@@ -62,7 +62,7 @@ class CustomAuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return redirect()->back()->withSuccess('New user - Stored');
+        return redirect()->back()->withSuccess('You account has been created');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BouteilleController;
+use App\Http\Controllers\CatalogueController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CellierController;
@@ -57,4 +57,4 @@ Route::get('show', [CellierController::class , 'show'])->name('show');
 
 
 //============================================= CELLIERCONTROLLER ===================================================\\
-Route::get('catalogue', [BouteilleController::class, 'index'])->name('catalogue');
+Route::get('catalogue', [CatalogueController::class, 'index'])->name('catalogue');

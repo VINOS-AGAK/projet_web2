@@ -8,23 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Bouteille extends Model
 {
 
-    const TABLE = 'vino__bouteille';
-    
-    protected $table = "vino__bouteille";
+    protected $table = "bouteille__has__cellier";
+
 
     use HasFactory;
 
-    protected $fillable = [
-        'type',
-        'nom',
-        'image',
-        'code_saq',
-        'pays',
-        'description',
-        'prix_saq',
-        'url_saq',
-        'url_img',
-        'format',
-    ];
 
+    protected $fillable = [
+
+        'vino__bouteille_id',
+        'vino__cellier_id',
+        'date_achat',
+        'garde_jusqua',
+        'notes',
+        'quantite',
+        'millesime',
+    ];
 }

@@ -9,23 +9,23 @@
 
 
 <body>
-  @forelse($bouteilles as $bouteille)
+  @forelse($catalogue as $catalogue)
   <div class="catalogue-container">
     <div class="catalogue-image">
-      <img src="{{ asset($bouteille->image)}}" alt="nom vin" />
+      <img src="{{ asset($catalogue->image)}}" alt="nom vin" />
     </div>
     <div class="catalogue-description">
-      <h1>{{ $bouteille->nom }}</h1>
+      <h1>{{ $catalogue->nom }}</h1>
       <ul>
-        <li>{{ $bouteille->date }}</li>
-        <li class="li-divider sous-titre">{{ $bouteille->nom }}</li>
-        <li class="li-divider">Description: {{ $bouteille->description }}</li>
-        <li class="li-divider sous-titre">Pays : {{ $bouteille->pays }}</li> 
+        <li>{{ $catalogue->date }}</li>
+        <li class="li-divider sous-titre">{{ $catalogue->nom }}</li>
+        <li class="li-divider">Description: {{ $catalogue->description }}</li>
+        <li class="li-divider sous-titre">Pays : {{ $catalogue->pays }}</li> 
         <li>Type :  </li>
-        <li>Prix : {{ $bouteille->prix_saq }} $</li>
-        <li>Format : {{ $bouteille->format }}</li>
+        <li>Prix : {{ $catalogue->prix_saq }} $</li>
+        <li>Format : {{ $catalogue->format }}</li>
         <div>
-          <a class="btn" href="{{ $bouteille->url_saq }}">Voir SAQ</a>
+          <a class="btn" href="{{ $catalogue->url_saq }}">Voir SAQ</a>
         </div>
       </ul>
     </div>
@@ -37,7 +37,7 @@
     </ul>
   </div>
   @endforelse
-  {{$bouteilles}}
+  {{$catalogue}}
 </body>
 
                         

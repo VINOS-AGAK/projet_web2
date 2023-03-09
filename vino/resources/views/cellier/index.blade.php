@@ -7,32 +7,32 @@
 		<div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
 			<div class="card-info">
-				<h3 class="card-title">Название продукта</h3>
-				<p class="card-subtitle">Тип продукта</p>
-				<p class="card-count">Количество: 10 бутылок</p>
-				<p class="card-rating">Оценка: 4.5 звезды</p>
+				<h3 class="card-title">Riesling  Pinot gris Mosel</h3>
+				<p class="card-subtitle">White wine 750 ml</p>
+				<p class="card-count">Quantite:: 10 </p>
+				<p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
 			</div>
 		</div>
     <div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
 			<div class="card-info">
-				<h3 class="card-title">Название продукта</h3>
-				<p class="card-subtitle">Тип продукта</p>
-				<p class="card-count">Количество: 10 бутылок</p>
-				<p class="card-rating">Оценка: 4.5 звезды</p>
+				<h3 class="card-title">Riesling  Pinot gris Mosel</h3>
+				<p class="card-subtitle">White wine 750 ml</p>
+				<p class="card-count">Quantite:: 10 </p>
+				<p class="card-rating">Note: 4.5 etoiles</p>
 			</div>
 		</div>
     <div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
 			<div class="card-info">
-				<h3 class="card-title">Название продукта</h3>
-				<p class="card-subtitle">Тип продукта</p>
-				<p class="card-count">Количество: 10 бутылок</p>
-				<p class="card-rating">Оценка: 4.5 звезды</p>
+				<h3 class="card-title">Riesling  Pinot gris Mosel</h3>
+				<p class="card-subtitle">White wine 750 ml</p>
+				<p class="card-count">Quantite:: 10 </p>
+				<p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;&#10025;</p>
 			</div>
 		</div>
 
-		<!-- Вставьте здесь дополнительные карточки продуктов -->
+		
 	</div>
 
 

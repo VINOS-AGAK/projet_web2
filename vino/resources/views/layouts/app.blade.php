@@ -12,7 +12,7 @@
           <div class="site-header">
             <!---------------- header et icons -------------->
             <div class="site-header-container">
-              <a href="{{ route('welcome')}}" ><div class="logo-header">VINO <br> LOGO</div></a>
+              <a href="{{ route('welcome')}}" ><img class="logo-header" src="img/Logo2.png" alt=""></a>
               <div class="header-icon-container">
 
                 @guest

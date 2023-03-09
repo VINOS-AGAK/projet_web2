@@ -1,11 +1,3 @@
-/*================================= IMPORTS ================================*/
-
-@import "./navigation.css";
-
-/*=============================== END IMPORTS =============================*/
-
-
-
 /*================================ GENERIC ================================*/
 
 * {
@@ -18,7 +10,7 @@
 }
 
 html {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
 	line-height: 1.25;
 }
 
@@ -86,8 +78,6 @@ li{
     list-style-type: none;
 }
 
-/*=========== spacing ==========*/
-
 *+p, *+img, *+small, *+h1, *+h2, *+h3, *+h4, *+h5, *+h6 { 
 	margin-top: 20px; 
 }
@@ -96,23 +86,13 @@ h1, h2, h3, h4 {
     line-height: 1.25;
 }
 
-/*=========== end spacing ==========*/
-
-
-/*============================ END GENERIC ================================*/
-
-
-
-
-/*=========================== COLOR PALETTE ===============================*/
-:root{
-
-    --primary-color: rgb(138, 135, 135);
-    --secondary-color: rgb(124, 123, 123);
-    --accent-color: rgb(201, 122, 249);
-    --background-color: rgb(0, 0, 0);
+button{
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: none
 }
 
-/*======================= END COLOR PALETTE ===============================*/
-
-
+/*============================ END GENERIC ================================*/

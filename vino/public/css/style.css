@@ -1,5 +1,14 @@
+/*====================== immportations =======================*/
+
+@import "./settings/colors.css";
+@import "./settings/fonts.css";
+@import "./settings/generic.css";
+@import "./settings/margins.css";
+@import "./settings/typography.css";
+
 @import "./detail/detail.css";
 @import "./accueil/accueil.css";
+@import "./navigation/navigation.css";
 
 body {
     font-family: 'Yanone Kaffeesatz', sans-serif;

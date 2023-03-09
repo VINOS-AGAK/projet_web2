@@ -31,9 +31,9 @@ Route::post('signup-store', [CustomAuthController::class, 'store'])->name('user.
 Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 
-//================CELLIER================//
-Route::get('show', [CellierController::class , 'show'])->name('show');
-Route::get('liste', [CellierController::class , 'index'])->name('liste');
+// //================CELLIER================//
+// Route::get('show', [CellierController::class , 'show'])->name('show');
+// Route::get('liste', [CellierController::class , 'index'])->name('liste');
 
 
 
@@ -49,7 +49,7 @@ Route::get('liste-example', function () {
 //============================================= CELLIERCONTROLLER ===================================================\\
 Route::get('liste',  [CellierController::class, 'index'])->name('liste');
 Route::get('detail', [CellierController::class, 'show'])->name('detail');
-
+Route::get('show', [CellierController::class , 'show'])->name('show');
 
 
 

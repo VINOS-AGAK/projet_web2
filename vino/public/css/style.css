@@ -12,13 +12,10 @@
 @import "./detail/detail.css";
 @import "./navigation/navigation.css";
 @import "./liste/liste.css";
+@import "./form/signup.css";
 
 
-body {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+
 
 
 

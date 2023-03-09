@@ -30,7 +30,8 @@ Route::post('signup-store', [CustomAuthController::class, 'store'])->name('user.
 Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 
-
+//================CELLIER================//
+Route::get('show', [CellierController::class , 'show'])->name('show');
 
 
 

@@ -1,0 +1,17 @@
+/*================= palette de couleurs ==================*/
+
+:root{
+
+    --primary-color: rgb(138, 135, 135);
+    --primary-color-variation: rgb(204, 204, 204);
+
+    --secondary-color: rgb(124, 123, 123);
+    --secondary-color-variation: rgb(124, 123, 123);
+
+    --accent-color: rgb(191, 159, 44);
+    --accent-color-variation: rgb(162, 127, 0);
+
+    --color-dark: #201D1F;
+    --color-white: #ffffff;
+    
+}

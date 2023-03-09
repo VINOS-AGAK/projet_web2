@@ -1,0 +1,77 @@
+ 
+
+.accueil-container {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://st2.depositphotos.com/1177973/6257/i/600/depositphotos_62572249-stock-photo-pouring-red-wine-from-bottle.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.accueil-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+}
+.accueil-titre {
+    color: var(--accent-color);
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family:  var(--font-primary);
+}
+p {
+    color: var(--color-white);
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.accueil-button {
+    color: var(--color-white);
+    background-color: var(--accent-color);
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.accueil-button:hover {
+    
+    background-color: var(--accent-color-variation);
+    
+}
+@media screen and (min-width: 768px) {
+.accueil-container {
+background-size: contain;
+background-repeat: no-repeat;
+background-image: url('https://st2.depositphotos.com/1177973/6257/i/600/depositphotos_62572249-stock-photo-pouring-red-wine-from-bottle.jpg');
+}
+.accueil-overlay {
+margin: 0 auto;
+padding: 50px;
+}
+.accueil-titre {
+font-size: 40px;
+margin-bottom: 30px;
+}
+p {
+font-size: 20px;
+margin-bottom: 30px;
+}
+.accueil-button {
+font-size: 20px;
+padding: 15px 30px;
+}
+}
+
+

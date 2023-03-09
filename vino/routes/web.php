@@ -16,7 +16,7 @@ use App\Http\Controllers\CellierController;
 |
 */
 
-Route::get('/welcome', [CustomAuthController::class, 'welcome'])->name('welcome');
+Route::get('/', [CustomAuthController::class, 'welcome'])->name('welcome');
 
 
 
@@ -31,8 +31,9 @@ Route::post('signup-store', [CustomAuthController::class, 'store'])->name('user.
 Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 
-
-
+//================CELLIER================//
+Route::get('show', [CellierController::class , 'show'])->name('show');
+Route::get('liste', [CellierController::class , 'index'])->name('liste');
 
 
 

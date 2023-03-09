@@ -39,6 +39,13 @@ Route::get('liste', [CellierController::class , 'index'])->name('liste');
 
 
 
+Route::get('liste-example', function () {
+    return view('liste');
+});
+
+
+
+
 //============================================= CELLIERCONTROLLER ===================================================\\
 Route::get('liste',  [CellierController::class, 'index'])->name('liste');
 Route::get('detail', [CellierController::class, 'show'])->name('detail');

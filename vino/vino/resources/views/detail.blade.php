@@ -16,7 +16,7 @@
         <img src="{{ asset('img/vin2.png')}}" alt="nom vin" />
       </div>
       <div class="product-description">
-        <h1>Riesling  Pinot gris Mosels</h1>
+        <h1>Riesling  Pinot gris Mosel</h1>
         <ul>
           <li> 2017</li>
           <li class="li-divider soutitle"  >White wine 750 ml</li>

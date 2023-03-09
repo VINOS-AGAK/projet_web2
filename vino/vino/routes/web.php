@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BouteilleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CellierController;
@@ -41,12 +40,3 @@ Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 //============================================= CELLIERCONTROLLER ===================================================\\
 Route::get('liste',  [CellierController::class, 'index'])->name('liste');
 Route::get('detail', [CellierController::class, 'show'])->name('detail');
-
-
-
-
-
-
-
-//============================================= CELLIERCONTROLLER ===================================================\\
-Route::get('catalogue', [BouteilleController::class, 'index'])->name('catalogue');

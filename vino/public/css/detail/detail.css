@@ -16,7 +16,7 @@
     height: 65vh;
 }
 .product-image img {
-    background-color:  var(--primary-color)
+    background-color:  var(--primary-color);
 }
 .product-description {
     flex: 1;

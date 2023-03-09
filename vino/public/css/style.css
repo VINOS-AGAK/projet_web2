@@ -7,6 +7,8 @@
 @import "./settings/typography.css";
 
 @import "./detail/detail.css";
+@import "./catalogue/catalogue.css";
+@import "./pagination/pagination.css";
 @import "./navigation/navigation.css";
 
 

@@ -123,7 +123,7 @@ INSERT INTO `vino__type` VALUES(2, 'Vin blanc');
 --
 -- Structure de la table `vino__bouteille`
 --
-
+DROP TABLE IF EXISTS `vino__bouteille`;
 CREATE TABLE `vino__bouteille` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(200) DEFAULT NULL,
@@ -153,7 +153,7 @@ ENGINE=InnoDB ;
 --
 -- Structure de la table `vino__cellier`
 --
-
+DROP TABLE IF EXISTS `vino__cellier`;
 CREATE TABLE `vino__cellier` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_bouteille` int(11) DEFAULT NULL,

@@ -40,15 +40,19 @@ Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 
 
-Route::get('liste-example', function () {
-    return view('liste');
-});
+// Route::get('liste-example', function () {
+//     return view('liste');
+// });
 
 
 
 
 //============================================= CELLIERCONTROLLER ===================================================\\
-Route::get('liste',  [CellierController::class, 'index'])->name('liste');
+Route::get('liste',  [CellierController::class, 'index'])->name('cellier.liste');
+
+Route::get('cellier-create',  [CellierController::class, 'create'])->name('cellier.create');
+Route::post('/cellier-create',  [CellierController::class, 'store']);
+
 Route::get('detail', [CellierController::class, 'show'])->name('detail');
 Route::get('show', [CellierController::class , 'show'])->name('show');
 
@@ -58,8 +62,9 @@ Route::get('show', [CellierController::class , 'show'])->name('show');
 
 
 //============================================= CELLIERCONTROLLER ===================================================\\
-Route::get('catalogue', [CatalogueController::class, 'index'])->name('catalogue');
+Route::get('catalogue', [CatalogueController::class, 'index'])->name('catalogue.liste');
 
 //================LANGUES================\\
 Route::get('/lang/{locale}', [LocalizationController::class, 'index'])->name('lang'
 );
+

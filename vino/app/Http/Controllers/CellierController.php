@@ -18,7 +18,9 @@ class CellierController extends Controller
     {
         if (Auth::check()) {
             $name = Auth::user()->name;
+            $userId = Auth::user()->id;
         }
+
         return view('cellier.index', ['name' => $name]);
     }
 
@@ -29,7 +31,7 @@ class CellierController extends Controller
      */
     public function create()
     {
-        //
+        return view('cellier.create');
     }
 
     /**

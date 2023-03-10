@@ -8,43 +8,63 @@
     <title>Document</title>
 </head>
 <body>
-<div class="container">
+<div class="liste-container">
+
+  <form class="search  liste-search ">
+              <input  placeholder="recherche dans cellier" type="search">
+              <button type="submit" class="search-button">
+                
+              </button>
+  </form>
+	<div class="container">
 		<div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
 			<div class="card-info">
-                <div>
+        <div class="card-info-title">
 
-                    <h3 class="card-title">Название продукта</h3>
-                    <p class="card-subtitle">Тип продукта</p>
-                </div>
-                <div>
-
-                    <p class="card-count">Количество: 10 бутылок</p>
-                    <p class="card-rating">Оценка: 4.5 звезды</p>
-                </div>
+          <h3 class="card-title">Riesling  Pinot gris Mosel</h3>
+          <p class="card-subtitle">White wine 750 ml</p>
+        </div>
+        <div class="card-info-client">
+          
+          <p class="card-count">Quantite:: 10 </p>
+          <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
+        </div>
 			</div>
 		</div>
     <div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
 			<div class="card-info">
-				<h3 class="card-title">Название продукта</h3>
-				<p class="card-subtitle">Тип продукта</p>
-				<p class="card-count">Количество: 10 бутылок</p>
-				<p class="card-rating">Оценка: 4.5 звезды</p>
+        <div class="card-info-title">
+
+          <h3 class="card-title">Riesling  Pinot gris Mosel</h3>
+          <p class="card-subtitle">White wine 750 ml</p>
+          </div>
+          <div class="card-info-client">
+          
+          <p class="card-count">Quantite:: 10 </p>
+          <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
+        </div>
 			</div>
 		</div>
     <div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
 			<div class="card-info">
-				<h3 class="card-title">Название продукта</h3>
-				<p class="card-subtitle">Тип продукта</p>
-				<p class="card-count">Количество: 10 бутылок</p>
-				<p class="card-rating">Оценка: 4.5 звезды</p>
+        <div class="card-info-title">
+            
+            <h3 class="card-title">Riesling  Pinot gris Mosel</h3>
+            <p class="card-subtitle">White wine 750 ml</p>
+            </div>
+            <div class="card-info-client">
+            
+            <p class="card-count">Quantite:: 10 </p>
+            <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
+         </div>
 			</div>
 		</div>
 
-		<!-- Вставьте здесь дополнительные карточки продуктов -->
+		
 	</div>
-
+</div>
 </body>
 </html>

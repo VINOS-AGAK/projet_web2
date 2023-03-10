@@ -15,6 +15,7 @@ class CellierController extends Controller
     public function index()
     {
         //
+        return view('cellier.index');
     }
 
     /**
@@ -47,6 +48,7 @@ class CellierController extends Controller
     public function show(Cellier $cellier)
     {
         //
+        return view('cellier.show');
     }
 
     /**
@@ -83,11 +85,12 @@ class CellierController extends Controller
         //
     }
 
-    public function create(){
-        //creer un cellier
-    }
+    // public function create(){
+    //     //creer un cellier
+    //     return view('cellier.index');
+    // }
 
-    public function store(){
+    // public function store(){
 
-    }
+    // }
 }

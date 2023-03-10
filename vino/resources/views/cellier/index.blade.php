@@ -1,7 +1,8 @@
 
-
 @extends('layouts.app')
 @section('content')
+
+
 <div class="liste-container">
 
   <form class="search  liste-search ">
@@ -13,6 +14,7 @@
 	<div class="container">
 		<div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
+      <picture class="modal"><img src="{{ asset('img/vin2.png')}}" alt="img"></picture>
 			<div class="card-info">
         <div class="card-info-title">
 
@@ -28,6 +30,7 @@
 		</div>
     <div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
+      <picture class="modal"><img src="{{ asset('img/vin2.png')}}" alt="img"></picture>
 			<div class="card-info">
         <div class="card-info-title">
 
@@ -43,6 +46,7 @@
 		</div>
     <div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
+      <picture class="modal"><img src="{{ asset('img/vin2.png')}}" alt="img"></picture>
 			<div class="card-info">
         <div class="card-info-title">
             

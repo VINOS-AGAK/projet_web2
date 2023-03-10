@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: var(--padding-medium);
     
 }
 .accueil-titre {
@@ -60,26 +60,26 @@ p.accueil-paragraph{
 
 
 @media screen and (min-width: 768px) {
-.accueil-container {
-background-size: contain;
-background-repeat: no-repeat;
-background-image: url('https://as2.ftcdn.net/v2/jpg/00/97/95/11/1000_F_97951154_mc0qsUpZBWWNm1TjSehhwCQJ4lBiRGm4.jpg');
-}
-.accueil-overlay {
-margin: 0 auto;
-padding: 50px;
-}
-.accueil-titre {
-font-size: 40px;
-margin-bottom: 30px;
-}
+
+    .accueil-container {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('https://as2.ftcdn.net/v2/jpg/00/97/95/11/1000_F_97951154_mc0qsUpZBWWNm1TjSehhwCQJ4lBiRGm4.jpg');
+    }
+    .accueil-overlay {
+        margin: 0 auto;
+        padding: 50px;
+    }
+    .accueil-titre {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
 
 
-.accueil-button {
-font-size: 20px;
-padding: 15px 30px;
-
-}
+    .accueil-button {
+       font-size: 20px;
+       padding: 15px 30px;
+    }
 }
 
 

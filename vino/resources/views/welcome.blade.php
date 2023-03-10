@@ -9,7 +9,7 @@
           <button class="accueil-button">Se connecter</button>
           @else
           <h1 class="accueil-titre">Welcome {{ $name }}</h1>
-          <p>Ton vin a soif de toi</p>
+          <p class="accueil-paragraph">Ton vin a soif de toi</p>
           <button class="accueil-button">Voir cellier</button>
           @endguest 
           

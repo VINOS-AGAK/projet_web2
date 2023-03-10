@@ -21,7 +21,7 @@
 
             <!-- {{-- NAME--}} -->
             <div class="">
-                <input class="name" type="text" name="name" id="" placeholder="name" value="name">
+                <input class="name" type="text" name="name" id="" placeholder="name" value="">
                 @if($errors->has('name'))
                 <div class="">
                     {{$errors->first('name')}}

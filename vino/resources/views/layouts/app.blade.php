@@ -258,15 +258,19 @@
           <ul id="menu">
           @guest
             <li class="list-item"><a href="#"></a>settings</li>
+            <li class="list-item"><a href="#"></a>Español</li>
+            <li class="list-item"><a href="#"></a>Francais</li>
+            <li class="list-item"><a href="#"></a>Русский</li>
             <li class="list-item"><a href="#"></a>privacy policy</li>
             <li class="list-item"><a href="#"></a>terms and conditions</li>
-            <li class="list-item"><a href="#"></a>about us</li>
           @else
             <li class="list-item"><a href="{{ route('logout')}}">Log out</a></li>
+            <li class="list-item"><a href="#"></a>Español</li>
+            <li class="list-item"><a href="#"></a>Francais</li>
+            <li class="list-item"><a href="#"></a>Русский</li>
             <li class="list-item"><a href="#"></a>settings</li>
             <li class="list-item"><a href="#"></a>privacy policy</li>
             <li class="list-item"><a href="#"></a>terms and conditions</li>
-            <li class="list-item"><a href="#"></a>about us</li>
           @endguest
           </ul>
     </nav>

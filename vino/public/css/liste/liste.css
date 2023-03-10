@@ -1,8 +1,4 @@
-
-  
-  
-
-  .liste-container {
+ .liste-container {
     display: flex;
     flex-direction: column;
     padding: 40px;
@@ -31,13 +27,12 @@
     min-width: 300px;
     min-height: 500px;
     border-radius: 40px;
-    margin: 10px;
-    padding: 10px;
+    margin: var(--margin-small);
+    padding: var(--padding-small);
     box-shadow: 0px 0px 5px var(--color-dark);
     display: flex;
     flex-direction: row;
     align-items: center;
-  
       /* background-image: linear-gradient(to bottom, rgb(144, 24, 24), rgb(86, 86, 85)); */
     background-image: linear-gradient(to bottom right, rgba(186, 57, 57, 0.755), var( --accent-color) 50%, var( --accent-color-variation));
     
@@ -47,7 +42,7 @@
     width: 100%;
     max-width: 150px;
     object-fit: cover;
-    margin-right: 10px;
+    margin-right:  var(--margin-small);
   }
 
   .card-info {
@@ -55,7 +50,7 @@
     flex-direction: column;
     gap: 200px;
     flex-grow: 1;
-    margin-right: 10px;
+    margin-right:  var(--margin-small);
   }
 
   .card-title {
@@ -96,7 +91,7 @@
 
   .card img:hover ~ .modal {
     opacity: 1;
-      scale: 1.5;
+    scale: 1.5;
     transition-duration: 800ms ;
   }
 

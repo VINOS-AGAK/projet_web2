@@ -12,7 +12,7 @@
 .product-image {
     flex: 1;
     max-width: 100%;
-    margin-right: 10px;
+    margin-right: var(--margin-small);
     
 }
 .product-image img {
@@ -21,12 +21,12 @@
 .product-description {
     flex: 1;
     max-width: 100%;
-    margin-right: 10px
+    margin-right:  var(--margin-small);
 }
 .product-description h1 {
     font-size: 24px;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: var(--margin-small);
     color: var(--accent-color-variation);
     font-weight: 800;
 }
@@ -36,12 +36,12 @@
     padding: 0;
 }
 .product-description .soutitle{
- font-size: 24px;
+    font-size: 24px;
 }
 .product-description li {
     font-size: 16px;
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom:  var(--margin-small);
 }
 .li-divider::after {
     content: "";

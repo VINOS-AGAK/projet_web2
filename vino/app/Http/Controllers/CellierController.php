@@ -4,17 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Cellier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CellierController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * retourne la vue du cellier du utilisateur
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        if (Auth::check()) {
+            $name = Auth::user()->name;
+        }
+        return view('cellier.index', ['name' => $name]);
     }
 
     /**
@@ -47,6 +52,7 @@ class CellierController extends Controller
     public function show(Cellier $cellier)
     {
         //
+        return view('cellier.show');
     }
 
     /**
@@ -83,11 +89,12 @@ class CellierController extends Controller
         //
     }
 
-    public function create(){
-        //creer un cellier
-    }
+    // public function create(){
+    //     //creer un cellier
+    //     return view('cellier.index');
+    // }
 
-    public function store(){
+    // public function store(){
 
-    }
+    // }
 }

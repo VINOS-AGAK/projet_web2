@@ -4,6 +4,7 @@ use App\Http\Controllers\CatalogueController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CellierController;
+use App\Http\Controllers\LocalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +59,7 @@ Route::get('show', [CellierController::class , 'show'])->name('show');
 
 //============================================= CELLIERCONTROLLER ===================================================\\
 Route::get('catalogue', [CatalogueController::class, 'index'])->name('catalogue');
+
+//================LANGUES================\\
+Route::get('/lang/{locale}', [LocalizationController::class, 'index'])->name('lang'
+);

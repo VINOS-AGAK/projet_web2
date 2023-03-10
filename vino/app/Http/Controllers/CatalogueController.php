@@ -39,6 +39,7 @@ class CatalogueController extends Controller
     public function store(Request $request)
     {
         //
+ 
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cellier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CellierController extends Controller
 {
@@ -27,6 +28,16 @@ class CellierController extends Controller
         //
     }
 
+
+    public function ajouterBouteille(Request $request, Cellier $cellier)
+    {
+        $cellier->bouteille()->attach(['bouteille_id']);
+
+        return redirect()->back()->with('success', 'Bouteille ajoute avec succes!');
+    }
+
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -35,7 +46,12 @@ class CellierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
+        $cellier = new Cellier();
+        $cellier->user_id = Auth::id();
+        $cellier->save();
+
+        return redirect(route('catalogue.index'));
     }
 
     /**

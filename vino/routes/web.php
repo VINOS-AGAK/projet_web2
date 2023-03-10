@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BouteilleController;
+use App\Http\Controllers\CatalogueController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CellierController;
@@ -31,10 +31,17 @@ Route::post('signup-store', [CustomAuthController::class, 'store'])->name('user.
 Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 
-//================CELLIER================//
-Route::get('show', [CellierController::class , 'show'])->name('show');
-Route::get('liste', [CellierController::class , 'index'])->name('liste');
+// //================CELLIER================//
+// Route::get('show', [CellierController::class , 'show'])->name('show');
+// Route::get('liste', [CellierController::class , 'index'])->name('liste');
 
+
+
+
+
+Route::get('liste-example', function () {
+    return view('liste');
+});
 
 
 
@@ -42,7 +49,7 @@ Route::get('liste', [CellierController::class , 'index'])->name('liste');
 //============================================= CELLIERCONTROLLER ===================================================\\
 Route::get('liste',  [CellierController::class, 'index'])->name('liste');
 Route::get('detail', [CellierController::class, 'show'])->name('detail');
-
+Route::get('show', [CellierController::class , 'show'])->name('show');
 
 
 
@@ -50,4 +57,4 @@ Route::get('detail', [CellierController::class, 'show'])->name('detail');
 
 
 //============================================= CELLIERCONTROLLER ===================================================\\
-Route::get('catalogue', [BouteilleController::class, 'index'])->name('catalogue');
+Route::get('catalogue', [CatalogueController::class, 'index'])->name('catalogue');

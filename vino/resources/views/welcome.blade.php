@@ -5,7 +5,7 @@
         <div class="accueil-overlay">
            @guest
           <h1 class="accueil-titre">Welcome Guest</h1>
-          <p>Notre page principale de projet Vino-AGAK</p>
+          <p class="accueil-paragraph">Notre page principale de projet Vino-AGAK</p>
           <button class="accueil-button">Se connecter</button>
           @else
           <h1 class="accueil-titre">Welcome {{ $name }}</h1>

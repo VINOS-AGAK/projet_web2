@@ -85,6 +85,22 @@
         </div>
       </div>
     </div>
+    <div class="card">
+      <img src="{{ asset('img/vin2.png')}}" alt="Product Image">
+      <picture class="modal"><img src="{{ asset('img/vin2.png')}}" alt="img"></picture>
+      <div class="card-info">
+        <div class="card-info-title">
+
+          <h3 class="card-title">Riesling Pinot gris Mosel</h3>
+          <p class="card-subtitle">White wine 750 ml</p>
+        </div>
+        <div class="card-info-client">
+
+          <p class="card-count">Quantite:: 10 </p>
+          <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

@@ -51,8 +51,10 @@ class CellierController extends Controller
      */
     public function show(Cellier $cellier)
     {
-        //
-        return view('cellier.show');
+        if (Auth::check()) {
+            $name = Auth::user()->name;
+        }
+        return view('cellier.show', ['name' => $name]);
     }
 
     /**

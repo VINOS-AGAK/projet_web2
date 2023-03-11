@@ -15,9 +15,9 @@
     margin-right: var(--margin-small);
     
 }
-.product-image img {
-    /* background-color:  var(--primary-color); */
-}
+/* .product-image img {
+     background-color:  var(--primary-color); 
+} */
 .product-description {
     flex: 1;
     max-width: 100%;

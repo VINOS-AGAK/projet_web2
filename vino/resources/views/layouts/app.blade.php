@@ -8,6 +8,7 @@
     <title>vino</title>
 </head>
 <body>
+@php $locale = session()->get('locale'); @endphp
     <nav  class="container-header">
           <div class="site-header">
             <!---------------- header et icons -------------->
@@ -144,7 +145,7 @@
 
             <!--------------- barre de recherche ------------->
             <form class="search">
-              <input  placeholder="recherche un vin" type="search">
+              <input  placeholder="@lang('lang.recherche_un_vin')" type="search">
               <button type="submit" class="search-button">
                 <svg width="35pt" height="35pt" version="1.1" viewBox="100 150 500 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <defs>
@@ -256,22 +257,20 @@
           <!-------------- items menu-deroulant -------------->
           <input type="checkbox" id="menu-toggle"/>
           <ul id="menu">
-          @guest
+            @guest
             <li class="list-item"><a href="#"></a>settings</li>
-            <li class="list-item"><a href="#"></a>Español</li>
-            <li class="list-item"><a href="#"></a>Francais</li>
-            <li class="list-item"><a href="#"></a>Русский</li>
             <li class="list-item"><a href="#"></a>privacy policy</li>
             <li class="list-item"><a href="#"></a>terms and conditions</li>
-          @else
+            @else
             <li class="list-item"><a href="{{ route('logout')}}">Log out</a></li>
-            <li class="list-item"><a href="#"></a>Español</li>
-            <li class="list-item"><a href="#"></a>Francais</li>
-            <li class="list-item"><a href="#"></a>Русский</li>
             <li class="list-item"><a href="#"></a>settings</li>
             <li class="list-item"><a href="#"></a>privacy policy</li>
             <li class="list-item"><a href="#"></a>terms and conditions</li>
-          @endguest
+            @endguest
+            <li class="list-item"><a href="{{route('lang', 'en')}}">English</a></li>
+            <li class="list-item"><a href="{{route('lang', 'fr')}}">Francais</a></li>
+            <li class="list-item"><a href="{{route('lang', 'es')}}">Español</a></li>
+            <li class="list-item"><a href="{{route('lang', 'ru')}}">Русский</a></li>
           </ul>
     </nav>
 

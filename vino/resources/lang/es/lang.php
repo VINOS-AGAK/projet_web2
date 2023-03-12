@@ -2,14 +2,17 @@
 // FR folder
 return [
  'register_user' => 'Registrar usuario',
- 'name' => 'nombre',
- 'email' => 'correo electrónico',
- 'password' => 'contraseña',
- 'sign_up' => 'guardar',
+ 'name' => 'Nombre',
+ 'email' => 'Correo electrónico',
+ 'password' => 'Contraseña',
+ 'sign_up' => 'Guardar',
  'text_hello' => 'Hola',
- 'login' => 'conectarse',
+ 'login' => 'Conectarse',
  'logout' => 'Desconectar',
  'about' => 'Acerca de nosotros',
  'langue'=> 'Español',
- 'recherche_un_vin'=> 'busca un vino',
+ 'recherche_un_vin'=> 'Busca un vino',
+ 'settings' => 'Configuración',
+ 'privacy_policy' => 'Política de privacidad',
+ 'terms&conditions' => 'Términos y condiciones',
 ];

@@ -11,4 +11,16 @@ return [
  'logout' => 'Logout',
  'about' => 'About us',
  'recherche_un_vin'=> 'looking for a wine',
+ 'settings' => 'settings',
+ 'privacy_policy' => 'privacy policy',
+ 'terms&conditions' => 'terms and conditions',
+ '' => '',
+ '' => '',
+ '' => '',
+ '' => '',
+ '' => '',
+ '' => '',
+ '' => '',
+ '' => '',
+ 
 ];

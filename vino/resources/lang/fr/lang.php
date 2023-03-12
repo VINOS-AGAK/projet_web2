@@ -10,5 +10,8 @@ return [
  'login' => 'Se connecter',
  'logout' => 'Deconnecter',
  'about' => 'A propos',
- 'recherche_un_vin'=> 'recherche un vin',
+ 'recherche_un_vin'=> 'Recherche un vin',
+ 'settings' => 'Réglages',
+ 'privacy_policy' => 'Politique de confidentialité',
+ 'terms&conditions' => 'Termes et conditions',
 ];

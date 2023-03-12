@@ -8,8 +8,8 @@
     background-size: cover;
     background-position: center;
     z-index: 1;
-
 }
+
 .accueil-overlay {
     position: absolute;
     top: 0;
@@ -55,9 +55,8 @@
 p.accueil-paragraph{
     font-size: 20px;
     margin-bottom: 30px;
-    color: var(--color-white);
+    color: var(--color-dark);
 }
-
 
 @media screen and (min-width: 768px) {
 
@@ -74,7 +73,6 @@ p.accueil-paragraph{
         font-size: 40px;
         margin-bottom: 30px;
     }
-
 
     .accueil-button {
        font-size: 20px;

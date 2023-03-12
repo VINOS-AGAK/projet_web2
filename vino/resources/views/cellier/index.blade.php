@@ -62,42 +62,28 @@
             </div>
            
         </div>
-    <!-- <div class="card mb-3">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="{{ asset($bouteille->image) }}" class="card-img" alt="{{ $bouteille->nom }}">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $bouteille->name }}</h5>
-                    <p class="card-text">{{ $bouteille->description }}</p>
-                    <p class="card-text"><small class="text-muted">Quantity: {{ $bouteille->quantity }}</small></p>
-                    <p class="card-text"><small class="text-muted">Added on: {{ $bouteille->created_at }}</small></p>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    
   @endforeach
 
 
    <div class="card">
         <div class="card-body">
 
-            <img src="{{ asset($bouteille->image) }}" alt="Product Image">
+            <img src="{{ asset($bouteille->image)}}" alt="{{ $bouteille->nom }}">
             <picture class="modal"><img src="{{ asset($bouteille->image) }}" alt="img"></picture>
             
             <div class="card-info">
             
                 <div class="card-info-title">
-                    <h3 class="card-title">{{ $bouteille->name }}</h3>
-                    <!-- <p class="card-subtitle">White wine 750 ml</p> -->
-                    <p class="card-subtitle">{{ $bouteille->description }}</p>
+                    <h3 class="card-title">{{ $bouteille->nom }}</h3>
+                    <p class="card-subtitle">White wine {{ $bouteille->format }}</p>
+                    <p class="card-subtitle">{{ $bouteille->pays }}</p>
                 </div>
                 
                 <div class="card-info-client">
-                    <p class="card-count">Quantite:{{ $bouteille->quantity }}</p>
+                    <p class="card-count">Prix : {{ $bouteille->prix_saq }} $</p>
                     <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
-                    <p class="card-rating">Date d'ajoute:  {{ $bouteille->created_at }}</p>
+                    
                 </div>
                
             </div>
@@ -105,9 +91,30 @@
         </div>
         
         <div class="card-footer">
-            <button  class="card-btn" value="">Drink</button>
+            <button  class="card-btn deleteModalBtn" value="" data-id="{{ $bouteille->id}}" data-dialog-id="deleteModal_{{ $bouteille->id }}">Drink</button>
             <button  class="card-btn" value="">Add</button>
         </div>
+        <!-- Modal -->
+    <dialog  class="deleteModal" id="deleteModal_{{ $bouteille->id }}" >
+      <div>
+        <div>
+          <div>
+            <h1 >Supprimer une bouteille du cellier</h1>
+          </div>
+          <div>
+            Voulez vous vraiment effacer cette bouteille {{ $bouteille->nom }}?
+          </div>
+          <div>
+            <button data-dialog-id="deleteModal_{{ $bouteille->id }}" class="btn closeDeleteModal">Annuler</button>
+            <form action="{{ route('delete', $bouteille->id)}}" method="post">
+              @csrf
+              @method('delete')
+                <input type="submit" class="btn btn-danger" value="Effacer">
+            </form>
+          </div>
+        </div>
+      </div>
+    </dialog> 
         
    </div>
     

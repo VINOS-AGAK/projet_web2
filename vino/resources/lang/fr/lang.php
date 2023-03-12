@@ -6,7 +6,7 @@ return [
  'email' => 'Courriel',
  'password' => 'Mot de passe',
  'sign_up' => 'Enregistrer',
- 'text_hello' => 'Bonjour',
+ 'hello' => 'Salut',
  'login' => 'Se connecter',
  'logout' => 'Deconnecter',
  'about' => 'A propos',
@@ -14,4 +14,9 @@ return [
  'settings' => 'Réglages',
  'privacy_policy' => 'Politique de confidentialité',
  'terms&conditions' => 'Termes et conditions',
+ 'welcome' => 'Bienvenue',
+ 'guest' => 'Hôte',
+ 'introduction' => 'Notre page principale de projet Vino-AGAK',
+ 'slogan' => 'Votre vin vous attend',
+ 'mes_cellier' => 'Mes celliers',
 ];

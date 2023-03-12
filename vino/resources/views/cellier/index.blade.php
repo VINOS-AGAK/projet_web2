@@ -39,7 +39,30 @@
 <div class="container">
   
   @foreach($bouteilles as $bouteille)
-    <div class="card mb-3">
+  <div class="card">
+        <div class="card-body">
+
+            <img src="{{ asset($bouteille->image) }}" alt="Product Image">
+            <picture class="modal"><img src="{{ asset($bouteille->image) }}" alt="img"></picture>
+            
+            <div class="card-info">
+            
+                <div class="card-info-title">
+                    <h3 class="card-title">{{ $bouteille->name }}</h3>
+                    <!-- <p class="card-subtitle">White wine 750 ml</p> -->
+                    <p class="card-subtitle">{{ $bouteille->description }}</p>
+                </div>
+                
+                <div class="card-info-client">
+                    <p class="card-count">Quantite:{{ $bouteille->quantity }}</p>
+                    <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
+                    <p class="card-rating">Date d'ajoute:  {{ $bouteille->created_at }}</p>
+                </div>
+               
+            </div>
+           
+        </div>
+    <!-- <div class="card mb-3">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="{{ asset($bouteille->image) }}" class="card-img" alt="{{ $bouteille->nom }}">
@@ -53,26 +76,28 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
   @endforeach
 
 
    <div class="card">
         <div class="card-body">
 
-            <img src="{{ asset('img/vin2.png')}}" alt="Product Image">
-            <picture class="modal"><img src="{{ asset('img/vin2.png')}}" alt="img"></picture>
+            <img src="{{ asset($bouteille->image) }}" alt="Product Image">
+            <picture class="modal"><img src="{{ asset($bouteille->image) }}" alt="img"></picture>
             
             <div class="card-info">
             
                 <div class="card-info-title">
-                    <h3 class="card-title">Riesling Pinot gris Mosel</h3>
-                    <p class="card-subtitle">White wine 750 ml</p>
+                    <h3 class="card-title">{{ $bouteille->name }}</h3>
+                    <!-- <p class="card-subtitle">White wine 750 ml</p> -->
+                    <p class="card-subtitle">{{ $bouteille->description }}</p>
                 </div>
                 
                 <div class="card-info-client">
-                    <p class="card-count">Quantite: 10 </p>
+                    <p class="card-count">Quantite:{{ $bouteille->quantity }}</p>
                     <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
+                    <p class="card-rating">Date d'ajoute:  {{ $bouteille->created_at }}</p>
                 </div>
                
             </div>

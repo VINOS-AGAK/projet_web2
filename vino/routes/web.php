@@ -58,6 +58,7 @@ Route::get('show',                [CellierController::class, 'show'])->name('sho
 
 //============================================= CATALOGUECONTROLLER ==================================================\\
 Route::get('catalogue', [CatalogueController::class, 'index'])->name('catalogue.liste');
+Route::get('catalogue', [CatalogueController::class, 'index'])->name('catalogue');
 
 
 

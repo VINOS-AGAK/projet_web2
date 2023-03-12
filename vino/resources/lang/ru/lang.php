@@ -1,15 +1,23 @@
 <?php
-// FR folder
+// RU folder
 return [
  'register_user' => 'Регистрировать пользователя',
- 'name' => 'имя',
+ 'name' => 'Имя',
  'email' => 'Courriel',
- 'password' => 'пароль',
- 'sign_up' => 'зарегистрироваться',
- 'text_hello' => 'привет',
- 'login' => 'вход',
- 'logout' => 'выход',
- 'about' => 'o нас',
+ 'password' => 'Пароль',
+ 'sign_up' => 'Зарегистрироваться',
+ 'hello' => 'Привет',
+ 'login' => 'Войти',
+ 'logout' => 'Bыйти',
+ 'about' => 'О нас',
  'langue'=> 'Русский',
- 'recherche_un_vin'=> 'поиск вина',
+ 'recherche_un_vin'=> 'Поиск вина',
+ 'settings' => 'Настройки',
+ 'privacy_policy' => 'Политика конфиденциальности',
+ 'terms&conditions' => 'Сроки и условия ',
+ 'welcome' => 'Добро пожаловать',
+ 'guest' => 'Гость',
+ 'introduction' => 'Главная страница проекта Vino-AGAK',
+ 'slogan' => 'Твое вино тебя ждет',
+ 'mes_cellier' => 'Мой погребок',
 ];

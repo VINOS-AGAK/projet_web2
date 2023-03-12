@@ -258,14 +258,14 @@
           <input type="checkbox" id="menu-toggle"/>
           <ul id="menu">
             @guest
-            <li class="list-item"><a href="#"></a>settings</li>
-            <li class="list-item"><a href="#"></a>privacy policy</li>
-            <li class="list-item"><a href="#"></a>terms and conditions</li>
+            <li class="list-item"><a href="{{ route('welcome')}}">@lang('lang.settings')</a> </li>
+            <li class="list-item"><a href="{{ route('welcome')}}">@lang('lang.privacy_policy')</a> </li>
+            <li class="list-item"><a href="{{ route('welcome')}}">@lang('lang.terms&conditions')</a></li>
             @else
-            <li class="list-item"><a href="{{ route('logout')}}">Log out</a></li>
-            <li class="list-item"><a href="#"></a>settings</li>
-            <li class="list-item"><a href="#"></a>privacy policy</li>
-            <li class="list-item"><a href="#"></a>terms and conditions</li>
+            <li class="list-item"><a href="{{ route('logout')}}"> @lang('lang.logout')</a></li>
+            <li class="list-item"><a href="{{ route('welcome')}}">@lang('lang.settings')</a></li>
+            <li class="list-item"><a href="{{ route('welcome')}}">@lang('lang.privacy_policy')</a></li>
+            <li class="list-item"><a href="{{ route('welcome')}}">@lang('lang.terms&conditions')</a></li>
             @endguest
             <li class="list-item"><a href="{{route('lang', 'en')}}">English</a></li>
             <li class="list-item"><a href="{{route('lang', 'fr')}}">Francais</a></li>

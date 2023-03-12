@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Catalogue;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Suuport\Facades\Session;
@@ -16,10 +17,16 @@ class CatalogueController extends Controller
      */
     public function index()
     {
-        //
-        $catalogue = Catalogue::select()->paginate(15);
+        if (Auth::check()) {
+            $catalogue = Catalogue::select()->paginate(15);
+            $name = Auth()->user()->name;
+            return view('catalogue.index', ['catalogue'=>$catalogue,'name' => $name ]);
+        }else{
+            $catalogue = Catalogue::select()->paginate(15);
+            $name = "guest";
+            return view('catalogue.index', ['catalogue'=>$catalogue,'name' => $name ]);
+        }
 
-        return view('catalogue.index', ['catalogue'=>$catalogue]);
     }
 
     /**

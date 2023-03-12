@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bouteille;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class BouteilleController extends Controller
 {
@@ -15,7 +18,9 @@ class BouteilleController extends Controller
      */
     public function index()
     {
+        $name = Auth()->user()->name;
         $user_id = Auth()->user()->id;
+
         $bouteilles = DB::table('bouteille__has__cellier')
                     ->join('vino__bouteille','bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
                     ->where('bouteille__has__cellier.vino__cellier_id', Auth()->user()->cellier->id)
@@ -31,7 +36,7 @@ class BouteilleController extends Controller
                             'bouteille__has__cellier.created_at')
                     ->get();
     
-        return view('bouteilles_has_cellier.index', ['bouteilles'=>$bouteilles]);
+        return view('bouteilles_has_cellier.index', ['bouteilles'=>$bouteilles, 'name' => $name ]);
     }
 
     /**

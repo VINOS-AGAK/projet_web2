@@ -60,7 +60,7 @@ a {
 }
 
 a:link {
-    color: var(--primary-color);
+    color: var(--color-dark);
 }
 
 a:visited {

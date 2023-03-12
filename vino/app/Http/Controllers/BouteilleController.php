@@ -36,6 +36,7 @@ class BouteilleController extends Controller
                             'bouteille__has__cellier.created_at')
                     ->get();
     
+                    
         return view('bouteilles_has_cellier.index', ['bouteilles'=>$bouteilles, 'name' => $name ]);
     }
 

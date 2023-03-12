@@ -65,6 +65,10 @@
       cursor: pointer;
       opacity: 0.7;
     }
+
+    .icon-search{
+      fill: var(--color-dark);
+    }
    
 /* =============== toggle-menu ===========*/
   

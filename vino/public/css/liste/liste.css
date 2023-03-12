@@ -1,167 +1,125 @@
-/* .product-card {
-    display: flex;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  .product-image {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .product-image img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .product-info {
-    flex: 2;
-  }
-  
-  .product-name {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  .product-type {
-    font-size: 18px;
-    color: #666;
-    margin: 0;
-  }
-  
-  .product-rating {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .rating-value {
-    font-size: 20px;
-    margin-right: 5px;
-    font-weight: bold;
-  }
-  
-  .rating-max {
-    font-size: 16px;
-    color: #666;
-  }
-  
-  .product-quantity {
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 0;
-  } */
-
-
-
-  /* .card {
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .card img {
-    width: 40%;
-    height: auto;
-    margin-right: 10px;
-  }
-  
-  .card .info {
-    width: 60%;
+ .liste-container {
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    padding: 40px;
+    background-color: var(--secondary-color);
+    
   }
-  .card .info h3 {
-    font-size: 1.5rem;
-    margin-top: 0;
-  }
-  
-  .card .info p {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: black;
+  .liste-search{
+    border-radius: 20px;
+    width: 250px;
+    background-image: linear-gradient(to bottom , rgba(186, 57, 57, 0.755), var( --accent-color) );
+    box-shadow: 0px 0px 5px var(--color-dark);
   }
   
-  @media screen and (min-width: 768px) {
-    .card {
-      flex-direction: column;
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .card .info {
-      width: 100%;
-    }
-  } */
-
   .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 20px;
   }
 
+  
+
   .card {
-    width: 100%;
-    max-width: 400px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    
+    min-width: 300px;
+    min-height: 500px;
+    border-radius: 40px;
+    margin: var(--margin-small);
+    padding: var(--padding-small);
+    box-shadow: 0px 0px 5px var(--color-dark);
+    
+    background-image: linear-gradient(to bottom right, rgba(186, 57, 57, 0.755), var( --accent-color) 50%, var( --accent-color-variation));
+  }
+  .card-body{
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-top: 20px;
+      /* background-image: linear-gradient(to bottom, rgb(144, 24, 24), rgb(86, 86, 85)); */
   }
 
   .card img {
     width: 100%;
-    max-width: 150px;
+    max-width: 120px;
     object-fit: cover;
-    margin-right: 10px;
+    margin-right:  var(--margin-small);
   }
 
   .card-info {
     display: flex;
     flex-direction: column;
+    gap: 160px;
     flex-grow: 1;
-    margin-right: 10px;
+    margin-right:  var(--margin-small);
   }
 
   .card-title {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
     margin: 0;
+    font-family: var(--font-third);
+    
+  }
+
+  .card-subtitle, .card-count, .card-rating {
+    font-size: var(--font-size-small);
+    margin: 0;
+    text-align: start;
   }
 
   .card-subtitle {
-    font-size: 14px;
     font-style: italic;
-    margin: 0;
-    color: black;
+    color:var(--color-dark);
   }
 
   .card-count {
-    font-size: 14px;
-    margin: 0;
-    color: black;
+    color: var(--color-dark);
   }
 
-  .card-rating {
-    font-size: 14px;
-    margin: 0;
+  .card-rating{
+    color: var(--color-white);
   }
 
-  @media only screen and (min-width: 768px) {
+  .modal{
+    position: absolute;
+	  max-width: 70%;
+	  opacity: 0;
+	  pointer-events: none;
+    z-index: 1;
+
+  }
+
+  .card img:hover ~ .modal {
+    opacity: 1;
+    scale: 1.5;
+    transition-duration: 800ms ;
+  }
+  .card-footer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .card-btn{
+    border-radius: 15px;
+    width: 100px;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-image: linear-gradient(to bottom , rgba(91, 89, 89, 0.755), var(--accent-color) );
+    box-shadow: 0px 0px 5px var(--color-dark);
+  }
+  .card-btn_add{
+    border-radius: 20px;
+    width: 40px;
+    margin: 5px  ;
+    
+    padding: 10px ;
+    background-image: linear-gradient(to bottom , rgba(150, 56, 56, 0.755), var(--accent-color) );
+    box-shadow: 0px 0px 5px var(--color-dark);
+  }
+
+  @media only screen and (min-width: 700px) {
     .container {
       justify-content: space-between;
     }

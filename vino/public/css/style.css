@@ -11,8 +11,13 @@
 @import "./accueil/accueil.css";
 @import "./detail/detail.css";
 @import "./navigation/navigation.css";
+
+/* Cellier view */
 @import "./liste/liste.css";
+@import "./liste/menu.css";
+
 @import "./form/signup.css";
+
 
 
 

@@ -5,18 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\Cellier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 
 class CellierController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * retourne la vue du cellier du utilisateur
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
-        return view('cellier.index');
+
+        if (Auth::check()) {
+            $name = Auth::user()->name;
+            $userId = Auth::user()->id;
+        }
+
+        return view('cellier.index', ['name' => $name]);
     }
 
     /**
@@ -25,8 +32,7 @@ class CellierController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        
+    {        
         return view('cellier.create');
     }
 
@@ -41,6 +47,7 @@ class CellierController extends Controller
         $cellier->bouteille()->attach(['bouteille_id']);
 
         return redirect()->back()->with('success', 'Bouteille ajoute avec succes!');
+
     }
 
 
@@ -71,7 +78,11 @@ class CellierController extends Controller
      */
     public function show(Cellier $cellier)
     {
-        return view('cellier.show', ['cellier'=>$cellier]);
+
+        if (Auth::check()) {
+            $name = Auth::user()->name;
+        }
+        return view('cellier.show', ['name' => $name,'cellier'=>$cellier ]);
     }
 
     /**
@@ -105,8 +116,7 @@ class CellierController extends Controller
      */
     public function destroy(Cellier $cellier)
     {
-        //
+        
     }
-
 
 }

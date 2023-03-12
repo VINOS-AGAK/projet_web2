@@ -1,21 +1,28 @@
 @extends('layouts.app')
 @section('content') 
       
-       <div class="accueil-container">
+    <div class="accueil-container">
         <div class="accueil-overlay">
-           @guest
-          <h1 class="accueil-titre">Welcome Guest</h1>
-          <p>Notre page principale de projet Vino-AGAK</p>
-          <button class="accueil-button">Se connecter</button>
+        
+          @guest
+          
+          <h1 class="accueil-titre">@lang('lang.welcome') @lang('lang.guest')</h1>
+          <p class="accueil-paragraph">@lang('lang.introduction')</p>
+          <button class="accueil-button"><a  href="{{ route('user.auth')}}">@lang('lang.login')</a></button>
+         
           @else
-          <h1 class="accueil-titre">Welcome {{ $name }}</h1>
-          <p class="accueil-paragraph">Ton vin a soif de toi</p>
-          <a class="accueil-button" href="{{ route('liste-bouteilles') }}">Voir cellier</a>
+
+          <h1 class="accueil-titre">@lang('lang.hello') {{ $name }}</h1>
+          <p class="accueil-paragraph">@lang('lang.slogan')</p>
+          <button class="accueil-button"><a  href="{{ route('liste-bouteilles')}}">@lang('lang.mes_cellier')</a></button>
+          
           @endguest 
           
         </div>
     </div>
 @endsection
+
+
 
 
 

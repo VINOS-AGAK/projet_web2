@@ -36,9 +36,12 @@ Route::get('logout',        [CustomAuthController::class, 'logout'])->name('logo
 // Route::get('liste', [CellierController::class , 'index'])->name('liste');
 
 
-// Route::get('liste-example', function () {
-//     return view('liste');
-// });
+
+
+
+ Route::get('liste-example', function () {
+     return view('liste');
+ });
 
 
 

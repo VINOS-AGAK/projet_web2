@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bouteille;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BouteilleController extends Controller
 {
@@ -14,7 +15,23 @@ class BouteilleController extends Controller
      */
     public function index()
     {
-        //
+        $user_id = Auth()->user()->id;
+        $bouteilles = DB::table('bouteille__has__cellier')
+                    ->join('vino__bouteille','bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
+                    ->where('bouteille__has__cellier.vino__cellier_id', Auth()->user()->cellier->id)
+                    ->select('bouteille__has__cellier.id', 
+                            'vino__bouteille.nom', 
+                            'vino__bouteille.description', 
+                            'vino__bouteille.image', 
+                            'vino__bouteille.prix_saq' , 
+                            'vino__bouteille.pays' , 
+                            'vino__bouteille.url_saq' , 
+                            'vino__bouteille.format' , 
+                            'vino__bouteille.vino__type_id' , 
+                            'bouteille__has__cellier.created_at')
+                    ->get();
+    
+        return view('bouteilles_has_cellier.index', ['bouteilles'=>$bouteilles]);
     }
 
     /**
@@ -24,7 +41,7 @@ class BouteilleController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +52,13 @@ class BouteilleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = Auth()->user()->id;
+        $newBouteille = Bouteille::create([
+            'vino__bouteille_id' => $request->id,
+            'vino__cellier_id' => $user_id
+        ]);
+
+        return redirect()->route('catalogue');
     }
 
     /**
@@ -80,6 +103,8 @@ class BouteilleController extends Controller
      */
     public function destroy(Bouteille $bouteille)
     {
-        //
+        $bouteille->delete();
+
+        return redirect(route('liste-bouteilles'));
     }
 }

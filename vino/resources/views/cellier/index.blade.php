@@ -1,9 +1,30 @@
-
-
 @extends('layouts.app')
 @section('content')
 
-	<div class="container">
+
+
+@foreach($bouteilles as $bouteille)
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{ asset($bouteille->image) }}" class="card-img" alt="{{ $bouteille->nom }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $bouteille->name }}</h5>
+                    <p class="card-text">{{ $bouteille->description }}</p>
+                    <p class="card-text"><small class="text-muted">Quantity: {{ $bouteille->quantity }}</small></p>
+                    <p class="card-text"><small class="text-muted">Added on: {{ $bouteille->created_at }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+
+
+
+
+	<!-- <div class="container">
 		<div class="card">
 			<img src="{{ asset('img/vin2.png')}}" alt="Product Image">
 			<div class="card-info">
@@ -32,8 +53,8 @@
 			</div>
 		</div>
 
-		<!-- Вставьте здесь дополнительные карточки продуктов -->
-	</div>
+		Вставьте здесь дополнительные карточки продуктов
+	</div> -->
 
 
 

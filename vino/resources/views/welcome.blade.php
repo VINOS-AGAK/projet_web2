@@ -10,7 +10,7 @@
           @else
           <h1 class="accueil-titre">Welcome {{ $name }}</h1>
           <p class="accueil-paragraph">Ton vin a soif de toi</p>
-          <button class="accueil-button">Voir cellier</button>
+          <a class="accueil-button" href="{{ route('liste-bouteilles') }}">Voir cellier</a>
           @endguest 
           
         </div>

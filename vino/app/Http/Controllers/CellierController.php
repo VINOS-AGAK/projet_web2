@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
+
 class CellierController extends Controller
 {
     /**
@@ -16,6 +17,7 @@ class CellierController extends Controller
      */
     public function index()
     {
+
         if (Auth::check()) {
             $name = Auth::user()->name;
             $userId = Auth::user()->id;
@@ -30,9 +32,25 @@ class CellierController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {        
         return view('cellier.create');
     }
+
+
+    /**
+     * Add one bottle from the cataloge to the user's cellier
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function ajouterBouteille(Request $request, Cellier $cellier)
+    {
+        $cellier->bouteille()->attach(['bouteille_id']);
+
+        return redirect()->back()->with('success', 'Bouteille ajoute avec succes!');
+
+    }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -42,7 +60,14 @@ class CellierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $cellier = Cellier::create([
+        'nom' => $request->nom,
+        'description'=>$request->description,
+        'user_id'=> Auth::user()->id
+        ]);
+
+        return redirect(route('catalogue', $cellier->id));
     }
 
     /**
@@ -53,10 +78,11 @@ class CellierController extends Controller
      */
     public function show(Cellier $cellier)
     {
+
         if (Auth::check()) {
             $name = Auth::user()->name;
         }
-        return view('cellier.show', ['name' => $name]);
+        return view('cellier.show', ['name' => $name,'cellier'=>$cellier ]);
     }
 
     /**
@@ -90,15 +116,7 @@ class CellierController extends Controller
      */
     public function destroy(Cellier $cellier)
     {
-        //
+        
     }
 
-    // public function create(){
-    //     //creer un cellier
-    //     return view('cellier.index');
-    // }
-
-    // public function store(){
-
-    // }
 }

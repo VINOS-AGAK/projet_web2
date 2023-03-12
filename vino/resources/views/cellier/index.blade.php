@@ -27,7 +27,7 @@
   </div>
 </nav>
 
-<div class="liste-container">
+
   <h4>Cellier {{ $name }}</h4>
   <!-- search bar -->
   <form class="search  liste-search ">
@@ -36,118 +36,91 @@
   </form>
 
   <!-- wine list -->
-  <div class="container">
-
-  <div class="card">
-        <div class="card-body">
-
-            <img src="{{ asset('img/vin2.png')}}" alt="Product Image">
-            <picture class="modal"><img src="{{ asset('img/vin2.png')}}" alt="img"></picture>
-            <div class="card-info">
-                <div class="card-info-title">
+<div class="container">
   
-                    <h3 class="card-title">Riesling Pinot gris Mosel</h3>
-                    <p class="card-subtitle">White wine 750 ml</p>
+  @foreach($bouteilles as $bouteille)
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{ asset($bouteille->image) }}" class="card-img" alt="{{ $bouteille->nom }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $bouteille->name }}</h5>
+                    <p class="card-text">{{ $bouteille->description }}</p>
+                    <p class="card-text"><small class="text-muted">Quantity: {{ $bouteille->quantity }}</small></p>
+                    <p class="card-text"><small class="text-muted">Added on: {{ $bouteille->created_at }}</small></p>
                 </div>
-                <div class="card-info-client">
-                    
-                    <div>
-                    <p class="card-count">Quantite: 10 <button  class="card-btn_add" value="">&#8679;</button></p>
-                    </div>
-                    
-                    <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
-                </div>
-          
             </div>
         </div>
-        <div class="card-footer">
-
-            <button  class="card-btn" value="">Drink</button>
-            
-        </div>
     </div>
-    <div class="card">
+  @endforeach
+
+
+   <div class="card">
         <div class="card-body">
 
             <img src="{{ asset('img/vin2.png')}}" alt="Product Image">
             <picture class="modal"><img src="{{ asset('img/vin2.png')}}" alt="img"></picture>
+            
             <div class="card-info">
+            
                 <div class="card-info-title">
-  
                     <h3 class="card-title">Riesling Pinot gris Mosel</h3>
                     <p class="card-subtitle">White wine 750 ml</p>
                 </div>
+                
                 <div class="card-info-client">
-  
                     <p class="card-count">Quantite: 10 </p>
                     <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
                 </div>
-          
+               
             </div>
+           
         </div>
+        
         <div class="card-footer">
-
             <button  class="card-btn" value="">Drink</button>
             <button  class="card-btn" value="">Add</button>
         </div>
-    </div>
+        
+   </div>
+    
     <div class="card">
         <div class="card-body">
 
             <img src="{{ asset('img/vin2.png')}}" alt="Product Image">
             <picture class="modal"><img src="{{ asset('img/vin2.png')}}" alt="img"></picture>
             <div class="card-info">
+            
                 <div class="card-info-title">
-  
                     <h3 class="card-title">Riesling Pinot gris Mosel</h3>
                     <p class="card-subtitle">White wine 750 ml</p>
                 </div>
+                
                 <div class="card-info-client">
-  
-                    <p class="card-count">Quantite: 10 </p>
-                    <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
-                </div>
-          
-            </div>
-        </div>
-        <div class="card-footer">
-
-            <button  class="card-btn" value="">Drink</button>
-            <button  class="card-btn" value="">Add</button>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-
-            <img src="{{ asset('img/vin2.png')}}" alt="Product Image">
-            <picture class="modal"><img src="{{ asset('img/vin2.png')}}" alt="img"></picture>
-            <div class="card-info">
-                <div class="card-info-title">
-  
-                    <h3 class="card-title">Riesling Pinot gris Mosel</h3>
-                    <p class="card-subtitle">White wine 750 ml</p>
-                </div>
-                <div class="card-info-client">
-                    
+                
                     <div>
                     <p class="card-count">Quantite: 10 <button  class="card-btn_add" value="">&#8679;</button></p>
                     </div>
-                    
                     <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
+                    
                 </div>
           
             </div>
-        </div>
-        <div class="card-footer">
-
-            <button  class="card-btn" value="">Drink</button>
             
         </div>
+        
+        <div class="card-footer">
+            <button  class="card-btn" value="">Drink</button>
+        </div>
+ 
     </div>
-  </div>
+    
+    
+ </div>
 
 </div>
-
 
 
 @endsection

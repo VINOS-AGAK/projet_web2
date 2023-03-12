@@ -69,7 +69,7 @@
             <button  class="card-btn" value="">Add</button>
         </div>
         <!-- Modal -->
-    <dialog  class="deleteModal" id="deleteModal_{{ $bouteille->id }}" >
+    <!-- <dialog  class="deleteModal" id="deleteModal_{{ $bouteille->id }}" >
       <div>
         <div>
           <div>
@@ -88,7 +88,19 @@
           </div>
         </div>
       </div>
-    </dialog> 
+    </dialog>  -->
+    <dialog class="dialogue" id="deleteModal_{{ $bouteille->id }}">
+  <h2>Supprimer une bouteille du cellier</h2>
+  <p>Voulez vous vraiment effacer cette bouteille {{ $bouteille->nom }}?</p>
+  
+  <button data-dialog-id="deleteModal_{{ $bouteille->id }}" >Annuler</button>
+  <form action="{{ route('delete', $bouteille->id)}}" method="post">
+  @csrf
+  @method('delete')
+    <input type="submit"  value="Effacer">
+</form>
+</dialog>
+
         
    </div>
   @empty

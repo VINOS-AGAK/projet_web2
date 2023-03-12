@@ -25,16 +25,25 @@
     margin-bottom: 30px;
   }
   
-  .dialogue button {
-    background-color: #4CAF50;
+  .button-modal{
+    background-color:var(--secondary-color);
     border: none;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: var(--border-radius-meduim);
+    color: var(--color-dark);
+    padding: 10px 15px;
     cursor: pointer;
+  }
+
+  .button-form{
+    border: none;
+    background-color:var(--accent-color);
+    border-radius: var(--border-radius-meduim);
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
   }
   
   .dialogue button:hover {
-    background-color: #3e8e41;
+    background-color: var(--color-white);
   }
   

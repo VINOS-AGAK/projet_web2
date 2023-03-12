@@ -65,8 +65,8 @@
         </div>
         
         <div class="card-footer">
-            <button  class="card-btn deleteModalBtn" value="" data-id="{{ $bouteille->id}}" data-dialog-id="deleteModal_{{ $bouteille->id }}">Drink</button>
-            <button  class="card-btn" value="">Add</button>
+            <button  class="card-btn deleteModalBtn" value="" data-id="{{ $bouteille->id}}" data-dialog-id="deleteModal_{{ $bouteille->id }}">Supprimer</button>
+            
         </div>
         <!-- Modal -->
     <!-- <dialog  class="deleteModal" id="deleteModal_{{ $bouteille->id }}" >
@@ -93,12 +93,12 @@
   <h2>Supprimer une bouteille du cellier</h2>
   <p>Voulez vous vraiment effacer cette bouteille {{ $bouteille->nom }}?</p>
   
-  <button data-dialog-id="deleteModal_{{ $bouteille->id }}" >Annuler</button>
   <form action="{{ route('delete', $bouteille->id)}}" method="post">
   @csrf
   @method('delete')
-    <input type="submit"  value="Effacer">
+    <input class="button-form" type="submit"  value="Effacer">
 </form>
+  <button data-dialog-id="deleteModal_{{ $bouteille->id }}"  class="button-modal closeDeleteModal">Annuler</button>
 </dialog>
 
         

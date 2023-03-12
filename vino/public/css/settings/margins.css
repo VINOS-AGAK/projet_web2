@@ -3,4 +3,10 @@
     --padding-small: 10px;
     --padding-medium: 20px;
     --padding-large: 30px;
+
+    --border-radius-small:5px;
+    --border-radius-ex-small:10px;
+    --border-radius-meduim:15px;
+    --border-radius-large:20px;
+    --border-radius-ex-large:40px;
 }

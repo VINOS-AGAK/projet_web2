@@ -12,7 +12,12 @@
     --accent-color: rgb(255, 211, 65);
     --accent-color-variation: rgb(100, 100, 100);
 
-    --color-dark: #201D1F;
+    /* 88% black */
+    --color-dark: #313131;
+
+    /* 75% black */
+    /* --color-dark: #3f3f3f; */
+    
     --color-white: #ffffff;
     
 }

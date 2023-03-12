@@ -13,7 +13,7 @@
 }
 
 .profile-button, .cellier-button, .search-button, .flower-button {
-    fill: white;
+    fill:var(--color-dark);
 }
 
 .profile-button:active, 

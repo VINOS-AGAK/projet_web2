@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Catalogue;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Suuport\Facades\Session;
 
 class CatalogueController extends Controller
 {
@@ -39,6 +41,7 @@ class CatalogueController extends Controller
     public function store(Request $request)
     {
         //
+ 
     }
 
     /**

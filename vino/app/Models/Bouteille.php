@@ -24,4 +24,31 @@ class Bouteille extends Model
         'quantite',
         'millesime',
     ];
+
+
+    public function catalogue()
+    {
+        return $this->belongsTo(Catalogue::class);    
+    }    
+
+    public function cellar()
+    {
+        return $this->belongsToMany(Cellier::class, 'bouteille__has__cellier')
+                        ->withPivot([
+                            'id',
+                            'quantite',
+                            'note',
+                            'created_at',
+                            'updated_at'
+                        ]);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class)
+                        ->withPivot('quantite', 'note')
+                        ->withTimestamps();
+    }
+
+
 }

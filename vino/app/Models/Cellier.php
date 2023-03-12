@@ -13,7 +13,27 @@ class Cellier extends Model
 
     protected $fillable = [
 
-        'cellier_user_id',
+        'user_id',
+        'nom',
+        'description'
 
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function bouteille()
+    {
+        return $this->hasMany(Bouteille::class, 'bouteille__has__cellier')
+                        ->withPivot([
+                            'id',
+                            'quantite',
+                            'note',
+                            'created_at',
+                            'updated_at'
+                        ]);
+    }
 }

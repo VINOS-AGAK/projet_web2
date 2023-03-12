@@ -40,9 +40,9 @@ Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 
 
-// Route::get('liste-example', function () {
-//     return view('liste');
-// });
+ Route::get('liste-example', function () {
+     return view('liste');
+ });
 
 
 

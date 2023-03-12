@@ -35,7 +35,7 @@
 </nav>
 
 <div class="liste-container">
-  <!-- <h4>Cellier {{ $name }}</h4> -->
+  
   <!-- search bar -->
   <form class="search  liste-search ">
     <input placeholder="recherche dans cellier" type="search">

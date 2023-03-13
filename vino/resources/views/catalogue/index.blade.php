@@ -4,7 +4,7 @@
          
                 
 <div class="card-header">
-  <h3>notre catalogue</h3>
+  <h3>our catalogue</h3>
 </div>
 
 

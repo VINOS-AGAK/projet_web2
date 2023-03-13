@@ -52,7 +52,9 @@ class BouteilleController extends Controller
             ->where('bouteille__has__cellier.vino__cellier_id', Auth()->user()->cellier->id)
             ->where(function($q) use ($query) {
                 $q->where('vino__bouteille.nom', 'LIKE', "%$query%")
-                    ->orWhere('vino__bouteille.pays', 'LIKE', "%$query%");
+                    ->orWhere('vino__bouteille.pays', 'LIKE', "%$query%")
+                    ->orWhere('vino__bouteille.format', 'LIKE', "%$query%")
+                    ->orWhere('vino__bouteille.prix_saq', 'LIKE', "%$query%");
             })
             ->select('bouteille__has__cellier.id', 
                     'vino__bouteille.nom', 

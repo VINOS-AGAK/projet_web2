@@ -245,8 +245,8 @@
             </div>
 
             <!--------------- barre de recherche ------------->
-            <form class="search">
-              <input  placeholder="@lang('lang.recherche_un_vin')" type="search">
+            <form action="{{ route('catalogue.search') }}" method="GET" class="search">
+              <input  placeholder="@lang('lang.recherche_un_vin')" type="text" name="query">
               <button type="submit" class="search-button">
                 <svg class="icon-search" width="35pt" height="35pt" version="1.1" viewBox="100 150 500 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <defs>

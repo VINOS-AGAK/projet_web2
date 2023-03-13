@@ -126,4 +126,18 @@ class CatalogueController extends Controller
 
         return redirect(route('catalogue.index'));
     }
+
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    // Получить результаты поиска из модели Catalogue
+    $catalogue = Catalogue::where('nom', 'LIKE', "%$query%")
+                           ->orWhere('pays', 'LIKE', "%$query%")
+                           ->paginate(15);
+
+    // Возвращаем представление с результатами поиска
+    return view('catalogue.index', ['catalogue' => $catalogue]);
+}
+
 }

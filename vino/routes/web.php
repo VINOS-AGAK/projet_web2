@@ -75,3 +75,7 @@ Route::delete('bouteille-edit/{bouteille}', [BouteilleController::class, 'destro
 Route::get('/lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
 
 
+
+
+
+Route::get('/catalogue/search', [CatalogueController::class, 'search'])->name('catalogue.search');

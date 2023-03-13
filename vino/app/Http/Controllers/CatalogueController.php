@@ -18,11 +18,11 @@ class CatalogueController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            $catalogue = Catalogue::select()->paginate(15);
+            $catalogue = Catalogue::select()->paginate(10);
             $name = Auth()->user()->name;
             return view('catalogue.index', ['catalogue'=>$catalogue,'name' => $name ]);
         }else{
-            $catalogue = Catalogue::select()->paginate(15);
+            $catalogue = Catalogue::select()->paginate(10);
             $name = "guest";
             return view('catalogue.index', ['catalogue'=>$catalogue,'name' => $name ]);
         }
@@ -125,5 +125,34 @@ class CatalogueController extends Controller
         $catalogue->delete();
 
         return redirect(route('catalogue.index'));
+    }
+
+    /**
+     * Recherche dans catalogue saq
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        if(Auth::check()){
+            $name = Auth::user()->name;
+            $catalogue = Catalogue::where('nom', 'LIKE', "%$query%")
+                                   ->orWhere('pays', 'LIKE', "%$query%")
+                                   ->orWhere('description', 'LIKE', "%$query%")
+                                   ->orWhere('prix_saq', 'LIKE', "%$query%")
+                                   ->orWhere('format', 'LIKE', "%$query%")
+                                   ->paginate(5);
+            return view('catalogue.index', ['catalogue' => $catalogue, 'name' => $name]);                      
+        } else {
+            $catalogue = Catalogue::where('nom', 'LIKE', "%$query%")
+                                   ->orWhere('pays', 'LIKE', "%$query%")
+                                   ->orWhere('description', 'LIKE', "%$query%")
+                                   ->orWhere('prix_saq', 'LIKE', "%$query%")
+                                   ->orWhere('format', 'LIKE', "%$query%")
+                                   ->paginate(5);
+        
+            return view('catalogue.index', ['catalogue' => $catalogue]);
+        }
     }
 }

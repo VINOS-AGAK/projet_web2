@@ -34,7 +34,7 @@
 }
 .accueil-container>p {
     color: var(--color-white);
-    font-size: 16px;
+    font-size: var(--font-size-default);
     text-align: center;
     margin-bottom: var(--margin-medium);
 }
@@ -44,7 +44,7 @@
     padding: 10px 40px;
     border: none;
     border-radius: var(--border-radius-ex-small);
-    font-size: 16px;
+    font-size:var(--font-size-default);
     cursor: pointer;
 }
 
@@ -53,7 +53,7 @@
 }
 
 p.accueil-paragraph{
-    font-size: 20px;
+    font-size:var(--font-size-regular);
     margin-bottom: 30px;
     color: var(--color-white);
 }
@@ -75,7 +75,7 @@ p.accueil-paragraph{
     }
 
     .accueil-button {
-       font-size: 20px;
+       font-size: var(--font-size-regular);
        padding: 15px 30px;
     }
 }

@@ -127,17 +127,22 @@ class CatalogueController extends Controller
         return redirect(route('catalogue.index'));
     }
 
+  
     public function search(Request $request)
-{
-    $query = $request->input('query');
-
-    // Получить результаты поиска из модели Catalogue
-    $catalogue = Catalogue::where('nom', 'LIKE', "%$query%")
-                           ->orWhere('pays', 'LIKE', "%$query%")
-                           ->paginate(15);
-
-    // Возвращаем представление с результатами поиска
-    return view('catalogue.index', ['catalogue' => $catalogue]);
-}
-
+    {
+        $query = $request->input('query');
+        if(Auth::check()){
+            $name = Auth::user()->name;
+            $catalogue = Catalogue::where('nom', 'LIKE', "%$query%")
+                                   ->orWhere('pays', 'LIKE', "%$query%")
+                                   ->paginate(15);
+            return view('catalogue.index', ['catalogue' => $catalogue, 'name' => $name]);                      
+        } else {
+            $catalogue = Catalogue::where('nom', 'LIKE', "%$query%")
+                               ->orWhere('pays', 'LIKE', "%$query%")
+                               ->paginate(15);
+        
+            return view('catalogue.index', ['catalogue' => $catalogue]);
+        }
+    }
 }

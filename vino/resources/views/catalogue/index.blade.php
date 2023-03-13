@@ -20,7 +20,6 @@
         <li class="li-divider sous-titre">{{ $catalogue->nom }}</li>
         <li class="li-divider">Description: {{ $catalogue->description }}</li>
         <li class="li-divider sous-titre">Pays : {{ $catalogue->pays }}</li> 
-        <li>Type :  </li>
         <li>Prix : {{ $catalogue->prix_saq }} $</li>
         <li>Format : {{ $catalogue->format }}</li>
         <div>
@@ -44,7 +43,7 @@
     </ul>
   </div>
   @endforelse
-  {{$catalogue}}
+  {{ $catalogue }}
 </body>
 
 

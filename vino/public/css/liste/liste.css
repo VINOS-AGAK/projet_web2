@@ -9,7 +9,7 @@
     border-radius: var(--border-radius-meduim);
     width: 250px;
     /* background-image: linear-gradient(to bottom , rgba(186, 57, 57, 0.755), var( --accent-color) ); */
-    margin: 10px;
+    margin: var(--margin-medium);
     display: flex;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);
     backdrop-filter: blur(5px);

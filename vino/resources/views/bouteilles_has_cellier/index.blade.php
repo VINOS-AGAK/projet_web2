@@ -32,11 +32,12 @@
 <div class="liste-container">
   
   <!-- search bar -->
-  <form class=" liste-search ">
-    <input placeholder="recherche dans cellier" type="search">
-    <button type="submit" class="search-button" value="Submit"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+  <form class=" liste-search " action="{{ route('liste-bouteilles') }}" method="GET">
+  <input placeholder="Recherche dans cellier" type="search" name="q" value="{{ old('q') }}">
+  <button type="submit" class="search-button" value="Submit"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
         <path d="m19.45 21.325-6.3-6.3q-.725.55-1.675.85-.95.3-2.05.3-2.775 0-4.712-1.937Q2.775 12.3 2.775 9.525q0-2.775 1.938-4.713Q6.65 2.875 9.425 2.875q2.775 0 4.712 1.937 1.938 1.938 1.938 4.713 0 1.1-.313 2.05-.312.95-.837 1.65l6.325 6.325ZM9.425 13.65q1.725 0 2.925-1.2 1.2-1.2 1.2-2.925 0-1.725-1.2-2.925-1.2-1.2-2.925-1.2Q7.7 5.4 6.5 6.6 5.3 7.8 5.3 9.525q0 1.725 1.2 2.925 1.2 1.2 2.925 1.2Z" />
       </svg></button>
+   
   </form>
 <!-- wine list -->
 <div class="container">

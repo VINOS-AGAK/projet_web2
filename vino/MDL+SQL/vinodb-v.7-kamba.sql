@@ -604,6 +604,7 @@ ALTER TABLE `vino__cellier`
 --
 -- AUTO_INCREMENT for table `vino__type`
 --
+
 ALTER TABLE `vino__type`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 

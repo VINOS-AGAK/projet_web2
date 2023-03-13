@@ -1,19 +1,14 @@
 .dialogue {
     width: 300px;
-   
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    
-    padding: 20px;
+    padding: var(--padding-medium);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    
-    border-radius: 10px;
+    border-radius:var(--border-radius-small);
     color: var(--color-dark);
-
-
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -21,12 +16,12 @@
   }
   
   .dialogue h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--margin-medium);
   }
   
   .dialogue p {
-    font-size: 18px;
+    font-size:var(--font-size-regular);
     margin-bottom: 30px;
    
   }
@@ -37,7 +32,7 @@
 
   .button-form{
     background-color:var(--accent-color);
-    font-size: 18px;
+    font-size: var(--font-size-regular);
   }
 
   .button-form, .button-modal{
@@ -50,5 +45,8 @@
   
   .dialogue button:hover {
     background-color: var(--color-white);
+  }
+  .dialogue input:hover {
+    background-color: rgb(255, 98, 0);
   }
   

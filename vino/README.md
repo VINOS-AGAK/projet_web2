@@ -1,3 +1,16 @@
+REMISE SPRINT 1
+
+lien de github: https://github.com/VINOS-AGAK/projet_web2
+
+username: potato@potato.com
+password: 123456789
+
+lien de site: https://agak.alexandrucandu.ca/
+
+
+
+INFORMATION POUR EQUIPE:
+
 CatalogueController 
 -> controle le data qui vient de la SAQ
 -> population de la base de données
@@ -11,5 +24,7 @@ BouteilleController
 
 AuthController
 -> gere les utilisateurs
+
+
 
 

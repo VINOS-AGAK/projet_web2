@@ -127,7 +127,11 @@ class CatalogueController extends Controller
         return redirect(route('catalogue.index'));
     }
 
-  
+    /**
+     * Recherche dans catalogue saq
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function search(Request $request)
     {
         $query = $request->input('query');
@@ -135,11 +139,17 @@ class CatalogueController extends Controller
             $name = Auth::user()->name;
             $catalogue = Catalogue::where('nom', 'LIKE', "%$query%")
                                    ->orWhere('pays', 'LIKE', "%$query%")
+                                   ->orWhere('description', 'LIKE', "%$query%")
+                                   ->orWhere('prix_saq', 'LIKE', "%$query%")
+                                   ->orWhere('format', 'LIKE', "%$query%")
                                    ->paginate(15);
             return view('catalogue.index', ['catalogue' => $catalogue, 'name' => $name]);                      
         } else {
             $catalogue = Catalogue::where('nom', 'LIKE', "%$query%")
                                ->orWhere('pays', 'LIKE', "%$query%")
+                               ->orWhere('description', 'LIKE', "%$query%")
+                               ->orWhere('prix_saq', 'LIKE', "%$query%")
+                               ->orWhere('format', 'LIKE', "%$query%")
                                ->paginate(15);
         
             return view('catalogue.index', ['catalogue' => $catalogue]);

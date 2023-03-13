@@ -55,7 +55,7 @@
 p.accueil-paragraph{
     font-size: 20px;
     margin-bottom: 30px;
-    color: var(--color-dark);
+    color: var(--color-white);
 }
 
 @media screen and (min-width: 768px) {

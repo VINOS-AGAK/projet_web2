@@ -13,7 +13,7 @@ class BouteilleController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     // public function index()
@@ -34,9 +34,7 @@ class BouteilleController extends Controller
     //                         'vino__bouteille.format' , 
     //                         'vino__bouteille.vino__type_id' , 
     //                         'bouteille__has__cellier.created_at')
-    //                 ->get();
-    
-                    
+    //                 ->get();       
     //     return view('bouteilles_has_cellier.index', ['bouteilles'=>$bouteilles, 'name' => $name ]);
     // }
 

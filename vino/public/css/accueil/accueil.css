@@ -29,21 +29,21 @@
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: var(--margin-medium);
     font-family:  var(--font-primary);
 }
 .accueil-container>p {
     color: var(--color-white);
     font-size: 16px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: var(--margin-medium);
 }
 .accueil-button {
     color: var(--color-white);
     background-color: var(--accent-color);
     padding: 10px 40px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius-ex-small);
     font-size: 16px;
     cursor: pointer;
 }

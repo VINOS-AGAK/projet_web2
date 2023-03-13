@@ -80,7 +80,7 @@ strong{
 .catalogue-image img {
     margin-left: auto;
     margin-right: auto;
-    padding: 40px;
+    padding: var(--padding-ex-large);
     width: auto;
 }
 

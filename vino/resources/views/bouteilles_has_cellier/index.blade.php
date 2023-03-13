@@ -56,13 +56,15 @@
                 <div class="card-info-client">
                     <p class="card-count">Prix : {{ $bouteille->prix_saq }} $</p>
                     <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
+                    <div class="card-footer">
+                      <button  class="card-btn_add " value="">+</button>   
+                      <button  class="card-btn_add deleteModalBtn" value="" data-id="{{ $bouteille->id}}" data-dialog-id="deleteModal_{{ $bouteille->id }}">-</button>   
+                </div>
                 </div>  
-            </div>   
+            </div> 
+  
         </div>
-        <div class="card-footer">
-            <button  class="card-btn deleteModalBtn" value="" data-id="{{ $bouteille->id}}" data-dialog-id="deleteModal_{{ $bouteille->id }}">Supprimer</button>   
-        </div>
-
+        
         <!-- Modal -->
         <dialog class="dialogue" id="deleteModal_{{ $bouteille->id }}">
             <h2>Supprimer une bouteille du cellier</h2>

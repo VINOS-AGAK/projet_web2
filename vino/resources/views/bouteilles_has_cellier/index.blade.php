@@ -42,59 +42,48 @@
 <!-- wine list -->
 <div class="container">
 
-  @forelse($bouteilles as $bouteille)
-  <div class="card">
+    @forelse($bouteilles as $bouteille)
+    <div class="card">
         <div class="card-body">
-
             <img src="{{ asset($bouteille->image)}}" alt="{{ $bouteille->nom }}">
             <picture class="modal"><img src="{{ asset($bouteille->image) }}" alt="img"></picture>
-            
             <div class="card-info">
-            
                 <div class="card-info-title">
                     <h3 class="card-title">{{ $bouteille->nom }}</h3>
                     <p class="card-subtitle">White wine {{ $bouteille->format }}</p>
                     <p class="card-subtitle">{{ $bouteille->pays }}</p>
                 </div>
-                
                 <div class="card-info-client">
                     <p class="card-count">Prix : {{ $bouteille->prix_saq }} $</p>
                     <p class="card-rating">Note: &#9733;&#9733;&#9733;&#10025;</p>
-                    
-                </div>
-               
-            </div>
-           
+                </div>  
+            </div>   
         </div>
-        
         <div class="card-footer">
-            <button  class="card-btn deleteModalBtn" value="" data-id="{{ $bouteille->id}}" data-dialog-id="deleteModal_{{ $bouteille->id }}">Supprimer</button>
-            
+            <button  class="card-btn deleteModalBtn" value="" data-id="{{ $bouteille->id}}" data-dialog-id="deleteModal_{{ $bouteille->id }}">Supprimer</button>   
         </div>
-        <!-- Modal -->
-    
-    <dialog class="dialogue" id="deleteModal_{{ $bouteille->id }}">
-  <h2>Supprimer une bouteille du cellier</h2>
-  <p>Voulez vous vraiment effacer cette bouteille {{ $bouteille->nom }}?</p>
-  <div class="card-footer">
-    <form action="{{ route('delete', $bouteille->id)}}" method="post">
-    @csrf
-    @method('delete')
-      <input class="button-form" type="submit"  value="Effacer">
-    </form>
-    <button data-dialog-id="deleteModal_{{ $bouteille->id }}"  class="button-modal closeDeleteModal">Annuler</button>
-  </div>
-</dialog>
 
-        
-   </div>
-  @empty
-  <div class="catalogue-container">
-    <ul>
-      <li class="text-danger">Aucune bouteilles disponible dans le cellier</li>
-    </ul>
-  </div>
-  @endforelse
+        <!-- Modal -->
+        <dialog class="dialogue" id="deleteModal_{{ $bouteille->id }}">
+            <h2>Supprimer une bouteille du cellier</h2>
+            <p>Voulez vous vraiment effacer cette bouteille {{ $bouteille->nom }}?</p>
+            <div class="card-footer">
+                <form action="{{ route('delete', $bouteille->id)}}" method="post">
+                @csrf
+                @method('delete')
+                    <input class="button-form" type="submit"  value="Effacer">
+                </form>
+                <button data-dialog-id="deleteModal_{{ $bouteille->id }}"  class="button-modal closeDeleteModal">Annuler</button>
+            </div>
+        </dialog>     
+    </div>
+    @empty
+    <div class="catalogue-container">
+        <ul>
+            <li class="text-danger">Aucune bouteilles disponible dans le cellier</li>
+        </ul>
+    </div>
+    @endforelse
 
   </div>
 

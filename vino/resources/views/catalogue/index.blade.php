@@ -43,7 +43,7 @@
     </ul>
   </div>
   @endforelse
-  {{$catalogue}}
+  {{ $catalogue }}
 </body>
 
 

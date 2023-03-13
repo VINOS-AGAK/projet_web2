@@ -72,36 +72,18 @@
             
         </div>
         <!-- Modal -->
-    <!-- <dialog  class="deleteModal" id="deleteModal_{{ $bouteille->id }}" >
-      <div>
-        <div>
-          <div>
-            <h1 >Supprimer une bouteille du cellier</h1>
-          </div>
-          <div>
-            Voulez vous vraiment effacer cette bouteille {{ $bouteille->nom }}?
-          </div>
-          <div>
-            <button data-dialog-id="deleteModal_{{ $bouteille->id }}" class="btn closeDeleteModal">Annuler</button>
-            <form action="{{ route('delete', $bouteille->id)}}" method="post">
-              @csrf
-              @method('delete')
-                <input type="submit" class="btn btn-danger" value="Effacer">
-            </form>
-          </div>
-        </div>
-      </div>
-    </dialog>  -->
+    
     <dialog class="dialogue" id="deleteModal_{{ $bouteille->id }}">
   <h2>Supprimer une bouteille du cellier</h2>
   <p>Voulez vous vraiment effacer cette bouteille {{ $bouteille->nom }}?</p>
-  
-  <form action="{{ route('delete', $bouteille->id)}}" method="post">
-  @csrf
-  @method('delete')
-    <input class="button-form" type="submit"  value="Effacer">
-</form>
-  <button data-dialog-id="deleteModal_{{ $bouteille->id }}"  class="button-modal closeDeleteModal">Annuler</button>
+  <div class="card-footer">
+    <form action="{{ route('delete', $bouteille->id)}}" method="post">
+    @csrf
+    @method('delete')
+      <input class="button-form" type="submit"  value="Effacer">
+    </form>
+    <button data-dialog-id="deleteModal_{{ $bouteille->id }}"  class="button-modal closeDeleteModal">Annuler</button>
+  </div>
 </dialog>
 
         

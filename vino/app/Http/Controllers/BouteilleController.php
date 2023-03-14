@@ -44,10 +44,17 @@ class BouteilleController extends Controller
         $name = Auth()->user()->name;
         $user_id = Auth()->user()->id;
         $query = $request->input('q');
+        // dd($query);
     
         $bouteilles = DB::table('bouteille__has__cellier')
             ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
-            ->where('bouteille__has__cellier.vino__cellier_id', Auth()->user()->cellier->id)
+
+            /* OLD */
+            // ->where('bouteille__has__cellier.vino__cellier_id', Auth()->user()->cellier->id)
+            
+            /* NEW */
+            ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
+
             ->where(function($q) use ($query) {
                 $q->where('vino__bouteille.nom', 'LIKE', "%$query%")
                     ->orWhere('vino__bouteille.pays', 'LIKE', "%$query%")
@@ -64,7 +71,10 @@ class BouteilleController extends Controller
                     'vino__bouteille.format' , 
                     'vino__bouteille.vino__type_id' , 
                     'bouteille__has__cellier.created_at')
-            ->get();            
+            ->get();   
+              
+        // dd($bouteilles);
+
         return view('bouteilles_has_cellier.index', ['bouteilles'=>$bouteilles, 'name' => $name ]);
     }
     

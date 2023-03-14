@@ -21,7 +21,9 @@
 
 
 <!-- formulaire de alex. a revoir. -->
-<!-- <div class="cellier-create">
+
+{{--
+<div class="cellier-create">
 
     <form method="POST">
         @csrf
@@ -39,4 +41,5 @@
             <input type="submit" value="send" name="saveCellier" class="">
         </div>
     </form>
-</div>  -->
+</div>
+--}}

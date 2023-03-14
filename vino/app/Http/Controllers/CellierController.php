@@ -33,7 +33,13 @@ class CellierController extends Controller
      */
     public function create()
     {        
-        return view('cellier.create');
+        if (Auth::check()) {
+            $name = Auth()->user()->name;
+        }
+        
+        return view('cellier.create', [ 
+            "name" => $name  
+        ]);
     }
 
 
@@ -82,7 +88,10 @@ class CellierController extends Controller
         if (Auth::check()) {
             $name = Auth::user()->name;
         }
-        return view('cellier.show', ['name' => $name,'cellier'=>$cellier ]);
+        return view('cellier.show', [
+            'name' => $name,
+            'cellier'=>$cellier 
+        ]);
     }
 
     /**

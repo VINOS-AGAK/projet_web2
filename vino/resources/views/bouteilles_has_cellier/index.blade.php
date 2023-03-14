@@ -2,7 +2,7 @@
 @section('title', 'Liste des Bouteilles du Cellier')
 @section('content') 
          
-                
+<!--                 
 <nav>
   <div class="menu-cellier-container">
     <a href="{{ route('cellier.create') }}" class="flower-button">
@@ -27,7 +27,7 @@
       </svg>
     </a>
   </div>
-</nav>
+</nav> -->
 
 <div class="liste-container">
   

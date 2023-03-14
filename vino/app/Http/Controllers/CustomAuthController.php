@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use App\Models\Cellier;
 
 class CustomAuthController extends Controller
 {
@@ -19,15 +20,6 @@ class CustomAuthController extends Controller
      */
     public function index()
     {
-        // if(Auth::check()){
-        TODO:
-        // $bouteille = Bouteill::all();
-        //     return view('auth.index', ['bouteille' => $bouteille]); 
-        //     }
-        //     return redirect(route('login'))->withErrors('Vous n\'
-        //    êtes pas autorisé à accéder');
-        //     }
-
         return view('auth.index');
     }
 
@@ -59,8 +51,19 @@ class CustomAuthController extends Controller
         $user->fill($request->all());
         $user->password = Hash::make($request->password);
         $user->save();
+        $userId = $user->id;
+        // dd($userId);
 
-        return redirect()->back()->withSuccess('You account has been created');
+
+        $cellier = Cellier::create([
+            'nom' => "Cellier nom par defaut",
+            'description' => "Cellier description par defaut",
+            'user_id' => $userId
+        ]);
+
+        return redirect()->back()->withSuccess('You account has been created', [
+            "cellier" => $cellier
+        ]);
     }
 
     /**
@@ -154,13 +157,12 @@ class CustomAuthController extends Controller
         return view('welcome', ['name' => $name]);
     }
 
-    public function logout(){
+    public function logout()
+    {
         Session::flush();
         Auth::logout();
-        
+
         $name = 'Guest';
         return redirect(route('welcome', ['name' => $name]));
     }
 }
-
-

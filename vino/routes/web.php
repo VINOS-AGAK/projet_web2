@@ -48,11 +48,11 @@ Route::get('logout',        [CustomAuthController::class, 'logout'])->name('logo
 //============================================= CELLIERCONTROLLER ===================================================\\
 
 Route::get('cellier-create',      [CellierController::class, 'create'])->name('cellier.create');
-Route::post('cellier-create',     [CellierController::class, 'store'])->name('cellier.store');
-//Route::post('/cellier-create',  [CellierController::class, 'store']);
+Route::post('/cellier-create',     [CellierController::class, 'store'])->name('cellier.store');
 Route::get('liste',               [CellierController::class, 'index'])->name('cellier.liste');
-Route::get('detail',              [CellierController::class, 'show'])->name('detail');
-Route::get('show',                [CellierController::class, 'show'])->name('show');
+// Route::get('detail',              [CellierController::class, 'show'])->name('detail');
+// Route::get('show',                [CellierController::class, 'show'])->name('show');
+// Route::get('cellier-show',                [CellierController::class, 'show'])->name('show');
 
 
 

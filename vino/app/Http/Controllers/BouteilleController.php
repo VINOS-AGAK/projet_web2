@@ -41,14 +41,8 @@ class BouteilleController extends Controller
 
     public function index(Request $request)
     {
-
-        $user = Auth()->user();
-
-        if (!$user->cellier) {
-            return redirect('cellier-create');
-        }
         $name = Auth()->user()->name;
-        $user_id = $user->id;
+        $user_id = Auth()->user()->id;
         $query = $request->input('q');
     
         $bouteilles = DB::table('bouteille__has__cellier')

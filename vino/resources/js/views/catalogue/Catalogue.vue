@@ -43,81 +43,66 @@
     <!-- <div class="product-card" v-for="bouteille in catalogue" :key="bouteille.id"> --> 
 </template>
 
-
-
-<!-- ПОИСК С АФИШАЖЕМ КАТАЛОГА ПРИ ПЕРВОЙ ЗАГРУЗКЕ -->
+<!-- ПОИСК без АФИШАЖа КАТАЛОГА ПРИ ПЕРВОЙ ЗАГРУЗКЕ с 2 буквами   -->
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data() {
     return {
       catalogue: [],
-      searchQuery: ''
-    }
-  },
-  mounted() {
-    this.fetchCatalogue()
+      searchQuery: "",
+      searchDelay: 500, // задержка перед отправкой запроса
+      searchTimerId: null, // id таймера задержки
+    };
   },
   methods: {
     fetchCatalogue() {
-      axios.get('api/bouteille')
-      .then(response => {
-        console.log(response.data)
-        this.catalogue = response.data.data
+      axios
+        .get("api/bouteille", { params: { query: this.searchQuery } })
+        .then((response) => {
+          //console.log(response.data);
+          this.catalogue = response.data.data;
         })
-        .catch(error => console.log(error))
+        .catch((error) => console.log(error));
+    },
+    handleInput() {
+      if (this.searchQuery.length >= 2) {
+
+        // сбрасываем таймер, чтобы не отправлять запрос с предыдущей задержкой
+        clearTimeout(this.searchTimerId);
+        // запускаем новый таймер, чтобы отправить запрос через searchDelay миллисекунд
+        this.searchTimerId = setTimeout(() => {
+          this.fetchCatalogue();
+        }, this.searchDelay);
       }
+    
+    },
   },
-  //При создании вычисляемого свойства в Vue компоненте, мы должны использовать ключевое слово computed, чтобы компилятор Vue понимал, что это свойство должно быть вычислено и кешировано. Таким образом, это не произвольное имя, а ключевое слово, используемое для определения вычисляемых свойств в Vue.js.
   computed: {
     filteredCatalogue() {
-      const query = this.searchQuery.toLowerCase().trim()
+      const query = this.searchQuery.toLowerCase().trim();
       if (!query) {
-        return this.catalogue
+        return this.catalogue;
       }
-      return this.catalogue.filter(bouteille => {
+      return this.catalogue.filter((bouteille) => {
         return (
           bouteille.nom.toLowerCase().includes(query) ||
           bouteille.pays.toLowerCase().includes(query) ||
-          bouteille.format.toLowerCase().includes(query)||
+          bouteille.format.toLowerCase().includes(query) ||
           bouteille.prix_saq.toLowerCase().includes(query)
-          )
-        })
-      }
-    }
-}
+        );
+      });
+    },
+  },
+};
 </script>
 
-<style scoped></style>
-<!-- <script>
-import axios from 'axios'
-export default {
 
-    // name: "Welcome"
-    data() {
-            return {
-                catalogue: [],
-                searchQuery: ''
-            }
-        },
-        mounted(){
-            this.fetchCatalogue()
-        },
-        methods: {
-            fetchCatalogue(){
-                axios.get('api/bouteille ')
-               
-                .then(response => {
-                    console.log(response.data);
-                    this.catalogue = response.data.data;
-                    })
-                
-                .catch(error =>console.log(error))
-            }
-            
-        }
-        // console.log(response.data);
 
-}
-</script> -->
+
+
+
+
+
+

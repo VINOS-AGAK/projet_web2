@@ -27,6 +27,7 @@ Vue.component('header-component', require('./components/Header.vue').default);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import "../../public/css/style.css";
 
 import router from "./router"
 

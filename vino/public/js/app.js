@@ -5947,6 +5947,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5989,6 +5992,14 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.searchResults = []; // очищаем список автозаполнения
       }
+    },
+    selectResult: function selectResult(result) {
+      this.searchQuery = result.nom; // выбираем результат
+      this.selectedCard = result; // устанавливаем выбранную карточку
+      this.searchResults = []; // очищаем список автозаполнения
+    },
+    selectCard: function selectCard(card) {
+      this.selectedCard = card; // выбираем карточку
     }
   },
 
@@ -31834,34 +31845,31 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("form", { staticClass: "liste-search" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.searchQuery,
-              expression: "searchQuery",
-            },
-          ],
-          attrs: { placeholder: "Recherche dans catalogue", type: "search" },
-          domProps: { value: _vm.searchQuery },
-          on: {
-            input: [
-              function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.searchQuery = $event.target.value
-              },
-              _vm.handleInput,
-            ],
+  return _c("div", [
+    _c("form", { staticClass: "liste-search" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.searchQuery,
+            expression: "searchQuery",
           },
-        }),
-      ]),
+        ],
+        attrs: { placeholder: "Recherche dans catalogue", type: "search" },
+        domProps: { value: _vm.searchQuery },
+        on: {
+          input: [
+            function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.searchQuery = $event.target.value
+            },
+            _vm.handleInput,
+          ],
+        },
+      }),
       _vm._v(" "),
       _c(
         "ul",
@@ -31877,56 +31885,80 @@ var render = function () {
                 },
               },
             },
-            [_vm._v("\n    " + _vm._s(result.nom) + "\n  ")]
+            [_vm._v("\n             " + _vm._s(result.nom) + "\n           ")]
           )
         }),
         0
       ),
-      _vm._v(" "),
-      _vm._l(_vm.filteredCatalogue, function (bouteille) {
-        return _c("div", { key: bouteille.id, staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("img", {
-              attrs: { src: bouteille.image, alt: "img-bouteille" },
-            }),
-            _vm._v(" "),
-            _c("picture", { staticClass: "modal" }, [
-              _c("img", { attrs: { src: bouteille.image, alt: "img" } }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-info" }, [
-              _c("div", { staticClass: "card-info-title" }, [
-                _c("h3", { staticClass: "card-title" }, [
-                  _vm._v(_vm._s(bouteille.nom)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-subtitle" }, [
-                  _vm._v(
-                    _vm._s(bouteille.description) +
-                      " " +
-                      _vm._s(bouteille.format)
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-subtitle" }, [
-                  _vm._v(_vm._s(bouteille.pays)),
-                ]),
+    ]),
+    _vm._v(" "),
+    !_vm.selectedCard
+      ? _c(
+          "div",
+          { staticStyle: { display: "none" } },
+          _vm._l(_vm.filteredCatalogue, function (bouteille) {
+            return _c("div", { key: bouteille.id, staticClass: "card" }, [
+              _c("h3", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(bouteille.nom)),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "card-info-client" }, [
-                _c("p", { staticClass: "card-count" }, [
-                  _vm._v(_vm._s(bouteille.prix_saq) + "$"),
-                ]),
-                _vm._v(" "),
-                _vm._m(0, true),
+              _c("p", { staticClass: "card-subtitle" }, [
+                _vm._v(
+                  _vm._s(bouteille.description) + " " + _vm._s(bouteille.format)
+                ),
               ]),
-            ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-subtitle" }, [
+                _vm._v(_vm._s(bouteille.pays)),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-count" }, [
+                _vm._v(_vm._s(bouteille.prix_saq) + "$"),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn",
+                    on: {
+                      click: function ($event) {
+                        return _vm.selectCard(bouteille)
+                      },
+                    },
+                  },
+                  [_vm._v("Buy Now")]
+                ),
+              ]),
+            ])
+          }),
+          0
+        )
+      : _c("div", { staticClass: "card" }, [
+          _vm._v("\n  Salut\n  "),
+          _c("h3", { staticClass: "card-title" }, [
+            _vm._v(_vm._s(_vm.selectedCard.nom)),
           ]),
-        ])
-      }),
-    ],
-    2
-  )
+          _vm._v(" "),
+          _c("p", { staticClass: "card-subtitle" }, [
+            _vm._v(
+              _vm._s(_vm.selectedCard.description) +
+                " " +
+                _vm._s(_vm.selectedCard.format)
+            ),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-subtitle" }, [
+            _vm._v(_vm._s(_vm.selectedCard.pays)),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-count" }, [
+            _vm._v(_vm._s(_vm.selectedCard.prix_saq) + "$"),
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+        ]),
+  ])
 }
 var staticRenderFns = [
   function () {

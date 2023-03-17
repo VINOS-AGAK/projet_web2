@@ -6,36 +6,39 @@
                type="search"
                v-model="searchQuery"
                @input="handleInput"/>
+               <ul class="listeAutoComplete">
+             <!-- Выводим список автозаполнения -->
+             <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
+               {{ result.nom }}
+             </li>
+           </ul>
         </form>
-        <ul class="listeAutoComplete">
-      <!-- Выводим список автозаполнения -->
-      <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
-        {{ result.nom }}
-      </li>
-    </ul>
-        <div class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id">
-            <div class="card-body">
-                <img :src="bouteille.image" alt="img-bouteille">
-                <picture class="modal"><img :src="bouteille.image" alt="img"></picture>
-                <div class="card-info">
-                    <div class="card-info-title">
-                        <h3 class="card-title">{{bouteille.nom}}</h3>
-                        <p class="card-subtitle">{{bouteille.description}} {{bouteille.format}}</p>
-                        <p class="card-subtitle">{{bouteille.pays}}</p>
-                    </div>
-                    <div class="card-info-client">
-                        <p class="card-count">{{bouteille.prix_saq}}$</p>
-                        <div class="card-footer">
-                            <button  class="btn" value="">Buy Now</button>   
-                      
-                        </div>
-                    </div>  
-                </div> 
-            </div>
-        </div>
+        <div v-if="!selectedCard" style="display: none;">
+    <div class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id">
+      <h3 class="card-title">{{ bouteille.nom }}</h3>
+      <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
+      <p class="card-subtitle">{{ bouteille.pays }}</p>
+      <p class="card-count">{{ bouteille.prix_saq }}$</p>
+      <div class="card-footer">
+        <button class="btn" @click="selectCard(bouteille)">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="card" v-else>
+    Salut
+    <h3 class="card-title">{{ selectedCard.nom }}</h3>
+    <p class="card-subtitle">{{ selectedCard.description }} {{ selectedCard.format }}</p>
+    <p class="card-subtitle">{{ selectedCard.pays }}</p>
+    <p class="card-count">{{ selectedCard.prix_saq }}$</p>
+    <div class="card-footer">
+      <button class="btn" value="">Buy Now</button>
+    </div>
+
+    
+  </div>
            
     </div> 
-    <!-- <div class="product-card" v-for="bouteille in catalogue" :key="bouteille.id"> --> 
+    
 </template>
 
 <!-- ПОИСК без АФИШАЖа КАТАЛОГА ПРИ ПЕРВОЙ ЗАГРУЗКЕ с 2 буквами   -->
@@ -76,6 +79,14 @@ export default {
         this.searchResults = []; // очищаем список автозаполнения
       }
     
+    },
+    selectResult(result) {
+      this.searchQuery = result.nom; // выбираем результат
+      this.selectedCard = result; // устанавливаем выбранную карточку
+      this.searchResults = []; // очищаем список автозаполнения
+    },
+    selectCard(card) {
+      this.selectedCard = card; // выбираем карточку
     },
   },
   computed: {

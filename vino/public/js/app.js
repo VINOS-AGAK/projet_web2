@@ -5950,6 +5950,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -31935,28 +31945,43 @@ var render = function () {
           0
         )
       : _c("div", { staticClass: "card" }, [
-          _vm._v("\n      Salut\n      "),
-          _c("h3", { staticClass: "card-title" }, [
-            _vm._v(_vm._s(_vm.selectedCard.nom)),
+          _c("div", { staticClass: "card-body" }, [
+            _c("img", {
+              attrs: { src: _vm.selectedCard.image, alt: "img-bouteille" },
+            }),
+            _vm._v(" "),
+            _c("picture", { staticClass: "modal" }, [
+              _c("img", { attrs: { src: _vm.selectedCard.image, alt: "img" } }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-info" }, [
+              _c("div", { staticClass: "card-info-title" }, [
+                _c("h3", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(_vm.selectedCard.nom)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-subtitle" }, [
+                  _vm._v(
+                    _vm._s(_vm.selectedCard.description) +
+                      " " +
+                      _vm._s(_vm.selectedCard.format)
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-subtitle" }, [
+                  _vm._v(_vm._s(_vm.selectedCard.pays)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-info-client" }, [
+                _c("p", { staticClass: "card-count" }, [
+                  _vm._v(_vm._s(_vm.selectedCard.prix_saq) + "$"),
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+              ]),
+            ]),
           ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-subtitle" }, [
-            _vm._v(
-              _vm._s(_vm.selectedCard.description) +
-                " " +
-                _vm._s(_vm.selectedCard.format)
-            ),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-subtitle" }, [
-            _vm._v(_vm._s(_vm.selectedCard.pays)),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-count" }, [
-            _vm._v(_vm._s(_vm.selectedCard.prix_saq) + "$"),
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
         ]),
   ])
 }

@@ -44,8 +44,6 @@
                     </div>
                 </div>
 
-                {{-- <p class="text-form">Forgot your password? Click <a class="text-login" href="{{ route('user.auth')}}">here</a></p> --}}
-
                 <input type="submit" class="submit">
 
                 @if (Route::has('password.request'))
@@ -53,6 +51,13 @@
                         {{ __('Forgot Your Password?') }}
                     </a>
                 @endif
+
+                <p class="text-form">Don't have an account? Click <a class="text-login" href="{{ route('register') }}">here</a> to Sign up.</p>
+
+                {{-- @if (Route::has('register'))
+                    <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                @endif --}}
+
             </form>
         </div>
     </div>

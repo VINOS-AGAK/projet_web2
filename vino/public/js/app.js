@@ -5795,12 +5795,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "main"
+  name: "main",
+  data: function data() {
+    return {
+      loggedUser: document.querySelector("meta[name='user']").getAttribute('content')
+    };
+  } // mounted() {
+  //     console.log(this.loggedUser);
+  // },
 });
 
 /***/ }),
@@ -31477,7 +31481,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("h1", { staticClass: "accueil-titre" }, [
-    _vm._v("Here will be wines"),
+    _vm._v("Here will be wines " + _vm._s(_vm.loggedUser)),
   ])
 }
 var staticRenderFns = []

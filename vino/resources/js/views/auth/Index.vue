@@ -16,13 +16,13 @@
                 <input type="email" placeholder="email" class="email" name="email" value="">
 
                 <!-- <div v-if="$errors.has('email')" class="text-form"> -->
-                    <!-- {{ $errors.first('email') }} -->
+                <!-- {{ $errors.first('email') }} -->
                 <!-- </div> -->
 
                 <input type="password" placeholder="password" class="password" name="password">
 
                 <!-- <div v-if="$errors.has('password')" class="text-form"> -->
-                    <!-- {{ $errors.first('password') }} -->
+                <!-- {{ $errors.first('password') }} -->
                 <!-- </div> -->
 
                 <input type="submit" value="submit" class="submit">

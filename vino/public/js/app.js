@@ -5941,6 +5941,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5950,7 +5956,9 @@ __webpack_require__.r(__webpack_exports__);
       searchQuery: "",
       searchDelay: 500,
       // задержка перед отправкой запроса
-      searchTimerId: null // id таймера задержки
+      searchTimerId: null,
+      // id таймера задержки
+      searchResults: [] // список автозаполнения
     };
   },
 
@@ -31850,6 +31858,26 @@ var render = function () {
           },
         }),
       ]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "listeAutoComplete" },
+        _vm._l(_vm.searchResults, function (result, index) {
+          return _c(
+            "li",
+            {
+              key: index,
+              on: {
+                click: function ($event) {
+                  return _vm.selectResult(result)
+                },
+              },
+            },
+            [_vm._v("\n    " + _vm._s(result.nom) + "\n  ")]
+          )
+        }),
+        0
+      ),
       _vm._v(" "),
       _vm._l(_vm.filteredCatalogue, function (bouteille) {
         return _c("div", { key: bouteille.id, staticClass: "card" }, [

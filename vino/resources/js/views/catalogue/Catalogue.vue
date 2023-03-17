@@ -7,6 +7,12 @@
                v-model="searchQuery"
                @input="handleInput"/>
         </form>
+        <ul class="listeAutoComplete">
+      <!-- Выводим список автозаполнения -->
+      <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
+        {{ result.nom }}
+      </li>
+    </ul>
         <div class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id">
             <div class="card-body">
                 <img :src="bouteille.image" alt="img-bouteille">
@@ -43,6 +49,7 @@ export default {
       searchQuery: "",
       searchDelay: 500, // задержка перед отправкой запроса
       searchTimerId: null, // id таймера задержки
+      searchResults: [], // список автозаполнения
     };
   },
   methods: {

@@ -72,6 +72,8 @@ export default {
         this.searchTimerId = setTimeout(() => {
           this.fetchCatalogue();
         }, this.searchDelay);
+      } else {
+        this.searchResults = []; // очищаем список автозаполнения
       }
     
     },

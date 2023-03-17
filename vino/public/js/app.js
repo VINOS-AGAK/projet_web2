@@ -5986,9 +5986,12 @@ __webpack_require__.r(__webpack_exports__);
         this.searchTimerId = setTimeout(function () {
           _this2.fetchCatalogue();
         }, this.searchDelay);
+      } else {
+        this.searchResults = []; // очищаем список автозаполнения
       }
     }
   },
+
   computed: {
     filteredCatalogue: function filteredCatalogue() {
       var query = this.searchQuery.toLowerCase().trim();

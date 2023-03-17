@@ -31454,7 +31454,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("li", { staticClass: "list-item" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Lang 3")]),
+        _c("a", { attrs: { href: "logout" } }, [_vm._v("logout")]),
       ]),
     ])
   },

@@ -6,9 +6,9 @@
 <head>
     <meta charset="utf-8">
 
-    {{-- @if (Auth::check()) 
+    @if (Auth::check()) 
       <meta name="user" content="{{ Auth::user() }}">
-    @endif  --}}
+    @endif 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,7 +33,7 @@
 <body>
     <div id="app">
         @php $locale = session()->get('locale'); @endphp
-        <nav class="container-header">
+        {{-- <nav class="container-header">
             <div class="site-header">
                 <!---------------- header et icons -------------->
                 <div class="site-header-container">
@@ -212,7 +212,7 @@
                         </ul>
                     </div>
                 </div>
-        </nav>
+        </nav> --}}
     @endguest
         <main class="">
             @yield('content')

@@ -31885,7 +31885,7 @@ var render = function () {
                 },
               },
             },
-            [_vm._v("\n             " + _vm._s(result.nom) + "\n           ")]
+            [_vm._v("\n           " + _vm._s(result.nom) + "\n         ")]
           )
         }),
         0
@@ -31935,7 +31935,7 @@ var render = function () {
           0
         )
       : _c("div", { staticClass: "card" }, [
-          _vm._v("\n  Salut\n  "),
+          _vm._v("\n      Salut\n      "),
           _c("h3", { staticClass: "card-title" }, [
             _vm._v(_vm._s(_vm.selectedCard.nom)),
           ]),

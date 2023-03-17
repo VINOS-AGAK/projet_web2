@@ -24,18 +24,18 @@
                 </div>
             </div>
         </div>
-  <div class="card" v-else>
-    Salut
-    <h3 class="card-title">{{ selectedCard.nom }}</h3>
-    <p class="card-subtitle">{{ selectedCard.description }} {{ selectedCard.format }}</p>
-    <p class="card-subtitle">{{ selectedCard.pays }}</p>
-    <p class="card-count">{{ selectedCard.prix_saq }}$</p>
-    <div class="card-footer">
-      <button class="btn" value="">Buy Now</button>
-    </div>
-
-    
-  </div>
+        <div class="card" v-else>
+          Salut
+          <h3 class="card-title">{{ selectedCard.nom }}</h3>
+          <p class="card-subtitle">{{ selectedCard.description }} {{ selectedCard.format }}</p>
+          <p class="card-subtitle">{{ selectedCard.pays }}</p>
+          <p class="card-count">{{ selectedCard.prix_saq }}$</p>
+          <div class="card-footer">
+            <button class="btn" value="">Buy Now</button>
+          </div>
+      
+          
+        </div>
            
     </div> 
     

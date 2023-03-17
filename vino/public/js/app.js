@@ -5796,8 +5796,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "main"
@@ -31476,9 +31474,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", { staticClass: "accueil-titre" }, [
-    _vm._v("Here will be wines"),
-  ])
+  return _c("h1", { staticClass: "accueil-titre" }, [_vm._v("cellier.vue")])
 }
 var staticRenderFns = []
 render._withStripped = true

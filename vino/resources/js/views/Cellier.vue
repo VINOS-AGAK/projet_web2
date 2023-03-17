@@ -1,9 +1,7 @@
 <template>
     <!-- <headerView /> -->
-
-
-
-          <h1 class="accueil-titre">Here will be wines</h1>
+          <h1 class="accueil-titre">cellier.vue</h1>
+          
 
 
 </template>

@@ -16,6 +16,7 @@
     border: 1px solid rgba(216, 215, 215, 0.5);
     background: rgba(249, 244, 204, 0.29);
   }
+  
   .liste-search>input[type=search]{
     border: none;
     background: transparent;

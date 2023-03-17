@@ -1,6 +1,6 @@
-<template  >   
-    <div>
-        <form class="liste-search">
+<template  >  
+    <div class="catalogue-container" >
+        <form class="catalogue__liste-search">
             <input
                placeholder="Recherche dans catalogue"
                type="search"
@@ -48,6 +48,7 @@
         </div>
            
     </div> 
+    
     
 </template>
 

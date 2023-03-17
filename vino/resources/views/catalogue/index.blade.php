@@ -143,6 +143,8 @@
       </ul>
     </div>
   </div>
+
+  
   @empty
   <div class="catalogue-container">
     <ul>

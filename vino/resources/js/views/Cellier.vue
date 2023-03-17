@@ -13,9 +13,15 @@ export default {
     name: "main",
     data() {
         return {
-            loggedUser : document.querySelector("meta[name='user']").getAttribute('content')
+            user_id: "",
         }
     },
+    methods: {
+        fetchUserId(){
+            axios
+            .get("user_id")
+        }
+    }
     mounted() {
         console.log(this.loggedUser);
     },

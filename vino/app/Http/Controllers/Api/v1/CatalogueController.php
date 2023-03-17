@@ -23,10 +23,7 @@ class CatalogueController extends Controller
      */
     public function index()
     {
-        // return Bouteille::select()->where("id", "=", "385")->get();
-        // return Catalogue::all();
-        // collection является статическим методом класса Illuminate\Http\Resources\Json\ResourceCollection, который принимает коллекцию данных и создает экземпляр коллекции ресурсов, который можно возвращать в качестве ответа на запросы API.
-        //Коллекции ресурсов обычно используются вместе с контроллерами Laravel, чтобы преобразовывать коллекции моделей в удобный для использования формат данных (JSON, XML и т.д.), который будет возвращен клиенту в ответ на запросы API.
+        
         return CatalogueResource::collection(Catalogue::all());
     }
 

@@ -5975,7 +5975,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         //console.log(response.data);
         _this.catalogue = response.data.data;
-        _this.searchResults = _this.catalogue.slice(0, 5); // выбираем первые 5 результатов
+        _this.searchResults = _this.filteredCatalogue.slice(0, 5); // выбираем первые 5 отфильтрованных результатов
       })["catch"](function (error) {
         return console.log(error);
       });

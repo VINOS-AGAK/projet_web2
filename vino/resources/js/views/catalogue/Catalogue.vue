@@ -62,7 +62,7 @@ export default {
         .then((response) => {
           //console.log(response.data);
           this.catalogue = response.data.data;
-           this.searchResults = this.catalogue.slice(0, 5); // выбираем первые 5 результатов
+           this.searchResults = this.filteredCatalogue.slice(0, 5); // выбираем первые 5 отфильтрованных результатов
         })
         .catch((error) => console.log(error));
     },

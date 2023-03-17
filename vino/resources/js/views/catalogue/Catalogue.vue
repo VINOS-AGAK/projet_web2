@@ -13,17 +13,17 @@
              </li>
            </ul>
         </form>
-        <div v-if="!selectedCard" style="display: none;">
-    <div class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id">
-      <h3 class="card-title">{{ bouteille.nom }}</h3>
-      <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
-      <p class="card-subtitle">{{ bouteille.pays }}</p>
-      <p class="card-count">{{ bouteille.prix_saq }}$</p>
-      <div class="card-footer">
-        <button class="btn" @click="selectCard(bouteille)">Buy Now</button>
-      </div>
-    </div>
-  </div>
+        <div v-if="!selectedCard" class="catalogue-invisible">
+            <div class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id">
+                <h3 class="card-title">{{ bouteille.nom }}</h3>
+                <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
+                <p class="card-subtitle">{{ bouteille.pays }}</p>
+                <p class="card-count">{{ bouteille.prix_saq }}$</p>
+                <div class="card-footer">
+                    <button class="btn" @click="selectCard(bouteille)">Buy Now</button>
+                </div>
+            </div>
+        </div>
   <div class="card" v-else>
     Salut
     <h3 class="card-title">{{ selectedCard.nom }}</h3>

@@ -222,9 +222,9 @@
     <!--
     <script rel="text/javascript" src="{{ URL::asset('js/scripts.js') }}"></script> -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script>
+    <!-- <script>
         window.user = {{!! Auth::user() !!}} 
-    </script>
+    </script> -->
       
     @yield('js')
 </body>

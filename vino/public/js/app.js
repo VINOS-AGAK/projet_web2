@@ -5974,10 +5974,10 @@ __webpack_require__.r(__webpack_exports__);
       catalogue: [],
       searchQuery: "",
       searchDelay: 500,
-      // задержка перед отправкой запроса
+      // délai avant pousser la requette
       searchTimerId: null,
-      // id таймера задержки
-      searchResults: [] // список автозаполнения
+      // délai de minuterie d’id
+      searchResults: [] // liste d’autocompletes
     };
   },
 
@@ -5991,7 +5991,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         //console.log(response.data);
         _this.catalogue = response.data.data;
-        _this.searchResults = _this.filteredCatalogue.slice(0, 5); // выбираем первые 5 отфильтрованных результатов
+        _this.searchResults = _this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -5999,23 +5999,23 @@ __webpack_require__.r(__webpack_exports__);
     handleInput: function handleInput() {
       var _this2 = this;
       if (this.searchQuery.length >= 2) {
-        // сбрасываем таймер, чтобы не отправлять запрос с предыдущей задержкой
+        // réinitialiser le minuteur pour éviter d’envoyer une demande avec retard précédent
         clearTimeout(this.searchTimerId);
-        // запускаем новый таймер, чтобы отправить запрос через searchDelay миллисекунд
+        // lancer une nouvelle minuterie pour envoyer une requête via searchDelay milliseconds
         this.searchTimerId = setTimeout(function () {
           _this2.fetchCatalogue();
         }, this.searchDelay);
       } else {
-        this.searchResults = []; // очищаем список автозаполнения
+        this.searchResults = []; // efface la liste des autocompletes
       }
     },
     selectResult: function selectResult(result) {
-      this.searchQuery = result.nom; // выбираем результат
-      this.selectedCard = result; // устанавливаем выбранную карточку
-      this.searchResults = []; // очищаем список автозаполнения
+      this.searchQuery = result.nom; // choisi le résultat
+      this.selectedCard = result; // installe la carte sélectionnée
+      this.searchResults = []; // effacer la liste des autocompletes
     },
     selectCard: function selectCard(card) {
-      this.selectedCard = card; // выбираем карточку
+      this.selectedCard = card; // choisi le résultat
     }
   },
 

@@ -7,7 +7,7 @@
                v-model="searchQuery"
                @input="handleInput"/>
                <ul class="listeAutoComplete">
-             <!-- Выводим список автозаполнения -->
+             <!-- Affiche la liste d’autocompletes -->
              <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
                {{ result.nom }}
              </li>
@@ -52,7 +52,7 @@
     
 </template>
 
-<!-- ПОИСК без АФИШАЖа КАТАЛОГА ПРИ ПЕРВОЙ ЗАГРУЗКЕ с 2 буквами   -->
+<!-- recherche sans afficher catalogue au premier telechargement avec 2 lettres-->
 <script>
 import axios from "axios";
 
@@ -61,9 +61,9 @@ export default {
     return {
       catalogue: [],
       searchQuery: "",
-      searchDelay: 500, // задержка перед отправкой запроса
-      searchTimerId: null, // id таймера задержки
-      searchResults: [], // список автозаполнения
+      searchDelay: 500, // délai avant pousser la requette
+      searchTimerId: null, // délai de minuterie d’id
+      searchResults: [], // liste d’autocompletes
     };
   },
   methods: {
@@ -73,31 +73,31 @@ export default {
         .then((response) => {
           //console.log(response.data);
           this.catalogue = response.data.data;
-           this.searchResults = this.filteredCatalogue.slice(0, 5); // выбираем первые 5 отфильтрованных результатов
+           this.searchResults = this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
         })
         .catch((error) => console.log(error));
     },
     handleInput() {
       if (this.searchQuery.length >= 2) {
 
-        // сбрасываем таймер, чтобы не отправлять запрос с предыдущей задержкой
+        // réinitialiser le minuteur pour éviter d’envoyer une demande avec retard précédent
         clearTimeout(this.searchTimerId);
-        // запускаем новый таймер, чтобы отправить запрос через searchDelay миллисекунд
+        // lancer une nouvelle minuterie pour envoyer une requête via searchDelay milliseconds
         this.searchTimerId = setTimeout(() => {
           this.fetchCatalogue();
         }, this.searchDelay);
       } else {
-        this.searchResults = []; // очищаем список автозаполнения
+        this.searchResults = []; // efface la liste des autocompletes
       }
     
     },
     selectResult(result) {
-      this.searchQuery = result.nom; // выбираем результат
-      this.selectedCard = result; // устанавливаем выбранную карточку
-      this.searchResults = []; // очищаем список автозаполнения
+      this.searchQuery = result.nom; // choisi le résultat
+      this.selectedCard = result; // installe la carte sélectionnée
+      this.searchResults = []; // effacer la liste des autocompletes
     },
     selectCard(card) {
-      this.selectedCard = card; // выбираем карточку
+      this.selectedCard = card; // choisi le résultat
     },
   },
   computed: {

@@ -3,6 +3,10 @@
 @section('content')
     <div class="container-signup">
 
+        <div class="header-form">
+            <h3>Log in</h3>
+        </div>
+
         <div class="container-form">
 
             <form method="POST" action="{{ route('login') }}">

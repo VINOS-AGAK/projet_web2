@@ -88,10 +88,12 @@ class CellierController extends Controller
         if (Auth::check()) {
             $name = Auth::user()->name;
         }
-        return view('cellier.show', [
+        return view('cellier.show',
+         [
             'name' => $name,
             'cellier'=>$cellier 
-        ]);
+        ]
+    );
     }
 
     /**

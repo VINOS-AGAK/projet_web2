@@ -5795,12 +5795,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "main"
+  name: "main",
+  data: function data() {
+    return {
+      loggedUser: document.querySelector("meta[name='user']").getAttribute('content')
+    };
+  },
+  mounted: function mounted() {
+    console.log(this.loggedUser);
+  }
 });
 
 /***/ }),
@@ -5889,6 +5894,142 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "login"
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      catalogue: [],
+      searchQuery: "",
+      searchDelay: 500,
+      // задержка перед отправкой запроса
+      searchTimerId: null,
+      // id таймера задержки
+      searchResults: [] // список автозаполнения
+    };
+  },
+
+  methods: {
+    fetchCatalogue: function fetchCatalogue() {
+      var _this = this;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("api/bouteille", {
+        params: {
+          query: this.searchQuery
+        }
+      }).then(function (response) {
+        //console.log(response.data);
+        _this.catalogue = response.data.data;
+        _this.searchResults = _this.filteredCatalogue.slice(0, 5); // выбираем первые 5 отфильтрованных результатов
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    handleInput: function handleInput() {
+      var _this2 = this;
+      if (this.searchQuery.length >= 2) {
+        // сбрасываем таймер, чтобы не отправлять запрос с предыдущей задержкой
+        clearTimeout(this.searchTimerId);
+        // запускаем новый таймер, чтобы отправить запрос через searchDelay миллисекунд
+        this.searchTimerId = setTimeout(function () {
+          _this2.fetchCatalogue();
+        }, this.searchDelay);
+      } else {
+        this.searchResults = []; // очищаем список автозаполнения
+      }
+    },
+    selectResult: function selectResult(result) {
+      this.searchQuery = result.nom; // выбираем результат
+      this.selectedCard = result; // устанавливаем выбранную карточку
+      this.searchResults = []; // очищаем список автозаполнения
+    },
+    selectCard: function selectCard(card) {
+      this.selectedCard = card; // выбираем карточку
+    }
+  },
+
+  computed: {
+    filteredCatalogue: function filteredCatalogue() {
+      var query = this.searchQuery.toLowerCase().trim();
+      if (!query) {
+        return this.catalogue;
+      }
+      return this.catalogue.filter(function (bouteille) {
+        return bouteille.nom.toLowerCase().includes(query) || bouteille.pays.toLowerCase().includes(query) || bouteille.format.toLowerCase().includes(query) || bouteille.prix_saq.toLowerCase().includes(query);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -5994,11 +6135,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_Welcome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/Welcome */ "./resources/js/views/Welcome.vue");
 /* harmony import */ var _views_Cellier__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/Cellier */ "./resources/js/views/Cellier.vue");
 /* harmony import */ var _views_auth_Index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/auth/Index */ "./resources/js/views/auth/Index.vue");
+/* harmony import */ var _views_catalogue_Catalogue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/catalogue/Catalogue */ "./resources/js/views/catalogue/Catalogue.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 
+
+
+// import BouteilleCellier from "./views/cellier/BouteilleCellier";
 
 var routes = [{
   path: "/",
@@ -6009,7 +6154,16 @@ var routes = [{
 }, {
   path: "/login",
   component: _views_auth_Index__WEBPACK_IMPORTED_MODULE_4__["default"]
-}];
+}, {
+  path: "/catalogue",
+  component: _views_catalogue_Catalogue__WEBPACK_IMPORTED_MODULE_5__["default"]
+}
+// {
+//     path: "/bouteille-cellier",
+//     component: BouteilleCellier
+// }
+];
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: "history",
   routes: routes
@@ -11354,7 +11508,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".catalogue-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-wrap: wrap;\r\n    margin-top: 10%;\r\n    font-family:  var(--font-primary);\r\n    margin-left:  var(--margin-small);\r\n    margin-right: var(--margin-small);\r\n    background: rgba(255, 255, 255, 0.29);\r\n    border-radius: var(--border-radius-meduim);    \r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.3);\r\n    \r\n}\r\n\r\n.catalogue-image {\r\n    flex: 1;\r\n    max-width: 100%;\r\n    margin-right: var(--margin-small);\r\n    margin-top: var(--margin-small);\r\n    \r\n}\r\n\r\n.catalogue-image img {\r\n    object-fit: cover;\r\n    width: 200px;\r\n}\r\n\r\n.catalogue-description {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\r\n    width: 80%;\r\n}\r\n\r\n.catalogue-description>ul{\r\n\r\n    margin: 10px;\r\n}\r\n\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-medium);\r\n    margin-top: 0;\r\n    margin-bottom: var(--margin-small);\r\n    color: var(--accent-color);\r\n    font-weight: 800;\r\n}\r\n.catalogue-description ul {\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n.catalogue-description .sous-titre{\r\n   font-size: var(--font-size-medium);\r\n}\r\n.catalogue-description li {\r\n    font-size: var(--font-size-default);\r\n    line-height: 1;\r\n    margin-bottom: var(--margin-small);\r\n}\r\n.li-divider::after {\r\n    content: \"\";\r\n    display: block;\r\n    border-bottom: 2.5px solid var(--primary-color);\r\n    margin: 5px 0 ;\r\n  }\r\nstrong{\r\n    font-size: 18px;\r\n} \r\n.btn {\r\n    text-decoration: none;\r\n    color: #ccc;\r\n    background-color: var(--accent-color);\r\n    font-size: var(--font-size-default);\r\n    padding: 5px 40px;\r\n    border-radius: var(--border-radius-ex-small);\r\n}\r\na.btn{\r\n    margin: 10px;\r\n}\r\n\r\n.container-submit{\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0;\r\n\r\n}\r\n\r\n.card-header{\r\n\r\n    height: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n    letter-spacing: 10px;\r\n    text-transform: lowercase;\r\n\r\n\r\n    background: rgba(255, 255, 255, 0.29);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px); \r\n}\r\n\r\n.card-header>h3{\r\n    font-size: var(--font-size-regular);\r\n    padding-top: 10px;\r\n}\r\n\r\n\r\n@media screen and (min-width: 768px){\r\n.catalogue-description li{\r\n\r\n    font-size: var(--font-size-medium);\r\n} \r\n.catalogue-description {\r\n    max-width: 50%;\r\n}\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-x-large);\r\n}\r\n.catalogue-image {\r\n    max-width: 50%;\r\n}\r\n.catalogue-image img {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: var(--padding-ex-large);\r\n    width: auto;\r\n}\r\n\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".catalogue-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-wrap: wrap;\r\n    margin-top: 10%;\r\n    font-family:  var(--font-primary);\r\n    margin-left:  var(--margin-small);\r\n    margin-right: var(--margin-small);\r\n    background: rgba(255, 255, 255, 0.29);\r\n    border-radius: var(--border-radius-meduim);    \r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.3);\r\n    \r\n}\r\n\r\n.catalogue__liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n    font-size: var(--font-size-regular);\r\n  }\r\n.catalogue__liste-search input{\r\n    font-size: var(--font-size-regular);\r\n}\r\n\r\n.catalogue-image {\r\n    flex: 1;\r\n    max-width: 100%;\r\n    margin-right: var(--margin-small);\r\n    margin-top: var(--margin-small);\r\n    \r\n}\r\n\r\n.catalogue-image img {\r\n    object-fit: cover;\r\n    width: 200px;\r\n}\r\n\r\n.catalogue-description {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\r\n    width: 80%;\r\n}\r\n\r\n.catalogue-description>ul{\r\n\r\n    margin: 10px;\r\n}\r\n\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-medium);\r\n    margin-top: 0;\r\n    margin-bottom: var(--margin-small);\r\n    color: var(--accent-color);\r\n    font-weight: 800;\r\n}\r\n.catalogue-description ul {\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n.catalogue-description .sous-titre{\r\n   font-size: var(--font-size-medium);\r\n}\r\n.catalogue-description li {\r\n    font-size: var(--font-size-default);\r\n    line-height: 1;\r\n    margin-bottom: var(--margin-small);\r\n}\r\n.li-divider::after {\r\n    content: \"\";\r\n    display: block;\r\n    border-bottom: 2.5px solid var(--primary-color);\r\n    margin: 5px 0 ;\r\n  }\r\nstrong{\r\n    font-size: 18px;\r\n} \r\n.btn {\r\n    text-decoration: none;\r\n    color: #ccc;\r\n    background-color: var(--accent-color);\r\n    font-size: var(--font-size-default);\r\n    padding: 5px 40px;\r\n    border-radius: var(--border-radius-ex-small);\r\n}\r\na.btn{\r\n    margin: 10px;\r\n}\r\n\r\n.container-submit{\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0;\r\n\r\n}\r\n\r\n.card-header{\r\n\r\n    height: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n    letter-spacing: 10px;\r\n    text-transform: lowercase;\r\n\r\n\r\n    background: rgba(255, 255, 255, 0.29);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px); \r\n}\r\n\r\n.card-header>h3{\r\n    font-size: var(--font-size-regular);\r\n    padding-top: 10px;\r\n}\r\n\r\n.catalogue-invisible{\r\n    display: none;\r\n}\r\n@media screen and (min-width: 768px){\r\n.catalogue-description li{\r\n\r\n    font-size: var(--font-size-medium);\r\n} \r\n.catalogue-description {\r\n    max-width: 50%;\r\n}\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-x-large);\r\n}\r\n.catalogue-image {\r\n    max-width: 50%;\r\n}\r\n.catalogue-image img {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: var(--padding-ex-large);\r\n    width: auto;\r\n}\r\n.catalogue__liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n  }\r\n\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -11450,7 +11604,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, " .liste-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 40px;\r\n    background-color: var(--color-white);\r\n    \r\n  }\r\n  .liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    /* background-image: linear-gradient(to bottom , rgba(186, 57, 57, 0.755), var( --accent-color) ); */\r\n    display: flex;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n  }\r\n  .liste-search>input[type=search]{\r\n    border: none;\r\n    background: transparent;\r\n    margin: 0;\r\n    padding: 7px 8px;\r\n    font-size: 14px;\r\n    color: inherit;\r\n    border: 1px solid transparent;\r\n    border-radius: inherit;\r\n    width: 90%;\r\n  }\r\n  \r\n  .container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  \r\n\r\n  .card {\r\n    width: 300px;\r\n    height: 250px;\r\n    border-radius: var(--border-radius-large);\r\n    margin: var(--margin-small);\r\n    padding: var(--padding-small);\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.5);\r\n    \r\n    /* background-image: linear-gradient(to bottom right, rgba(186, 57, 57, 0.755), var( --accent-color) 50%, var( --accent-color-variation)); */\r\n    background: rgba(249, 244, 204, 0.29);\r\n    \r\n  }\r\n  .card-body{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    margin-top: var(--margin-small);\r\n      /* background-image: linear-gradient(to bottom, rgb(144, 24, 24), rgb(86, 86, 85)); */\r\n  }\r\n\r\n  .card img {\r\n    width: 100%;\r\n    max-width: 150px;\r\n    object-fit: cover;\r\n    margin-right:  var(--margin-small);\r\n  }\r\n\r\n  .card-info {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 20px;\r\n    flex-grow: 1;\r\n    margin-right:  var(--margin-small);\r\n  }\r\n\r\n  .card-title {\r\n    font-size: var(--font-size-default);\r\n    font-weight: var(--font-weight-medium);\r\n    margin: 0;\r\n    font-family: var(--font-third);\r\n    color: var(--color-dark);\r\n    \r\n  }\r\n\r\n  .card-subtitle, .card-count, .card-rating {\r\n    font-size: var(--font-size-small);\r\n    margin: 0;\r\n    text-align: start;\r\n  }\r\n\r\n  .card-subtitle {\r\n    font-style: italic;\r\n    color:var(--color-dark);\r\n  }\r\n\r\n  .card-count {\r\n    color: var(--color-dark);\r\n  }\r\n\r\n  .card-rating{\r\n    color: var(--accent-color);\r\n  }\r\n\r\n  .modal{\r\n    position: absolute;\r\n\t  max-width: 70%;\r\n\t  opacity: 0;\r\n\t  pointer-events: none;\r\n    z-index: 1;\r\n\r\n  }\r\n\r\n  .card img:hover ~ .modal {\r\n    opacity: 1;\r\n    scale: 1.5;\r\n    transition-duration: 800ms ;\r\n  }\r\n  .card-footer{\r\n    margin-top: 5px;\r\n    display: flex;\r\n    gap: 30px;\r\n    /* margin-top: var(--margin-medium); */\r\n  }\r\n  .card-btn{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 80px;\r\n    font-size:var(--font-size-small) ;\r\n    /* margin: var(--margin-small) 0; */\r\n    padding: 5px 10px;\r\n    /* background-image: linear-gradient(to bottom , rgba(91, 89, 89, 0.755), var(--accent-color) ); */\r\n    background-color: var(--primary-color);   \r\n    box-shadow: 0px 0px 5px var(--secondary-color-variation);\r\n  }\r\n  .card-btn_add{\r\n    border-radius:  var(--border-radius-large);\r\n    width: 40px;\r\n    /* margin: var(--margin-ex-small)  ; */\r\n    /* padding: var(--padding-small) ; */\r\n    /* background-image: linear-gradient(to bottom , rgba(150, 56, 56, 0.755), var(--accent-color) ); */\r\n    background-color: var(--color-white);  \r\n    /* background-color: var(--primary-color);  */\r\n    box-shadow: 0px 0px 2px var(--color-dark);\r\n  }\r\n\r\n  @media only screen and (min-width: 700px) {\r\n    .container {\r\n      justify-content: space-between;\r\n    }\r\n    .card {\r\n      max-width: 300px;\r\n    }\r\n  }\r\n  ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, " .liste-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 10px;\r\n    background-color: var(--color-white);\r\n    \r\n  }\r\n  .liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    /* background-image: linear-gradient(to bottom , rgba(186, 57, 57, 0.755), var( --accent-color) ); */\r\n    display: flex;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n  }\r\n  \r\n  .liste-search>input[type=search]{\r\n    border: none;\r\n    background: transparent;\r\n    margin: 0;\r\n    padding: 7px 8px;\r\n    font-size: 14px;\r\n    color: inherit;\r\n    border: 1px solid transparent;\r\n    border-radius: inherit;\r\n    width: 90%;\r\n  }\r\n  \r\n  .container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  \r\n\r\n  .card {\r\n    width: 100%;\r\n    height: 220px;\r\n    border-radius: var(--border-radius-large);\r\n    margin-top: var(--margin-small);\r\n    padding: var(--padding-small);\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.5);\r\n    \r\n    /* background-image: linear-gradient(to bottom right, rgba(186, 57, 57, 0.755), var( --accent-color) 50%, var( --accent-color-variation)); */\r\n    background: rgba(249, 244, 204, 0.29);\r\n    \r\n  }\r\n  .card-body{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    margin-top: var(--margin-small);\r\n      /* background-image: linear-gradient(to bottom, rgb(144, 24, 24), rgb(86, 86, 85)); */\r\n  }\r\n\r\n  .card img {\r\n    width: 100%;\r\n    max-width: 130px;\r\n    object-fit: cover;\r\n    margin-right:  var(--margin-small);\r\n  }\r\n\r\n  .card-info {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 20px;\r\n    flex-grow: 1;\r\n    margin-right:  var(--margin-small);\r\n  }\r\n\r\n  .card-title {\r\n    font-size: var(--font-size-small);\r\n    font-weight: var(--font-weight-medium);\r\n    margin: 0;\r\n    font-family: var(--font-third);\r\n    color: var(--color-dark);\r\n    \r\n  }\r\n\r\n  .card-subtitle, .card-count, .card-rating {\r\n    font-size: var(--font-size-x-small);\r\n    margin: 0;\r\n    text-align: start;\r\n  }\r\n\r\n  .card-subtitle {\r\n    font-style: italic;\r\n    color:var(--color-dark);\r\n  }\r\n\r\n  .card-count {\r\n    color: var(--color-dark);\r\n  }\r\n\r\n  .card-rating{\r\n    color: var(--accent-color);\r\n  }\r\n\r\n  .modal{\r\n    position: absolute;\r\n\t  max-width: 70%;\r\n\t  opacity: 0;\r\n\t  pointer-events: none;\r\n    z-index: 1;\r\n\r\n  }\r\n\r\n  .card img:hover ~ .modal {\r\n    opacity: 1;\r\n    scale: 1.5;\r\n    transition-duration: 800ms ;\r\n  }\r\n  .card-footer{\r\n    margin-top: 5px;\r\n    display: flex;\r\n    gap: 30px;\r\n    /* margin-top: var(--margin-medium); */\r\n  }\r\n  .card-btn{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 80px;\r\n    font-size:var(--font-size-small) ;\r\n    /* margin: var(--margin-small) 0; */\r\n    padding: 5px 10px;\r\n    /* background-image: linear-gradient(to bottom , rgba(91, 89, 89, 0.755), var(--accent-color) ); */\r\n    background-color: var(--primary-color);   \r\n    box-shadow: 0px 0px 5px var(--secondary-color-variation);\r\n  }\r\n  .card-btn_add{\r\n    border-radius:  var(--border-radius-large);\r\n    width: 40px;\r\n    /* margin: var(--margin-ex-small)  ; */\r\n    /* padding: var(--padding-small) ; */\r\n    /* background-image: linear-gradient(to bottom , rgba(150, 56, 56, 0.755), var(--accent-color) ); */\r\n    background-color: var(--color-white);  \r\n    /* background-color: var(--primary-color);  */\r\n    box-shadow: 0px 0px 2px var(--color-dark);\r\n  }\r\n\r\n  @media only screen and (min-width: 700px) {\r\n    .container {\r\n      justify-content: space-between;\r\n    }\r\n    .card {\r\n      max-width: 300px;\r\n    }\r\n  }\r\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29609,6 +29763,45 @@ component.options.__file = "resources/js/views/auth/Index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/views/catalogue/Catalogue.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/views/catalogue/Catalogue.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Catalogue_vue_vue_type_template_id_fe57b918___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Catalogue.vue?vue&type=template&id=fe57b918& */ "./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918&");
+/* harmony import */ var _Catalogue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Catalogue.vue?vue&type=script&lang=js& */ "./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Catalogue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Catalogue_vue_vue_type_template_id_fe57b918___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Catalogue_vue_vue_type_template_id_fe57b918___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/catalogue/Catalogue.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Header.vue?vue&type=script&lang=js&":
 /*!*********************************************************************!*\
   !*** ./resources/js/components/Header.vue?vue&type=script&lang=js& ***!
@@ -29670,6 +29863,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/auth/Index.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Catalogue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Catalogue.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Catalogue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -29737,6 +29946,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_12e2324a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_12e2324a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Index.vue?vue&type=template&id=12e2324a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/auth/Index.vue?vue&type=template&id=12e2324a&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Catalogue_vue_vue_type_template_id_fe57b918___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Catalogue_vue_vue_type_template_id_fe57b918___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Catalogue_vue_vue_type_template_id_fe57b918___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Catalogue.vue?vue&type=template&id=fe57b918& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918&");
 
 
 /***/ }),
@@ -31449,7 +31675,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("li", { staticClass: "list-item" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Lang 3")]),
+        _c("a", { attrs: { href: "logout" } }, [_vm._v("logout")]),
       ]),
     ])
   },
@@ -31477,7 +31703,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("h1", { staticClass: "accueil-titre" }, [
-    _vm._v("Here will be wines"),
+    _vm._v("Here will be wines " + _vm._s(_vm.loggedUser)),
   ])
 }
 var staticRenderFns = []
@@ -31519,12 +31745,31 @@ var render = function () {
             _vm._v("Cellier for now. Login later"),
           ]),
         ]),
+        _vm._v(" "),
+        _c("h1", { staticClass: "accueil-titre" }, [
+          _vm._v("@lang('lang.hello') "),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "accueil-paragraph" }, [
+          _vm._v("@lang('lang.slogan')"),
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
       ],
       1
     ),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "accueil-button" }, [
+      _c("a", { attrs: { href: "" } }, [_vm._v("@lang('lang.mes_cellier')")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -31590,6 +31835,170 @@ var staticRenderFns = [
             attrs: { type: "submit", value: "submit" },
           }),
         ]),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "catalogue-container" }, [
+    _c("form", { staticClass: "catalogue__liste-search" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.searchQuery,
+            expression: "searchQuery",
+          },
+        ],
+        attrs: { placeholder: "Recherche dans catalogue", type: "search" },
+        domProps: { value: _vm.searchQuery },
+        on: {
+          input: [
+            function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.searchQuery = $event.target.value
+            },
+            _vm.handleInput,
+          ],
+        },
+      }),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "listeAutoComplete" },
+        _vm._l(_vm.searchResults, function (result, index) {
+          return _c(
+            "li",
+            {
+              key: index,
+              on: {
+                click: function ($event) {
+                  return _vm.selectResult(result)
+                },
+              },
+            },
+            [_vm._v("\n           " + _vm._s(result.nom) + "\n         ")]
+          )
+        }),
+        0
+      ),
+    ]),
+    _vm._v(" "),
+    !_vm.selectedCard
+      ? _c(
+          "div",
+          { staticClass: "catalogue-invisible" },
+          _vm._l(_vm.filteredCatalogue, function (bouteille) {
+            return _c("div", { key: bouteille.id, staticClass: "card" }, [
+              _c("h3", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(bouteille.nom)),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-subtitle" }, [
+                _vm._v(
+                  _vm._s(bouteille.description) + " " + _vm._s(bouteille.format)
+                ),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-subtitle" }, [
+                _vm._v(_vm._s(bouteille.pays)),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-count" }, [
+                _vm._v(_vm._s(bouteille.prix_saq) + "$"),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn",
+                    on: {
+                      click: function ($event) {
+                        return _vm.selectCard(bouteille)
+                      },
+                    },
+                  },
+                  [_vm._v("Buy Now")]
+                ),
+              ]),
+            ])
+          }),
+          0
+        )
+      : _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("img", {
+              attrs: { src: _vm.selectedCard.image, alt: "img-bouteille" },
+            }),
+            _vm._v(" "),
+            _c("picture", { staticClass: "modal" }, [
+              _c("img", { attrs: { src: _vm.selectedCard.image, alt: "img" } }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-info" }, [
+              _c("div", { staticClass: "card-info-title" }, [
+                _c("h3", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(_vm.selectedCard.nom)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-subtitle" }, [
+                  _vm._v(
+                    _vm._s(_vm.selectedCard.description) +
+                      " " +
+                      _vm._s(_vm.selectedCard.format)
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-subtitle" }, [
+                  _vm._v(_vm._s(_vm.selectedCard.pays)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-info-client" }, [
+                _c("p", { staticClass: "card-count" }, [
+                  _vm._v(_vm._s(_vm.selectedCard.prix_saq) + "$"),
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+              ]),
+            ]),
+          ]),
+        ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-footer" }, [
+      _c("button", { staticClass: "btn", attrs: { value: "" } }, [
+        _vm._v("Buy Now"),
       ]),
     ])
   },

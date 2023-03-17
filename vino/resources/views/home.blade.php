@@ -1,7 +1,17 @@
+
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="accueil-container">
+        <div class="accueil-overlay">
+
+            <p class="accueil-paragraph">Access to my cellier</p>
+            <button class="accueil-button"><a href="/cellier">@lang('lang.mes_cellier')</a></button>
+
+        </div>
+    </div>
+
+    {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,5 +29,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

@@ -1,12 +1,14 @@
+@guest
+@else
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
 
-    @if (Auth::check()) 
+    {{-- @if (Auth::check()) 
       <meta name="user" content="{{ Auth::user() }}">
-    @endif 
+    @endif  --}}
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -211,8 +213,8 @@
                     </div>
                 </div>
         </nav>
-
-        <main class="py-4">
+    @endguest
+        <main class="">
             @yield('content')
         </main>
     </div>

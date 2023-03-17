@@ -15,9 +15,9 @@ export default {
             loggedUser : document.querySelector("meta[name='user']").getAttribute('content')
         }
     },
-    // mounted() {
-    //     console.log(this.loggedUser);
-    // },
+    mounted() {
+        console.log(this.loggedUser);
+    },
 }
 </script>
 

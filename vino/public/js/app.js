@@ -5802,9 +5802,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       loggedUser: document.querySelector("meta[name='user']").getAttribute('content')
     };
-  } // mounted() {
-  //     console.log(this.loggedUser);
-  // },
+  },
+  mounted: function mounted() {
+    console.log(this.loggedUser);
+  }
 });
 
 /***/ }),

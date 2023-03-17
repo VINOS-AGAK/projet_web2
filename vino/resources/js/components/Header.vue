@@ -439,7 +439,7 @@
         <ul id="menu">
             <li class="list-item"><a href="#">Lang 1</a> </li>
             <li class="list-item"><a href="#">Lang 2</a> </li>
-            <li class="list-item"><a href="#">Lang 3</a> </li>
+            <li class="list-item"><a href="logout">logout</a> </li>
         </ul>
     </nav>
 

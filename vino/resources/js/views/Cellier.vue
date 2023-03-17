@@ -7,8 +7,18 @@
 </template>
 
 <script>
+
+
 export default {
     name: "main",
+    data() {
+        return {
+            loggedUser : document.querySelector("meta[name='user']").getAttribute('content')
+        }
+    },
+    mounted() {
+        console.log(this.loggedUser);
+    },
 }
 </script>
 

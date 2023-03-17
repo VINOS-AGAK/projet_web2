@@ -10,7 +10,7 @@
 
 <body>
     <div id="app">
-        <header-component></header-component>
+        <header-component :auth_user="{{ Auth::user() }}"></header-component>
         
         <div>
             <router-view></router-view>

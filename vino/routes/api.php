@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\BouteilleController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\Api\v1\BouteilleHasCellierController;
+use App\Http\Controllers\Api\v1\CatalogueController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +24,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('bouteille', BouteilleController::class);
+//Route::resource('bouteille', BouteilleController::class);
 Route::resource('auth', CustomAuthController::class);
+Route::resource('bouteilleHasCellier', BouteilleHasCellierController::class);
+Route::resource('bouteille', CatalogueController::class);
 
 
 Route::group([

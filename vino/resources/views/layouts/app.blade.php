@@ -33,7 +33,7 @@
 <body>
     <div id="app">
         @php $locale = session()->get('locale'); @endphp
-        {{-- <nav class="container-header">
+        <nav class="container-header">
             <div class="site-header">
                 <!---------------- header et icons -------------->
                 <div class="site-header-container">
@@ -212,7 +212,7 @@
                         </ul>
                     </div>
                 </div>
-        </nav> --}}
+        </nav>
     @endguest
         <main class="">
             @yield('content')

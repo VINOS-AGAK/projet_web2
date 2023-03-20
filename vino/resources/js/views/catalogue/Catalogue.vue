@@ -1,4 +1,7 @@
-<template  >  
+<template  > 
+
+  <div>
+
     <div class="catalogue-container" >
         <form class="catalogue__liste-search">
             <input
@@ -9,7 +12,7 @@
                <ul class="listeAutoComplete">
              <!-- Affiche la liste d’autocompletes -->
              <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
-               {{ result.nom }}
+             {{ result.nom }}
              </li>
            </ul>
         </form>
@@ -48,6 +51,33 @@
         </div>
            
     </div> 
+    <div>
+      <h2>Nous reccomendons</h2>
+      <div class="card"  v-for="bouteille in catalogue" :key="bouteille.id">
+          <div class="card-body">
+                <img :src="bouteille.image" alt="img-bouteille">
+                <picture class="modal"><img :src="bouteille.image" alt="img"></picture>
+                <div class="card-info">
+                    <div class="card-info-title">
+                        <h3 class="card-title">{{ bouteille.nom }}</h3>
+                        <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
+                        <p class="card-subtitle">{{ bouteille.pays }}</p>
+                    </div>
+                    <div class="card-info-client">
+                        <p class="card-count">{{ bouteille.prix_saq }}$</p>
+                        <div class="card-footer">
+                            <button  class="btn" value="">Buy Now</button>   
+                      
+                        </div>
+                    </div>  
+                </div> 
+            </div>
+      
+          
+        </div>
+    </div>
+  </div>
+    
     
     
 </template>
@@ -66,6 +96,7 @@ export default {
       searchResults: [], // liste d’autocompletes
     };
   },
+  
   methods: {
     fetchCatalogue() {
       axios
@@ -77,6 +108,7 @@ export default {
         })
         .catch((error) => console.log(error));
     },
+   
     handleInput() {
       if (this.searchQuery.length >= 2) {
 
@@ -99,6 +131,7 @@ export default {
     selectCard(card) {
       this.selectedCard = card; // choisi le résultat
     },
+    
   },
   computed: {
     filteredCatalogue() {

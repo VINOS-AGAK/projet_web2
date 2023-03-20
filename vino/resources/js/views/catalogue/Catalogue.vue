@@ -96,7 +96,7 @@ export default {
       searchResults: [], // liste d’autocompletes
     };
   },
-  
+  mounted(){this.fetchCataloguePlein()},
   methods: {
     fetchCatalogue() {
       axios
@@ -131,7 +131,14 @@ export default {
     selectCard(card) {
       this.selectedCard = card; // choisi le résultat
     },
-    
+    fetchCataloguePlein(){
+      axios
+      .get('/api/bouteille')
+      .then((response) => {this.catalogue = response.data.data;
+      this.catalogue = this.catalogue.slice(0, 5);
+    })
+      .catch(error =>console.log(error))
+    },
   },
   computed: {
     filteredCatalogue() {

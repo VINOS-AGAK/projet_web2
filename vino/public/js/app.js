@@ -6010,7 +6010,9 @@ __webpack_require__.r(__webpack_exports__);
       searchResults: [] // liste d’autocompletes
     };
   },
-
+  mounted: function mounted() {
+    this.fetchCataloguePlein();
+  },
   methods: {
     fetchCatalogue: function fetchCatalogue() {
       var _this = this;
@@ -6046,9 +6048,17 @@ __webpack_require__.r(__webpack_exports__);
     },
     selectCard: function selectCard(card) {
       this.selectedCard = card; // choisi le résultat
+    },
+    fetchCataloguePlein: function fetchCataloguePlein() {
+      var _this3 = this;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/bouteille').then(function (response) {
+        _this3.catalogue = response.data.data;
+        _this3.catalogue = _this3.catalogue.slice(0, 5);
+      })["catch"](function (error) {
+        return console.log(error);
+      });
     }
   },
-
   computed: {
     filteredCatalogue: function filteredCatalogue() {
       var query = this.searchQuery.toLowerCase().trim();

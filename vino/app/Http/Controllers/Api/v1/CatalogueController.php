@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Bouteille;
 use Illuminate\Http\Request;
 use App\Models\Catalogue;
-use App\Models\User;
+// use App\Models\User;
 use App\Http\Resources\CatalogueResource;
 
 // use Dotenv\Validator;

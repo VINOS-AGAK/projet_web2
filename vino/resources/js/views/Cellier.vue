@@ -13,18 +13,19 @@ export default {
     name: "main",
     data() {
         return {
-            user_id: "",
+            user: [],
         }
+    },
+    mounted() {
+        this.fetchUser();
     },
     methods: {
-        fetchUserId(){
+        fetchUser(){
             axios
-            .get("user_id")
+            .get("api/user")
         }
     }
-    mounted() {
-        console.log(this.loggedUser);
-    },
+    
 }
 </script>
 

@@ -5996,6 +5996,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -11548,7 +11550,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".catalogue-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-wrap: wrap;\r\n    margin-top: 10%;\r\n    font-family:  var(--font-primary);\r\n    margin-left:  var(--margin-small);\r\n    margin-right: var(--margin-small);\r\n    background: rgba(255, 255, 255, 0.29);\r\n    border-radius: var(--border-radius-meduim);    \r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.3);\r\n    \r\n}\r\n\r\n.catalogue__liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n    font-size: var(--font-size-regular);\r\n  }\r\n.catalogue__liste-search input{\r\n    font-size: var(--font-size-regular);\r\n}\r\n\r\n.catalogue-image {\r\n    flex: 1;\r\n    max-width: 100%;\r\n    margin-right: var(--margin-small);\r\n    margin-top: var(--margin-small);\r\n    \r\n}\r\n\r\n.catalogue-image img {\r\n    object-fit: cover;\r\n    width: 200px;\r\n}\r\n\r\n.catalogue-description {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\r\n    width: 80%;\r\n}\r\n\r\n.catalogue-description>ul{\r\n\r\n    margin: 10px;\r\n}\r\n\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-medium);\r\n    margin-top: 0;\r\n    margin-bottom: var(--margin-small);\r\n    color: var(--accent-color);\r\n    font-weight: 800;\r\n}\r\n.catalogue-description ul {\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n.catalogue-description .sous-titre{\r\n   font-size: var(--font-size-medium);\r\n}\r\n.catalogue-description li {\r\n    font-size: var(--font-size-default);\r\n    line-height: 1;\r\n    margin-bottom: var(--margin-small);\r\n}\r\n.li-divider::after {\r\n    content: \"\";\r\n    display: block;\r\n    border-bottom: 2.5px solid var(--primary-color);\r\n    margin: 5px 0 ;\r\n  }\r\nstrong{\r\n    font-size: 18px;\r\n} \r\n.btn {\r\n    text-decoration: none;\r\n    color: #ccc;\r\n    background-color: var(--accent-color);\r\n    font-size: var(--font-size-default);\r\n    padding: 5px 40px;\r\n    border-radius: var(--border-radius-ex-small);\r\n}\r\na.btn{\r\n    margin: 10px;\r\n}\r\n\r\n.container-submit{\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0;\r\n\r\n}\r\n\r\n.card-header{\r\n\r\n    height: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n    letter-spacing: 10px;\r\n    text-transform: lowercase;\r\n\r\n\r\n    background: rgba(255, 255, 255, 0.29);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px); \r\n}\r\n\r\n.card-header>h3{\r\n    font-size: var(--font-size-regular);\r\n    padding-top: 10px;\r\n}\r\n\r\n.catalogue-invisible{\r\n    display: none;\r\n}\r\n@media screen and (min-width: 768px){\r\n.catalogue-description li{\r\n\r\n    font-size: var(--font-size-medium);\r\n} \r\n.catalogue-description {\r\n    max-width: 50%;\r\n}\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-x-large);\r\n}\r\n.catalogue-image {\r\n    max-width: 50%;\r\n}\r\n.catalogue-image img {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: var(--padding-ex-large);\r\n    width: auto;\r\n}\r\n.catalogue__liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n  }\r\n\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".catalogue-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-wrap: wrap;\r\n    margin-top: 10%;\r\n    font-family:  var(--font-primary);\r\n    margin-left:  var(--margin-small);\r\n    margin-right: var(--margin-small);\r\n    /* background: rgba(255, 255, 255, 0.29); */\r\n    background: rgba(249, 244, 204, 0.29);\r\n    border-radius: var(--border-radius-meduim);    \r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.3);\r\n    \r\n}\r\n\r\n\r\n.catalogue__liste-search {\r\n    position: relative;\r\n    /* background: rgba(249, 244, 204, 0.29); */\r\n   \r\n  }\r\n  \r\n  .search-box {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  \r\n  .search-input {\r\n    width: 100%;\r\n    padding: 10px;\r\n    border: 1px solid transparent;\r\n    border-radius: 25px;\r\n    font-size: 16px;\r\n    color: #555;\r\n  }\r\n  \r\n  .search-btn {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    margin-left: 10px;\r\n   \r\n    color: #fff;\r\n    font-size: 20px;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n  }\r\n  \r\n  .search-btn:hover {\r\n    background-color: #b7b8ba;\r\n  }\r\n  \r\n  .listeAutoComplete {\r\n    top: 20px;\r\n    left: 0;\r\n    width: 100%;\r\n    \r\n    margin: 0;\r\n    list-style-type: none;\r\n    /* background: rgba(249, 244, 204, 0.29); */\r\n    /* border: 1px solid #ccc;\r\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */\r\n  }\r\n  \r\n  .listeAutoComplete li {\r\n    display: flex;\r\n    align-items: center;\r\n    padding: 5px 10px;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n    border-radius: 20px;\r\n  }\r\n  .listeAutoComplete li img{\r\n    width: 40px;\r\n  }\r\n  \r\n  .listeAutoComplete li:hover {\r\n    background-color: #f5f5f5;\r\n  }\r\n  \r\n\r\n.catalogue-image {\r\n    flex: 1;\r\n    max-width: 100%;\r\n    margin-right: var(--margin-small);\r\n    margin-top: var(--margin-small);\r\n    \r\n}\r\n\r\n.catalogue-image img {\r\n    object-fit: cover;\r\n    width: 200px;\r\n}\r\n\r\n.catalogue-description {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\r\n    width: 80%;\r\n}\r\n\r\n.catalogue-description>ul{\r\n\r\n    margin: 10px;\r\n}\r\n\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-medium);\r\n    margin-top: 0;\r\n    margin-bottom: var(--margin-small);\r\n    color: var(--accent-color);\r\n    font-weight: 800;\r\n}\r\n.catalogue-description ul {\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n.catalogue-description .sous-titre{\r\n   font-size: var(--font-size-medium);\r\n}\r\n.catalogue-description li {\r\n    font-size: var(--font-size-default);\r\n    line-height: 1;\r\n    margin-bottom: var(--margin-small);\r\n}\r\n.li-divider::after {\r\n    content: \"\";\r\n    display: block;\r\n    border-bottom: 2.5px solid var(--primary-color);\r\n    margin: 5px 0 ;\r\n  }\r\nstrong{\r\n    font-size: 18px;\r\n} \r\n.btn {\r\n    text-decoration: none;\r\n    color: #ccc;\r\n    background-color: var(--accent-color);\r\n    font-size: var(--font-size-default);\r\n    padding: 5px 40px;\r\n    border-radius: var(--border-radius-ex-small);\r\n}\r\na.btn{\r\n    margin: 10px;\r\n}\r\n\r\n.container-submit{\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0;\r\n\r\n}\r\n\r\n.card-header{\r\n\r\n    height: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n    letter-spacing: 10px;\r\n    text-transform: lowercase;\r\n\r\n\r\n    background: rgba(255, 255, 255, 0.29);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px); \r\n}\r\n\r\n.card-header>h3{\r\n    font-size: var(--font-size-regular);\r\n    padding-top: 10px;\r\n}\r\n\r\n.catalogue-invisible{\r\n    display: none;\r\n}\r\n@media screen and (min-width: 768px){\r\n.catalogue-description li{\r\n\r\n    font-size: var(--font-size-medium);\r\n} \r\n.catalogue-description {\r\n    max-width: 50%;\r\n}\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-x-large);\r\n}\r\n.catalogue-image {\r\n    max-width: 50%;\r\n}\r\n.catalogue-image img {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: var(--padding-ex-large);\r\n    width: auto;\r\n}\r\n.catalogue__liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n  }\r\n\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -31904,29 +31906,56 @@ var render = function () {
   return _c("div", [
     _c("div", { staticClass: "catalogue-container" }, [
       _c("form", { staticClass: "catalogue__liste-search" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.searchQuery,
-              expression: "searchQuery",
-            },
-          ],
-          attrs: { placeholder: "Recherche dans catalogue", type: "search" },
-          domProps: { value: _vm.searchQuery },
-          on: {
-            input: [
-              function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.searchQuery = $event.target.value
+        _c("div", { staticClass: "search-box" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.searchQuery,
+                expression: "searchQuery",
               },
-              _vm.handleInput,
             ],
-          },
-        }),
+            staticClass: "search-input",
+            attrs: { type: "search", placeholder: "Recherche dans catalogue" },
+            domProps: { value: _vm.searchQuery },
+            on: {
+              input: [
+                function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.searchQuery = $event.target.value
+                },
+                _vm.handleInput,
+              ],
+            },
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "search-btn", attrs: { type: "submit" } },
+            [
+              _c(
+                "svg",
+                {
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    height: "24",
+                    width: "24",
+                  },
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d: "m19.45 21.325-6.3-6.3q-.725.55-1.675.85-.95.3-2.05.3-2.775 0-4.712-1.937Q2.775 12.3 2.775 9.525q0-2.775 1.938-4.713Q6.65 2.875 9.425 2.875q2.775 0 4.712 1.937 1.938 1.938 1.938 4.713 0 1.1-.313 2.05-.312.95-.837 1.65l6.325 6.325ZM9.425 13.65q1.725 0 2.925-1.2 1.2-1.2 1.2-2.925 0-1.725-1.2-2.925-1.2-1.2-2.925-1.2Q7.7 5.4 6.5 6.6 5.3 7.8 5.3 9.525q0 1.725 1.2 2.925 1.2 1.2 2.925 1.2Z",
+                    },
+                  }),
+                ]
+              ),
+            ]
+          ),
+        ]),
         _vm._v(" "),
         _c(
           "ul",
@@ -31942,7 +31971,12 @@ var render = function () {
                   },
                 },
               },
-              [_vm._v("\n           " + _vm._s(result.nom) + "\n           ")]
+              [
+                _c("img", {
+                  attrs: { src: result.image, alt: "img-bouteille" },
+                }),
+                _vm._v(_vm._s(result.nom) + "\n    "),
+              ]
             )
           }),
           0
@@ -32039,7 +32073,7 @@ var render = function () {
     _c(
       "div",
       [
-        _c("h2", [_vm._v("Nous reccomendons")]),
+        _c("h2", [_vm._v("Nous recommandons")]),
         _vm._v(" "),
         _vm._l(_vm.catalogue, function (bouteille) {
           return _c("div", { key: bouteille.id, staticClass: "card" }, [

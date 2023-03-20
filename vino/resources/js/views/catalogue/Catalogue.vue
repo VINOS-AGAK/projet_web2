@@ -3,19 +3,21 @@
   <div>
 
     <div class="catalogue-container" >
-        <form class="catalogue__liste-search">
-            <input
-               placeholder="Recherche dans catalogue"
-               type="search"
-               v-model="searchQuery"
-               @input="handleInput"/>
-               <ul class="listeAutoComplete">
-             <!-- Affiche la liste d’autocompletes -->
-             <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
-             {{ result.nom }}
-             </li>
-           </ul>
-        </form>
+      <form class="catalogue__liste-search">
+  <div class="search-box">
+    <input type="search" class="search-input" placeholder="Recherche dans catalogue" v-model="searchQuery" @input="handleInput">
+    <button type="submit" class="search-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+        <path d="m19.45 21.325-6.3-6.3q-.725.55-1.675.85-.95.3-2.05.3-2.775 0-4.712-1.937Q2.775 12.3 2.775 9.525q0-2.775 1.938-4.713Q6.65 2.875 9.425 2.875q2.775 0 4.712 1.937 1.938 1.938 1.938 4.713 0 1.1-.313 2.05-.312.95-.837 1.65l6.325 6.325ZM9.425 13.65q1.725 0 2.925-1.2 1.2-1.2 1.2-2.925 0-1.725-1.2-2.925-1.2-1.2-2.925-1.2Q7.7 5.4 6.5 6.6 5.3 7.8 5.3 9.525q0 1.725 1.2 2.925 1.2 1.2 2.925 1.2Z" />
+      </svg></button>
+  </div>
+  <ul class="listeAutoComplete">
+    <!-- Affiche la liste d’autocompletes -->
+    <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
+      <img :src="result.image" alt="img-bouteille">{{ result.nom }}
+    </li>
+  </ul>
+</form>
+
         <div v-if="!selectedCard" class="catalogue-invisible">
             <div class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id">
                 <h3 class="card-title">{{ bouteille.nom }}</h3>
@@ -52,7 +54,7 @@
            
     </div> 
     <div>
-      <h2>Nous reccomendons</h2>
+      <h2>Nous recommandons</h2>
       <div class="card"  v-for="bouteille in catalogue" :key="bouteille.id">
           <div class="card-body">
                 <img :src="bouteille.image" alt="img-bouteille">

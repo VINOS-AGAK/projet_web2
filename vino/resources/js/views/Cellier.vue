@@ -22,9 +22,9 @@ export default {
             .get("user_id")
         }
     }
-    mounted() {
-        console.log(this.loggedUser);
-    },
+    // mounted() {
+    //     console.log(this.loggedUser);
+    // },
 }
 </script>
 

@@ -55,7 +55,10 @@
     </div> 
     <div>
       <h2>Nous recommandons</h2>
-      <div class="card"  v-for="bouteille in catalogue" :key="bouteille.id">
+      <div class="carousel-container">
+      <carousel>
+      <slide v-for="bouteille in catalogue" :key="bouteille.id">
+        <div class="card"  >
           <div class="card-body">
                 <img :src="bouteille.image" alt="img-bouteille">
                 <picture class="modal"><img :src="bouteille.image" alt="img"></picture>
@@ -73,10 +76,11 @@
                         </div>
                     </div>  
                 </div> 
-            </div>
-      
-          
+          </div>  
         </div>
+      </slide>
+      </carousel>
+    </div>
     </div>
   </div>
     
@@ -87,8 +91,13 @@
 <!-- recherche sans afficher catalogue au premier telechargement avec 2 lettres-->
 <script>
 import axios from "axios";
+import { Carousel, Slide } from 'vue-carousel';
 
 export default {
+  components: {
+    Carousel,
+    Slide,
+  },
   data() {
     return {
       catalogue: [],

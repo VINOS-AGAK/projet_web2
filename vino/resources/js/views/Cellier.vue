@@ -25,7 +25,9 @@ export default {
             .get("api/user")
         }
     }
-    
+    // mounted() {
+    //     console.log(this.loggedUser);
+    // },
 }
 </script>
 

@@ -5776,10 +5776,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
+var recomandation = null;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Carousel: vue_carousel__WEBPACK_IMPORTED_MODULE_1__.Carousel,
@@ -5809,10 +5809,11 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         //console.log(response.data);
         _this.catalogue = response.data.data;
-        _this.searchResults = _this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
+        _this.searchResults = _this.filteredCatalogue.slice(0, 10); // sélectionne les 5 premiers résultats filtrés
       })["catch"](function (error) {
         return console.log(error);
       });
+      recomandation = true;
     },
     handleInput: function handleInput() {
       var _this2 = this;
@@ -5840,6 +5841,7 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/bouteille').then(function (response) {
         _this3.catalogue = response.data.data;
         _this3.catalogue = _this3.catalogue.slice(0, 5);
+        console.log(_this3.catalogue);
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -30570,7 +30572,7 @@ var render = function () {
           },
           [
             _c("img", { attrs: { src: result.image, alt: "img-bouteille" } }),
-            _vm._v(_vm._s(result.nom) + "\n    "),
+            _vm._v(_vm._s(result.nom) + "\n      "),
           ]
         )
       }),
@@ -30665,75 +30667,76 @@ var render = function () {
           ]),
     ]),
     _vm._v(" "),
-    _c("div", [
-      _c("h2", [_vm._v("Nous recommandons")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "carousel-container" },
-        [
+    !_vm.recomandation === true
+      ? _c("div", [
+          _c("h2", [_vm._v("Nous recommandons")]),
+          _vm._v(" "),
           _c(
-            "carousel",
+            "div",
             _vm._l(_vm.catalogue, function (bouteille) {
-              return _c("slide", { key: bouteille.id }, [
-                _c("div", { staticClass: "card" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("img", {
-                      attrs: { src: bouteille.image, alt: "img-bouteille" },
-                    }),
-                    _vm._v(" "),
-                    _c("picture", { staticClass: "modal" }, [
-                      _c("img", {
-                        attrs: { src: bouteille.image, alt: "img" },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-info" }, [
-                      _c("div", { staticClass: "card-info-title" }, [
-                        _c("h3", { staticClass: "card-title" }, [
-                          _vm._v(_vm._s(bouteille.nom)),
+              return _c("div", { key: bouteille.id }, [
+                bouteille.id > 10
+                  ? _c("div", { staticClass: "card" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("img", {
+                          attrs: { src: bouteille.image, alt: "img-bouteille" },
+                        }),
+                        _vm._v(" "),
+                        _c("picture", { staticClass: "modal" }, [
+                          _c("img", {
+                            attrs: { src: bouteille.image, alt: "img" },
+                          }),
                         ]),
                         _vm._v(" "),
-                        _c("p", { staticClass: "card-subtitle" }, [
-                          _vm._v(
-                            _vm._s(bouteille.description) +
-                              " " +
-                              _vm._s(bouteille.format)
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-subtitle" }, [
-                          _vm._v(_vm._s(bouteille.pays)),
+                        _c("div", { staticClass: "card-info" }, [
+                          _c("div", { staticClass: "card-info-title" }, [
+                            _c("h3", { staticClass: "card-title" }, [
+                              _vm._v(_vm._s(bouteille.nom)),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "card-subtitle" }, [
+                              _vm._v(
+                                _vm._s(bouteille.description) +
+                                  " " +
+                                  _vm._s(bouteille.format)
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "card-subtitle" }, [
+                              _vm._v(_vm._s(bouteille.pays)),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "card-info-client" }, [
+                            _c("p", { staticClass: "card-count" }, [
+                              _vm._v(_vm._s(bouteille.prix_saq) + "$"),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(1, true),
+                          ]),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-info-client" }, [
-                        _c("p", { staticClass: "card-count" }, [
-                          _vm._v(_vm._s(bouteille.prix_saq) + "$"),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-footer" }, [
-                          _c(
-                            "button",
-                            { staticClass: "btn", attrs: { value: "" } },
-                            [_vm._v("Buy Now")]
-                          ),
-                        ]),
-                      ]),
-                    ]),
-                  ]),
-                ]),
+                    ])
+                  : _vm._e(),
               ])
             }),
-            1
+            0
           ),
-        ],
-        1
-      ),
-    ]),
+        ])
+      : _vm._e(),
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-footer" }, [
+      _c("button", { staticClass: "btn", attrs: { value: "" } }, [
+        _vm._v("Buy Now"),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

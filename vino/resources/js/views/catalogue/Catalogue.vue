@@ -196,10 +196,11 @@
 
     </div>
 
-    <div v-if="!recomandation === true">
+    <!-- Section Recomendation -->
+    <div class="catalogue__section"  v-if="recomandation === true">
       <h2 class="catalogue_titre-section">Nous recommandons</h2>
       <!-- <div class="carousel-container"> -->
-      <div>
+      <div class="container">
         <!-- <slide v-for="bouteille in catalogue" :key="bouteille.id"> -->
         <div v-for="bouteille in catalogue" :key="bouteille.id">
           <div v-if="bouteille.id > 10" class="card">
@@ -250,7 +251,7 @@ export default {
       searchTimerId: null, // délai de minuterie d’id
       searchResults: [], // liste d’autocompletes
       selectedCard: null,
-      recomandation: "",
+      recomandation: true,
     };
   },
   mounted() { this.fetchCataloguePlein() },
@@ -285,6 +286,7 @@ export default {
       this.searchQuery = result.nom; // choisi le résultat
       this.selectedCard = result; // installe la carte sélectionnée
       this.searchResults = []; // effacer la liste des autocompletes
+      this.recomandation = false;
     },
     selectCard(card) {
       this.selectedCard = card; // choisi le résultat
@@ -294,7 +296,7 @@ export default {
         .get('/api/bouteille')
         .then((response) => {
           this.catalogue = response.data.data;
-          this.catalogue = this.catalogue.slice(0, 5);
+          this.catalogue = this.catalogue.slice(0, 6);
           console.log(this.catalogue);
         })
         .catch(error => console.log(error))

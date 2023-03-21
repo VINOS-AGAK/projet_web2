@@ -5876,7 +5876,10 @@ var recomandation = null;
       // délai avant pousser la requette
       searchTimerId: null,
       // délai de minuterie d’id
-      searchResults: [] // liste d’autocompletes
+      searchResults: [],
+      // liste d’autocompletes
+      selectedCard: null,
+      recomandation: ""
     };
   },
   mounted: function mounted() {

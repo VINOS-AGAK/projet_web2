@@ -249,6 +249,8 @@ export default {
       searchDelay: 500, // délai avant pousser la requette
       searchTimerId: null, // délai de minuterie d’id
       searchResults: [], // liste d’autocompletes
+      selectedCard: null,
+      recomandation: "",
     };
   },
   mounted() { this.fetchCataloguePlein() },

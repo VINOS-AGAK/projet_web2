@@ -234,92 +234,92 @@
 
 <!-- recherche sans afficher catalogue au premier telechargement avec 2 lettres-->
 <script>
-import axios from "axios";
-import { Carousel, Slide } from 'vue-carousel';
+    import axios from "axios";
+    //import { Carousel, Slide } from 'vue-carousel';
 
-let recomandation = null;
+    //let recomandation = null;
 
-export default {
-  // components: {
-  //   Carousel,
-  //   Slide,
-  // },
-  data() {
-    return {
-      catalogue: [],
-      searchQuery: "",
-      searchDelay: 500, // délai avant pousser la requette
-      searchTimerId: null, // délai de minuterie d’id
-      searchResults: [], // liste d’autocompletes
-      selectedCard: null,
-      recomandation: true,
+    export default {
+      // components: {
+      //   Carousel,
+      //   Slide,
+      // },
+      data() {
+        return {
+          catalogue: [],
+          searchQuery: "",
+          searchDelay: 500, // délai avant pousser la requette
+          searchTimerId: null, // délai de minuterie d’id
+          searchResults: [], // liste d’autocompletes
+          selectedCard: null,
+          recomandation: true,
+        };
+      },
+      mounted() { this.fetchCataloguePlein() },
+      methods: {
+        fetchCatalogue() {
+          axios
+            .get("api/bouteille", { params: { query: this.searchQuery } })
+            .then((response) => {
+              console.log(response.data);
+              this.catalogue = response.data.data;
+              this.searchResults = this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
+            })
+            .catch((error) => console.log(error));
+          recomandation = true;
+        },
+      
+        handleInput() {
+          if (this.searchQuery.length >= 2) {
+          
+            // réinitialiser le minuteur pour éviter d’envoyer une demande avec retard précédent
+            clearTimeout(this.searchTimerId);
+            // lancer une nouvelle minuterie pour envoyer une requête via searchDelay milliseconds
+            this.searchTimerId = setTimeout(() => {
+              this.fetchCatalogue();
+            }, this.searchDelay);
+          } else {
+            this.searchResults = []; // efface la liste des autocompletes
+          }
+        
+        },
+        selectResult(result) {
+          this.searchQuery = result.nom; // choisi le résultat
+          this.selectedCard = result; // installe la carte sélectionnée
+          this.searchResults = []; // effacer la liste des autocompletes
+          this.recomandation = false;
+        },
+        selectCard(card) {
+          this.selectedCard = card; // choisi le résultat
+        },
+        fetchCataloguePlein() {
+          axios
+            .get('/api/bouteille')
+            .then((response) => {
+              this.catalogue = response.data.data;
+              this.catalogue = this.catalogue.slice(0, 6);
+              console.log(this.catalogue);
+            })
+            .catch(error => console.log(error))
+        },
+      },
+      computed: {
+        filteredCatalogue() {
+          const query = this.searchQuery.toLowerCase().trim();
+          if (!query) {
+            return this.catalogue;
+          }
+          return this.catalogue.filter((bouteille) => {
+            return (
+              bouteille.nom.toLowerCase().includes(query) ||
+              bouteille.pays.toLowerCase().includes(query) ||
+              bouteille.format.toLowerCase().includes(query) ||
+              bouteille.prix_saq.toLowerCase().includes(query)
+            );
+          });
+        },
+      },
     };
-  },
-  mounted() { this.fetchCataloguePlein() },
-  methods: {
-    fetchCatalogue() {
-      axios
-        .get("api/bouteille", { params: { query: this.searchQuery } })
-        .then((response) => {
-          console.log(response.data);
-          this.catalogue = response.data.data;
-          this.searchResults = this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
-        })
-        .catch((error) => console.log(error));
-      recomandation = true;
-    },
-
-    handleInput() {
-      if (this.searchQuery.length >= 2) {
-
-        // réinitialiser le minuteur pour éviter d’envoyer une demande avec retard précédent
-        clearTimeout(this.searchTimerId);
-        // lancer une nouvelle minuterie pour envoyer une requête via searchDelay milliseconds
-        this.searchTimerId = setTimeout(() => {
-          this.fetchCatalogue();
-        }, this.searchDelay);
-      } else {
-        this.searchResults = []; // efface la liste des autocompletes
-      }
-
-    },
-    selectResult(result) {
-      this.searchQuery = result.nom; // choisi le résultat
-      this.selectedCard = result; // installe la carte sélectionnée
-      this.searchResults = []; // effacer la liste des autocompletes
-      this.recomandation = false;
-    },
-    selectCard(card) {
-      this.selectedCard = card; // choisi le résultat
-    },
-    fetchCataloguePlein() {
-      axios
-        .get('/api/bouteille')
-        .then((response) => {
-          this.catalogue = response.data.data;
-          this.catalogue = this.catalogue.slice(0, 6);
-          console.log(this.catalogue);
-        })
-        .catch(error => console.log(error))
-    },
-  },
-  computed: {
-    filteredCatalogue() {
-      const query = this.searchQuery.toLowerCase().trim();
-      if (!query) {
-        return this.catalogue;
-      }
-      return this.catalogue.filter((bouteille) => {
-        return (
-          bouteille.nom.toLowerCase().includes(query) ||
-          bouteille.pays.toLowerCase().includes(query) ||
-          bouteille.format.toLowerCase().includes(query) ||
-          bouteille.prix_saq.toLowerCase().includes(query)
-        );
-      });
-    },
-  },
-};
 </script>
 
 

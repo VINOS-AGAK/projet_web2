@@ -22,8 +22,9 @@ class BouteilleHasCellierController extends Controller
     public function index(Request $request)
     {
         //   $user_id = Auth()->user()->id;
-          //$user_id = Auth::id();
-           $user_id= 1;
+          $user_id = Auth::id();
+          dd($user_id);
+           //$user_id= 1;
          //$query = $request->input('q');
     
         $bouteilles = DB::table('bouteille__has__cellier')

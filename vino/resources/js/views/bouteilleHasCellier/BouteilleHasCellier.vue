@@ -44,28 +44,28 @@
 
 <script>
 
-import axios from "axios";
-export default {
-    
-    data() {
-        return {
-            bouteilleHasCellier: [],
+    import axios from "axios";
+    export default {
+        
+        data() {
+            return {
+                bouteilleHasCellier: [],
+            }
+        },
+        mounted() {
+            this.fetchBouteilleHasCellier();
+        },
+        methods: {
+            fetchBouteilleHasCellier(){
+                axios
+                .get("api/bouteilleHasCellier")
+                .then((response) =>{
+                    console.log(response.data);
+                    this.bouteilleHasCellier = response.data.data;
+                } )
+                .catch(error =>console.log(error));
+            }
         }
-    },
-    mounted() {
-        this.fetchBouteilleHasCellier();
-    },
-    methods: {
-        fetchBouteilleHasCellier(){
-            axios
-            .get("api/bouteilleHasCellier")
-            .then((response) =>{
-                console.log(response.data);
-                this.bouteilleHasCellier = response.data.data;
-            } )
-            .catch(error =>console.log(error));
-        }
+        
     }
-    
-}
 </script>

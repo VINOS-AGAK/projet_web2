@@ -21,12 +21,12 @@ class BouteilleHasCellierController extends Controller
     public function index(Request $request)
     {
           //$user_id = Auth()->user()->id;
-          //$user_id= 1;
+          $user_id= 1;
          //$query = $request->input('q');
     
         $bouteilles = DB::table('bouteille__has__cellier')
             ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
-              //->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
+              ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
             // ->where(function($q) use ($query) {
             //     $q->where('vino__bouteille.nom', 'LIKE', "%$query%")
             //         ->orWhere('vino__bouteille.pays', 'LIKE', "%$query%")

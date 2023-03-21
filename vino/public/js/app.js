@@ -5531,6 +5531,86 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      bouteilleHasCellier: []
+    };
+  },
+  mounted: function mounted() {
+    this.fetchBouteilleHasCellier();
+  },
+  methods: {
+    fetchBouteilleHasCellier: function fetchBouteilleHasCellier() {
+      var _this = this;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("api/bouteilleHasCellier").then(function (response) {
+        console.log(response.data);
+        _this.bouteilleHasCellier = response.data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js& ***!
@@ -5967,6 +6047,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_Cellier__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/Cellier */ "./resources/js/views/Cellier.vue");
 /* harmony import */ var _views_auth_Index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/auth/Index */ "./resources/js/views/auth/Index.vue");
 /* harmony import */ var _views_catalogue_Catalogue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/catalogue/Catalogue */ "./resources/js/views/catalogue/Catalogue.vue");
+/* harmony import */ var _views_bouteilleHasCellier_BouteilleHasCellier__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/bouteilleHasCellier/BouteilleHasCellier */ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -5974,7 +6055,6 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
 
 
 
-// import BouteilleCellier from "./views/cellier/BouteilleCellier";
 
 var routes = [{
   path: "/",
@@ -5988,13 +6068,10 @@ var routes = [{
 }, {
   path: "/catalogue",
   component: _views_catalogue_Catalogue__WEBPACK_IMPORTED_MODULE_5__["default"]
-}
-// {
-//     path: "/bouteille-cellier",
-//     component: BouteilleCellier
-// }
-];
-
+}, {
+  path: "/bouteille-cellier",
+  component: _views_bouteilleHasCellier_BouteilleHasCellier__WEBPACK_IMPORTED_MODULE_6__["default"]
+}];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: "history",
   routes: routes
@@ -29609,6 +29686,45 @@ component.options.__file = "resources/js/views/auth/Index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue":
+/*!************************************************************************!*\
+  !*** ./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BouteilleHasCellier.vue?vue&type=template&id=62127e00& */ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00&");
+/* harmony import */ var _BouteilleHasCellier_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BouteilleHasCellier.vue?vue&type=script&lang=js& */ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BouteilleHasCellier_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__.render,
+  _BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/views/catalogue/Catalogue.vue":
 /*!****************************************************!*\
   !*** ./resources/js/views/catalogue/Catalogue.vue ***!
@@ -29712,6 +29828,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BouteilleHasCellier.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************!*\
   !*** ./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js& ***!
@@ -29792,6 +29924,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_12e2324a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_12e2324a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Index.vue?vue&type=template&id=12e2324a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/auth/Index.vue?vue&type=template&id=12e2324a&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00& ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BouteilleHasCellier.vue?vue&type=template&id=62127e00& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00&");
 
 
 /***/ }),
@@ -30162,6 +30311,107 @@ var staticRenderFns = [
             attrs: { type: "submit", value: "submit" },
           }),
         ]),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _vm._l(_vm.bouteilleHasCellier, function (bouteille) {
+        return _c("div", { key: bouteille.id, staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("img", { attrs: { src: bouteille.image, alt: bouteille.nom } }),
+            _vm._v(" "),
+            _c("picture", { staticClass: "modal" }, [
+              _c("img", {
+                attrs: { src: bouteille.image, alt: bouteille.nom },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-info" }, [
+              _c("div", { staticClass: "card-info-title" }, [
+                _c("h3", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(bouteille.nom)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-subtitle" }, [
+                  _vm._v("White wine " + _vm._s(bouteille.format)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-subtitle" }, [
+                  _vm._v(_vm._s(bouteille.pays)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-info-client" }, [
+                _c("p", { staticClass: "card-count" }, [
+                  _vm._v("Prix : " + _vm._s(bouteille.prix_saq) + " $"),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-rating" }, [_vm._v("Note: ★★★✩")]),
+                _vm._v(" "),
+                _vm._m(0, true),
+              ]),
+            ]),
+          ]),
+        ])
+      }),
+      _vm._v(" "),
+      _vm.bouteilleHasCellier.length === 0
+        ? _c("div", { staticClass: "catalogue-container" }, [_vm._m(1)])
+        : _vm._e(),
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-footer" }, [
+      _c("button", { staticClass: "card-btn_add", attrs: { value: "" } }, [
+        _vm._v("+"),
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "card-btn_add deleteModalBtn", attrs: { value: "" } },
+        [_vm._v("-")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", { staticClass: "text-danger" }, [
+        _vm._v("Aucune bouteilles disponible dans le cellier"),
       ]),
     ])
   },

@@ -8,7 +8,7 @@ import Welcome from "./views/Welcome";
 import cellier from "./views/Cellier";
 import login from "./views/auth/Index";
 import Catalogue from "./views/catalogue/Catalogue";
-// import BouteilleCellier from "./views/cellier/BouteilleCellier";
+ import BouteilleCellier from "./views/bouteilleHasCellier/BouteilleHasCellier";
 
 const routes = [
     {
@@ -27,10 +27,10 @@ const routes = [
         path: "/catalogue",
         component: Catalogue
     },
-    // {
-    //     path: "/bouteille-cellier",
-    //     component: BouteilleCellier
-    // }
+    {
+        path: "/bouteille-cellier",
+        component: BouteilleCellier
+    },
 ]
 
 export default new VueRouter({

@@ -5,6 +5,10 @@
     background-color: var(--color-white);
     
   }
+  .liste__titre{
+    font-size: var(--font-size-medium);
+    text-align: center;
+  }
   .liste-search{
     border-radius: var(--border-radius-meduim);
     width: 250px;

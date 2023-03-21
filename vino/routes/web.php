@@ -61,11 +61,6 @@ Route::get('/{any}', function () {
 
 
 
-//  Route::get('liste-example', function () {
-//      return view('liste');
-//  });
-
-
 
 //============================================= CELLIERCONTROLLER ===================================================\\
 

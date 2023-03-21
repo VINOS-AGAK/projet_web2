@@ -2,10 +2,10 @@
   <div>
 
     <!--------------- barre de recherche ------------->
-    <div class="site-header">
+    <header class="site-header">
       <form class="search" action="#" method="GET">
         <!-- <input placeholder="@lang('lang.recherche_un_vin')" type="search" name="query"> -->
-        <input placeholder="recherche vin lang todo:" type="search" name="query" v-model="searchQuery"
+        <input placeholder="Recherche dans catalogue" type="search" name="query" v-model="searchQuery"
           @input="handleInput">
         <button type="submit" class="search-button">
           <svg class="icon-search" width="35pt" height="35pt" version="1.1" viewBox="100 150 500 300"
@@ -133,7 +133,7 @@
         </button>
 
       </form>
-    </div>
+    </header>
     <ul class="listeAutoComplete">
       <!-- Affiche la liste d’autocompletes -->
       <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
@@ -159,10 +159,10 @@
     </form> -->
 
     <!-- Catalogue -->
-    <div class="catalogue-container">
+    <section class="catalogue-container">
 
       <div v-if="!selectedCard" class="catalogue-invisible">
-        <div class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id">
+        <article class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id" style="background-color: transparent;">
           <h3 class="card-title">{{ bouteille.nom }}</h3>
           <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
           <p class="card-subtitle">{{ bouteille.pays }}</p>
@@ -170,10 +170,10 @@
           <div class="card-footer">
             <button class="btn" @click="selectCard(bouteille)">Buy Now</button>
           </div>
-        </div>
+        </article>
       </div>
 
-      <div class="card" v-else>
+      <article class="card" v-else>
         <div class="card-body">
           <img :src="selectedCard.image" alt="img-bouteille">
           <picture class="modal"><img :src="selectedCard.image" alt="img"></picture>
@@ -192,17 +192,18 @@
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-    </div>
+    </section>
 
-    <div v-if="!recomandation === true">
-      <h2>Nous recommandons</h2>
+    <!-- Section Recomendation -->
+    <section class="catalogue__section"  v-if="recomandation === true">
+      <h2 class="catalogue_titre-section">Nous recommandons</h2>
       <!-- <div class="carousel-container"> -->
-      <div>
+      <div class="container">
         <!-- <slide v-for="bouteille in catalogue" :key="bouteille.id"> -->
         <div v-for="bouteille in catalogue" :key="bouteille.id">
-          <div v-if="bouteille.id > 10" class="card">
+          <article v-if="bouteille.id > 10" class="card">
             <div class="card-body">
               <img :src="bouteille.image" alt="img-bouteille">
               <picture class="modal"><img :src="bouteille.image" alt="img"></picture>
@@ -221,14 +222,15 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
       <!-- </slide> -->
       <!-- </carousel> -->
-    </div>
+    </section>
   </div>
-</div></template>
+
+</template>
 
 <!-- recherche sans afficher catalogue au premier telechargement avec 2 lettres-->
 <script>
@@ -238,10 +240,10 @@ import { Carousel, Slide } from 'vue-carousel';
 let recomandation = null;
 
 export default {
-  components: {
-    Carousel,
-    Slide,
-  },
+  // components: {
+  //   Carousel,
+  //   Slide,
+  // },
   data() {
     return {
       catalogue: [],
@@ -249,6 +251,8 @@ export default {
       searchDelay: 500, // délai avant pousser la requette
       searchTimerId: null, // délai de minuterie d’id
       searchResults: [], // liste d’autocompletes
+      selectedCard: null,
+      recomandation: true,
     };
   },
   mounted() { this.fetchCataloguePlein() },
@@ -257,9 +261,9 @@ export default {
       axios
         .get("api/bouteille", { params: { query: this.searchQuery } })
         .then((response) => {
-          //console.log(response.data);
+          console.log(response.data);
           this.catalogue = response.data.data;
-          this.searchResults = this.filteredCatalogue.slice(0, 10); // sélectionne les 5 premiers résultats filtrés
+          this.searchResults = this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
         })
         .catch((error) => console.log(error));
       recomandation = true;
@@ -283,6 +287,7 @@ export default {
       this.searchQuery = result.nom; // choisi le résultat
       this.selectedCard = result; // installe la carte sélectionnée
       this.searchResults = []; // effacer la liste des autocompletes
+      this.recomandation = false;
     },
     selectCard(card) {
       this.selectedCard = card; // choisi le résultat
@@ -292,7 +297,7 @@ export default {
         .get('/api/bouteille')
         .then((response) => {
           this.catalogue = response.data.data;
-          this.catalogue = this.catalogue.slice(0, 5);
+          this.catalogue = this.catalogue.slice(0, 6);
           console.log(this.catalogue);
         })
         .catch(error => console.log(error))

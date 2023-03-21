@@ -17,7 +17,7 @@ export default {
             users: [],
         };
     },
-    mounted(){this.fetchUsers()},
+    onMounted(){this.fetchUsers()},
     methods: {
         fetchUsers(){
             axios.get("api/user")
@@ -25,10 +25,11 @@ export default {
                 if (response.status >= 200 && response.status < 300){
 
                     return this.users = response.data.data;
+                    console.log(this.users);
                 }else{
                     console.log ("oopsy poopsy")
                 }                
-                // console.log(this.users)              
+                console.log(this.users)              
             })
             .catch((error) => console.log(error))
         }

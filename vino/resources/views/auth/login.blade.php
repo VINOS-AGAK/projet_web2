@@ -4,34 +4,39 @@
     <div class="container-signup">
 
         <div class="header-form">
-            <h3>Log in</h3>
+            <h3>Se connecter</h3>
         </div>
 
         <div class="container-form">
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-                <p class="text-form">Log in to your account</p>
+                <p class="text-form">Connectez-vous à votre compte</p>
+                <div>
 
-                <label for="email" class="email">{{ __('Email Address') }}</label>
-                <input id="email" type="email" placeholder="email" class="email @error('email') is-invalid @enderror"
-                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <label for="email" class="email">{{ __('Adresse e-mail') }}</label>
+                    <input id="email" type="email" placeholder="courriel" class="email @error('email') is-invalid @enderror"
+                        name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>
+    
+                    @error('email')
+                        <span class="text-form" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div>
 
-                @error('email')
-                    <span class="text-form" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                    <label for="password" class="password">{{ __('Mot de passe') }}</label>
+                    <input id="password" type="password" class="password @error('password') is-invalid @enderror"
+                        name="password" required autocomplete="current-password">
+    
+                    @error('password')
+                        <span class="text-form" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
 
-                <label for="password" class="password">{{ __('Password') }}</label>
-                <input id="password" type="password" class="password @error('password') is-invalid @enderror"
-                    name="password" required autocomplete="current-password">
-
-                @error('password')
-                    <span class="text-form" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
 
                 {{-- <input type="submit" value="submit" class="submit"> --}}
 
@@ -42,21 +47,21 @@
                                 {{ old('remember') ? 'checked' : '' }}>
 
                             <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
+                                {{ __('Se souvenir de moi') }}
                             </label>
                         </div>
                     </div>
                 </div>
 
-                <input type="submit" class="submit">
+                <input type="submit" class="submit" value="Soumettre">
 
                 @if (Route::has('password.request'))
                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
+                        {{ __('Mot de passe oublié?') }}
                     </a>
                 @endif
 
-                <p class="text-form">Don't have an account? Click <a class="text-login" href="{{ route('register') }}">here</a> to Sign up.</p>
+                <p class="text-form">Vous n’avez pas de compte ? Cliquez  <a class="text-login" href="{{ route('register') }}">isi</a> pour vous inscrire.</p>
 
                 {{-- @if (Route::has('register'))
                     <a href="{{ route('register') }}">{{ __('Register') }}</a>

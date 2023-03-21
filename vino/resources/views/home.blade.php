@@ -5,7 +5,7 @@
     <div class="accueil-container">
         <div class="accueil-overlay">
 
-            <p class="accueil-paragraph">Access to my cellier</p>
+            <p class="accueil-paragraph">Accès à mon cellier</p>
             <button class="accueil-button"><a href="/cellier">@lang('lang.mes_cellier')</a></button>
 
         </div>

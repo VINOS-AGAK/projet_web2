@@ -5,7 +5,7 @@
     <div class="site-header">
       <form class="search" action="#" method="GET">
         <!-- <input placeholder="@lang('lang.recherche_un_vin')" type="search" name="query"> -->
-        <input placeholder="recherche vin lang todo:" type="search" name="query" v-model="searchQuery"
+        <input placeholder="Recherche dans catalogue" type="search" name="query" v-model="searchQuery"
           @input="handleInput">
         <button type="submit" class="search-button">
           <svg class="icon-search" width="35pt" height="35pt" version="1.1" viewBox="100 150 500 300"
@@ -197,7 +197,7 @@
     </div>
 
     <div v-if="!recomandation === true">
-      <h3>Nous recommandons</h3>
+      <h2 class="catalogue_titre-section">Nous recommandons</h2>
       <!-- <div class="carousel-container"> -->
       <div>
         <!-- <slide v-for="bouteille in catalogue" :key="bouteille.id"> -->

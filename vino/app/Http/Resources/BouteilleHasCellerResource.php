@@ -14,6 +14,10 @@ class BouteilleHasCellerResource extends JsonResource
      */
     public function toArray($request)
     {
+
+        // $bouteille = DB::table('bouteille__has__cellier')
+        // ->join('vino__bouteille', )
+
         // return parent::toArray($request);
         return [
             'vino__bouteille_id'=> $this->vino__bouteille_id,
@@ -26,6 +30,6 @@ class BouteilleHasCellerResource extends JsonResource
             'pays'=> $this->pays,
             'prix_saq'=> $this->prix_saq,
             'format'=> $this->format,
-        ];
+        ]; 
     }
 }

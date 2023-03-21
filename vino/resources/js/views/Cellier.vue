@@ -12,28 +12,24 @@ import { onMounted } from 'vue';
 
 
 export default {
-    data(){
-        return{
-            users: [],
-        };
+    name: "main",
+    data() {
+        return {
+            user: [],
+        }
     },
-    onMounted(){this.fetchUsers()},
+    mounted() {
+        this.fetchUser();
+    },
     methods: {
-        fetchUsers(){
-            axios.get("api/user")
-            .then((response)=>{
-                if (response.status >= 200 && response.status < 300){
-
-                    return this.users = response.data.data;
-                    console.log(this.users);
-                }else{
-                    console.log ("oopsy poopsy")
-                }                
-                console.log(this.users)              
-            })
-            .catch((error) => console.log(error))
+        fetchUser(){
+            axios
+            .get("api/user")
         }
     }
+    // mounted() {
+    //     console.log(this.loggedUser);
+    // },
 }
 </script>
 

@@ -29,7 +29,7 @@
   </div>
 </nav> -->
 
-<div class="liste-container">
+<section class="liste-container">
   
   <!-- search bar -->
   <form class=" liste-search " action="{{ route('liste-bouteilles') }}" method="GET">
@@ -40,7 +40,7 @@
    
   </form>
 <!-- wine list -->
-<div class="container">
+  <article class="container">
 
     @forelse($bouteilles as $bouteille)
     <div class="card">
@@ -87,9 +87,9 @@
     </div>
     @endforelse
 
-  </div>
+  </article>
 
-</div>
+</section>
 
               
                

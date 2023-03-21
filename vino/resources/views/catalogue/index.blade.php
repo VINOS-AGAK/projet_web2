@@ -10,7 +10,7 @@
 
 <body>
   @forelse($catalogue as $catalogue)
-  <div class="catalogue-container">
+  <article class="catalogue-container">
     <div class="catalogue-image">
       <img src="{{ asset($catalogue->image)}}" alt="{{ $catalogue->nom }}" />
     </div>
@@ -142,7 +142,7 @@
         </div>
       </ul>
     </div>
-  </div>
+  </article>
 
   
   @empty

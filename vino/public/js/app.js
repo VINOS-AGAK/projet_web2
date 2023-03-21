@@ -1,21 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "../node_modules/vue-carousel/dist/vue-carousel.min.js":
-/*!*************************************************************!*\
-  !*** ../node_modules/vue-carousel/dist/vue-carousel.min.js ***!
-  \*************************************************************/
-/***/ ((module) => {
-
-/*!
- * vue-carousel v0.18.0-alpha
- * (c) 2019 todd.beauchamp@ssense.com
- * https://github.com/ssense/vue-carousel#readme
- */
-!function(t,e){ true?module.exports=e():0}(window,function(){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var i=e[r]={i:r,l:!1,exports:{}};return t[r].call(i.exports,i,i.exports,n),i.l=!0,i.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var i in t)n.d(r,i,function(e){return t[e]}.bind(null,i));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=53)}([function(t,e,n){var r=n(30)("wks"),i=n(15),o=n(3).Symbol,a="function"==typeof o;(t.exports=function(t){return r[t]||(r[t]=a&&o[t]||(a?o:i)("Symbol."+t))}).store=r},function(t,e){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,e,n){var r=n(3),i=n(11),o=n(6),a=n(10),s=n(29),u=function(t,e,n){var c,l,f,d,h=t&u.F,p=t&u.G,g=t&u.S,v=t&u.P,y=t&u.B,m=p?r:g?r[e]||(r[e]={}):(r[e]||{}).prototype,b=p?i:i[e]||(i[e]={}),x=b.prototype||(b.prototype={});for(c in p&&(n=e),n)f=((l=!h&&m&&void 0!==m[c])?m:n)[c],d=y&&l?s(f,r):v&&"function"==typeof f?s(Function.call,f):f,m&&a(m,c,f,t&u.U),b[c]!=f&&o(b,c,d),v&&x[c]!=f&&(x[c]=f)};r.core=i,u.F=1,u.G=2,u.S=4,u.P=8,u.B=16,u.W=32,u.U=64,u.R=128,t.exports=u},function(t,e){var n=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=n)},function(t,e,n){var r=n(7),i=n(40),o=n(20),a=Object.defineProperty;e.f=n(5)?Object.defineProperty:function(t,e,n){if(r(t),e=o(e,!0),r(n),i)try{return a(t,e,n)}catch(t){}if("get"in n||"set"in n)throw TypeError("Accessors not supported!");return"value"in n&&(t[e]=n.value),t}},function(t,e,n){t.exports=!n(1)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,e,n){var r=n(4),i=n(14);t.exports=n(5)?function(t,e,n){return r.f(t,e,i(1,n))}:function(t,e,n){return t[e]=n,t}},function(t,e,n){var r=n(8);t.exports=function(t){if(!r(t))throw TypeError(t+" is not an object!");return t}},function(t,e){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,e){var n={}.hasOwnProperty;t.exports=function(t,e){return n.call(t,e)}},function(t,e,n){var r=n(3),i=n(6),o=n(9),a=n(15)("src"),s=Function.toString,u=(""+s).split("toString");n(11).inspectSource=function(t){return s.call(t)},(t.exports=function(t,e,n,s){var c="function"==typeof n;c&&(o(n,"name")||i(n,"name",e)),t[e]!==n&&(c&&(o(n,a)||i(n,a,t[e]?""+t[e]:u.join(String(e)))),t===r?t[e]=n:s?t[e]?t[e]=n:i(t,e,n):(delete t[e],i(t,e,n)))})(Function.prototype,"toString",function(){return"function"==typeof this&&this[a]||s.call(this)})},function(t,e){var n=t.exports={version:"2.5.7"};"number"==typeof __e&&(__e=n)},function(t,e,n){var r=n(47),i=n(17);t.exports=function(t){return r(i(t))}},function(t,e,n){var r=n(48),i=n(33);t.exports=Object.keys||function(t){return r(t,i)}},function(t,e){t.exports=function(t,e){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:e}}},function(t,e){var n=0,r=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++n+r).toString(36))}},function(t,e,n){var r=n(17);t.exports=function(t){return Object(r(t))}},function(t,e){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,e){t.exports={}},function(t,e){var n={}.toString;t.exports=function(t){return n.call(t).slice(8,-1)}},function(t,e,n){var r=n(8);t.exports=function(t,e){if(!r(t))return t;var n,i;if(e&&"function"==typeof(n=t.toString)&&!r(i=n.call(t)))return i;if("function"==typeof(n=t.valueOf)&&!r(i=n.call(t)))return i;if(!e&&"function"==typeof(n=t.toString)&&!r(i=n.call(t)))return i;throw TypeError("Can't convert object to primitive value")}},function(t,e){t.exports=!1},function(t,e){e.f={}.propertyIsEnumerable},function(t,e){t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var n=function(t,e){var n=t[1]||"",r=t[3];if(!r)return n;if(e&&"function"==typeof btoa){var i=function(t){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(t))))+" */"}(r),o=r.sources.map(function(t){return"/*# sourceURL="+r.sourceRoot+t+" */"});return[n].concat(o).concat([i]).join("\n")}return[n].join("\n")}(e,t);return e[2]?"@media "+e[2]+"{"+n+"}":n}).join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var r={},i=0;i<this.length;i++){var o=this[i][0];"number"==typeof o&&(r[o]=!0)}for(i=0;i<t.length;i++){var a=t[i];"number"==typeof a[0]&&r[a[0]]||(n&&!a[2]?a[2]=n:n&&(a[2]="("+a[2]+") and ("+n+")"),e.push(a))}},e}},function(t,e,n){"use strict";function r(t,e){for(var n=[],r={},i=0;i<e.length;i++){var o=e[i],a=o[0],s={id:t+":"+i,css:o[1],media:o[2],sourceMap:o[3]};r[a]?r[a].parts.push(s):n.push(r[a]={id:a,parts:[s]})}return n}n.r(e),n.d(e,"default",function(){return p});var i="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!i)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var o={},a=i&&(document.head||document.getElementsByTagName("head")[0]),s=null,u=0,c=!1,l=function(){},f=null,d="data-vue-ssr-id",h="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function p(t,e,n,i){c=n,f=i||{};var a=r(t,e);return g(a),function(e){for(var n=[],i=0;i<a.length;i++){var s=a[i];(u=o[s.id]).refs--,n.push(u)}for(e?g(a=r(t,e)):a=[],i=0;i<n.length;i++){var u;if(0===(u=n[i]).refs){for(var c=0;c<u.parts.length;c++)u.parts[c]();delete o[u.id]}}}}function g(t){for(var e=0;e<t.length;e++){var n=t[e],r=o[n.id];if(r){r.refs++;for(var i=0;i<r.parts.length;i++)r.parts[i](n.parts[i]);for(;i<n.parts.length;i++)r.parts.push(y(n.parts[i]));r.parts.length>n.parts.length&&(r.parts.length=n.parts.length)}else{var a=[];for(i=0;i<n.parts.length;i++)a.push(y(n.parts[i]));o[n.id]={id:n.id,refs:1,parts:a}}}}function v(){var t=document.createElement("style");return t.type="text/css",a.appendChild(t),t}function y(t){var e,n,r=document.querySelector("style["+d+'~="'+t.id+'"]');if(r){if(c)return l;r.parentNode.removeChild(r)}if(h){var i=u++;r=s||(s=v()),e=b.bind(null,r,i,!1),n=b.bind(null,r,i,!0)}else r=v(),e=function(t,e){var n=e.css,r=e.media,i=e.sourceMap;if(r&&t.setAttribute("media",r),f.ssrId&&t.setAttribute(d,e.id),i&&(n+="\n/*# sourceURL="+i.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */"),t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}.bind(null,r),n=function(){r.parentNode.removeChild(r)};return e(t),function(r){if(r){if(r.css===t.css&&r.media===t.media&&r.sourceMap===t.sourceMap)return;e(t=r)}else n()}}var m=function(){var t=[];return function(e,n){return t[e]=n,t.filter(Boolean).join("\n")}}();function b(t,e,n,r){var i=n?"":r.css;if(t.styleSheet)t.styleSheet.cssText=m(e,i);else{var o=document.createTextNode(i),a=t.childNodes;a[e]&&t.removeChild(a[e]),a.length?t.insertBefore(o,a[e]):t.appendChild(o)}}},function(t,e,n){var r=n(95);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals),(0,n(24).default)("1c9d4ce3",r,!1,{})},function(t,e,n){var r=n(98);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals),(0,n(24).default)("6a175419",r,!1,{})},function(t,e,n){var r=n(100);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals),(0,n(24).default)("07c48036",r,!1,{})},function(t,e,n){var r=n(102);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals),(0,n(24).default)("6eff00d0",r,!1,{})},function(t,e,n){var r=n(39);t.exports=function(t,e,n){if(r(t),void 0===e)return t;switch(n){case 1:return function(n){return t.call(e,n)};case 2:return function(n,r){return t.call(e,n,r)};case 3:return function(n,r,i){return t.call(e,n,r,i)}}return function(){return t.apply(e,arguments)}}},function(t,e,n){var r=n(11),i=n(3),o=i["__core-js_shared__"]||(i["__core-js_shared__"]={});(t.exports=function(t,e){return o[t]||(o[t]=void 0!==e?e:{})})("versions",[]).push({version:r.version,mode:n(21)?"pure":"global",copyright:"© 2018 Denis Pushkarev (zloirock.ru)"})},function(t,e,n){var r=n(7),i=n(67),o=n(33),a=n(32)("IE_PROTO"),s=function(){},u=function(){var t,e=n(41)("iframe"),r=o.length;for(e.style.display="none",n(69).appendChild(e),e.src="javascript:",(t=e.contentWindow.document).open(),t.write("<script>document.F=Object<\/script>"),t.close(),u=t.F;r--;)delete u.prototype[o[r]];return u()};t.exports=Object.create||function(t,e){var n;return null!==t?(s.prototype=r(t),n=new s,s.prototype=null,n[a]=t):n=u(),void 0===e?n:i(n,e)}},function(t,e,n){var r=n(30)("keys"),i=n(15);t.exports=function(t){return r[t]||(r[t]=i(t))}},function(t,e){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,e,n){var r=n(4).f,i=n(9),o=n(0)("toStringTag");t.exports=function(t,e,n){t&&!i(t=n?t:t.prototype,o)&&r(t,o,{configurable:!0,value:e})}},function(t,e){e.f=Object.getOwnPropertySymbols},function(t,e,n){var r=n(48),i=n(33).concat("length","prototype");e.f=Object.getOwnPropertyNames||function(t){return r(t,i)}},function(t,e,n){var r=n(22),i=n(14),o=n(12),a=n(20),s=n(9),u=n(40),c=Object.getOwnPropertyDescriptor;e.f=n(5)?c:function(t,e){if(t=o(t),e=a(e,!0),u)try{return c(t,e)}catch(t){}if(s(t,e))return i(!r.f.call(t,e),t[e])}},function(t,e,n){"use strict";var r=n(3),i=n(9),o=n(19),a=n(85),s=n(20),u=n(1),c=n(36).f,l=n(37).f,f=n(4).f,d=n(87).trim,h=r.Number,p=h,g=h.prototype,v="Number"==o(n(31)(g)),y="trim"in String.prototype,m=function(t){var e=s(t,!1);if("string"==typeof e&&e.length>2){var n,r,i,o=(e=y?e.trim():d(e,3)).charCodeAt(0);if(43===o||45===o){if(88===(n=e.charCodeAt(2))||120===n)return NaN}else if(48===o){switch(e.charCodeAt(1)){case 66:case 98:r=2,i=49;break;case 79:case 111:r=8,i=55;break;default:return+e}for(var a,u=e.slice(2),c=0,l=u.length;c<l;c++)if((a=u.charCodeAt(c))<48||a>i)return NaN;return parseInt(u,r)}}return+e};if(!h(" 0o1")||!h("0b1")||h("+0x1")){h=function(t){var e=arguments.length<1?0:t,n=this;return n instanceof h&&(v?u(function(){g.valueOf.call(n)}):"Number"!=o(n))?a(new p(m(e)),n,h):m(e)};for(var b,x=n(5)?c(p):"MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger".split(","),P=0;x.length>P;P++)i(p,b=x[P])&&!i(h,b)&&f(h,b,l(p,b));h.prototype=g,g.constructor=h,n(10)(r,"Number",h)}},function(t,e){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,e,n){t.exports=!n(5)&&!n(1)(function(){return 7!=Object.defineProperty(n(41)("div"),"a",{get:function(){return 7}}).a})},function(t,e,n){var r=n(8),i=n(3).document,o=r(i)&&r(i.createElement);t.exports=function(t){return o?i.createElement(t):{}}},function(t,e,n){var r=n(43),i=Math.min;t.exports=function(t){return t>0?i(r(t),9007199254740991):0}},function(t,e){var n=Math.ceil,r=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?r:n)(t)}},function(t,e,n){"use strict";var r=n(7);t.exports=function(){var t=r(this),e="";return t.global&&(e+="g"),t.ignoreCase&&(e+="i"),t.multiline&&(e+="m"),t.unicode&&(e+="u"),t.sticky&&(e+="y"),e}},function(t,e,n){"use strict";var r=n(46),i=n(64),o=n(18),a=n(12);t.exports=n(65)(Array,"Array",function(t,e){this._t=a(t),this._i=0,this._k=e},function(){var t=this._t,e=this._k,n=this._i++;return!t||n>=t.length?(this._t=void 0,i(1)):i(0,"keys"==e?n:"values"==e?t[n]:[n,t[n]])},"values"),o.Arguments=o.Array,r("keys"),r("values"),r("entries")},function(t,e,n){var r=n(0)("unscopables"),i=Array.prototype;void 0==i[r]&&n(6)(i,r,{}),t.exports=function(t){i[r][t]=!0}},function(t,e,n){var r=n(19);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==r(t)?t.split(""):Object(t)}},function(t,e,n){var r=n(9),i=n(12),o=n(49)(!1),a=n(32)("IE_PROTO");t.exports=function(t,e){var n,s=i(t),u=0,c=[];for(n in s)n!=a&&r(s,n)&&c.push(n);for(;e.length>u;)r(s,n=e[u++])&&(~o(c,n)||c.push(n));return c}},function(t,e,n){var r=n(12),i=n(42),o=n(68);t.exports=function(t){return function(e,n,a){var s,u=r(e),c=i(u.length),l=o(a,c);if(t&&n!=n){for(;c>l;)if((s=u[l++])!=s)return!0}else for(;c>l;l++)if((t||l in u)&&u[l]===n)return t||l||0;return!t&&-1}}},function(t,e,n){var r=n(3),i=n(11),o=n(21),a=n(51),s=n(4).f;t.exports=function(t){var e=i.Symbol||(i.Symbol=o?{}:r.Symbol||{});"_"==t.charAt(0)||t in e||s(e,t,{value:a.f(t)})}},function(t,e,n){e.f=n(0)},function(t,e,n){var r=n(2);r(r.S+r.F,"Object",{assign:n(96)})},function(t,e,n){t.exports=n(103)},function(t,e,n){"use strict";var r=n(29),i=n(2),o=n(16),a=n(55),s=n(56),u=n(42),c=n(57),l=n(58);i(i.S+i.F*!n(60)(function(t){Array.from(t)}),"Array",{from:function(t){var e,n,i,f,d=o(t),h="function"==typeof this?this:Array,p=arguments.length,g=p>1?arguments[1]:void 0,v=void 0!==g,y=0,m=l(d);if(v&&(g=r(g,p>2?arguments[2]:void 0,2)),void 0==m||h==Array&&s(m))for(n=new h(e=u(d.length));e>y;y++)c(n,y,v?g(d[y],y):d[y]);else for(f=m.call(d),n=new h;!(i=f.next()).done;y++)c(n,y,v?a(f,g,[i.value,y],!0):i.value);return n.length=y,n}})},function(t,e,n){var r=n(7);t.exports=function(t,e,n,i){try{return i?e(r(n)[0],n[1]):e(n)}catch(e){var o=t.return;throw void 0!==o&&r(o.call(t)),e}}},function(t,e,n){var r=n(18),i=n(0)("iterator"),o=Array.prototype;t.exports=function(t){return void 0!==t&&(r.Array===t||o[i]===t)}},function(t,e,n){"use strict";var r=n(4),i=n(14);t.exports=function(t,e,n){e in t?r.f(t,e,i(0,n)):t[e]=n}},function(t,e,n){var r=n(59),i=n(0)("iterator"),o=n(18);t.exports=n(11).getIteratorMethod=function(t){if(void 0!=t)return t[i]||t["@@iterator"]||o[r(t)]}},function(t,e,n){var r=n(19),i=n(0)("toStringTag"),o="Arguments"==r(function(){return arguments}());t.exports=function(t){var e,n,a;return void 0===t?"Undefined":null===t?"Null":"string"==typeof(n=function(t,e){try{return t[e]}catch(t){}}(e=Object(t),i))?n:o?r(e):"Object"==(a=r(e))&&"function"==typeof e.callee?"Arguments":a}},function(t,e,n){var r=n(0)("iterator"),i=!1;try{var o=[7][r]();o.return=function(){i=!0},Array.from(o,function(){throw 2})}catch(t){}t.exports=function(t,e){if(!e&&!i)return!1;var n=!1;try{var o=[7],a=o[r]();a.next=function(){return{done:n=!0}},o[r]=function(){return a},t(o)}catch(t){}return n}},function(t,e,n){"use strict";n(62);var r=n(7),i=n(44),o=n(5),a=/./.toString,s=function(t){n(10)(RegExp.prototype,"toString",t,!0)};n(1)(function(){return"/a/b"!=a.call({source:"a",flags:"b"})})?s(function(){var t=r(this);return"/".concat(t.source,"/","flags"in t?t.flags:!o&&t instanceof RegExp?i.call(t):void 0)}):"toString"!=a.name&&s(function(){return a.call(this)})},function(t,e,n){n(5)&&"g"!=/./g.flags&&n(4).f(RegExp.prototype,"flags",{configurable:!0,get:n(44)})},function(t,e,n){for(var r=n(45),i=n(13),o=n(10),a=n(3),s=n(6),u=n(18),c=n(0),l=c("iterator"),f=c("toStringTag"),d=u.Array,h={CSSRuleList:!0,CSSStyleDeclaration:!1,CSSValueList:!1,ClientRectList:!1,DOMRectList:!1,DOMStringList:!1,DOMTokenList:!0,DataTransferItemList:!1,FileList:!1,HTMLAllCollection:!1,HTMLCollection:!1,HTMLFormElement:!1,HTMLSelectElement:!1,MediaList:!0,MimeTypeArray:!1,NamedNodeMap:!1,NodeList:!0,PaintRequestList:!1,Plugin:!1,PluginArray:!1,SVGLengthList:!1,SVGNumberList:!1,SVGPathSegList:!1,SVGPointList:!1,SVGStringList:!1,SVGTransformList:!1,SourceBufferList:!1,StyleSheetList:!0,TextTrackCueList:!1,TextTrackList:!1,TouchList:!1},p=i(h),g=0;g<p.length;g++){var v,y=p[g],m=h[y],b=a[y],x=b&&b.prototype;if(x&&(x[l]||s(x,l,d),x[f]||s(x,f,y),u[y]=d,m))for(v in r)x[v]||o(x,v,r[v],!0)}},function(t,e){t.exports=function(t,e){return{value:e,done:!!t}}},function(t,e,n){"use strict";var r=n(21),i=n(2),o=n(10),a=n(6),s=n(18),u=n(66),c=n(34),l=n(70),f=n(0)("iterator"),d=!([].keys&&"next"in[].keys()),h=function(){return this};t.exports=function(t,e,n,p,g,v,y){u(n,e,p);var m,b,x,P=function(t){if(!d&&t in O)return O[t];switch(t){case"keys":case"values":return function(){return new n(this,t)}}return function(){return new n(this,t)}},S=e+" Iterator",C="values"==g,w=!1,O=t.prototype,T=O[f]||O["@@iterator"]||g&&O[g],_=T||P(g),E=g?C?P("entries"):_:void 0,j="Array"==e&&O.entries||T;if(j&&(x=l(j.call(new t)))!==Object.prototype&&x.next&&(c(x,S,!0),r||"function"==typeof x[f]||a(x,f,h)),C&&T&&"values"!==T.name&&(w=!0,_=function(){return T.call(this)}),r&&!y||!d&&!w&&O[f]||a(O,f,_),s[e]=_,s[S]=h,g)if(m={values:C?_:P("values"),keys:v?_:P("keys"),entries:E},y)for(b in m)b in O||o(O,b,m[b]);else i(i.P+i.F*(d||w),e,m);return m}},function(t,e,n){"use strict";var r=n(31),i=n(14),o=n(34),a={};n(6)(a,n(0)("iterator"),function(){return this}),t.exports=function(t,e,n){t.prototype=r(a,{next:i(1,n)}),o(t,e+" Iterator")}},function(t,e,n){var r=n(4),i=n(7),o=n(13);t.exports=n(5)?Object.defineProperties:function(t,e){i(t);for(var n,a=o(e),s=a.length,u=0;s>u;)r.f(t,n=a[u++],e[n]);return t}},function(t,e,n){var r=n(43),i=Math.max,o=Math.min;t.exports=function(t,e){return(t=r(t))<0?i(t+e,0):o(t,e)}},function(t,e,n){var r=n(3).document;t.exports=r&&r.documentElement},function(t,e,n){var r=n(9),i=n(16),o=n(32)("IE_PROTO"),a=Object.prototype;t.exports=Object.getPrototypeOf||function(t){return t=i(t),r(t,o)?t[o]:"function"==typeof t.constructor&&t instanceof t.constructor?t.constructor.prototype:t instanceof Object?a:null}},function(t,e,n){var r=n(16),i=n(13);n(72)("keys",function(){return function(t){return i(r(t))}})},function(t,e,n){var r=n(2),i=n(11),o=n(1);t.exports=function(t,e){var n=(i.Object||{})[t]||Object[t],a={};a[t]=e(n),r(r.S+r.F*o(function(){n(1)}),"Object",a)}},function(t,e,n){n(50)("asyncIterator")},function(t,e,n){"use strict";var r=n(3),i=n(9),o=n(5),a=n(2),s=n(10),u=n(75).KEY,c=n(1),l=n(30),f=n(34),d=n(15),h=n(0),p=n(51),g=n(50),v=n(76),y=n(77),m=n(7),b=n(8),x=n(12),P=n(20),S=n(14),C=n(31),w=n(78),O=n(37),T=n(4),_=n(13),E=O.f,j=T.f,A=w.f,M=r.Symbol,N=r.JSON,k=N&&N.stringify,L=h("_hidden"),V=h("toPrimitive"),$={}.propertyIsEnumerable,I=l("symbol-registry"),D=l("symbols"),W=l("op-symbols"),F=Object.prototype,R="function"==typeof M,B=r.QObject,H=!B||!B.prototype||!B.prototype.findChild,z=o&&c(function(){return 7!=C(j({},"a",{get:function(){return j(this,"a",{value:7}).a}})).a})?function(t,e,n){var r=E(F,e);r&&delete F[e],j(t,e,n),r&&t!==F&&j(F,e,r)}:j,U=function(t){var e=D[t]=C(M.prototype);return e._k=t,e},X=R&&"symbol"==typeof M.iterator?function(t){return"symbol"==typeof t}:function(t){return t instanceof M},G=function(t,e,n){return t===F&&G(W,e,n),m(t),e=P(e,!0),m(n),i(D,e)?(n.enumerable?(i(t,L)&&t[L][e]&&(t[L][e]=!1),n=C(n,{enumerable:S(0,!1)})):(i(t,L)||j(t,L,S(1,{})),t[L][e]=!0),z(t,e,n)):j(t,e,n)},Y=function(t,e){m(t);for(var n,r=v(e=x(e)),i=0,o=r.length;o>i;)G(t,n=r[i++],e[n]);return t},q=function(t){var e=$.call(this,t=P(t,!0));return!(this===F&&i(D,t)&&!i(W,t))&&(!(e||!i(this,t)||!i(D,t)||i(this,L)&&this[L][t])||e)},J=function(t,e){if(t=x(t),e=P(e,!0),t!==F||!i(D,e)||i(W,e)){var n=E(t,e);return!n||!i(D,e)||i(t,L)&&t[L][e]||(n.enumerable=!0),n}},K=function(t){for(var e,n=A(x(t)),r=[],o=0;n.length>o;)i(D,e=n[o++])||e==L||e==u||r.push(e);return r},Q=function(t){for(var e,n=t===F,r=A(n?W:x(t)),o=[],a=0;r.length>a;)!i(D,e=r[a++])||n&&!i(F,e)||o.push(D[e]);return o};R||(s((M=function(){if(this instanceof M)throw TypeError("Symbol is not a constructor!");var t=d(arguments.length>0?arguments[0]:void 0),e=function(n){this===F&&e.call(W,n),i(this,L)&&i(this[L],t)&&(this[L][t]=!1),z(this,t,S(1,n))};return o&&H&&z(F,t,{configurable:!0,set:e}),U(t)}).prototype,"toString",function(){return this._k}),O.f=J,T.f=G,n(36).f=w.f=K,n(22).f=q,n(35).f=Q,o&&!n(21)&&s(F,"propertyIsEnumerable",q,!0),p.f=function(t){return U(h(t))}),a(a.G+a.W+a.F*!R,{Symbol:M});for(var Z="hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","),tt=0;Z.length>tt;)h(Z[tt++]);for(var et=_(h.store),nt=0;et.length>nt;)g(et[nt++]);a(a.S+a.F*!R,"Symbol",{for:function(t){return i(I,t+="")?I[t]:I[t]=M(t)},keyFor:function(t){if(!X(t))throw TypeError(t+" is not a symbol!");for(var e in I)if(I[e]===t)return e},useSetter:function(){H=!0},useSimple:function(){H=!1}}),a(a.S+a.F*!R,"Object",{create:function(t,e){return void 0===e?C(t):Y(C(t),e)},defineProperty:G,defineProperties:Y,getOwnPropertyDescriptor:J,getOwnPropertyNames:K,getOwnPropertySymbols:Q}),N&&a(a.S+a.F*(!R||c(function(){var t=M();return"[null]"!=k([t])||"{}"!=k({a:t})||"{}"!=k(Object(t))})),"JSON",{stringify:function(t){for(var e,n,r=[t],i=1;arguments.length>i;)r.push(arguments[i++]);if(n=e=r[1],(b(e)||void 0!==t)&&!X(t))return y(e)||(e=function(t,e){if("function"==typeof n&&(e=n.call(this,t,e)),!X(e))return e}),r[1]=e,k.apply(N,r)}}),M.prototype[V]||n(6)(M.prototype,V,M.prototype.valueOf),f(M,"Symbol"),f(Math,"Math",!0),f(r.JSON,"JSON",!0)},function(t,e,n){var r=n(15)("meta"),i=n(8),o=n(9),a=n(4).f,s=0,u=Object.isExtensible||function(){return!0},c=!n(1)(function(){return u(Object.preventExtensions({}))}),l=function(t){a(t,r,{value:{i:"O"+ ++s,w:{}}})},f=t.exports={KEY:r,NEED:!1,fastKey:function(t,e){if(!i(t))return"symbol"==typeof t?t:("string"==typeof t?"S":"P")+t;if(!o(t,r)){if(!u(t))return"F";if(!e)return"E";l(t)}return t[r].i},getWeak:function(t,e){if(!o(t,r)){if(!u(t))return!0;if(!e)return!1;l(t)}return t[r].w},onFreeze:function(t){return c&&f.NEED&&u(t)&&!o(t,r)&&l(t),t}}},function(t,e,n){var r=n(13),i=n(35),o=n(22);t.exports=function(t){var e=r(t),n=i.f;if(n)for(var a,s=n(t),u=o.f,c=0;s.length>c;)u.call(t,a=s[c++])&&e.push(a);return e}},function(t,e,n){var r=n(19);t.exports=Array.isArray||function(t){return"Array"==r(t)}},function(t,e,n){var r=n(12),i=n(36).f,o={}.toString,a="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[];t.exports.f=function(t){return a&&"[object Window]"==o.call(t)?function(t){try{return i(t)}catch(t){return a.slice()}}(t):i(r(t))}},function(t,e,n){var r=n(2);r(r.S,"Math",{sign:n(80)})},function(t,e){t.exports=Math.sign||function(t){return 0==(t=+t)||t!=t?t:t<0?-1:1}},function(t,e,n){n(82)("match",1,function(t,e,n){return[function(n){"use strict";var r=t(this),i=void 0==n?void 0:n[e];return void 0!==i?i.call(n,r):new RegExp(n)[e](String(r))},n]})},function(t,e,n){"use strict";var r=n(6),i=n(10),o=n(1),a=n(17),s=n(0);t.exports=function(t,e,n){var u=s(t),c=n(a,u,""[t]),l=c[0],f=c[1];o(function(){var e={};return e[u]=function(){return 7},7!=""[t](e)})&&(i(String.prototype,t,l),r(RegExp.prototype,u,2==e?function(t,e){return f.call(t,this,e)}:function(t){return f.call(t,this)}))}},function(t,e,n){"use strict";var r=n(2),i=n(39),o=n(16),a=n(1),s=[].sort,u=[1,2,3];r(r.P+r.F*(a(function(){u.sort(void 0)})||!a(function(){u.sort(null)})||!n(84)(s)),"Array",{sort:function(t){return void 0===t?s.call(o(this)):s.call(o(this),i(t))}})},function(t,e,n){"use strict";var r=n(1);t.exports=function(t,e){return!!t&&r(function(){e?t.call(null,function(){},1):t.call(null)})}},function(t,e,n){var r=n(8),i=n(86).set;t.exports=function(t,e,n){var o,a=e.constructor;return a!==n&&"function"==typeof a&&(o=a.prototype)!==n.prototype&&r(o)&&i&&i(t,o),t}},function(t,e,n){var r=n(8),i=n(7),o=function(t,e){if(i(t),!r(e)&&null!==e)throw TypeError(e+": can't set as prototype!")};t.exports={set:Object.setPrototypeOf||("__proto__"in{}?function(t,e,r){try{(r=n(29)(Function.call,n(37).f(Object.prototype,"__proto__").set,2))(t,[]),e=!(t instanceof Array)}catch(t){e=!0}return function(t,n){return o(t,n),e?t.__proto__=n:r(t,n),t}}({},!1):void 0),check:o}},function(t,e,n){var r=n(2),i=n(17),o=n(1),a=n(88),s="["+a+"]",u=RegExp("^"+s+s+"*"),c=RegExp(s+s+"*$"),l=function(t,e,n){var i={},s=o(function(){return!!a[t]()||"​"!="​"[t]()}),u=i[t]=s?e(f):a[t];n&&(i[n]=u),r(r.P+r.F*s,"String",i)},f=l.trim=function(t,e){return t=String(i(t)),1&e&&(t=t.replace(u,"")),2&e&&(t=t.replace(c,"")),t};t.exports=l},function(t,e){t.exports="\t\n\v\f\r   ᠎             　\u2028\u2029\ufeff"},function(t,e,n){"use strict";var r=n(2),i=n(49)(!0);r(r.P,"Array",{includes:function(t){return i(this,t,arguments.length>1?arguments[1]:void 0)}}),n(46)("includes")},function(t,e,n){"use strict";var r=n(2),i=n(91);r(r.P+r.F*n(93)("includes"),"String",{includes:function(t){return!!~i(this,t,"includes").indexOf(t,arguments.length>1?arguments[1]:void 0)}})},function(t,e,n){var r=n(92),i=n(17);t.exports=function(t,e,n){if(r(e))throw TypeError("String#"+n+" doesn't accept regex!");return String(i(t))}},function(t,e,n){var r=n(8),i=n(19),o=n(0)("match");t.exports=function(t){var e;return r(t)&&(void 0!==(e=t[o])?!!e:"RegExp"==i(t))}},function(t,e,n){var r=n(0)("match");t.exports=function(t){var e=/./;try{"/./"[t](e)}catch(n){try{return e[r]=!1,!"/./"[t](e)}catch(t){}}return!0}},function(t,e,n){"use strict";var r=n(25);n.n(r).a},function(t,e,n){(t.exports=n(23)(!1)).push([t.i,'\n.VueCarousel-navigation-button[data-v-453ad8cd] {\n  position: absolute;\n  top: 50%;\n  box-sizing: border-box;\n  color: #000;\n  text-decoration: none;\n  appearance: none;\n  border: none;\n  background-color: transparent;\n  padding: 0;\n  cursor: pointer;\n  outline: none;\n}\n.VueCarousel-navigation-button[data-v-453ad8cd]:focus {\n  outline: 1px solid lightblue;\n}\n.VueCarousel-navigation-next[data-v-453ad8cd] {\n  right: 0;\n  transform: translateY(-50%) translateX(100%);\n  font-family: "system";\n}\n.VueCarousel-navigation-prev[data-v-453ad8cd] {\n  left: 0;\n  transform: translateY(-50%) translateX(-100%);\n  font-family: "system";\n}\n.VueCarousel-navigation--disabled[data-v-453ad8cd] {\n  opacity: 0.5;\n  cursor: default;\n}\n\n/* Define the "system" font family */\n@font-face {\n  font-family: system;\n  font-style: normal;\n  font-weight: 300;\n  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),\n    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Symbol"),\n    local("Roboto-Light"), local("DroidSans"), local("Tahoma");\n}\n',""])},function(t,e,n){"use strict";var r=n(13),i=n(35),o=n(22),a=n(16),s=n(47),u=Object.assign;t.exports=!u||n(1)(function(){var t={},e={},n=Symbol(),r="abcdefghijklmnopqrst";return t[n]=7,r.split("").forEach(function(t){e[t]=t}),7!=u({},t)[n]||Object.keys(u({},e)).join("")!=r})?function(t,e){for(var n=a(t),u=arguments.length,c=1,l=i.f,f=o.f;u>c;)for(var d,h=s(arguments[c++]),p=l?r(h).concat(l(h)):r(h),g=p.length,v=0;g>v;)f.call(h,d=p[v++])&&(n[d]=h[d]);return n}:u},function(t,e,n){"use strict";var r=n(26);n.n(r).a},function(t,e,n){(t.exports=n(23)(!1)).push([t.i,"\n.VueCarousel-pagination[data-v-438fd353] {\n  width: 100%;\n  text-align: center;\n}\n.VueCarousel-pagination--top-overlay[data-v-438fd353] {\n  position: absolute;\n  top: 0;\n}\n.VueCarousel-pagination--bottom-overlay[data-v-438fd353] {\n  position: absolute;\n  bottom: 0;\n}\n.VueCarousel-dot-container[data-v-438fd353] {\n  display: inline-block;\n  margin: 0 auto;\n  padding: 0;\n}\n.VueCarousel-dot[data-v-438fd353] {\n  display: inline-block;\n  cursor: pointer;\n  appearance: none;\n  border: none;\n  background-clip: content-box;\n  box-sizing: content-box;\n  padding: 0;\n  border-radius: 100%;\n  outline: none;\n}\n.VueCarousel-dot[data-v-438fd353]:focus {\n  outline: 1px solid lightblue;\n}\n",""])},function(t,e,n){"use strict";var r=n(27);n.n(r).a},function(t,e,n){(t.exports=n(23)(!1)).push([t.i,"\n.VueCarousel-slide {\n  flex-basis: inherit;\n  flex-grow: 0;\n  flex-shrink: 0;\n  user-select: none;\n  backface-visibility: hidden;\n  -webkit-touch-callout: none;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  outline: none;\n}\n.VueCarousel-slide-adjustableHeight {\n  display: table;\n  flex-basis: auto;\n  width: 100%;\n}\n",""])},function(t,e,n){"use strict";var r=n(28);n.n(r).a},function(t,e,n){(t.exports=n(23)(!1)).push([t.i,"\n.VueCarousel {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n}\n.VueCarousel--reverse {\n  flex-direction: column-reverse;\n}\n.VueCarousel-wrapper {\n  width: 100%;\n  position: relative;\n  overflow: hidden;\n}\n.VueCarousel-inner {\n  display: flex;\n  flex-direction: row;\n  backface-visibility: hidden;\n}\n.VueCarousel-inner--center {\n  justify-content: center;\n}\n",""])},function(t,e,n){"use strict";n.r(e);var r=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"VueCarousel",class:{"VueCarousel--reverse":"top"===t.paginationPosition}},[n("div",{ref:"VueCarousel-wrapper",staticClass:"VueCarousel-wrapper"},[n("div",{ref:"VueCarousel-inner",class:["VueCarousel-inner",{"VueCarousel-inner--center":t.isCenterModeEnabled}],style:{transform:"translate("+t.currentOffset+"px, 0)",transition:t.dragging?"none":t.transitionStyle,"ms-flex-preferred-size":t.slideWidth+"px","webkit-flex-basis":t.slideWidth+"px","flex-basis":t.slideWidth+"px",visibility:t.slideWidth?"visible":"hidden",height:""+t.currentHeight,"padding-left":t.padding+"px","padding-right":t.padding+"px"}},[t._t("default")],2)]),t._v(" "),t.navigationEnabled?t._t("navigation",[t.isNavigationRequired?n("navigation",{attrs:{clickTargetSize:t.navigationClickTargetSize,nextLabel:t.navigationNextLabel,prevLabel:t.navigationPrevLabel},on:{navigationclick:t.handleNavigation}}):t._e()]):t._e(),t._v(" "),t.paginationEnabled?t._t("pagination",[n("pagination",{on:{paginationclick:function(e){t.goToPage(e,"pagination")}}})]):t._e()],2)};r._withStripped=!0,n(54),n(61),n(63),n(45),n(71),n(73),n(74),n(79),n(81),n(83),n(38),n(89),n(90);var i={props:{autoplay:{type:Boolean,default:!1},autoplayTimeout:{type:Number,default:2e3},autoplayHoverPause:{type:Boolean,default:!0},autoplayDirection:{type:String,default:"forward"}},data:function(){return{autoplayInterval:null}},destroyed:function(){this.$isServer||(this.$el.removeEventListener("mouseenter",this.pauseAutoplay),this.$el.removeEventListener("mouseleave",this.startAutoplay))},methods:{pauseAutoplay:function(){this.autoplayInterval&&(this.autoplayInterval=clearInterval(this.autoplayInterval))},startAutoplay:function(){this.autoplay&&(this.autoplayInterval=setInterval(this.autoplayAdvancePage,this.autoplayTimeout))},restartAutoplay:function(){this.pauseAutoplay(),this.startAutoplay()},autoplayAdvancePage:function(){this.advancePage(this.autoplayDirection)}},mounted:function(){!this.$isServer&&this.autoplayHoverPause&&(this.$el.addEventListener("mouseenter",this.pauseAutoplay),this.$el.addEventListener("mouseleave",this.startAutoplay)),this.startAutoplay()}},o=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"VueCarousel-navigation"},[n("button",{staticClass:"VueCarousel-navigation-button VueCarousel-navigation-prev",class:{"VueCarousel-navigation--disabled":!t.canAdvanceBackward},style:"padding: "+t.clickTargetSize+"px; margin-right: -"+t.clickTargetSize+"px;",attrs:{type:"button","aria-label":"Previous page",tabindex:t.canAdvanceBackward?0:-1},domProps:{innerHTML:t._s(t.prevLabel)},on:{click:function(e){e.preventDefault(),t.triggerPageAdvance("backward")}}}),t._v(" "),n("button",{staticClass:"VueCarousel-navigation-button VueCarousel-navigation-next",class:{"VueCarousel-navigation--disabled":!t.canAdvanceForward},style:"padding: "+t.clickTargetSize+"px; margin-left: -"+t.clickTargetSize+"px;",attrs:{type:"button","aria-label":"Next page",tabindex:t.canAdvanceForward?0:-1},domProps:{innerHTML:t._s(t.nextLabel)},on:{click:function(e){e.preventDefault(),t.triggerPageAdvance("forward")}}})])};o._withStripped=!0;var a={name:"navigation",inject:["carousel"],props:{clickTargetSize:{type:Number,default:8},nextLabel:{type:String,default:"&#9654"},prevLabel:{type:String,default:"&#9664"}},computed:{canAdvanceForward:function(){return this.carousel.canAdvanceForward||!1},canAdvanceBackward:function(){return this.carousel.canAdvanceBackward||!1}},methods:{triggerPageAdvance:function(t){this.$emit("navigationclick",t)}}};function s(t,e,n,r,i,o,a,s){var u,c="function"==typeof t?t.options:t;if(e&&(c.render=e,c.staticRenderFns=n,c._compiled=!0),r&&(c.functional=!0),o&&(c._scopeId="data-v-"+o),a?(u=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),i&&i.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(a)},c._ssrRegister=u):i&&(u=s?function(){i.call(this,this.$root.$options.shadowRoot)}:i),u)if(c.functional){c._injectStyles=u;var l=c.render;c.render=function(t,e){return u.call(e),l(t,e)}}else{var f=c.beforeCreate;c.beforeCreate=f?[].concat(f,u):[u]}return{exports:t,options:c}}n(94);var u=s(a,o,[],!1,null,"453ad8cd",null);u.options.__file="src/Navigation.vue";var c=u.exports,l=function(){var t,e=this,n=e.$createElement,r=e._self._c||n;return r("div",{directives:[{name:"show",rawName:"v-show",value:e.carousel.pageCount>1,expression:"carousel.pageCount > 1"}],staticClass:"VueCarousel-pagination",class:(t={},t["VueCarousel-pagination--"+e.paginationPositionModifierName]=e.paginationPositionModifierName,t)},[r("div",{staticClass:"VueCarousel-dot-container",style:e.dotContainerStyle,attrs:{role:"tablist"}},e._l(e.paginationCount,function(t,n){return r("button",{key:t+"_"+n,staticClass:"VueCarousel-dot",class:{"VueCarousel-dot--active":e.isCurrentDot(n)},style:e.dotStyle(n),attrs:{"aria-hidden":"false",role:"tab",title:e.getDotTitle(n),value:e.getDotTitle(n),"aria-label":e.getDotTitle(n),"aria-selected":e.isCurrentDot(n)?"true":"false"},on:{click:function(t){e.goToPage(n)}}})}))])};l._withStripped=!0,n(52);var f={name:"pagination",inject:["carousel"],computed:{paginationPositionModifierName:function(){var t=this.carousel.paginationPosition;if(!(t.indexOf("overlay")<0))return t},paginationPropertyBasedOnPosition:function(){return this.carousel.paginationPosition.indexOf("top")>=0?"bottom":"top"},paginationCount:function(){return this.carousel&&this.carousel.scrollPerPage?this.carousel.pageCount:this.carousel.slideCount||0},dotContainerStyle:function(){var t=this.carousel;if(-1===t.maxPaginationDotCount)return{"margin-top":"".concat(2*t.paginationPadding,"px")};var e=2*t.paginationPadding,n=t.maxPaginationDotCount*(t.paginationSize+e);return{"margin-top":"".concat(2*t.paginationPadding,"px"),overflow:"hidden",width:"".concat(n,"px"),margin:"0 auto","white-space":"nowrap"}}},methods:{goToPage:function(t){this.$emit("paginationclick",t)},isCurrentDot:function(t){return t===this.carousel.currentPage},getDotTitle:function(t){return this.carousel.$children[t].title?this.carousel.$children[t].title:"Item ".concat(t)},dotStyle:function(t){var e=this.carousel,n={};if(n["margin-".concat(this.paginationPropertyBasedOnPosition)]="".concat(2*e.paginationPadding,"px"),Object.assign(n,{padding:"".concat(e.paginationPadding,"px"),width:"".concat(e.paginationSize,"px"),height:"".concat(e.paginationSize,"px"),"background-color":"".concat(this.isCurrentDot(t)?e.paginationActiveColor:e.paginationColor)}),-1===e.maxPaginationDotCount)return n;var r=e.paginationSize+2*e.paginationPadding,i=e.pageCount-e.maxPaginationDotCount,o=0-r*(e.currentPage>i?i:e.currentPage<=e.maxPaginationDotCount/2?0:e.currentPage-Math.ceil(e.maxPaginationDotCount/2)+1);return Object.assign(n,{"-webkit-transform":"translate3d(".concat(o,"px,0,0)"),transform:"translate3d(".concat(o,"px,0,0)"),"-webkit-transition":"-webkit-transform ".concat(e.speed/1e3,"s"),transition:"transform ".concat(e.speed/1e3,"s")})}}},d=(n(97),s(f,l,[],!1,null,"438fd353",null));d.options.__file="src/Pagination.vue";var h=d.exports,p=function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"VueCarousel-slide",class:{"VueCarousel-slide-active":this.isActive,"VueCarousel-slide-center":this.isCenter,"VueCarousel-slide-adjustableHeight":this.isAdjustableHeight},attrs:{tabindex:"-1","aria-hidden":!this.isActive,role:"tabpanel"}},[this._t("default")],2)};p._withStripped=!0;var g={name:"slide",props:["title"],data:function(){return{width:null}},inject:["carousel"],mounted:function(){this.$isServer||this.$el.addEventListener("dragstart",function(t){return t.preventDefault()}),this.$el.addEventListener(this.carousel.isTouch?"touchend":"mouseup",this.onTouchEnd)},computed:{activeSlides:function(){for(var t=this.carousel,e=t.currentPage,n=t.breakpointSlidesPerPage,r=[],i=t.$children.filter(function(t){return t.$el&&t.$el.className.indexOf("VueCarousel-slide")>=0}).map(function(t){return t._uid}),o=0;o<n;){var a=i[e*n+o];r.push(a),o++}return r},isActive:function(){return this.activeSlides.indexOf(this._uid)>=0},isCenter:function(){var t=this.carousel.breakpointSlidesPerPage;return!(t%2==0||!this.isActive)&&this.activeSlides.indexOf(this._uid)===Math.floor(t/2)},isAdjustableHeight:function(){return this.carousel.adjustableHeight}},methods:{onTouchEnd:function(t){var e=this.carousel.isTouch&&t.changedTouches&&t.changedTouches.length>0?t.changedTouches[0].clientX:t.clientX,n=this.carousel.dragStartX-e;(0===this.carousel.minSwipeDistance||Math.abs(n)<this.carousel.minSwipeDistance)&&(this.$emit("slideclick",Object.assign({},t.currentTarget.dataset)),this.$emit("slide-click",Object.assign({},t.currentTarget.dataset)))}}},v=(n(99),s(g,p,[],!1,null,null,null));v.options.__file="src/Slide.vue";var y=v.exports;function m(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function b(t){return(b="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}var x={onwebkittransitionend:"webkitTransitionEnd",onmoztransitionend:"transitionend",onotransitionend:"oTransitionEnd otransitionend",ontransitionend:"transitionend"},P=function(){for(var t in x)if(t in window)return x[t]},S={name:"carousel",beforeUpdate:function(){this.computeCarouselWidth()},components:{Navigation:c,Pagination:h,Slide:y},data:function(){return{browserWidth:null,carouselWidth:0,currentPage:0,dragging:!1,dragMomentum:0,dragOffset:0,dragStartY:0,dragStartX:0,isTouch:"undefined"!=typeof window&&"ontouchstart"in window,offset:0,refreshRate:16,slideCount:0,transitionstart:"transitionstart",transitionend:"transitionend",currentHeight:"auto"}},mixins:[i],provide:function(){return{carousel:this}},props:{adjustableHeight:{type:Boolean,default:!1},adjustableHeightEasing:{type:String},centerMode:{type:Boolean,default:!1},easing:{type:String,validator:function(t){return-1!==["ease","linear","ease-in","ease-out","ease-in-out"].indexOf(t)||t.includes("cubic-bezier")},default:"ease"},loop:{type:Boolean,default:!1},minSwipeDistance:{type:Number,default:8},mouseDrag:{type:Boolean,default:!0},touchDrag:{type:Boolean,default:!0},navigateTo:{type:[Number,Array],default:0},navigationClickTargetSize:{type:Number,default:8},navigationEnabled:{type:Boolean,default:!1},navigationNextLabel:{type:String,default:"&#9654"},navigationPrevLabel:{type:String,default:"&#9664"},paginationActiveColor:{type:String,default:"#000000"},paginationColor:{type:String,default:"#efefef"},paginationEnabled:{type:Boolean,default:!0},paginationPadding:{type:Number,default:10},paginationPosition:{type:String,default:"bottom"},paginationSize:{type:Number,default:10},perPage:{type:Number,default:2},perPageCustom:{type:Array},resistanceCoef:{type:Number,default:20},scrollPerPage:{type:Boolean,default:!0},spacePadding:{type:Number,default:0},spacePaddingMaxOffsetFactor:{type:Number,default:0},speed:{type:Number,default:500},tagName:{type:String,default:"slide"},value:{type:Number},maxPaginationDotCount:{type:Number,default:-1},rtl:{type:Boolean,default:!1}},watch:{value:function(t){t!==this.currentPage&&(this.goToPage(t),this.render())},navigateTo:{immediate:!0,handler:function(t){var e=this;"object"===b(t)?(0==t[1]&&(this.dragging=!0,setTimeout(function(){e.dragging=!1},this.refreshRate)),this.$nextTick(function(){e.goToPage(t[0])})):this.$nextTick(function(){e.goToPage(t)})}},currentPage:function(t){this.$emit("pageChange",t),this.$emit("page-change",t),this.$emit("input",t)},autoplay:function(t){!1===t?this.pauseAutoplay():this.restartAutoplay()}},computed:{breakpointSlidesPerPage:function(){if(!this.perPageCustom)return this.perPage;var t=this.perPageCustom,e=this.browserWidth,n=t.sort(function(t,e){return t[0]>e[0]?-1:1}).filter(function(t){return e>=t[0]});return n[0]&&n[0][1]||this.perPage},canAdvanceForward:function(){return this.loop||this.offset<this.maxOffset},canAdvanceBackward:function(){return this.loop||this.currentPage>0},currentPerPage:function(){return!this.perPageCustom||this.$isServer?this.perPage:this.breakpointSlidesPerPage},currentOffset:function(){return this.isCenterModeEnabled?0:this.rtl?1*(this.offset-this.dragOffset):-1*(this.offset+this.dragOffset)},isHidden:function(){return this.carouselWidth<=0},maxOffset:function(){return Math.max(this.slideWidth*(this.slideCount-this.currentPerPage)-this.spacePadding*this.spacePaddingMaxOffsetFactor,0)},pageCount:function(){return this.scrollPerPage?Math.ceil(this.slideCount/this.currentPerPage):this.slideCount-this.currentPerPage+1},slideWidth:function(){return(this.carouselWidth-2*this.spacePadding)/this.currentPerPage},isNavigationRequired:function(){return this.slideCount>this.currentPerPage},isCenterModeEnabled:function(){return this.centerMode&&!this.isNavigationRequired},transitionStyle:function(){var t="".concat(this.speed/1e3,"s"),e="".concat(t," ").concat(this.easing," transform");return this.adjustableHeight?"".concat(e,", height ").concat(t," ").concat(this.adjustableHeightEasing||this.easing):e},padding:function(){var t=this.spacePadding;return t>0&&t}},methods:{getNextPage:function(){return this.currentPage<this.pageCount-1?this.currentPage+1:this.loop?0:this.currentPage},getPreviousPage:function(){return this.currentPage>0?this.currentPage-1:this.loop?this.pageCount-1:this.currentPage},advancePage:function(t){t&&"backward"===t&&this.canAdvanceBackward?this.goToPage(this.getPreviousPage(),"navigation"):(!t||t&&"backward"!==t)&&this.canAdvanceForward&&this.goToPage(this.getNextPage(),"navigation")},goToLastSlide:function(){var t=this;this.dragging=!0,setTimeout(function(){t.dragging=!1},this.refreshRate),this.$nextTick(function(){t.goToPage(t.pageCount)})},attachMutationObserver:function(){var t=this,e=window.MutationObserver||window.WebKitMutationObserver||window.MozMutationObserver;if(e){var n={attributes:!0,data:!0};if(this.adjustableHeight&&(n=function(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},r=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(r=r.concat(Object.getOwnPropertySymbols(n).filter(function(t){return Object.getOwnPropertyDescriptor(n,t).enumerable}))),r.forEach(function(e){m(t,e,n[e])})}return t}({},n,{childList:!0,subtree:!0,characterData:!0})),this.mutationObserver=new e(function(){t.$nextTick(function(){t.computeCarouselWidth(),t.computeCarouselHeight()})}),this.$parent.$el)for(var r=this.$el.getElementsByClassName("VueCarousel-inner"),i=0;i<r.length;i++)this.mutationObserver.observe(r[i],n)}},handleNavigation:function(t){this.advancePage(t),this.pauseAutoplay(),this.$emit("navigation-click",t)},detachMutationObserver:function(){this.mutationObserver&&this.mutationObserver.disconnect()},getBrowserWidth:function(){return this.browserWidth=window.innerWidth,this.browserWidth},getCarouselWidth:function(){for(var t=this.$el.getElementsByClassName("VueCarousel-inner"),e=0;e<t.length;e++)t[e].clientWidth>0&&(this.carouselWidth=t[e].clientWidth||0);return this.carouselWidth},getCarouselHeight:function(){var t=this;if(!this.adjustableHeight)return"auto";var e=this.currentPerPage*(this.currentPage+1)-1,n=function(t){return function(t){if(Array.isArray(t)){for(var e=0,n=new Array(t.length);e<t.length;e++)n[e]=t[e];return n}}(t)||function(t){if(Symbol.iterator in Object(t)||"[object Arguments]"===Object.prototype.toString.call(t))return Array.from(t)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}(Array(this.currentPerPage)).map(function(n,r){return t.getSlide(e+r)}).reduce(function(t,e){return Math.max(t,e&&e.$el.clientHeight||0)},0);return this.currentHeight=0===n?"auto":"".concat(n,"px"),this.currentHeight},getSlideCount:function(){var t=this;this.slideCount=this.$slots&&this.$slots.default&&this.$slots.default.filter(function(e){return e.tag&&null!==e.tag.match("^vue-component-\\d+-".concat(t.tagName,"$"))}).length||0},getSlide:function(t){var e=this;return this.$children.filter(function(t){return null!==t.$vnode.tag.match("^vue-component-\\d+-".concat(e.tagName,"$"))})[t]},goToPage:function(t,e){t>=0&&t<=this.pageCount&&(this.offset=this.scrollPerPage?Math.min(this.slideWidth*this.currentPerPage*t,this.maxOffset):this.slideWidth*t,this.autoplay&&!this.autoplayHoverPause&&this.restartAutoplay(),this.currentPage=t,"pagination"===e&&(this.pauseAutoplay(),this.$emit("pagination-click",t)))},onStart:function(t){2!=t.button&&(document.addEventListener(this.isTouch?"touchend":"mouseup",this.onEnd,!0),document.addEventListener(this.isTouch?"touchmove":"mousemove",this.onDrag,!0),this.startTime=t.timeStamp,this.dragging=!0,this.dragStartX=this.isTouch?t.touches[0].clientX:t.clientX,this.dragStartY=this.isTouch?t.touches[0].clientY:t.clientY)},onEnd:function(t){this.autoplay&&!this.autoplayHoverPause&&this.restartAutoplay(),this.pauseAutoplay();var e=this.isTouch?t.changedTouches[0].clientX:t.clientX,n=this.dragStartX-e;if(this.dragMomentum=n/(t.timeStamp-this.startTime),0!==this.minSwipeDistance&&Math.abs(n)>=this.minSwipeDistance){var r=this.scrollPerPage?this.slideWidth*this.currentPerPage:this.slideWidth;this.dragOffset=this.dragOffset+Math.sign(n)*(r/2)}this.rtl?this.offset-=this.dragOffset:this.offset+=this.dragOffset,this.dragOffset=0,this.dragging=!1,this.render(),document.removeEventListener(this.isTouch?"touchend":"mouseup",this.onEnd,!0),document.removeEventListener(this.isTouch?"touchmove":"mousemove",this.onDrag,!0)},onDrag:function(t){var e=this.isTouch?t.touches[0].clientX:t.clientX,n=this.isTouch?t.touches[0].clientY:t.clientY,r=this.dragStartX-e,i=this.dragStartY-n;if(!(this.isTouch&&Math.abs(r)<Math.abs(i))){t.stopImmediatePropagation(),this.dragOffset=r;var o=this.offset+this.dragOffset;this.rtl?0==this.offset&&this.dragOffset>0?this.dragOffset=Math.sqrt(this.resistanceCoef*this.dragOffset):this.offset==this.maxOffset&&this.dragOffset<0&&(this.dragOffset=-Math.sqrt(-this.resistanceCoef*this.dragOffset)):o<0?this.dragOffset=-Math.sqrt(-this.resistanceCoef*this.dragOffset):o>this.maxOffset&&(this.dragOffset=Math.sqrt(this.resistanceCoef*this.dragOffset))}},onResize:function(){var t=this;this.computeCarouselWidth(),this.computeCarouselHeight(),this.dragging=!0,this.render(),setTimeout(function(){t.dragging=!1},this.refreshRate)},render:function(){this.rtl?this.offset-=Math.max(1-this.currentPerPage,Math.min(Math.round(this.dragMomentum),this.currentPerPage-1))*this.slideWidth:this.offset+=Math.max(1-this.currentPerPage,Math.min(Math.round(this.dragMomentum),this.currentPerPage-1))*this.slideWidth;var t=this.scrollPerPage?this.slideWidth*this.currentPerPage:this.slideWidth,e=t*Math.floor(this.slideCount/(this.currentPerPage-1)),n=e+this.slideWidth*(this.slideCount%this.currentPerPage);this.offset>(e+n)/2?this.offset=n:this.offset=t*Math.round(this.offset/t),this.offset=Math.max(0,Math.min(this.offset,this.maxOffset)),this.currentPage=this.scrollPerPage?Math.round(this.offset/this.slideWidth/this.currentPerPage):Math.round(this.offset/this.slideWidth)},computeCarouselWidth:function(){this.getSlideCount(),this.getBrowserWidth(),this.getCarouselWidth(),this.setCurrentPageInBounds()},computeCarouselHeight:function(){this.getCarouselHeight()},setCurrentPageInBounds:function(){if(!this.canAdvanceForward&&this.scrollPerPage){var t=this.pageCount-1;this.currentPage=t>=0?t:0,this.offset=Math.max(0,Math.min(this.offset,this.maxOffset))}},handleTransitionStart:function(){this.$emit("transitionStart"),this.$emit("transition-start")},handleTransitionEnd:function(){this.$emit("transitionEnd"),this.$emit("transition-end")}},mounted:function(){window.addEventListener("resize",function(t,e,n){var r;return function(){var i=n&&!r;clearTimeout(r),r=setTimeout(function(){r=null,n||t.apply(void 0)},e),i&&t.apply(void 0)}}(this.onResize,this.refreshRate)),(this.isTouch&&this.touchDrag||this.mouseDrag)&&this.$refs["VueCarousel-wrapper"].addEventListener(this.isTouch?"touchstart":"mousedown",this.onStart),this.attachMutationObserver(),this.computeCarouselWidth(),this.computeCarouselHeight(),this.transitionstart=P(),this.$refs["VueCarousel-inner"].addEventListener(this.transitionstart,this.handleTransitionStart),this.transitionend=P(),this.$refs["VueCarousel-inner"].addEventListener(this.transitionend,this.handleTransitionEnd),this.$emit("mounted"),"backward"===this.autoplayDirection&&this.goToLastSlide()},beforeDestroy:function(){this.detachMutationObserver(),window.removeEventListener("resize",this.getBrowserWidth),this.$refs["VueCarousel-inner"].removeEventListener(this.transitionstart,this.handleTransitionStart),this.$refs["VueCarousel-inner"].removeEventListener(this.transitionend,this.handleTransitionEnd),this.$refs["VueCarousel-wrapper"].removeEventListener(this.isTouch?"touchstart":"mousedown",this.onStart)}},C=(n(101),s(S,r,[],!1,null,null,null));C.options.__file="src/Carousel.vue";var w=C.exports;n.d(e,"Carousel",function(){return w}),n.d(e,"Slide",function(){return y}),e.default={install:function(t){t.component("carousel",w),t.component("slide",y)}}}])});
-
-/***/ }),
-
 /***/ "./node_modules/@popperjs/core/lib/createPopper.js":
 /*!*********************************************************!*\
   !*** ./node_modules/@popperjs/core/lib/createPopper.js ***!
@@ -5407,382 +5392,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
@@ -5816,30 +5425,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "main",
   data: function data() {
     return {
-      users: []
+      user: []
     };
   },
-  onMounted: function onMounted() {
-    this.fetchUsers();
+  mounted: function mounted() {
+    this.fetchUser();
   },
   methods: {
-    fetchUsers: function fetchUsers() {
-      var _this = this;
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get("api/user").then(function (response) {
-        if (response.status >= 200 && response.status < 300) {
-          return _this.users = response.data.data;
-          console.log(_this.users);
-        } else {
-          console.log("oopsy poopsy");
-        }
-        console.log(_this.users);
-      })["catch"](function (error) {
-        return console.log(error);
-      });
+    fetchUser: function fetchUser() {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("api/user");
     }
   }
+  // mounted() {
+  //     console.log(this.loggedUser);
+  // },
 });
 
 /***/ }),
@@ -5932,6 +5534,89 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      bouteilleHasCellier: []
+    };
+  },
+  mounted: function mounted() {
+    this.fetchBouteilleHasCellier();
+  },
+  methods: {
+    fetchBouteilleHasCellier: function fetchBouteilleHasCellier() {
+      var _this = this;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("api/bouteilleHasCellier").then(function (response) {
+        console.log(response.data);
+        _this.bouteilleHasCellier = response.data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js& ***!
@@ -5945,8 +5630,151 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-carousel */ "../node_modules/vue-carousel/dist/vue-carousel.min.js");
-/* harmony import */ var vue_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_carousel__WEBPACK_IMPORTED_MODULE_1__);
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-carousel'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6041,11 +5869,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var recomandation = null;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    Carousel: vue_carousel__WEBPACK_IMPORTED_MODULE_1__.Carousel,
-    Slide: vue_carousel__WEBPACK_IMPORTED_MODULE_1__.Slide
-  },
+  // components: {
+  //   Carousel,
+  //   Slide,
+  // },
   data: function data() {
     return {
       catalogue: [],
@@ -6054,7 +5883,10 @@ __webpack_require__.r(__webpack_exports__);
       // délai avant pousser la requette
       searchTimerId: null,
       // délai de minuterie d’id
-      searchResults: [] // liste d’autocompletes
+      searchResults: [],
+      // liste d’autocompletes
+      selectedCard: null,
+      recomandation: true
     };
   },
   mounted: function mounted() {
@@ -6068,12 +5900,13 @@ __webpack_require__.r(__webpack_exports__);
           query: this.searchQuery
         }
       }).then(function (response) {
-        //console.log(response.data);
+        console.log(response.data);
         _this.catalogue = response.data.data;
         _this.searchResults = _this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
       })["catch"](function (error) {
         return console.log(error);
       });
+      recomandation = true;
     },
     handleInput: function handleInput() {
       var _this2 = this;
@@ -6092,6 +5925,7 @@ __webpack_require__.r(__webpack_exports__);
       this.searchQuery = result.nom; // choisi le résultat
       this.selectedCard = result; // installe la carte sélectionnée
       this.searchResults = []; // effacer la liste des autocompletes
+      this.recomandation = false;
     },
     selectCard: function selectCard(card) {
       this.selectedCard = card; // choisi le résultat
@@ -6100,7 +5934,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/bouteille').then(function (response) {
         _this3.catalogue = response.data.data;
-        _this3.catalogue = _this3.catalogue.slice(0, 5);
+        _this3.catalogue = _this3.catalogue.slice(0, 6);
+        console.log(_this3.catalogue);
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -6223,6 +6058,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_Cellier__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/Cellier */ "./resources/js/views/Cellier.vue");
 /* harmony import */ var _views_auth_Index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/auth/Index */ "./resources/js/views/auth/Index.vue");
 /* harmony import */ var _views_catalogue_Catalogue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/catalogue/Catalogue */ "./resources/js/views/catalogue/Catalogue.vue");
+/* harmony import */ var _views_bouteilleHasCellier_BouteilleHasCellier__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/bouteilleHasCellier/BouteilleHasCellier */ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -6230,7 +6066,6 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
 
 
 
-// import BouteilleCellier from "./views/cellier/BouteilleCellier";
 
 var routes = [{
   path: "/",
@@ -6244,13 +6079,10 @@ var routes = [{
 }, {
   path: "/catalogue",
   component: _views_catalogue_Catalogue__WEBPACK_IMPORTED_MODULE_5__["default"]
-}
-// {
-//     path: "/bouteille-cellier",
-//     component: BouteilleCellier
-// }
-];
-
+}, {
+  path: "/bouteille-cellier",
+  component: _views_bouteilleHasCellier_BouteilleHasCellier__WEBPACK_IMPORTED_MODULE_6__["default"]
+}];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: "history",
   routes: routes
@@ -11595,7 +11427,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".catalogue-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-wrap: wrap;\r\n    margin-top: 10%;\r\n    font-family:  var(--font-primary);\r\n    margin-left:  var(--margin-small);\r\n    margin-right: var(--margin-small);\r\n    /* background: rgba(255, 255, 255, 0.29); */\r\n    background: rgba(249, 244, 204, 0.29);\r\n    border-radius: var(--border-radius-meduim);    \r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.3);\r\n    \r\n}\r\n\r\n\r\n.catalogue__liste-search {\r\n    position: relative;\r\n    /* background: rgba(249, 244, 204, 0.29); */\r\n   \r\n  }\r\n  \r\n  .search-box {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  \r\n  .search-input {\r\n    width: 100%;\r\n    padding: 10px;\r\n    border: 1px solid transparent;\r\n    border-radius: 25px;\r\n    font-size: 16px;\r\n    color: #555;\r\n  }\r\n  \r\n  .search-btn {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    margin-left: 10px;\r\n   \r\n    color: #fff;\r\n    font-size: 20px;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n  }\r\n  \r\n  .search-btn:hover {\r\n    background-color: #b7b8ba;\r\n  }\r\n  \r\n  .listeAutoComplete {\r\n    top: 20px;\r\n    left: 0;\r\n    width: 100%;\r\n    \r\n    margin: 0;\r\n    list-style-type: none;\r\n    /* background: rgba(249, 244, 204, 0.29); */\r\n    /* border: 1px solid #ccc;\r\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */\r\n  }\r\n  \r\n  .listeAutoComplete li {\r\n    display: flex;\r\n    align-items: center;\r\n    padding: 5px 10px;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n    border-radius: 20px;\r\n  }\r\n  .listeAutoComplete li img{\r\n    width: 40px;\r\n  }\r\n  \r\n  .listeAutoComplete li:hover {\r\n    background-color: #f5f5f5;\r\n  }\r\n  \r\n\r\n.catalogue-image {\r\n    flex: 1;\r\n    max-width: 100%;\r\n    margin-right: var(--margin-small);\r\n    margin-top: var(--margin-small);\r\n    \r\n}\r\n\r\n.catalogue-image img {\r\n    object-fit: cover;\r\n    width: 200px;\r\n}\r\n\r\n.catalogue-description {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\r\n    width: 80%;\r\n}\r\n\r\n.catalogue-description>ul{\r\n\r\n    margin: 10px;\r\n}\r\n\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-medium);\r\n    margin-top: 0;\r\n    margin-bottom: var(--margin-small);\r\n    color: var(--accent-color);\r\n    font-weight: 800;\r\n}\r\n.catalogue-description ul {\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n.catalogue-description .sous-titre{\r\n   font-size: var(--font-size-medium);\r\n}\r\n.catalogue-description li {\r\n    font-size: var(--font-size-default);\r\n    line-height: 1;\r\n    margin-bottom: var(--margin-small);\r\n}\r\n.li-divider::after {\r\n    content: \"\";\r\n    display: block;\r\n    border-bottom: 2.5px solid var(--primary-color);\r\n    margin: 5px 0 ;\r\n  }\r\nstrong{\r\n    font-size: 18px;\r\n} \r\n.btn {\r\n    text-decoration: none;\r\n    color: #ccc;\r\n    background-color: var(--accent-color);\r\n    font-size: var(--font-size-default);\r\n    padding: 5px 40px;\r\n    border-radius: var(--border-radius-ex-small);\r\n}\r\na.btn{\r\n    margin: 10px;\r\n}\r\n\r\n.container-submit{\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0;\r\n\r\n}\r\n\r\n.card-header{\r\n\r\n    height: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n    letter-spacing: 10px;\r\n    text-transform: lowercase;\r\n\r\n\r\n    background: rgba(255, 255, 255, 0.29);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px); \r\n}\r\n\r\n.card-header>h3{\r\n    font-size: var(--font-size-regular);\r\n    padding-top: 10px;\r\n}\r\n\r\n.catalogue-invisible{\r\n    display: none;\r\n}\r\n@media screen and (min-width: 768px){\r\n.catalogue-description li{\r\n\r\n    font-size: var(--font-size-medium);\r\n} \r\n.catalogue-description {\r\n    max-width: 50%;\r\n}\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-x-large);\r\n}\r\n.catalogue-image {\r\n    max-width: 50%;\r\n}\r\n.catalogue-image img {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: var(--padding-ex-large);\r\n    width: auto;\r\n}\r\n.catalogue__liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n  }\r\n\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* .catalogue-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-wrap: wrap;\r\n    margin-top: 10%;\r\n    font-family:  var(--font-primary);\r\n    margin-left:  var(--margin-small);\r\n    margin-right: var(--margin-small); \r\n    background: rgba(249, 244, 204, 0.29);\r\n    border-radius: var(--border-radius-meduim);    \r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.3);    \r\n} */\r\n.catalogue-container{\r\n    margin-top: var(--margin-medium);\r\n    margin-bottom: var(--margin-medium);\r\n    \r\n}\r\n\r\n.catalogue_titre-section{\r\n  font-size: var(--font-size-medium);\r\n  text-align: center;\r\n}\r\n\r\n\r\n.catalogue__liste-search {\r\n    position: relative;\r\n    /* background: rgba(249, 244, 204, 0.29); */\r\n   \r\n  }\r\n  \r\n  .search-box {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  \r\n  .search-input {\r\n    width: 100%;\r\n    padding: 10px;\r\n    border: 1px solid transparent;\r\n    border-radius: 25px;\r\n    font-size: 16px;\r\n    color: #555;\r\n  }\r\n  \r\n  .search-btn {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    margin-left: 10px;\r\n   \r\n    color: #fff;\r\n    font-size: 20px;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n  }\r\n  \r\n  .search-btn:hover {\r\n    background-color: #b7b8ba;\r\n  }\r\n  \r\n  .listeAutoComplete {\r\n    top: 20px;\r\n    left: 0;\r\n    width: 100%;\r\n    \r\n    margin: 0;\r\n    list-style-type: none;\r\n    /* background: rgba(249, 244, 204, 0.29); */\r\n    /* border: 1px solid #ccc;\r\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */\r\n  }\r\n  \r\n  .listeAutoComplete li {\r\n    display: flex;\r\n    align-items: center;\r\n    padding: 5px 10px;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n    border-radius: 20px;\r\n  }\r\n  .listeAutoComplete li img{\r\n    width: 40px;\r\n  }\r\n  \r\n  .listeAutoComplete li:hover {\r\n    background-color: #f5f5f5;\r\n  }\r\n  \r\n\r\n.catalogue-image {\r\n    flex: 1;\r\n    max-width: 100%;\r\n    margin-right: var(--margin-small);\r\n    margin-top: var(--margin-small);\r\n    \r\n}\r\n\r\n.catalogue-image img {\r\n    object-fit: cover;\r\n    width: 200px;\r\n}\r\n\r\n.catalogue-description {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\r\n    width: 80%;\r\n}\r\n\r\n.catalogue-description>ul{\r\n\r\n    margin: 10px;\r\n}\r\n\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-medium);\r\n    margin-top: 0;\r\n    margin-bottom: var(--margin-small);\r\n    color: var(--accent-color);\r\n    font-weight: 800;\r\n}\r\n.catalogue-description ul {\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n.catalogue-description .sous-titre{\r\n   font-size: var(--font-size-medium);\r\n}\r\n.catalogue-description li {\r\n    font-size: var(--font-size-default);\r\n    line-height: 1;\r\n    margin-bottom: var(--margin-small);\r\n}\r\n.li-divider::after {\r\n    content: \"\";\r\n    display: block;\r\n    border-bottom: 2.5px solid var(--primary-color);\r\n    margin: 5px 0 ;\r\n  }\r\nstrong{\r\n    font-size: 18px;\r\n} \r\n.btn {\r\n    text-decoration: none;\r\n    color: #ccc;\r\n    background-color: var(--accent-color);\r\n    font-size: var(--font-size-default);\r\n    padding: 5px 40px;\r\n    border-radius: var(--border-radius-ex-small);\r\n}\r\na.btn{\r\n    margin: 10px;\r\n}\r\n\r\n.container-submit{\r\n\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 0;\r\n\r\n}\r\n\r\n.card-header{\r\n\r\n    height: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n    letter-spacing: 10px;\r\n    text-transform: lowercase;\r\n\r\n\r\n    background: rgba(255, 255, 255, 0.29);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px); \r\n}\r\n\r\n.card-header>h3{\r\n    font-size: var(--font-size-regular);\r\n    padding-top: 10px;\r\n}\r\n\r\n.catalogue-invisible{\r\n    display: none;\r\n}\r\n\r\n.catalogue__section{\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 10px;\r\n    background-color: var(--color-white);\r\n}\r\n@media screen and (min-width: 768px){\r\n.catalogue-description li{\r\n\r\n    font-size: var(--font-size-medium);\r\n} \r\n.catalogue-description {\r\n    max-width: 50%;\r\n}\r\n.catalogue-description h1 {\r\n    font-size: var(--font-size-x-large);\r\n}\r\n.catalogue-image {\r\n    max-width: 50%;\r\n}\r\n.catalogue-image img {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: var(--padding-ex-large);\r\n    width: auto;\r\n}\r\n.catalogue__liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n  }\r\n.container {\r\n  justify-content: space-between;\r\n  \r\n}\r\n\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -11691,7 +11523,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, " .liste-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 10px;\r\n    background-color: var(--color-white);\r\n    \r\n  }\r\n  .liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    /* background-image: linear-gradient(to bottom , rgba(186, 57, 57, 0.755), var( --accent-color) ); */\r\n    display: flex;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n  }\r\n  \r\n  .liste-search>input[type=search]{\r\n    border: none;\r\n    background: transparent;\r\n    margin: 0;\r\n    padding: 7px 8px;\r\n    font-size: 14px;\r\n    color: inherit;\r\n    border: 1px solid transparent;\r\n    border-radius: inherit;\r\n    width: 90%;\r\n  }\r\n  \r\n  .container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  \r\n\r\n  .card {\r\n    width: 100%;\r\n    height: 220px;\r\n    border-radius: var(--border-radius-large);\r\n    margin-top: var(--margin-small);\r\n    padding: var(--padding-small);\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.5);\r\n    \r\n    /* background-image: linear-gradient(to bottom right, rgba(186, 57, 57, 0.755), var( --accent-color) 50%, var( --accent-color-variation)); */\r\n    background: rgba(249, 244, 204, 0.29);\r\n    \r\n  }\r\n  .card-body{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    margin-top: var(--margin-small);\r\n      /* background-image: linear-gradient(to bottom, rgb(144, 24, 24), rgb(86, 86, 85)); */\r\n  }\r\n\r\n  .card img {\r\n    width: 100%;\r\n    max-width: 130px;\r\n    object-fit: cover;\r\n    margin-right:  var(--margin-small);\r\n  }\r\n\r\n  .card-info {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 20px;\r\n    flex-grow: 1;\r\n    margin-right:  var(--margin-small);\r\n  }\r\n\r\n  .card-title {\r\n    font-size: var(--font-size-small);\r\n    font-weight: var(--font-weight-medium);\r\n    margin: 0;\r\n    font-family: var(--font-third);\r\n    color: var(--color-dark);\r\n    \r\n  }\r\n\r\n  .card-subtitle, .card-count, .card-rating {\r\n    font-size: var(--font-size-x-small);\r\n    margin: 0;\r\n    text-align: start;\r\n  }\r\n\r\n  .card-subtitle {\r\n    font-style: italic;\r\n    color:var(--color-dark);\r\n  }\r\n\r\n  .card-count {\r\n    color: var(--color-dark);\r\n  }\r\n\r\n  .card-rating{\r\n    color: var(--accent-color);\r\n  }\r\n\r\n  .modal{\r\n    position: absolute;\r\n\t  max-width: 70%;\r\n\t  opacity: 0;\r\n\t  pointer-events: none;\r\n    z-index: 1;\r\n\r\n  }\r\n\r\n  .card img:hover ~ .modal {\r\n    opacity: 1;\r\n    scale: 1.5;\r\n    transition-duration: 800ms ;\r\n  }\r\n  .card-footer{\r\n    margin-top: 5px;\r\n    display: flex;\r\n    gap: 30px;\r\n    /* margin-top: var(--margin-medium); */\r\n  }\r\n  .card-btn{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 80px;\r\n    font-size:var(--font-size-small) ;\r\n    /* margin: var(--margin-small) 0; */\r\n    padding: 5px 10px;\r\n    /* background-image: linear-gradient(to bottom , rgba(91, 89, 89, 0.755), var(--accent-color) ); */\r\n    background-color: var(--primary-color);   \r\n    box-shadow: 0px 0px 5px var(--secondary-color-variation);\r\n  }\r\n  .card-btn_add{\r\n    border-radius:  var(--border-radius-large);\r\n    width: 40px;\r\n    /* margin: var(--margin-ex-small)  ; */\r\n    /* padding: var(--padding-small) ; */\r\n    /* background-image: linear-gradient(to bottom , rgba(150, 56, 56, 0.755), var(--accent-color) ); */\r\n    background-color: var(--color-white);  \r\n    /* background-color: var(--primary-color);  */\r\n    box-shadow: 0px 0px 2px var(--color-dark);\r\n  }\r\n\r\n  @media only screen and (min-width: 700px) {\r\n    .container {\r\n      justify-content: space-between;\r\n    }\r\n    .card {\r\n      max-width: 300px;\r\n    }\r\n  }\r\n  ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, " .liste-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 10px;\r\n    background-color: var(--color-white);\r\n    \r\n  }\r\n  .liste__titre{\r\n    font-size: var(--font-size-medium);\r\n    text-align: center;\r\n  }\r\n  .liste-search{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 250px;\r\n    /* background-image: linear-gradient(to bottom , rgba(186, 57, 57, 0.755), var( --accent-color) ); */\r\n    display: flex;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(216, 215, 215, 0.5);\r\n    background: rgba(249, 244, 204, 0.29);\r\n  }\r\n  \r\n  .liste-search>input[type=search]{\r\n    border: none;\r\n    background: transparent;\r\n    margin: 0;\r\n    padding: 7px 8px;\r\n    font-size: 14px;\r\n    color: inherit;\r\n    border: 1px solid transparent;\r\n    border-radius: inherit;\r\n    width: 90%;\r\n  }\r\n  \r\n  .container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    align-items: center;\r\n  }\r\n\r\n  \r\n\r\n  .card {\r\n    width: 100%;\r\n    height: 220px;\r\n    border-radius: var(--border-radius-large);\r\n    margin-top: var(--margin-small);\r\n    padding: var(--padding-small);\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);\r\n    backdrop-filter: blur(5px);\r\n    -webkit-backdrop-filter: blur(5px);\r\n    border: 1px solid rgba(255, 255, 255, 0.5);\r\n    \r\n    /* background-image: linear-gradient(to bottom right, rgba(186, 57, 57, 0.755), var( --accent-color) 50%, var( --accent-color-variation)); */\r\n    background: rgba(249, 244, 204, 0.29);\r\n    \r\n  }\r\n  .card-body{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    margin-top: var(--margin-small);\r\n      /* background-image: linear-gradient(to bottom, rgb(144, 24, 24), rgb(86, 86, 85)); */\r\n  }\r\n\r\n  .card img {\r\n    width: 100%;\r\n    max-width: 130px;\r\n    object-fit: cover;\r\n    margin-right:  var(--margin-small);\r\n  }\r\n\r\n  .card-info {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 20px;\r\n    flex-grow: 1;\r\n    margin-right:  var(--margin-small);\r\n  }\r\n\r\n  .card-title {\r\n    font-size: var(--font-size-small);\r\n    font-weight: var(--font-weight-medium);\r\n    margin: 0;\r\n    font-family: var(--font-third);\r\n    color: var(--color-dark);\r\n    \r\n  }\r\n\r\n  .card-subtitle, .card-count, .card-rating {\r\n    font-size: var(--font-size-x-small);\r\n    margin: 0;\r\n    text-align: start;\r\n  }\r\n\r\n  .card-subtitle {\r\n    font-style: italic;\r\n    color:var(--color-dark);\r\n  }\r\n\r\n  .card-count {\r\n    color: var(--color-dark);\r\n  }\r\n\r\n  .card-rating{\r\n    color: var(--accent-color);\r\n  }\r\n\r\n  .modal{\r\n    position: absolute;\r\n\t  max-width: 70%;\r\n\t  opacity: 0;\r\n\t  pointer-events: none;\r\n    z-index: 1;\r\n\r\n  }\r\n\r\n  .card img:hover ~ .modal {\r\n    opacity: 1;\r\n    scale: 1.5;\r\n    transition-duration: 800ms ;\r\n  }\r\n  .card-footer{\r\n    margin-top: 5px;\r\n    display: flex;\r\n    gap: 30px;\r\n    /* margin-top: var(--margin-medium); */\r\n  }\r\n  .card-btn{\r\n    border-radius: var(--border-radius-meduim);\r\n    width: 80px;\r\n    font-size:var(--font-size-small) ;\r\n    /* margin: var(--margin-small) 0; */\r\n    padding: 5px 10px;\r\n    /* background-image: linear-gradient(to bottom , rgba(91, 89, 89, 0.755), var(--accent-color) ); */\r\n    background-color: var(--primary-color);   \r\n    box-shadow: 0px 0px 5px var(--secondary-color-variation);\r\n  }\r\n  .card-btn_add{\r\n    border-radius:  var(--border-radius-large);\r\n    width: 40px;\r\n    /* margin: var(--margin-ex-small)  ; */\r\n    /* padding: var(--padding-small) ; */\r\n    /* background-image: linear-gradient(to bottom , rgba(150, 56, 56, 0.755), var(--accent-color) ); */\r\n    background-color: var(--color-white);  \r\n    /* background-color: var(--primary-color);  */\r\n    box-shadow: 0px 0px 2px var(--color-dark);\r\n  }\r\n\r\n  @media only screen and (min-width: 700px) {\r\n    .container {\r\n      justify-content: space-between;\r\n    }\r\n    .card {\r\n      max-width: 300px;\r\n    }\r\n  }\r\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29850,6 +29682,45 @@ component.options.__file = "resources/js/views/auth/Index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue":
+/*!************************************************************************!*\
+  !*** ./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BouteilleHasCellier.vue?vue&type=template&id=62127e00& */ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00&");
+/* harmony import */ var _BouteilleHasCellier_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BouteilleHasCellier.vue?vue&type=script&lang=js& */ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BouteilleHasCellier_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__.render,
+  _BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/views/catalogue/Catalogue.vue":
 /*!****************************************************!*\
   !*** ./resources/js/views/catalogue/Catalogue.vue ***!
@@ -29953,6 +29824,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BouteilleHasCellier.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************!*\
   !*** ./resources/js/views/catalogue/Catalogue.vue?vue&type=script&lang=js& ***!
@@ -30037,6 +29924,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00& ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BouteilleHasCellier_vue_vue_type_template_id_62127e00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BouteilleHasCellier.vue?vue&type=template&id=62127e00& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00&");
+
+
+/***/ }),
+
 /***/ "./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918&":
 /*!***********************************************************************************!*\
   !*** ./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918& ***!
@@ -30076,1652 +29980,127 @@ var render = function () {
     _c("body", [
       _c("nav", { staticClass: "container-header" }, [
         _c("div", { staticClass: "site-header" }, [
-          _c(
-            "div",
-            { staticClass: "site-header-container" },
-            [
-              _c("router-link", { attrs: { to: "/" } }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("nav", [
+            _c(
+              "div",
+              { staticClass: "menu-cellier-container" },
+              [
                 _c(
-                  "svg",
-                  {
-                    staticClass: "logo-vino",
-                    attrs: {
-                      width: "35pt",
-                      height: "35pt",
-                      version: "1.1",
-                      viewBox: "0 0 600 700",
-                      xmlns: "http://www.w3.org/2000/svg",
-                      "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                    },
-                  },
+                  "a",
+                  { staticClass: "flower-button", attrs: { href: "home" } },
                   [
-                    _c("defs", [
-                      _c(
-                        "symbol",
-                        { attrs: { id: "t", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m2.2188-0.125c-0.11719 0.054688-0.23438 0.09375-0.35938 0.125s-0.25781 0.046875-0.39062 0.046875c-0.39844 0-0.71484-0.10938-0.95312-0.32812-0.23047-0.22656-0.34375-0.53516-0.34375-0.92188 0-0.38281 0.11328-0.6875 0.34375-0.90625 0.23828-0.22656 0.55469-0.34375 0.95312-0.34375 0.13281 0 0.26562 0.015625 0.39062 0.046875 0.125 0.023438 0.24219 0.0625 0.35938 0.125v0.5c-0.11719-0.070312-0.23047-0.125-0.34375-0.15625-0.11719-0.039062-0.23047-0.0625-0.34375-0.0625-0.23047 0-0.40625 0.074219-0.53125 0.21875-0.125 0.13672-0.1875 0.32812-0.1875 0.57812s0.0625 0.44922 0.1875 0.59375c0.125 0.13672 0.30078 0.20312 0.53125 0.20312 0.11328 0 0.22656-0.015625 0.34375-0.046875 0.11328-0.039063 0.22656-0.097656 0.34375-0.17188z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "c", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m1.625-1.3125c-0.054688-0.03125-0.10547-0.050781-0.15625-0.0625-0.054688-0.007812-0.10156-0.015625-0.14062-0.015625-0.15625 0-0.27734 0.054687-0.35938 0.15625-0.074219 0.09375-0.10938 0.23047-0.10938 0.40625v0.82812h-0.57812v-1.8125h0.57812v0.29688c0.070313-0.11328 0.15625-0.19531 0.25-0.25 0.10156-0.0625 0.21875-0.09375 0.34375-0.09375 0.019531 0 0.039063 0.007813 0.0625 0.015625h0.10938z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "a", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m2.0938-0.90625v0.15625h-1.3594c0.007813 0.13672 0.054687 0.24219 0.14062 0.3125 0.082031 0.0625 0.20312 0.09375 0.35938 0.09375 0.125 0 0.25-0.015625 0.375-0.046875 0.125-0.039063 0.25391-0.097656 0.39062-0.17188v0.45312c-0.13672 0.054688-0.27344 0.089844-0.40625 0.10938-0.13672 0.03125-0.27734 0.046875-0.42188 0.046875-0.32422 0-0.57812-0.082031-0.76562-0.25-0.17969-0.16406-0.26562-0.39844-0.26562-0.70312 0-0.28906 0.085937-0.51953 0.26562-0.6875 0.17578-0.17578 0.42188-0.26562 0.73438-0.26562 0.28906 0 0.51953 0.089844 0.6875 0.26562 0.17578 0.16797 0.26562 0.39844 0.26562 0.6875zm-0.60938-0.20312c0-0.10156-0.03125-0.1875-0.09375-0.25-0.0625-0.070313-0.14844-0.10938-0.25-0.10938-0.11719 0-0.21094 0.03125-0.28125 0.09375-0.0625 0.0625-0.10547 0.15234-0.125 0.26562z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "j", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m1.0938-0.8125c-0.125 0-0.21875 0.023438-0.28125 0.0625-0.0625 0.042969-0.09375 0.10156-0.09375 0.17188 0 0.074219 0.023438 0.13281 0.078125 0.17188 0.050781 0.042969 0.11719 0.0625 0.20312 0.0625 0.11328 0 0.20703-0.035156 0.28125-0.10938 0.070312-0.082031 0.10938-0.17969 0.10938-0.29688v-0.0625zm0.875-0.21875v1.0312h-0.57812v-0.26562c-0.074219 0.10547-0.16406 0.18359-0.26562 0.23438-0.09375 0.050781-0.21094 0.078125-0.34375 0.078125-0.1875 0-0.34375-0.050781-0.46875-0.15625-0.11719-0.11328-0.17188-0.25781-0.17188-0.4375 0-0.20703 0.070313-0.35938 0.21875-0.45312 0.14453-0.10156 0.375-0.15625 0.6875-0.15625h0.34375v-0.046875c0-0.09375-0.039063-0.16016-0.10938-0.20312-0.074219-0.039062-0.1875-0.0625-0.34375-0.0625-0.11719 0-0.23047 0.015625-0.34375 0.046875-0.10547 0.023437-0.20312 0.054687-0.29688 0.09375v-0.4375c0.125-0.03125 0.25-0.050781 0.375-0.0625 0.125-0.019531 0.25-0.03125 0.375-0.03125 0.33203 0 0.56641 0.070313 0.70312 0.20312 0.14453 0.125 0.21875 0.33594 0.21875 0.625z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "b", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m0.90625-2.3281v0.51562h0.59375v0.42188h-0.59375v0.76562c0 0.085938 0.015625 0.14062 0.046875 0.17188 0.039063 0.023437 0.10938 0.03125 0.20312 0.03125h0.29688v0.42188h-0.5c-0.21875 0-0.38281-0.046875-0.48438-0.14062-0.09375-0.09375-0.14062-0.25391-0.14062-0.48438v-0.76562h-0.28125v-0.42188h0.28125v-0.51562z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "i", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m1.5156-1.5469v-0.96875h0.57812v2.5156h-0.57812v-0.26562c-0.085937 0.10547-0.17188 0.18359-0.26562 0.23438s-0.21094 0.078125-0.34375 0.078125c-0.21875 0-0.40234-0.085938-0.54688-0.26562-0.13672-0.17578-0.20312-0.40625-0.20312-0.6875s0.066406-0.50781 0.20312-0.6875c0.14453-0.17578 0.32812-0.26562 0.54688-0.26562 0.125 0 0.23438 0.027344 0.32812 0.078125 0.10156 0.054688 0.19531 0.13281 0.28125 0.23438zm-0.39062 1.1719c0.125 0 0.21875-0.039062 0.28125-0.125 0.070312-0.09375 0.10938-0.22656 0.10938-0.40625 0-0.16406-0.039063-0.29688-0.10938-0.39062-0.0625-0.09375-0.15625-0.14062-0.28125-0.14062s-0.21875 0.046875-0.28125 0.14062-0.09375 0.22656-0.09375 0.39062c0 0.17969 0.03125 0.3125 0.09375 0.40625 0.0625 0.085938 0.15625 0.125 0.28125 0.125z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "h", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m1.25-0.375c0.11328 0 0.20312-0.039062 0.26562-0.125 0.070313-0.09375 0.10938-0.22656 0.10938-0.40625 0-0.16406-0.039062-0.29688-0.10938-0.39062-0.0625-0.09375-0.15234-0.14062-0.26562-0.14062-0.125 0-0.22656 0.046875-0.29688 0.14062-0.0625 0.09375-0.09375 0.22656-0.09375 0.39062 0 0.17969 0.03125 0.3125 0.09375 0.40625 0.070313 0.085938 0.17188 0.125 0.29688 0.125zm-0.39062-1.1719c0.082031-0.10156 0.17188-0.17969 0.26562-0.23438 0.09375-0.050781 0.20312-0.078125 0.32812-0.078125 0.22656 0 0.41016 0.089844 0.54688 0.26562 0.14453 0.17969 0.21875 0.40625 0.21875 0.6875s-0.074219 0.51172-0.21875 0.6875c-0.13672 0.17969-0.32031 0.26562-0.54688 0.26562-0.125 0-0.23438-0.027344-0.32812-0.078125s-0.18359-0.12891-0.26562-0.23438v0.26562h-0.57812v-2.5156h0.57812z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "g", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m0.046875-1.8125h0.57812l0.48438 1.2344 0.40625-1.2344h0.57812l-0.75 1.9844c-0.085938 0.19531-0.17969 0.33594-0.28125 0.42188-0.09375 0.082031-0.22656 0.125-0.39062 0.125h-0.34375v-0.39062h0.1875c0.09375 0 0.16016-0.015625 0.20312-0.046875 0.050781-0.03125 0.085938-0.085938 0.10938-0.15625l0.015625-0.0625z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "f", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m0.29688-2.4219h1.6875v0.48438h-1.0625v0.4375h1v0.46875h-1v0.5625h1.0938v0.46875h-1.7188z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "e", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m0.28125-2.5156h0.57812v2.5156h-0.57812z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "s", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m1.4688-2.5156v0.375h-0.3125c-0.085938 0-0.14062 0.015625-0.17188 0.046875s-0.046875 0.085938-0.046875 0.15625v0.125h0.48438v0.42188h-0.48438v1.3906h-0.59375v-1.3906h-0.28125v-0.42188h0.28125v-0.125c0-0.19531 0.054688-0.34375 0.17188-0.4375 0.11328-0.09375 0.28516-0.14062 0.51562-0.14062z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "d", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m1.1406-1.4375c-0.125 0-0.22656 0.046875-0.29688 0.14062-0.0625 0.085937-0.09375 0.21484-0.09375 0.39062 0 0.17969 0.03125 0.3125 0.09375 0.40625 0.070312 0.09375 0.17188 0.14062 0.29688 0.14062s0.21875-0.046875 0.28125-0.14062c0.070313-0.09375 0.10938-0.22656 0.10938-0.40625 0-0.17578-0.039062-0.30469-0.10938-0.39062-0.0625-0.09375-0.15625-0.14062-0.28125-0.14062zm0-0.42188c0.3125 0 0.55469 0.089844 0.73438 0.26562 0.17578 0.16797 0.26562 0.39844 0.26562 0.6875 0 0.30469-0.089844 0.53906-0.26562 0.70312-0.17969 0.16797-0.42188 0.25-0.73438 0.25s-0.55859-0.082031-0.73438-0.25c-0.17969-0.16406-0.26562-0.39844-0.26562-0.70312 0-0.28906 0.085937-0.51953 0.26562-0.6875 0.17578-0.17578 0.42188-0.26562 0.73438-0.26562z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "r", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m1.9531-1.5156c0.070313-0.10156 0.16016-0.1875 0.26562-0.25 0.10156-0.0625 0.21094-0.09375 0.32812-0.09375 0.20703 0 0.36328 0.070313 0.46875 0.20312 0.11328 0.125 0.17188 0.30859 0.17188 0.54688v1.1094h-0.57812v-0.9375-0.046875-0.0625c0-0.13281-0.023437-0.22656-0.0625-0.28125-0.03125-0.0625-0.089844-0.09375-0.17188-0.09375-0.11719 0-0.20312 0.046875-0.26562 0.14062-0.054687 0.09375-0.085937 0.22656-0.09375 0.39062v0.89062h-0.57812v-0.9375c0-0.20703-0.015625-0.33594-0.046875-0.39062-0.03125-0.0625-0.09375-0.09375-0.1875-0.09375-0.11719 0-0.20312 0.046875-0.26562 0.14062-0.054688 0.09375-0.078125 0.22656-0.078125 0.39062v0.89062h-0.57812v-1.8125h0.57812v0.26562c0.070313-0.10156 0.14844-0.17969 0.23438-0.23438 0.09375-0.050781 0.19531-0.078125 0.3125-0.078125 0.125 0 0.23438 0.03125 0.32812 0.09375s0.16406 0.14844 0.21875 0.25z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "q", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m2.0938-1.1094v1.1094h-0.57812v-0.84375c0-0.15625-0.007813-0.25781-0.015625-0.3125 0-0.0625-0.011719-0.10938-0.03125-0.14062-0.023438-0.039063-0.054688-0.070313-0.09375-0.09375-0.042969-0.019531-0.085938-0.03125-0.125-0.03125-0.125 0-0.22656 0.046875-0.29688 0.14062-0.0625 0.09375-0.09375 0.22656-0.09375 0.39062v0.89062h-0.57812v-2.5156h0.57812v0.96875c0.082031-0.10156 0.17188-0.17969 0.26562-0.23438 0.10156-0.050781 0.21094-0.078125 0.32812-0.078125 0.21875 0 0.37891 0.070313 0.48438 0.20312 0.10156 0.125 0.15625 0.30859 0.15625 0.54688z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "p", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m0.29688-2.4219h0.70312l0.875 1.6562v-1.6562h0.59375v2.4219h-0.70312l-0.875-1.6562v1.6562h-0.59375z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "o", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m0.26562-0.70312v-1.1094h0.57812v0.1875 0.375 0.28125 0.32812c0.007812 0.0625 0.023438 0.10547 0.046875 0.125 0.019531 0.042969 0.046875 0.074219 0.078125 0.09375 0.039062 0.023437 0.085938 0.03125 0.14062 0.03125 0.125 0 0.21875-0.046875 0.28125-0.14062 0.070313-0.09375 0.10938-0.22266 0.10938-0.39062v-0.89062h0.57812v1.8125h-0.57812v-0.26562c-0.085938 0.10547-0.17969 0.18359-0.28125 0.23438-0.09375 0.050781-0.19922 0.078125-0.3125 0.078125-0.21094 0-0.37109-0.0625-0.48438-0.1875-0.10547-0.13281-0.15625-0.32031-0.15625-0.5625z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "n", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m2.0938-1.1094v1.1094h-0.57812v-0.84375c0-0.15625-0.007813-0.25781-0.015625-0.3125 0-0.0625-0.011719-0.10938-0.03125-0.14062-0.023438-0.039063-0.054688-0.070313-0.09375-0.09375-0.042969-0.019531-0.085938-0.03125-0.125-0.03125-0.125 0-0.22656 0.046875-0.29688 0.14062-0.0625 0.09375-0.09375 0.22656-0.09375 0.39062v0.89062h-0.57812v-1.8125h0.57812v0.26562c0.082031-0.10156 0.17188-0.17969 0.26562-0.23438 0.10156-0.050781 0.21094-0.078125 0.32812-0.078125 0.21875 0 0.37891 0.070313 0.48438 0.20312 0.10156 0.125 0.15625 0.30859 0.15625 0.54688z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "m", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m0.29688-2.4219h1.0469c0.30078 0 0.53516 0.074219 0.70312 0.21875 0.16406 0.13672 0.25 0.32812 0.25 0.57812s-0.085937 0.44531-0.25 0.57812c-0.16797 0.13672-0.40234 0.20312-0.70312 0.20312h-0.42188v0.84375h-0.625zm0.625 0.45312v0.67188h0.34375c0.125 0 0.21875-0.023437 0.28125-0.078125 0.070313-0.0625 0.10938-0.14453 0.10938-0.25 0-0.10156-0.039062-0.1875-0.10938-0.25-0.0625-0.0625-0.15625-0.09375-0.28125-0.09375z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "l", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m0.28125-1.8125h0.57812v1.7812c0 0.23828-0.058594 0.42188-0.17188 0.54688-0.11719 0.13281-0.28906 0.20312-0.51562 0.20312h-0.28125v-0.39062h0.09375c0.11328 0 0.19141-0.027344 0.23438-0.078125 0.039062-0.042969 0.0625-0.13672 0.0625-0.28125zm0-0.70312h0.57812v0.46875h-0.57812z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "symbol",
-                        { attrs: { id: "k", overflow: "visible" } },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d: "m1.7344-1.75v0.46875c-0.074219-0.050781-0.15234-0.085938-0.23438-0.10938-0.074219-0.03125-0.15234-0.046875-0.23438-0.046875-0.16797 0-0.29688 0.046875-0.39062 0.14062-0.085938 0.09375-0.125 0.22656-0.125 0.39062 0 0.16797 0.039062 0.30469 0.125 0.40625 0.09375 0.09375 0.22266 0.14062 0.39062 0.14062 0.082031 0 0.16406-0.015625 0.25-0.046875 0.082031-0.03125 0.15625-0.070312 0.21875-0.125v0.48438c-0.085937 0.03125-0.17188 0.050781-0.26562 0.0625-0.09375 0.019531-0.1875 0.03125-0.28125 0.03125-0.32422 0-0.57812-0.082031-0.76562-0.25-0.1875-0.16406-0.28125-0.39844-0.28125-0.70312 0-0.30078 0.09375-0.53516 0.28125-0.70312 0.1875-0.16406 0.44141-0.25 0.76562-0.25 0.09375 0 0.1875 0.011719 0.28125 0.03125 0.09375 0.011719 0.17969 0.039063 0.26562 0.078125z",
-                            },
-                          }),
-                        ]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("g", [
-                      _c("path", {
-                        attrs: {
-                          d: "m227.03 203.75c29.023 0 52.551 23.527 52.551 52.551 0 29.016-23.527 52.551-52.551 52.551-29.016 0-52.551-23.535-52.551-52.551 0-29.023 23.535-52.551 52.551-52.551zm236.77-183.77s18.309 139.11-118.49 123.04c0 0-9.3398-120.39 118.49-123.04zm-260.28 14.262c0.37109-0.097657 107.16-30.844 142.7 123.77h257.18v15.172h-254.02c1.7773 9.5859 3.3008 19.809 4.5391 30.711 27.191 2.0039 48.633 24.699 48.633 52.406 0 29.016-23.527 52.551-52.551 52.551s-52.551-23.535-52.551-52.551c0-25.168 17.691-46.195 41.32-51.34-1.3086-11.383-2.9375-21.953-4.8398-31.773h-237.32v-15.172h234.02c-32.812-135.25-122.88-109.23-123.19-109.14l-3.9141-14.629zm269.46 400.68c29.023 0 52.551 23.527 52.551 52.551 0 29.016-23.527 52.543-52.551 52.543-29.023 0-52.551-23.527-52.551-52.543 0-29.023 23.527-52.551 52.551-52.551zm-122.97 0c29.023 0 52.551 23.527 52.551 52.551 0 29.016-23.527 52.543-52.551 52.543s-52.551-23.527-52.551-52.543c0-29.023 23.527-52.551 52.551-52.551zm-122.97 0c29.023 0 52.551 23.527 52.551 52.551 0 29.016-23.527 52.543-52.551 52.543-29.016 0-52.551-23.527-52.551-52.543 0-29.023 23.535-52.551 52.551-52.551zm307.43-115.58c29.016 0 52.543 23.527 52.543 52.543 0 29.023-23.527 52.551-52.543 52.551-29.023 0-52.551-23.527-52.551-52.551 0-29.016 23.527-52.543 52.551-52.543zm-122.97 0c29.016 0 52.543 23.527 52.543 52.543 0 29.023-23.527 52.551-52.543 52.551-29.023 0-52.551-23.527-52.551-52.551 0-29.016 23.527-52.543 52.551-52.543zm-122.97 0c29.023 0 52.551 23.527 52.551 52.543 0 29.023-23.527 52.551-52.551 52.551-29.023 0-52.551-23.527-52.551-52.551 0-29.016 23.527-52.543 52.551-52.543zm-122.97 0c29.023 0 52.551 23.527 52.551 52.543 0 29.023-23.527 52.551-52.551 52.551-29.023 0-52.551-23.527-52.551-52.551 0-29.016 23.527-52.543 52.551-52.543zm307.43-115.59c29.023 0 52.551 23.527 52.551 52.551 0 29.016-23.527 52.551-52.551 52.551s-52.551-23.535-52.551-52.551c0-29.023 23.527-52.551 52.551-52.551z",
-                          "fill-rule": "evenodd",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: { x: "70", y: "569.921875", "xlink:href": "#t" },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "72.425781",
-                          y: "569.921875",
-                          "xlink:href": "#c",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "74.058594",
-                          y: "569.921875",
-                          "xlink:href": "#a",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "76.300781",
-                          y: "569.921875",
-                          "xlink:href": "#j",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "78.53125",
-                          y: "569.921875",
-                          "xlink:href": "#b",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "80.113281",
-                          y: "569.921875",
-                          "xlink:href": "#a",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "82.355469",
-                          y: "569.921875",
-                          "xlink:href": "#i",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "85.875",
-                          y: "569.921875",
-                          "xlink:href": "#h",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "88.242188",
-                          y: "569.921875",
-                          "xlink:href": "#g",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "91.550781",
-                          y: "569.921875",
-                          "xlink:href": "#f",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "93.808594",
-                          y: "569.921875",
-                          "xlink:href": "#e",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "94.941406",
-                          y: "569.921875",
-                          "xlink:href": "#e",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: { x: "70", y: "573.226562", "xlink:href": "#s" },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "71.4375",
-                          y: "573.226562",
-                          "xlink:href": "#c",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "73.070312",
-                          y: "573.226562",
-                          "xlink:href": "#d",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "75.339844",
-                          y: "573.226562",
-                          "xlink:href": "#r",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "79.9375",
-                          y: "573.226562",
-                          "xlink:href": "#b",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "81.519531",
-                          y: "573.226562",
-                          "xlink:href": "#q",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "83.875",
-                          y: "573.226562",
-                          "xlink:href": "#a",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "87.269531",
-                          y: "573.226562",
-                          "xlink:href": "#p",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "90.035156",
-                          y: "573.226562",
-                          "xlink:href": "#d",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "92.308594",
-                          y: "573.226562",
-                          "xlink:href": "#o",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "94.664062",
-                          y: "573.226562",
-                          "xlink:href": "#n",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "98.167969",
-                          y: "573.226562",
-                          "xlink:href": "#m",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "100.59375",
-                          y: "573.226562",
-                          "xlink:href": "#c",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "102.222656",
-                          y: "573.226562",
-                          "xlink:href": "#d",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "104.496094",
-                          y: "573.226562",
-                          "xlink:href": "#l",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "105.628906",
-                          y: "573.226562",
-                          "xlink:href": "#a",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "107.871094",
-                          y: "573.226562",
-                          "xlink:href": "#k",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("use", {
-                        attrs: {
-                          x: "109.832031",
-                          y: "573.226562",
-                          "xlink:href": "#b",
-                        },
-                      }),
-                    ]),
-                  ]
-                ),
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "header-icon-container" },
-                [
-                  _c("router-link", { attrs: { to: "login" } }, [
                     _c(
                       "svg",
                       {
                         attrs: {
-                          width: "35pt",
-                          height: "35pt",
-                          version: "1.1",
-                          viewBox: "0 0 600 500",
                           xmlns: "http://www.w3.org/2000/svg",
+                          height: "24",
+                          width: "24",
                         },
                       },
                       [
                         _c("path", {
                           attrs: {
-                            d: "m350 160.91c19.941 0 38.031 8.1094 51.129 21.199 13.129 13.137 21.238 31.227 21.238 51.168s-8.1094 38.031-21.199 51.129c-13.137 13.129-31.227 21.238-51.168 21.238s-38.031-8.1094-51.129-21.199c-13.129-13.137-21.238-31.227-21.238-51.168s8.1094-38.031 21.199-51.129c13.137-13.129 31.227-21.238 51.168-21.238zm0-85.086c56.371 0 107.42 22.859 144.37 59.805 36.945 36.945 59.805 87.996 59.805 144.37s-22.859 107.42-59.805 144.37c-36.945 36.945-87.996 59.805-144.37 59.805s-107.42-22.859-144.37-59.805c-36.945-36.945-59.805-87.996-59.805-144.37s22.859-107.42 59.805-144.37c36.945-36.945 87.996-59.805 144.37-59.805zm128.54 75.641c-32.887-32.887-78.332-53.23-128.54-53.23s-95.648 20.344-128.54 53.23c-32.887 32.887-53.23 78.332-53.23 128.54s20.344 95.648 53.23 128.54c2.7109 2.7109 5.5078 5.3359 8.3945 7.8789v-5.5742c0-25.285 10.344-48.277 27-64.934s39.645-27 64.934-27h56.426c25.281 0 48.27 10.344 64.926 27 16.66 16.66 27.008 39.664 27.008 64.934v5.5703c2.8789-2.5352 5.6758-5.1602 8.3867-7.8711 32.887-32.887 53.23-78.332 53.23-128.54s-20.344-95.648-53.23-128.54zm-226.27 281.82c28.215 18.023 61.75 28.48 97.73 28.48s69.516-10.449 97.738-28.48v-22.449c0-19.102-7.832-36.496-20.43-49.098-12.594-12.594-29.98-20.426-49.09-20.426h-56.426c-19.113 0-36.504 7.832-49.098 20.426s-20.426 29.98-20.426 49.098zm133.09-235.36c-9.0352-9.0156-21.535-14.605-35.352-14.605s-26.316 5.5898-35.352 14.605c-9.0156 9.0352-14.605 21.535-14.605 35.352 0 13.809 5.5898 26.316 14.605 35.352 9.0352 9.0156 21.535 14.605 35.352 14.605s26.316-5.5898 35.352-14.605c9.0156-9.0352 14.605-21.543 14.605-35.352 0-13.816-5.5898-26.316-14.605-35.352z",
+                            d: "M12 21.85q0-1.8.7-3.4.7-1.6 1.9-2.8 1.2-1.2 2.8-1.9 1.6-.7 3.4-.7 0 1.8-.7 3.4-.7 1.6-1.9 2.8-1.2 1.2-2.8 1.9-1.6.7-3.4.7Zm2.275-2.275q1.5-.525 2.612-1.637 1.113-1.113 1.638-2.613-1.475.525-2.6 1.637-1.125 1.113-1.65 2.613ZM12 21.85q0-1.8-.7-3.4-.7-1.6-1.9-2.8-1.2-1.2-2.8-1.9-1.6-.7-3.4-.7 0 1.8.7 3.4.7 1.6 1.9 2.8 1.2 1.2 2.8 1.9 1.6.7 3.4.7Zm-2.275-2.275q-1.5-.525-2.613-1.637Q6 16.825 5.475 15.325q1.5.525 2.613 1.637 1.112 1.113 1.637 2.613Zm5.625-8.45q.5 0 .862-.35.363-.35.363-.85 0-.375-.2-.65t-.525-.425l-.95-.475q-.1.575-.375 1.063-.275.487-.725.862l.875.625q.125.1.3.15.175.05.375.05ZM14.9 7.6l.95-.45q.325-.175.513-.463.187-.287.187-.612 0-.5-.35-.863-.35-.362-.85-.362-.2 0-.362.062-.163.063-.313.163l-.9.625q.45.35.738.825Q14.8 7 14.9 7.6Zm-3.975-2.325q.275-.1.55-.162.275-.063.525-.063.275 0 .538.063.262.062.537.162l.15-1.225q.05-.475-.338-.8-.387-.325-.887-.325-.475 0-.863.325-.387.325-.337.8ZM12 9.05q.45 0 .763-.3.312-.3.312-.75t-.312-.762q-.313-.313-.763-.313t-.75.313q-.3.312-.3.762t.3.75q.3.3.75.3Zm0 4q.5 0 .887-.325.388-.325.338-.775l-.15-1.25q-.275.125-.537.175-.263.05-.538.05-.25 0-.525-.05t-.55-.175l-.125 1.25q-.05.45.337.775.388.325.863.325ZM9.1 7.6q.1-.6.388-1.075.287-.475.712-.825l-.875-.625q-.125-.125-.3-.175-.175-.05-.375-.05-.5 0-.85.362-.35.363-.35.863 0 .325.188.612.187.288.512.463Zm-.45 3.5q.2 0 .362-.038.163-.037.338-.162l.9-.6q-.475-.375-.762-.838Q9.2 9 9.1 8.375l-.95.475q-.325.15-.5.45-.175.3-.175.625.025.5.35.837.325.338.825.338ZM12 14.925q-.975 0-1.75-.538-.775-.537-1.125-1.412-.1 0-.225.013-.125.012-.25.012-1.275 0-2.175-.9-.9-.9-.9-2.175 0-.525.175-1.013.175-.487.525-.912-.325-.425-.5-.925t-.175-1q0-1.275.888-2.188.887-.912 2.162-.912.125 0 .25.012.125.013.225.013.35-.875 1.125-1.413.775-.537 1.75-.537t1.75.537q.775.538 1.125 1.413.125 0 .238-.013.112-.012.237-.012 1.275 0 2.175.912.9.913.9 2.188 0 .5-.175 1T17.725 8q.325.425.513.912.187.488.187 1.013 0 1.275-.9 2.175-.9.9-2.175.9-.125 0-.237-.012-.113-.013-.238-.013-.35.875-1.125 1.412-.775.538-1.75.538Zm0-9.875Zm1.775.65Zm.025 4.6Zm-1.8.625Zm-1.75-.625Zm-.05-4.6Zm-.475 13.875Zm4.55 0Z",
                           },
                         }),
                       ]
                     ),
-                  ]),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "menu-toggle" } }, [
-                    _c("div", { staticClass: "container-icon-menu" }, [
-                      _c(
-                        "svg",
-                        {
-                          attrs: {
-                            width: "35pt",
-                            height: "35pt",
-                            version: "1.1",
-                            viewBox: "0 0 700 500",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                          },
+                    _vm._v(
+                      "\n                        to home(logout)\n                    "
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  { staticClass: "cellier-button", attrs: { to: "/cellier" } },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          height: "24",
+                          width: "24",
                         },
-                        [
-                          _c("defs", [
-                            _c(
-                              "symbol",
-                              { attrs: { id: "t", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m18.766-1.125c-0.96875 0.5-1.9805 0.875-3.0312 1.125-1.043 0.25781-2.1367 0.39062-3.2812 0.39062-3.3984 0-6.0898-0.94531-8.0781-2.8438-1.9922-1.9062-2.9844-4.4844-2.9844-7.7344 0-3.2578 0.99219-5.8359 2.9844-7.7344 1.9883-1.9062 4.6797-2.8594 8.0781-2.8594 1.1445 0 2.2383 0.13281 3.2812 0.39062 1.0508 0.25 2.0625 0.625 3.0312 1.125v4.2188c-0.98047-0.65625-1.9453-1.1406-2.8906-1.4531-0.94922-0.3125-1.9492-0.46875-3-0.46875-1.875 0-3.3516 0.60547-4.4219 1.8125-1.0742 1.1992-1.6094 2.8555-1.6094 4.9688 0 2.1055 0.53516 3.7617 1.6094 4.9688 1.0703 1.1992 2.5469 1.7969 4.4219 1.7969 1.0508 0 2.0508-0.14844 3-0.45312 0.94531-0.3125 1.9102-0.80078 2.8906-1.4688z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "d", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m13.734-11.141c-0.4375-0.19531-0.87109-0.34375-1.2969-0.4375-0.41797-0.10156-0.83984-0.15625-1.2656-0.15625-1.2617 0-2.2305 0.40625-2.9062 1.2188-0.67969 0.80469-1.0156 1.9531-1.0156 3.4531v7.0625h-4.8906v-15.312h4.8906v2.5156c0.625-1 1.3438-1.7266 2.1562-2.1875 0.82031-0.46875 1.8008-0.70312 2.9375-0.70312 0.16406 0 0.34375 0.011719 0.53125 0.03125 0.19531 0.011719 0.47656 0.039062 0.84375 0.078125z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "a", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m17.641-7.7031v1.4062h-11.453c0.125 1.1484 0.53906 2.0078 1.25 2.5781 0.70703 0.57422 1.7031 0.85938 2.9844 0.85938 1.0312 0 2.082-0.14844 3.1562-0.45312 1.082-0.3125 2.1914-0.77344 3.3281-1.3906v3.7656c-1.1562 0.4375-2.3125 0.76562-3.4688 0.98438-1.1562 0.22656-2.3125 0.34375-3.4688 0.34375-2.7734 0-4.9297-0.70312-6.4688-2.1094-1.5312-1.4062-2.2969-3.3789-2.2969-5.9219 0-2.5 0.75391-4.4609 2.2656-5.8906 1.5078-1.4375 3.582-2.1562 6.2188-2.1562 2.4062 0 4.332 0.73047 5.7812 2.1875 1.4453 1.4492 2.1719 3.3828 2.1719 5.7969zm-5.0312-1.625c0-0.92578-0.27344-1.6719-0.8125-2.2344-0.54297-0.57031-1.25-0.85938-2.125-0.85938-0.94922 0-1.7188 0.26562-2.3125 0.79688s-0.96484 1.2969-1.1094 2.2969z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "m", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m9.2188-6.8906c-1.0234 0-1.793 0.17188-2.3125 0.51562-0.51172 0.34375-0.76562 0.85547-0.76562 1.5312 0 0.625 0.20703 1.1172 0.625 1.4688 0.41406 0.34375 0.98828 0.51562 1.7188 0.51562 0.92578 0 1.7031-0.32812 2.3281-0.98438 0.63281-0.66406 0.95312-1.4922 0.95312-2.4844v-0.5625zm7.4688-1.8438v8.7344h-4.9219v-2.2656c-0.65625 0.92969-1.3984 1.6055-2.2188 2.0312-0.82422 0.41406-1.8242 0.625-3 0.625-1.5859 0-2.8711-0.45703-3.8594-1.375-0.99219-0.92578-1.4844-2.1289-1.4844-3.6094 0-1.7891 0.61328-3.1016 1.8438-3.9375 1.2383-0.84375 3.1797-1.2656 5.8281-1.2656h2.8906v-0.39062c0-0.76953-0.30859-1.332-0.92188-1.6875-0.61719-0.36328-1.5703-0.54688-2.8594-0.54688-1.0547 0-2.0312 0.10547-2.9375 0.3125-0.89844 0.21094-1.7305 0.52344-2.5 0.9375v-3.7344c1.0391-0.25 2.0859-0.44141 3.1406-0.57812 1.0625-0.13281 2.125-0.20312 3.1875-0.20312 2.7578 0 4.75 0.54688 5.9688 1.6406 1.2266 1.0859 1.8438 2.8555 1.8438 5.3125z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "c", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m7.7031-19.656v4.3438h5.0469v3.5h-5.0469v6.5c0 0.71094 0.14062 1.1875 0.42188 1.4375s0.83594 0.375 1.6719 0.375h2.5156v3.5h-4.1875c-1.9375 0-3.3125-0.39844-4.125-1.2031-0.80469-0.8125-1.2031-2.1797-1.2031-4.1094v-6.5h-2.4219v-3.5h2.4219v-4.3438z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "l", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m12.766-13.078v-8.2031h4.9219v21.281h-4.9219v-2.2188c-0.66797 0.90625-1.4062 1.5703-2.2188 1.9844s-1.7578 0.625-2.8281 0.625c-1.8867 0-3.4336-0.75-4.6406-2.25-1.2109-1.5-1.8125-3.4258-1.8125-5.7812 0-2.3633 0.60156-4.2969 1.8125-5.7969 1.207-1.5 2.7539-2.25 4.6406-2.25 1.0625 0 2 0.21484 2.8125 0.64062 0.82031 0.42969 1.5664 1.0859 2.2344 1.9688zm-3.2188 9.9219c1.0391 0 1.8359-0.37891 2.3906-1.1406 0.55078-0.76953 0.82812-1.8828 0.82812-3.3438 0-1.457-0.27734-2.5664-0.82812-3.3281-0.55469-0.76953-1.3516-1.1562-2.3906-1.1562-1.043 0-1.8398 0.38672-2.3906 1.1562-0.55469 0.76172-0.82812 1.8711-0.82812 3.3281 0 1.4609 0.27344 2.5742 0.82812 3.3438 0.55078 0.76172 1.3477 1.1406 2.3906 1.1406z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "k", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m10.5-3.1562c1.0508 0 1.8516-0.37891 2.4062-1.1406 0.55078-0.76953 0.82812-1.8828 0.82812-3.3438 0-1.457-0.27734-2.5664-0.82812-3.3281-0.55469-0.76953-1.3555-1.1562-2.4062-1.1562-1.0547 0-1.8594 0.38672-2.4219 1.1562-0.55469 0.77344-0.82812 1.8828-0.82812 3.3281 0 1.4492 0.27344 2.5586 0.82812 3.3281 0.5625 0.77344 1.3672 1.1562 2.4219 1.1562zm-3.25-9.9219c0.67578-0.88281 1.4219-1.5391 2.2344-1.9688 0.82031-0.42578 1.7656-0.64062 2.8281-0.64062 1.8945 0 3.4453 0.75 4.6562 2.25 1.207 1.5 1.8125 3.4336 1.8125 5.7969 0 2.3555-0.60547 4.2812-1.8125 5.7812-1.2109 1.5-2.7617 2.25-4.6562 2.25-1.0625 0-2.0078-0.21094-2.8281-0.625-0.8125-0.42578-1.5586-1.0859-2.2344-1.9844v2.2188h-4.8906v-21.281h4.8906z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "j", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m0.34375-15.312h4.8906l4.125 10.391 3.5-10.391h4.8906l-6.4375 16.766c-0.64844 1.6953-1.4023 2.8828-2.2656 3.5625-0.86719 0.6875-2 1.0312-3.4062 1.0312h-2.8438v-3.2188h1.5312c0.83203 0 1.4375-0.13672 1.8125-0.40625 0.38281-0.26172 0.67969-0.73047 0.89062-1.4062l0.14062-0.42188z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "f", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m2.1875-5.9688v-9.3438h4.9219v1.5312c0 0.83594-0.007813 1.875-0.015625 3.125-0.011719 1.25-0.015625 2.0859-0.015625 2.5 0 1.2422 0.03125 2.1328 0.09375 2.6719 0.070313 0.54297 0.17969 0.93359 0.32812 1.1719 0.20703 0.32422 0.47266 0.57422 0.79688 0.75 0.32031 0.16797 0.69141 0.25 1.1094 0.25 1.0195 0 1.8203-0.39062 2.4062-1.1719 0.58203-0.78125 0.875-1.8672 0.875-3.2656v-7.5625h4.8906v15.312h-4.8906v-2.2188c-0.74219 0.89844-1.5234 1.5586-2.3438 1.9844-0.82422 0.41406-1.7344 0.625-2.7344 0.625-1.7617 0-3.1055-0.53906-4.0312-1.625-0.92969-1.082-1.3906-2.6602-1.3906-4.7344z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "e", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m17.75-9.3281v9.3281h-4.9219v-7.1406c0-1.3203-0.03125-2.2344-0.09375-2.7344s-0.16797-0.86719-0.3125-1.1094c-0.1875-0.3125-0.44922-0.55469-0.78125-0.73438-0.32422-0.17578-0.69531-0.26562-1.1094-0.26562-1.0234 0-1.8242 0.39844-2.4062 1.1875-0.58594 0.78125-0.875 1.8711-0.875 3.2656v7.5312h-4.8906v-15.312h4.8906v2.2344c0.73828-0.88281 1.5195-1.5391 2.3438-1.9688 0.83203-0.42578 1.75-0.64062 2.75-0.64062 1.7695 0 3.1133 0.54688 4.0312 1.6406 0.91406 1.0859 1.375 2.6562 1.375 4.7188z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "s", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m2.3594-21.281h4.8906v21.281h-4.8906z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "i", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m2.3594-15.312h4.8906v15.312h-4.8906zm0-5.9688h4.8906v4h-4.8906z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "h", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m16.547-12.766c0.61328-0.94531 1.3477-1.6719 2.2031-2.1719 0.85156-0.5 1.7891-0.75 2.8125-0.75 1.7578 0 3.0977 0.54688 4.0156 1.6406 0.92578 1.0859 1.3906 2.6562 1.3906 4.7188v9.3281h-4.9219v-7.9844-0.35938c0.007813-0.13281 0.015625-0.32031 0.015625-0.5625 0-1.082-0.16406-1.8633-0.48438-2.3438-0.3125-0.48828-0.82422-0.73438-1.5312-0.73438-0.92969 0-1.6484 0.38672-2.1562 1.1562-0.51172 0.76172-0.77344 1.8672-0.78125 3.3125v7.5156h-4.9219v-7.9844c0-1.6953-0.14844-2.7852-0.4375-3.2656-0.29297-0.48828-0.8125-0.73438-1.5625-0.73438-0.9375 0-1.6641 0.38672-2.1719 1.1562-0.51172 0.76172-0.76562 1.8594-0.76562 3.2969v7.5312h-4.9219v-15.312h4.9219v2.2344c0.60156-0.86328 1.2891-1.5156 2.0625-1.9531 0.78125-0.4375 1.6406-0.65625 2.5781-0.65625 1.0625 0 2 0.25781 2.8125 0.76562 0.8125 0.51172 1.4258 1.2305 1.8438 2.1562z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "g", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m14.719-14.828v3.9844c-0.65625-0.45703-1.3242-0.79688-2-1.0156-0.66797-0.21875-1.3594-0.32812-2.0781-0.32812-1.3672 0-2.4336 0.40234-3.2031 1.2031-0.76172 0.79297-1.1406 1.9062-1.1406 3.3438 0 1.4297 0.37891 2.543 1.1406 3.3438 0.76953 0.79297 1.8359 1.1875 3.2031 1.1875 0.75781 0 1.4844-0.10938 2.1719-0.32812 0.6875-0.22656 1.3203-0.56641 1.9062-1.0156v4c-0.76172 0.28125-1.5391 0.48828-2.3281 0.625-0.78125 0.14453-1.5742 0.21875-2.375 0.21875-2.7617 0-4.9219-0.70703-6.4844-2.125-1.5547-1.4141-2.3281-3.3828-2.3281-5.9062 0-2.5312 0.77344-4.5039 2.3281-5.9219 1.5625-1.4141 3.7227-2.125 6.4844-2.125 0.80078 0 1.5938 0.074219 2.375 0.21875 0.78125 0.13672 1.5547 0.35156 2.3281 0.64062z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "b", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m9.6406-12.188c-1.0859 0-1.9141 0.39062-2.4844 1.1719-0.57422 0.78125-0.85938 1.9062-0.85938 3.375s0.28516 2.5938 0.85938 3.375c0.57031 0.77344 1.3984 1.1562 2.4844 1.1562 1.0625 0 1.875-0.38281 2.4375-1.1562 0.57031-0.78125 0.85938-1.9062 0.85938-3.375s-0.28906-2.5938-0.85938-3.375c-0.5625-0.78125-1.375-1.1719-2.4375-1.1719zm0-3.5c2.6328 0 4.6914 0.71484 6.1719 2.1406 1.4766 1.418 2.2188 3.3867 2.2188 5.9062 0 2.5117-0.74219 4.4805-2.2188 5.9062-1.4805 1.418-3.5391 2.125-6.1719 2.125-2.6484 0-4.7148-0.70703-6.2031-2.125-1.4922-1.4258-2.2344-3.3945-2.2344-5.9062 0-2.5195 0.74219-4.4883 2.2344-5.9062 1.4883-1.4258 3.5547-2.1406 6.2031-2.1406z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "r", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m12.422-21.281v3.2188h-2.7031c-0.6875 0-1.1719 0.125-1.4531 0.375-0.27344 0.25-0.40625 0.6875-0.40625 1.3125v1.0625h4.1875v3.5h-4.1875v11.812h-4.8906v-11.812h-2.4375v-3.5h2.4375v-1.0625c0-1.6641 0.46094-2.8984 1.3906-3.7031 0.92578-0.80078 2.3672-1.2031 4.3281-1.2031z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "q", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m17.75-9.3281v9.3281h-4.9219v-7.1094c0-1.3438-0.03125-2.2656-0.09375-2.7656s-0.16797-0.86719-0.3125-1.1094c-0.1875-0.3125-0.44922-0.55469-0.78125-0.73438-0.32422-0.17578-0.69531-0.26562-1.1094-0.26562-1.0234 0-1.8242 0.39844-2.4062 1.1875-0.58594 0.78125-0.875 1.8711-0.875 3.2656v7.5312h-4.8906v-21.281h4.8906v8.2031c0.73828-0.88281 1.5195-1.5391 2.3438-1.9688 0.83203-0.42578 1.75-0.64062 2.75-0.64062 1.7695 0 3.1133 0.54688 4.0312 1.6406 0.91406 1.0859 1.375 2.6562 1.375 4.7188z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "p", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m2.5781-20.406h5.875l7.4219 14v-14h4.9844v20.406h-5.875l-7.4219-14v14h-4.9844z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "o", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m2.5781-20.406h8.7344c2.5938 0 4.582 0.57812 5.9688 1.7344 1.3945 1.1484 2.0938 2.7891 2.0938 4.9219 0 2.1367-0.69922 3.7812-2.0938 4.9375-1.3867 1.1562-3.375 1.7344-5.9688 1.7344h-3.4844v7.0781h-5.25zm5.25 3.8125v5.7031h2.9219c1.0195 0 1.8047-0.25 2.3594-0.75 0.5625-0.5 0.84375-1.2031 0.84375-2.1094 0-0.91406-0.28125-1.6172-0.84375-2.1094-0.55469-0.48828-1.3398-0.73438-2.3594-0.73438z",
-                                  },
-                                }),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "symbol",
-                              { attrs: { id: "n", overflow: "visible" } },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    d: "m2.3594-15.312h4.8906v15.031c0 2.0508-0.49609 3.6172-1.4844 4.7031-0.98047 1.082-2.4062 1.625-4.2812 1.625h-2.4219v-3.2188h0.85938c0.92578 0 1.5625-0.21094 1.9062-0.625 0.35156-0.41797 0.53125-1.2461 0.53125-2.4844zm0-5.9688h4.8906v4h-4.8906z",
-                                  },
-                                }),
-                              ]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("g", [
-                            _c("path", {
-                              attrs: {
-                                d: "m260.4 56c-74.266 0-134.4 60.137-134.4 134.4v179.2c0 74.266 60.137 134.4 134.4 134.4h179.2c74.266 0 134.4-60.137 134.4-134.4v-179.2c0-74.266-60.137-134.4-134.4-134.4zm0 22.398h179.2c62.242 0 112 49.758 112 112v179.2c0 62.242-49.758 112-112 112h-179.2c-62.242 0-112-49.758-112-112v-179.2c0-62.242 49.758-112 112-112zm-56 100.8v22.398h291.2v-22.398zm0 89.602v22.398h291.2v-22.398zm0 89.602v22.398h291.2v-22.398z",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: { x: "70", y: "644", "xlink:href": "#t" },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "90.550781",
-                                y: "644",
-                                "xlink:href": "#d",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "104.359375",
-                                y: "644",
-                                "xlink:href": "#a",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "123.347656",
-                                y: "644",
-                                "xlink:href": "#m",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "142.242188",
-                                y: "644",
-                                "xlink:href": "#c",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "155.628906",
-                                y: "644",
-                                "xlink:href": "#a",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "174.617188",
-                                y: "644",
-                                "xlink:href": "#l",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "204.410156",
-                                y: "644",
-                                "xlink:href": "#k",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "224.453125",
-                                y: "644",
-                                "xlink:href": "#j",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "252.453125",
-                                y: "644",
-                                "xlink:href": "#f",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "272.382812",
-                                y: "644",
-                                "xlink:href": "#e",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "292.320312",
-                                y: "644",
-                                "xlink:href": "#s",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "301.914062",
-                                y: "644",
-                                "xlink:href": "#i",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "311.515625",
-                                y: "644",
-                                "xlink:href": "#h",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "340.6875",
-                                y: "644",
-                                "xlink:href": "#i",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "350.289062",
-                                y: "644",
-                                "xlink:href": "#g",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "366.882812",
-                                y: "644",
-                                "xlink:href": "#b",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "386.121094",
-                                y: "644",
-                                "xlink:href": "#e",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: { x: "70", y: "672", "xlink:href": "#r" },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "82.183594",
-                                y: "672",
-                                "xlink:href": "#d",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "95.992188",
-                                y: "672",
-                                "xlink:href": "#b",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "115.226562",
-                                y: "672",
-                                "xlink:href": "#h",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "154.152344",
-                                y: "672",
-                                "xlink:href": "#c",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "167.535156",
-                                y: "672",
-                                "xlink:href": "#q",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "187.46875",
-                                y: "672",
-                                "xlink:href": "#a",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "216.207031",
-                                y: "672",
-                                "xlink:href": "#p",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "239.640625",
-                                y: "672",
-                                "xlink:href": "#b",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "258.878906",
-                                y: "672",
-                                "xlink:href": "#f",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "278.8125",
-                                y: "672",
-                                "xlink:href": "#e",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "308.492188",
-                                y: "672",
-                                "xlink:href": "#o",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "329.015625",
-                                y: "672",
-                                "xlink:href": "#d",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "342.820312",
-                                y: "672",
-                                "xlink:href": "#b",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "362.058594",
-                                y: "672",
-                                "xlink:href": "#n",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "371.65625",
-                                y: "672",
-                                "xlink:href": "#a",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "390.648438",
-                                y: "672",
-                                "xlink:href": "#g",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("use", {
-                              attrs: {
-                                x: "407.242188",
-                                y: "672",
-                                "xlink:href": "#c",
-                              },
-                            }),
-                          ]),
-                        ]
-                      ),
-                    ]),
-                  ]),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "form",
-            { staticClass: "search", attrs: { action: "#", method: "GET" } },
-            [
-              _c("input", {
-                attrs: {
-                  placeholder: "recherche vin lang todo:",
-                  type: "search",
-                  name: "query",
-                },
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "search-button", attrs: { type: "submit" } },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "icon-search",
-                      attrs: {
-                        width: "35pt",
-                        height: "35pt",
-                        version: "1.1",
-                        viewBox: "100 150 500 300",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        "xmlns:xlink": "http://www.w3.org/1999/xlink",
                       },
-                    },
-                    [
-                      _c("defs", [
-                        _c(
-                          "symbol",
-                          { attrs: { id: "t", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m18.766-1.125c-0.96875 0.5-1.9805 0.875-3.0312 1.125-1.043 0.25781-2.1367 0.39062-3.2812 0.39062-3.3984 0-6.0898-0.94531-8.0781-2.8438-1.9922-1.9062-2.9844-4.4844-2.9844-7.7344 0-3.2578 0.99219-5.8359 2.9844-7.7344 1.9883-1.9062 4.6797-2.8594 8.0781-2.8594 1.1445 0 2.2383 0.13281 3.2812 0.39062 1.0508 0.25 2.0625 0.625 3.0312 1.125v4.2188c-0.98047-0.65625-1.9453-1.1406-2.8906-1.4531-0.94922-0.3125-1.9492-0.46875-3-0.46875-1.875 0-3.3516 0.60547-4.4219 1.8125-1.0742 1.1992-1.6094 2.8555-1.6094 4.9688 0 2.1055 0.53516 3.7617 1.6094 4.9688 1.0703 1.1992 2.5469 1.7969 4.4219 1.7969 1.0508 0 2.0508-0.14844 3-0.45312 0.94531-0.3125 1.9102-0.80078 2.8906-1.4688z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "c", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m13.734-11.141c-0.4375-0.19531-0.87109-0.34375-1.2969-0.4375-0.41797-0.10156-0.83984-0.15625-1.2656-0.15625-1.2617 0-2.2305 0.40625-2.9062 1.2188-0.67969 0.80469-1.0156 1.9531-1.0156 3.4531v7.0625h-4.8906v-15.312h4.8906v2.5156c0.625-1 1.3438-1.7266 2.1562-2.1875 0.82031-0.46875 1.8008-0.70312 2.9375-0.70312 0.16406 0 0.34375 0.011719 0.53125 0.03125 0.19531 0.011719 0.47656 0.039062 0.84375 0.078125z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "b", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m17.641-7.7031v1.4062h-11.453c0.125 1.1484 0.53906 2.0078 1.25 2.5781 0.70703 0.57422 1.7031 0.85938 2.9844 0.85938 1.0312 0 2.082-0.14844 3.1562-0.45312 1.082-0.3125 2.1914-0.77344 3.3281-1.3906v3.7656c-1.1562 0.4375-2.3125 0.76562-3.4688 0.98438-1.1562 0.22656-2.3125 0.34375-3.4688 0.34375-2.7734 0-4.9297-0.70312-6.4688-2.1094-1.5312-1.4062-2.2969-3.3789-2.2969-5.9219 0-2.5 0.75391-4.4609 2.2656-5.8906 1.5078-1.4375 3.582-2.1562 6.2188-2.1562 2.4062 0 4.332 0.73047 5.7812 2.1875 1.4453 1.4492 2.1719 3.3828 2.1719 5.7969zm-5.0312-1.625c0-0.92578-0.27344-1.6719-0.8125-2.2344-0.54297-0.57031-1.25-0.85938-2.125-0.85938-0.94922 0-1.7188 0.26562-2.3125 0.79688s-0.96484 1.2969-1.1094 2.2969z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "k", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m9.2188-6.8906c-1.0234 0-1.793 0.17188-2.3125 0.51562-0.51172 0.34375-0.76562 0.85547-0.76562 1.5312 0 0.625 0.20703 1.1172 0.625 1.4688 0.41406 0.34375 0.98828 0.51562 1.7188 0.51562 0.92578 0 1.7031-0.32812 2.3281-0.98438 0.63281-0.66406 0.95312-1.4922 0.95312-2.4844v-0.5625zm7.4688-1.8438v8.7344h-4.9219v-2.2656c-0.65625 0.92969-1.3984 1.6055-2.2188 2.0312-0.82422 0.41406-1.8242 0.625-3 0.625-1.5859 0-2.8711-0.45703-3.8594-1.375-0.99219-0.92578-1.4844-2.1289-1.4844-3.6094 0-1.7891 0.61328-3.1016 1.8438-3.9375 1.2383-0.84375 3.1797-1.2656 5.8281-1.2656h2.8906v-0.39062c0-0.76953-0.30859-1.332-0.92188-1.6875-0.61719-0.36328-1.5703-0.54688-2.8594-0.54688-1.0547 0-2.0312 0.10547-2.9375 0.3125-0.89844 0.21094-1.7305 0.52344-2.5 0.9375v-3.7344c1.0391-0.25 2.0859-0.44141 3.1406-0.57812 1.0625-0.13281 2.125-0.20312 3.1875-0.20312 2.7578 0 4.75 0.54688 5.9688 1.6406 1.2266 1.0859 1.8438 2.8555 1.8438 5.3125z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "a", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m7.7031-19.656v4.3438h5.0469v3.5h-5.0469v6.5c0 0.71094 0.14062 1.1875 0.42188 1.4375s0.83594 0.375 1.6719 0.375h2.5156v3.5h-4.1875c-1.9375 0-3.3125-0.39844-4.125-1.2031-0.80469-0.8125-1.2031-2.1797-1.2031-4.1094v-6.5h-2.4219v-3.5h2.4219v-4.3438z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "j", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m12.766-13.078v-8.2031h4.9219v21.281h-4.9219v-2.2188c-0.66797 0.90625-1.4062 1.5703-2.2188 1.9844s-1.7578 0.625-2.8281 0.625c-1.8867 0-3.4336-0.75-4.6406-2.25-1.2109-1.5-1.8125-3.4258-1.8125-5.7812 0-2.3633 0.60156-4.2969 1.8125-5.7969 1.207-1.5 2.7539-2.25 4.6406-2.25 1.0625 0 2 0.21484 2.8125 0.64062 0.82031 0.42969 1.5664 1.0859 2.2344 1.9688zm-3.2188 9.9219c1.0391 0 1.8359-0.37891 2.3906-1.1406 0.55078-0.76953 0.82812-1.8828 0.82812-3.3438 0-1.457-0.27734-2.5664-0.82812-3.3281-0.55469-0.76953-1.3516-1.1562-2.3906-1.1562-1.043 0-1.8398 0.38672-2.3906 1.1562-0.55469 0.76172-0.82812 1.8711-0.82812 3.3281 0 1.4609 0.27344 2.5742 0.82812 3.3438 0.55078 0.76172 1.3477 1.1406 2.3906 1.1406z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "i", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m10.5-3.1562c1.0508 0 1.8516-0.37891 2.4062-1.1406 0.55078-0.76953 0.82812-1.8828 0.82812-3.3438 0-1.457-0.27734-2.5664-0.82812-3.3281-0.55469-0.76953-1.3555-1.1562-2.4062-1.1562-1.0547 0-1.8594 0.38672-2.4219 1.1562-0.55469 0.77344-0.82812 1.8828-0.82812 3.3281 0 1.4492 0.27344 2.5586 0.82812 3.3281 0.5625 0.77344 1.3672 1.1562 2.4219 1.1562zm-3.25-9.9219c0.67578-0.88281 1.4219-1.5391 2.2344-1.9688 0.82031-0.42578 1.7656-0.64062 2.8281-0.64062 1.8945 0 3.4453 0.75 4.6562 2.25 1.207 1.5 1.8125 3.4336 1.8125 5.7969 0 2.3555-0.60547 4.2812-1.8125 5.7812-1.2109 1.5-2.7617 2.25-4.6562 2.25-1.0625 0-2.0078-0.21094-2.8281-0.625-0.8125-0.42578-1.5586-1.0859-2.2344-1.9844v2.2188h-4.8906v-21.281h4.8906z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "h", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m0.34375-15.312h4.8906l4.125 10.391 3.5-10.391h4.8906l-6.4375 16.766c-0.64844 1.6953-1.4023 2.8828-2.2656 3.5625-0.86719 0.6875-2 1.0312-3.4062 1.0312h-2.8438v-3.2188h1.5312c0.83203 0 1.4375-0.13672 1.8125-0.40625 0.38281-0.26172 0.67969-0.73047 0.89062-1.4062l0.14062-0.42188z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "e", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m2.5781-20.406h8.7344c2.5938 0 4.582 0.57812 5.9688 1.7344 1.3945 1.1484 2.0938 2.7891 2.0938 4.9219 0 2.1367-0.69922 3.7812-2.0938 4.9375-1.3867 1.1562-3.375 1.7344-5.9688 1.7344h-3.4844v7.0781h-5.25zm5.25 3.8125v5.7031h2.9219c1.0195 0 1.8047-0.25 2.3594-0.75 0.5625-0.5 0.84375-1.2031 0.84375-2.1094 0-0.91406-0.28125-1.6172-0.84375-2.1094-0.55469-0.48828-1.3398-0.73438-2.3594-0.73438z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "g", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m2.3594-15.312h4.8906v15.312h-4.8906zm0-5.9688h4.8906v4h-4.8906z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "f", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m17.75-9.3281v9.3281h-4.9219v-7.1094c0-1.3438-0.03125-2.2656-0.09375-2.7656s-0.16797-0.86719-0.3125-1.1094c-0.1875-0.3125-0.44922-0.55469-0.78125-0.73438-0.32422-0.17578-0.69531-0.26562-1.1094-0.26562-1.0234 0-1.8242 0.39844-2.4062 1.1875-0.58594 0.78125-0.875 1.8711-0.875 3.2656v7.5312h-4.8906v-21.281h4.8906v8.2031c0.73828-0.88281 1.5195-1.5391 2.3438-1.9688 0.83203-0.42578 1.75-0.64062 2.75-0.64062 1.7695 0 3.1133 0.54688 4.0312 1.6406 0.91406 1.0859 1.375 2.6562 1.375 4.7188z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "s", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m0.42188-15.312h4.8906l3.8281 10.578 3.7969-10.578h4.9062l-6.0312 15.312h-5.375z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "r", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m12.422-21.281v3.2188h-2.7031c-0.6875 0-1.1719 0.125-1.4531 0.375-0.27344 0.25-0.40625 0.6875-0.40625 1.3125v1.0625h4.1875v3.5h-4.1875v11.812h-4.8906v-11.812h-2.4375v-3.5h2.4375v-1.0625c0-1.6641 0.46094-2.8984 1.3906-3.7031 0.92578-0.80078 2.3672-1.2031 4.3281-1.2031z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "d", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m9.6406-12.188c-1.0859 0-1.9141 0.39062-2.4844 1.1719-0.57422 0.78125-0.85938 1.9062-0.85938 3.375s0.28516 2.5938 0.85938 3.375c0.57031 0.77344 1.3984 1.1562 2.4844 1.1562 1.0625 0 1.875-0.38281 2.4375-1.1562 0.57031-0.78125 0.85938-1.9062 0.85938-3.375s-0.28906-2.5938-0.85938-3.375c-0.5625-0.78125-1.375-1.1719-2.4375-1.1719zm0-3.5c2.6328 0 4.6914 0.71484 6.1719 2.1406 1.4766 1.418 2.2188 3.3867 2.2188 5.9062 0 2.5117-0.74219 4.4805-2.2188 5.9062-1.4805 1.418-3.5391 2.125-6.1719 2.125-2.6484 0-4.7148-0.70703-6.2031-2.125-1.4922-1.4258-2.2344-3.3945-2.2344-5.9062 0-2.5195 0.74219-4.4883 2.2344-5.9062 1.4883-1.4258 3.5547-2.1406 6.2031-2.1406z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "q", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m16.547-12.766c0.61328-0.94531 1.3477-1.6719 2.2031-2.1719 0.85156-0.5 1.7891-0.75 2.8125-0.75 1.7578 0 3.0977 0.54688 4.0156 1.6406 0.92578 1.0859 1.3906 2.6562 1.3906 4.7188v9.3281h-4.9219v-7.9844-0.35938c0.007813-0.13281 0.015625-0.32031 0.015625-0.5625 0-1.082-0.16406-1.8633-0.48438-2.3438-0.3125-0.48828-0.82422-0.73438-1.5312-0.73438-0.92969 0-1.6484 0.38672-2.1562 1.1562-0.51172 0.76172-0.77344 1.8672-0.78125 3.3125v7.5156h-4.9219v-7.9844c0-1.6953-0.14844-2.7852-0.4375-3.2656-0.29297-0.48828-0.8125-0.73438-1.5625-0.73438-0.9375 0-1.6641 0.38672-2.1719 1.1562-0.51172 0.76172-0.76562 1.8594-0.76562 3.2969v7.5312h-4.9219v-15.312h4.9219v2.2344c0.60156-0.86328 1.2891-1.5156 2.0625-1.9531 0.78125-0.4375 1.6406-0.65625 2.5781-0.65625 1.0625 0 2 0.25781 2.8125 0.76562 0.8125 0.51172 1.4258 1.2305 1.8438 2.1562z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "p", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m2.5781-20.406h5.875l7.4219 14v-14h4.9844v20.406h-5.875l-7.4219-14v14h-4.9844z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "o", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m2.1875-5.9688v-9.3438h4.9219v1.5312c0 0.83594-0.007813 1.875-0.015625 3.125-0.011719 1.25-0.015625 2.0859-0.015625 2.5 0 1.2422 0.03125 2.1328 0.09375 2.6719 0.070313 0.54297 0.17969 0.93359 0.32812 1.1719 0.20703 0.32422 0.47266 0.57422 0.79688 0.75 0.32031 0.16797 0.69141 0.25 1.1094 0.25 1.0195 0 1.8203-0.39062 2.4062-1.1719 0.58203-0.78125 0.875-1.8672 0.875-3.2656v-7.5625h4.8906v15.312h-4.8906v-2.2188c-0.74219 0.89844-1.5234 1.5586-2.3438 1.9844-0.82422 0.41406-1.7344 0.625-2.7344 0.625-1.7617 0-3.1055-0.53906-4.0312-1.625-0.92969-1.082-1.3906-2.6602-1.3906-4.7344z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "n", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m17.75-9.3281v9.3281h-4.9219v-7.1406c0-1.3203-0.03125-2.2344-0.09375-2.7344s-0.16797-0.86719-0.3125-1.1094c-0.1875-0.3125-0.44922-0.55469-0.78125-0.73438-0.32422-0.17578-0.69531-0.26562-1.1094-0.26562-1.0234 0-1.8242 0.39844-2.4062 1.1875-0.58594 0.78125-0.875 1.8711-0.875 3.2656v7.5312h-4.8906v-15.312h4.8906v2.2344c0.73828-0.88281 1.5195-1.5391 2.3438-1.9688 0.83203-0.42578 1.75-0.64062 2.75-0.64062 1.7695 0 3.1133 0.54688 4.0312 1.6406 0.91406 1.0859 1.375 2.6562 1.375 4.7188z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "m", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m2.3594-15.312h4.8906v15.031c0 2.0508-0.49609 3.6172-1.4844 4.7031-0.98047 1.082-2.4062 1.625-4.2812 1.625h-2.4219v-3.2188h0.85938c0.92578 0 1.5625-0.21094 1.9062-0.625 0.35156-0.41797 0.53125-1.2461 0.53125-2.4844zm0-5.9688h4.8906v4h-4.8906z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "symbol",
-                          { attrs: { id: "l", overflow: "visible" } },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "m14.719-14.828v3.9844c-0.65625-0.45703-1.3242-0.79688-2-1.0156-0.66797-0.21875-1.3594-0.32812-2.0781-0.32812-1.3672 0-2.4336 0.40234-3.2031 1.2031-0.76172 0.79297-1.1406 1.9062-1.1406 3.3438 0 1.4297 0.37891 2.543 1.1406 3.3438 0.76953 0.79297 1.8359 1.1875 3.2031 1.1875 0.75781 0 1.4844-0.10938 2.1719-0.32812 0.6875-0.22656 1.3203-0.56641 1.9062-1.0156v4c-0.76172 0.28125-1.5391 0.48828-2.3281 0.625-0.78125 0.14453-1.5742 0.21875-2.375 0.21875-2.7617 0-4.9219-0.70703-6.4844-2.125-1.5547-1.4141-2.3281-3.3828-2.3281-5.9062 0-2.5312 0.77344-4.5039 2.3281-5.9219 1.5625-1.4141 3.7227-2.125 6.4844-2.125 0.80078 0 1.5938 0.074219 2.375 0.21875 0.78125 0.13672 1.5547 0.35156 2.3281 0.64062z",
-                              },
-                            }),
-                          ]
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("g", [
+                      [
                         _c("path", {
                           attrs: {
-                            d: "m245 188.33c-18.926 18.852-28.242 45.297-25.312 71.848 0.60547 5.7227 5.4453 10.055 11.199 10.023h1.2344c2.9883-0.33594 5.7188-1.8594 7.5742-4.2305 1.8516-2.3672 2.6758-5.3867 2.2812-8.3672-2.1875-19.805 4.7578-39.527 18.871-53.594 4.375-4.375 4.375-11.473 0-15.848s-11.473-4.375-15.848 0z",
+                            d: "M2.8 19.95V8.725Q2.375 8.45 2.087 8 1.8 7.55 1.8 6.9V4.075q0-.95.662-1.613.663-.662 1.613-.662h15.85q.95 0 1.613.662.662.663.662 1.613V6.9q0 .65-.287 1.1-.288.45-.713.725V19.95q0 .95-.662 1.612-.663.663-1.613.663H5.075q-.95 0-1.612-.663Q2.8 20.9 2.8 19.95ZM5.075 9.175V19.95h13.85V9.175ZM19.925 6.9V4.075H4.075V6.9ZM8.9 14.075h6.2v-2.1H8.9ZM5.075 19.95V9.175 19.95Z",
                           },
                         }),
-                        _vm._v(" "),
+                      ]
+                    ),
+                    _vm._v(
+                      "\n                        mes cellier\n                    "
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  { staticClass: "search-button", attrs: { to: "/catalogue" } },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          height: "24",
+                          width: "24",
+                        },
+                      },
+                      [
                         _c("path", {
                           attrs: {
-                            d: "m437.47 351.62c33.98-39.5 44.953-93.84 28.969-143.43-15.98-49.594-56.621-87.293-107.27-99.52-50.648-12.223-104.01 2.793-140.86 39.637s-51.859 90.207-39.637 140.86c12.227 50.652 49.926 91.293 99.52 107.27 49.59 15.984 103.93 5.0117 143.43-28.969l89.602 89.602 15.848-15.848zm-203.5-7.6172c-23.883-23.883-37.297-56.273-37.297-90.047 0-33.773 13.418-66.16 37.301-90.043 23.879-23.883 56.27-37.297 90.043-37.297s66.164 13.414 90.047 37.297c23.879 23.883 37.297 56.27 37.297 90.043 0 33.773-13.414 66.164-37.297 90.047-23.895 23.855-56.281 37.254-90.047 37.254s-66.152-13.398-90.047-37.254z",
+                            d: "m19.45 21.325-6.3-6.3q-.725.55-1.675.85-.95.3-2.05.3-2.775 0-4.712-1.937Q2.775 12.3 2.775 9.525q0-2.775 1.938-4.713Q6.65 2.875 9.425 2.875q2.775 0 4.712 1.937 1.938 1.938 1.938 4.713 0 1.1-.313 2.05-.312.95-.837 1.65l6.325 6.325ZM9.425 13.65q1.725 0 2.925-1.2 1.2-1.2 1.2-2.925 0-1.725-1.2-2.925-1.2-1.2-2.925-1.2Q7.7 5.4 6.5 6.6 5.3 7.8 5.3 9.525q0 1.725 1.2 2.925 1.2 1.2 2.925 1.2Z",
                           },
                         }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: { x: "70", y: "644", "xlink:href": "#t" },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
+                      ]
+                    ),
+                    _vm._v(
+                      "\n                        catalogue\n                    "
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  { staticClass: "profile-button", attrs: { to: "#" } },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          height: "24",
+                          width: "24",
+                        },
+                      },
+                      [
+                        _c("path", {
                           attrs: {
-                            x: "90.550781",
-                            y: "644",
-                            "xlink:href": "#c",
+                            d: "M12 11.9q-1.75 0-2.975-1.238Q7.8 9.425 7.8 7.7q0-1.75 1.225-2.975T12 3.5q1.75 0 2.975 1.225T16.2 7.7q0 1.725-1.225 2.962Q13.75 11.9 12 11.9Zm-8.2 8.4v-3q0-.925.463-1.675.462-.75 1.237-1.15 1.575-.8 3.2-1.188 1.625-.387 3.3-.387 1.675 0 3.3.387 1.625.388 3.2 1.163.775.4 1.238 1.163.462.762.462 1.687v3Zm2.275-2.275h11.85v-.7q0-.275-.137-.5-.138-.225-.363-.325-1.3-.675-2.663-1-1.362-.325-2.762-.325t-2.762.325q-1.363.325-2.663 1-.225.1-.362.325-.138.225-.138.5ZM12 9.625q.8 0 1.363-.563.562-.562.562-1.362t-.562-1.363Q12.8 5.775 12 5.775t-1.362.562q-.563.563-.563 1.363t.563 1.362q.562.563 1.362.563ZM12 7.7Zm0 10.325Z",
                           },
                         }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "104.359375",
-                            y: "644",
-                            "xlink:href": "#b",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "123.347656",
-                            y: "644",
-                            "xlink:href": "#k",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "142.242188",
-                            y: "644",
-                            "xlink:href": "#a",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "155.628906",
-                            y: "644",
-                            "xlink:href": "#b",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "174.617188",
-                            y: "644",
-                            "xlink:href": "#j",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "204.410156",
-                            y: "644",
-                            "xlink:href": "#i",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "224.453125",
-                            y: "644",
-                            "xlink:href": "#h",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "252.453125",
-                            y: "644",
-                            "xlink:href": "#e",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "272.972656",
-                            y: "644",
-                            "xlink:href": "#c",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "286.78125",
-                            y: "644",
-                            "xlink:href": "#g",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "296.378906",
-                            y: "644",
-                            "xlink:href": "#a",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "309.765625",
-                            y: "644",
-                            "xlink:href": "#f",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "329.695312",
-                            y: "644",
-                            "xlink:href": "#s",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "347.949219",
-                            y: "644",
-                            "xlink:href": "#g",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: { x: "70", y: "672", "xlink:href": "#r" },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "82.183594",
-                            y: "672",
-                            "xlink:href": "#c",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "95.992188",
-                            y: "672",
-                            "xlink:href": "#d",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "115.226562",
-                            y: "672",
-                            "xlink:href": "#q",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "154.152344",
-                            y: "672",
-                            "xlink:href": "#a",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "167.535156",
-                            y: "672",
-                            "xlink:href": "#f",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "187.46875",
-                            y: "672",
-                            "xlink:href": "#b",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "216.207031",
-                            y: "672",
-                            "xlink:href": "#p",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "239.640625",
-                            y: "672",
-                            "xlink:href": "#d",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "258.878906",
-                            y: "672",
-                            "xlink:href": "#o",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "278.8125",
-                            y: "672",
-                            "xlink:href": "#n",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "308.492188",
-                            y: "672",
-                            "xlink:href": "#e",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "329.015625",
-                            y: "672",
-                            "xlink:href": "#c",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "342.820312",
-                            y: "672",
-                            "xlink:href": "#d",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "362.058594",
-                            y: "672",
-                            "xlink:href": "#m",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "371.65625",
-                            y: "672",
-                            "xlink:href": "#b",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "390.648438",
-                            y: "672",
-                            "xlink:href": "#l",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("use", {
-                          attrs: {
-                            x: "407.242188",
-                            y: "672",
-                            "xlink:href": "#a",
-                          },
-                        }),
-                      ]),
-                    ]
-                  ),
-                ]
-              ),
-            ]
-          ),
+                      ]
+                    ),
+                    _vm._v("\n                        #\n                    "),
+                  ]
+                ),
+              ],
+              1
+            ),
+          ]),
         ]),
         _vm._v(" "),
         _c("input", { attrs: { type: "checkbox", id: "menu-toggle" } }),
         _vm._v(" "),
-        _vm._m(1),
+        _vm._m(2),
       ]),
     ]),
   ])
@@ -31746,6 +30125,14 @@ var staticRenderFns = [
       }),
       _vm._v(" "),
       _c("title", [_vm._v("vino")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "site-header-container" }, [
+      _c("div", { staticClass: "header-icon-container" }),
     ])
   },
   function () {
@@ -31932,6 +30319,115 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/bouteilleHasCellier/BouteilleHasCellier.vue?vue&type=template&id=62127e00& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "liste-container" }, [
+    _c("h2", { staticClass: "liste__titre" }, [_vm._v("Mon cellier 1")]),
+    _vm._v(" "),
+    _c(
+      "article",
+      { staticClass: "container" },
+      [
+        _vm._l(_vm.bouteilleHasCellier, function (bouteille) {
+          return _c("div", { key: bouteille.id, staticClass: "card" }, [
+            _c("div", { staticClass: "card-body" }, [
+              _c("img", {
+                attrs: { src: bouteille.image, alt: bouteille.nom },
+              }),
+              _vm._v(" "),
+              _c("picture", { staticClass: "modal" }, [
+                _c("img", {
+                  attrs: { src: bouteille.image, alt: bouteille.nom },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-info" }, [
+                _c("div", { staticClass: "card-info-title" }, [
+                  _c("h3", { staticClass: "card-title" }, [
+                    _vm._v(_vm._s(bouteille.nom)),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-subtitle" }, [
+                    _vm._v("White wine " + _vm._s(bouteille.format)),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-subtitle" }, [
+                    _vm._v(_vm._s(bouteille.pays)),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-info-client" }, [
+                  _c("p", { staticClass: "card-count" }, [
+                    _vm._v("Prix : " + _vm._s(bouteille.prix_saq) + " $"),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-rating" }, [
+                    _vm._v("Note: ★★★✩"),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(0, true),
+                ]),
+              ]),
+            ]),
+          ])
+        }),
+        _vm._v(" "),
+        _vm.bouteilleHasCellier.length === 0
+          ? _c("div", { staticClass: "catalogue-container" }, [_vm._m(1)])
+          : _vm._e(),
+      ],
+      2
+    ),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-footer" }, [
+      _c("button", { staticClass: "card-btn_add", attrs: { value: "" } }, [
+        _vm._v("+"),
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "card-btn_add deleteModalBtn", attrs: { value: "" } },
+        [_vm._v("-")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", { staticClass: "text-danger" }, [
+        _vm._v("Aucune bouteilles disponible dans ce cellier"),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/catalogue/Catalogue.vue?vue&type=template&id=fe57b918& ***!
@@ -31949,9 +30445,11 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "catalogue-container" }, [
-      _c("form", { staticClass: "catalogue__liste-search" }, [
-        _c("div", { staticClass: "search-box" }, [
+    _c("header", { staticClass: "site-header" }, [
+      _c(
+        "form",
+        { staticClass: "search", attrs: { action: "#", method: "GET" } },
+        [
           _c("input", {
             directives: [
               {
@@ -31961,8 +30459,11 @@ var render = function () {
                 expression: "searchQuery",
               },
             ],
-            staticClass: "search-input",
-            attrs: { type: "search", placeholder: "Recherche dans catalogue" },
+            attrs: {
+              placeholder: "Recherche dans catalogue",
+              type: "search",
+              name: "query",
+            },
             domProps: { value: _vm.searchQuery },
             on: {
               input: [
@@ -31979,100 +30480,418 @@ var render = function () {
           _vm._v(" "),
           _c(
             "button",
-            { staticClass: "search-btn", attrs: { type: "submit" } },
+            { staticClass: "search-button", attrs: { type: "submit" } },
             [
               _c(
                 "svg",
                 {
+                  staticClass: "icon-search",
                   attrs: {
+                    width: "35pt",
+                    height: "35pt",
+                    version: "1.1",
+                    viewBox: "100 150 500 300",
                     xmlns: "http://www.w3.org/2000/svg",
-                    height: "24",
-                    width: "24",
+                    "xmlns:xlink": "http://www.w3.org/1999/xlink",
                   },
                 },
                 [
-                  _c("path", {
-                    attrs: {
-                      d: "m19.45 21.325-6.3-6.3q-.725.55-1.675.85-.95.3-2.05.3-2.775 0-4.712-1.937Q2.775 12.3 2.775 9.525q0-2.775 1.938-4.713Q6.65 2.875 9.425 2.875q2.775 0 4.712 1.937 1.938 1.938 1.938 4.713 0 1.1-.313 2.05-.312.95-.837 1.65l6.325 6.325ZM9.425 13.65q1.725 0 2.925-1.2 1.2-1.2 1.2-2.925 0-1.725-1.2-2.925-1.2-1.2-2.925-1.2Q7.7 5.4 6.5 6.6 5.3 7.8 5.3 9.525q0 1.725 1.2 2.925 1.2 1.2 2.925 1.2Z",
-                    },
-                  }),
+                  _c("defs", [
+                    _c("symbol", { attrs: { id: "t", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m18.766-1.125c-0.96875 0.5-1.9805 0.875-3.0312 1.125-1.043 0.25781-2.1367 0.39062-3.2812 0.39062-3.3984 0-6.0898-0.94531-8.0781-2.8438-1.9922-1.9062-2.9844-4.4844-2.9844-7.7344 0-3.2578 0.99219-5.8359 2.9844-7.7344 1.9883-1.9062 4.6797-2.8594 8.0781-2.8594 1.1445 0 2.2383 0.13281 3.2812 0.39062 1.0508 0.25 2.0625 0.625 3.0312 1.125v4.2188c-0.98047-0.65625-1.9453-1.1406-2.8906-1.4531-0.94922-0.3125-1.9492-0.46875-3-0.46875-1.875 0-3.3516 0.60547-4.4219 1.8125-1.0742 1.1992-1.6094 2.8555-1.6094 4.9688 0 2.1055 0.53516 3.7617 1.6094 4.9688 1.0703 1.1992 2.5469 1.7969 4.4219 1.7969 1.0508 0 2.0508-0.14844 3-0.45312 0.94531-0.3125 1.9102-0.80078 2.8906-1.4688z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "c", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m13.734-11.141c-0.4375-0.19531-0.87109-0.34375-1.2969-0.4375-0.41797-0.10156-0.83984-0.15625-1.2656-0.15625-1.2617 0-2.2305 0.40625-2.9062 1.2188-0.67969 0.80469-1.0156 1.9531-1.0156 3.4531v7.0625h-4.8906v-15.312h4.8906v2.5156c0.625-1 1.3438-1.7266 2.1562-2.1875 0.82031-0.46875 1.8008-0.70312 2.9375-0.70312 0.16406 0 0.34375 0.011719 0.53125 0.03125 0.19531 0.011719 0.47656 0.039062 0.84375 0.078125z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "b", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m17.641-7.7031v1.4062h-11.453c0.125 1.1484 0.53906 2.0078 1.25 2.5781 0.70703 0.57422 1.7031 0.85938 2.9844 0.85938 1.0312 0 2.082-0.14844 3.1562-0.45312 1.082-0.3125 2.1914-0.77344 3.3281-1.3906v3.7656c-1.1562 0.4375-2.3125 0.76562-3.4688 0.98438-1.1562 0.22656-2.3125 0.34375-3.4688 0.34375-2.7734 0-4.9297-0.70312-6.4688-2.1094-1.5312-1.4062-2.2969-3.3789-2.2969-5.9219 0-2.5 0.75391-4.4609 2.2656-5.8906 1.5078-1.4375 3.582-2.1562 6.2188-2.1562 2.4062 0 4.332 0.73047 5.7812 2.1875 1.4453 1.4492 2.1719 3.3828 2.1719 5.7969zm-5.0312-1.625c0-0.92578-0.27344-1.6719-0.8125-2.2344-0.54297-0.57031-1.25-0.85938-2.125-0.85938-0.94922 0-1.7188 0.26562-2.3125 0.79688s-0.96484 1.2969-1.1094 2.2969z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "k", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m9.2188-6.8906c-1.0234 0-1.793 0.17188-2.3125 0.51562-0.51172 0.34375-0.76562 0.85547-0.76562 1.5312 0 0.625 0.20703 1.1172 0.625 1.4688 0.41406 0.34375 0.98828 0.51562 1.7188 0.51562 0.92578 0 1.7031-0.32812 2.3281-0.98438 0.63281-0.66406 0.95312-1.4922 0.95312-2.4844v-0.5625zm7.4688-1.8438v8.7344h-4.9219v-2.2656c-0.65625 0.92969-1.3984 1.6055-2.2188 2.0312-0.82422 0.41406-1.8242 0.625-3 0.625-1.5859 0-2.8711-0.45703-3.8594-1.375-0.99219-0.92578-1.4844-2.1289-1.4844-3.6094 0-1.7891 0.61328-3.1016 1.8438-3.9375 1.2383-0.84375 3.1797-1.2656 5.8281-1.2656h2.8906v-0.39062c0-0.76953-0.30859-1.332-0.92188-1.6875-0.61719-0.36328-1.5703-0.54688-2.8594-0.54688-1.0547 0-2.0312 0.10547-2.9375 0.3125-0.89844 0.21094-1.7305 0.52344-2.5 0.9375v-3.7344c1.0391-0.25 2.0859-0.44141 3.1406-0.57812 1.0625-0.13281 2.125-0.20312 3.1875-0.20312 2.7578 0 4.75 0.54688 5.9688 1.6406 1.2266 1.0859 1.8438 2.8555 1.8438 5.3125z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "a", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m7.7031-19.656v4.3438h5.0469v3.5h-5.0469v6.5c0 0.71094 0.14062 1.1875 0.42188 1.4375s0.83594 0.375 1.6719 0.375h2.5156v3.5h-4.1875c-1.9375 0-3.3125-0.39844-4.125-1.2031-0.80469-0.8125-1.2031-2.1797-1.2031-4.1094v-6.5h-2.4219v-3.5h2.4219v-4.3438z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "j", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m12.766-13.078v-8.2031h4.9219v21.281h-4.9219v-2.2188c-0.66797 0.90625-1.4062 1.5703-2.2188 1.9844s-1.7578 0.625-2.8281 0.625c-1.8867 0-3.4336-0.75-4.6406-2.25-1.2109-1.5-1.8125-3.4258-1.8125-5.7812 0-2.3633 0.60156-4.2969 1.8125-5.7969 1.207-1.5 2.7539-2.25 4.6406-2.25 1.0625 0 2 0.21484 2.8125 0.64062 0.82031 0.42969 1.5664 1.0859 2.2344 1.9688zm-3.2188 9.9219c1.0391 0 1.8359-0.37891 2.3906-1.1406 0.55078-0.76953 0.82812-1.8828 0.82812-3.3438 0-1.457-0.27734-2.5664-0.82812-3.3281-0.55469-0.76953-1.3516-1.1562-2.3906-1.1562-1.043 0-1.8398 0.38672-2.3906 1.1562-0.55469 0.76172-0.82812 1.8711-0.82812 3.3281 0 1.4609 0.27344 2.5742 0.82812 3.3438 0.55078 0.76172 1.3477 1.1406 2.3906 1.1406z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "i", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m10.5-3.1562c1.0508 0 1.8516-0.37891 2.4062-1.1406 0.55078-0.76953 0.82812-1.8828 0.82812-3.3438 0-1.457-0.27734-2.5664-0.82812-3.3281-0.55469-0.76953-1.3555-1.1562-2.4062-1.1562-1.0547 0-1.8594 0.38672-2.4219 1.1562-0.55469 0.77344-0.82812 1.8828-0.82812 3.3281 0 1.4492 0.27344 2.5586 0.82812 3.3281 0.5625 0.77344 1.3672 1.1562 2.4219 1.1562zm-3.25-9.9219c0.67578-0.88281 1.4219-1.5391 2.2344-1.9688 0.82031-0.42578 1.7656-0.64062 2.8281-0.64062 1.8945 0 3.4453 0.75 4.6562 2.25 1.207 1.5 1.8125 3.4336 1.8125 5.7969 0 2.3555-0.60547 4.2812-1.8125 5.7812-1.2109 1.5-2.7617 2.25-4.6562 2.25-1.0625 0-2.0078-0.21094-2.8281-0.625-0.8125-0.42578-1.5586-1.0859-2.2344-1.9844v2.2188h-4.8906v-21.281h4.8906z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "h", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m0.34375-15.312h4.8906l4.125 10.391 3.5-10.391h4.8906l-6.4375 16.766c-0.64844 1.6953-1.4023 2.8828-2.2656 3.5625-0.86719 0.6875-2 1.0312-3.4062 1.0312h-2.8438v-3.2188h1.5312c0.83203 0 1.4375-0.13672 1.8125-0.40625 0.38281-0.26172 0.67969-0.73047 0.89062-1.4062l0.14062-0.42188z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "e", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m2.5781-20.406h8.7344c2.5938 0 4.582 0.57812 5.9688 1.7344 1.3945 1.1484 2.0938 2.7891 2.0938 4.9219 0 2.1367-0.69922 3.7812-2.0938 4.9375-1.3867 1.1562-3.375 1.7344-5.9688 1.7344h-3.4844v7.0781h-5.25zm5.25 3.8125v5.7031h2.9219c1.0195 0 1.8047-0.25 2.3594-0.75 0.5625-0.5 0.84375-1.2031 0.84375-2.1094 0-0.91406-0.28125-1.6172-0.84375-2.1094-0.55469-0.48828-1.3398-0.73438-2.3594-0.73438z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "g", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m2.3594-15.312h4.8906v15.312h-4.8906zm0-5.9688h4.8906v4h-4.8906z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "f", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m17.75-9.3281v9.3281h-4.9219v-7.1094c0-1.3438-0.03125-2.2656-0.09375-2.7656s-0.16797-0.86719-0.3125-1.1094c-0.1875-0.3125-0.44922-0.55469-0.78125-0.73438-0.32422-0.17578-0.69531-0.26562-1.1094-0.26562-1.0234 0-1.8242 0.39844-2.4062 1.1875-0.58594 0.78125-0.875 1.8711-0.875 3.2656v7.5312h-4.8906v-21.281h4.8906v8.2031c0.73828-0.88281 1.5195-1.5391 2.3438-1.9688 0.83203-0.42578 1.75-0.64062 2.75-0.64062 1.7695 0 3.1133 0.54688 4.0312 1.6406 0.91406 1.0859 1.375 2.6562 1.375 4.7188z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "s", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m0.42188-15.312h4.8906l3.8281 10.578 3.7969-10.578h4.9062l-6.0312 15.312h-5.375z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "r", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m12.422-21.281v3.2188h-2.7031c-0.6875 0-1.1719 0.125-1.4531 0.375-0.27344 0.25-0.40625 0.6875-0.40625 1.3125v1.0625h4.1875v3.5h-4.1875v11.812h-4.8906v-11.812h-2.4375v-3.5h2.4375v-1.0625c0-1.6641 0.46094-2.8984 1.3906-3.7031 0.92578-0.80078 2.3672-1.2031 4.3281-1.2031z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "d", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m9.6406-12.188c-1.0859 0-1.9141 0.39062-2.4844 1.1719-0.57422 0.78125-0.85938 1.9062-0.85938 3.375s0.28516 2.5938 0.85938 3.375c0.57031 0.77344 1.3984 1.1562 2.4844 1.1562 1.0625 0 1.875-0.38281 2.4375-1.1562 0.57031-0.78125 0.85938-1.9062 0.85938-3.375s-0.28906-2.5938-0.85938-3.375c-0.5625-0.78125-1.375-1.1719-2.4375-1.1719zm0-3.5c2.6328 0 4.6914 0.71484 6.1719 2.1406 1.4766 1.418 2.2188 3.3867 2.2188 5.9062 0 2.5117-0.74219 4.4805-2.2188 5.9062-1.4805 1.418-3.5391 2.125-6.1719 2.125-2.6484 0-4.7148-0.70703-6.2031-2.125-1.4922-1.4258-2.2344-3.3945-2.2344-5.9062 0-2.5195 0.74219-4.4883 2.2344-5.9062 1.4883-1.4258 3.5547-2.1406 6.2031-2.1406z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "q", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m16.547-12.766c0.61328-0.94531 1.3477-1.6719 2.2031-2.1719 0.85156-0.5 1.7891-0.75 2.8125-0.75 1.7578 0 3.0977 0.54688 4.0156 1.6406 0.92578 1.0859 1.3906 2.6562 1.3906 4.7188v9.3281h-4.9219v-7.9844-0.35938c0.007813-0.13281 0.015625-0.32031 0.015625-0.5625 0-1.082-0.16406-1.8633-0.48438-2.3438-0.3125-0.48828-0.82422-0.73438-1.5312-0.73438-0.92969 0-1.6484 0.38672-2.1562 1.1562-0.51172 0.76172-0.77344 1.8672-0.78125 3.3125v7.5156h-4.9219v-7.9844c0-1.6953-0.14844-2.7852-0.4375-3.2656-0.29297-0.48828-0.8125-0.73438-1.5625-0.73438-0.9375 0-1.6641 0.38672-2.1719 1.1562-0.51172 0.76172-0.76562 1.8594-0.76562 3.2969v7.5312h-4.9219v-15.312h4.9219v2.2344c0.60156-0.86328 1.2891-1.5156 2.0625-1.9531 0.78125-0.4375 1.6406-0.65625 2.5781-0.65625 1.0625 0 2 0.25781 2.8125 0.76562 0.8125 0.51172 1.4258 1.2305 1.8438 2.1562z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "p", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m2.5781-20.406h5.875l7.4219 14v-14h4.9844v20.406h-5.875l-7.4219-14v14h-4.9844z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "o", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m2.1875-5.9688v-9.3438h4.9219v1.5312c0 0.83594-0.007813 1.875-0.015625 3.125-0.011719 1.25-0.015625 2.0859-0.015625 2.5 0 1.2422 0.03125 2.1328 0.09375 2.6719 0.070313 0.54297 0.17969 0.93359 0.32812 1.1719 0.20703 0.32422 0.47266 0.57422 0.79688 0.75 0.32031 0.16797 0.69141 0.25 1.1094 0.25 1.0195 0 1.8203-0.39062 2.4062-1.1719 0.58203-0.78125 0.875-1.8672 0.875-3.2656v-7.5625h4.8906v15.312h-4.8906v-2.2188c-0.74219 0.89844-1.5234 1.5586-2.3438 1.9844-0.82422 0.41406-1.7344 0.625-2.7344 0.625-1.7617 0-3.1055-0.53906-4.0312-1.625-0.92969-1.082-1.3906-2.6602-1.3906-4.7344z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "n", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m17.75-9.3281v9.3281h-4.9219v-7.1406c0-1.3203-0.03125-2.2344-0.09375-2.7344s-0.16797-0.86719-0.3125-1.1094c-0.1875-0.3125-0.44922-0.55469-0.78125-0.73438-0.32422-0.17578-0.69531-0.26562-1.1094-0.26562-1.0234 0-1.8242 0.39844-2.4062 1.1875-0.58594 0.78125-0.875 1.8711-0.875 3.2656v7.5312h-4.8906v-15.312h4.8906v2.2344c0.73828-0.88281 1.5195-1.5391 2.3438-1.9688 0.83203-0.42578 1.75-0.64062 2.75-0.64062 1.7695 0 3.1133 0.54688 4.0312 1.6406 0.91406 1.0859 1.375 2.6562 1.375 4.7188z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "m", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m2.3594-15.312h4.8906v15.031c0 2.0508-0.49609 3.6172-1.4844 4.7031-0.98047 1.082-2.4062 1.625-4.2812 1.625h-2.4219v-3.2188h0.85938c0.92578 0 1.5625-0.21094 1.9062-0.625 0.35156-0.41797 0.53125-1.2461 0.53125-2.4844zm0-5.9688h4.8906v4h-4.8906z",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("symbol", { attrs: { id: "l", overflow: "visible" } }, [
+                      _c("path", {
+                        attrs: {
+                          d: "m14.719-14.828v3.9844c-0.65625-0.45703-1.3242-0.79688-2-1.0156-0.66797-0.21875-1.3594-0.32812-2.0781-0.32812-1.3672 0-2.4336 0.40234-3.2031 1.2031-0.76172 0.79297-1.1406 1.9062-1.1406 3.3438 0 1.4297 0.37891 2.543 1.1406 3.3438 0.76953 0.79297 1.8359 1.1875 3.2031 1.1875 0.75781 0 1.4844-0.10938 2.1719-0.32812 0.6875-0.22656 1.3203-0.56641 1.9062-1.0156v4c-0.76172 0.28125-1.5391 0.48828-2.3281 0.625-0.78125 0.14453-1.5742 0.21875-2.375 0.21875-2.7617 0-4.9219-0.70703-6.4844-2.125-1.5547-1.4141-2.3281-3.3828-2.3281-5.9062 0-2.5312 0.77344-4.5039 2.3281-5.9219 1.5625-1.4141 3.7227-2.125 6.4844-2.125 0.80078 0 1.5938 0.074219 2.375 0.21875 0.78125 0.13672 1.5547 0.35156 2.3281 0.64062z",
+                        },
+                      }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("g", [
+                    _c("path", {
+                      attrs: {
+                        d: "m245 188.33c-18.926 18.852-28.242 45.297-25.312 71.848 0.60547 5.7227 5.4453 10.055 11.199 10.023h1.2344c2.9883-0.33594 5.7188-1.8594 7.5742-4.2305 1.8516-2.3672 2.6758-5.3867 2.2812-8.3672-2.1875-19.805 4.7578-39.527 18.871-53.594 4.375-4.375 4.375-11.473 0-15.848s-11.473-4.375-15.848 0z",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("path", {
+                      attrs: {
+                        d: "m437.47 351.62c33.98-39.5 44.953-93.84 28.969-143.43-15.98-49.594-56.621-87.293-107.27-99.52-50.648-12.223-104.01 2.793-140.86 39.637s-51.859 90.207-39.637 140.86c12.227 50.652 49.926 91.293 99.52 107.27 49.59 15.984 103.93 5.0117 143.43-28.969l89.602 89.602 15.848-15.848zm-203.5-7.6172c-23.883-23.883-37.297-56.273-37.297-90.047 0-33.773 13.418-66.16 37.301-90.043 23.879-23.883 56.27-37.297 90.043-37.297s66.164 13.414 90.047 37.297c23.879 23.883 37.297 56.27 37.297 90.043 0 33.773-13.414 66.164-37.297 90.047-23.895 23.855-56.281 37.254-90.047 37.254s-66.152-13.398-90.047-37.254z",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "70", y: "644", "xlink:href": "#t" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "90.550781", y: "644", "xlink:href": "#c" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "104.359375", y: "644", "xlink:href": "#b" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "123.347656", y: "644", "xlink:href": "#k" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "142.242188", y: "644", "xlink:href": "#a" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "155.628906", y: "644", "xlink:href": "#b" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "174.617188", y: "644", "xlink:href": "#j" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "204.410156", y: "644", "xlink:href": "#i" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "224.453125", y: "644", "xlink:href": "#h" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "252.453125", y: "644", "xlink:href": "#e" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "272.972656", y: "644", "xlink:href": "#c" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "286.78125", y: "644", "xlink:href": "#g" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "296.378906", y: "644", "xlink:href": "#a" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "309.765625", y: "644", "xlink:href": "#f" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "329.695312", y: "644", "xlink:href": "#s" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "347.949219", y: "644", "xlink:href": "#g" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "70", y: "672", "xlink:href": "#r" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "82.183594", y: "672", "xlink:href": "#c" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "95.992188", y: "672", "xlink:href": "#d" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "115.226562", y: "672", "xlink:href": "#q" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "154.152344", y: "672", "xlink:href": "#a" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "167.535156", y: "672", "xlink:href": "#f" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "187.46875", y: "672", "xlink:href": "#b" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "216.207031", y: "672", "xlink:href": "#p" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "239.640625", y: "672", "xlink:href": "#d" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "258.878906", y: "672", "xlink:href": "#o" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "278.8125", y: "672", "xlink:href": "#n" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "308.492188", y: "672", "xlink:href": "#e" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "329.015625", y: "672", "xlink:href": "#c" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "342.820312", y: "672", "xlink:href": "#d" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "362.058594", y: "672", "xlink:href": "#m" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "371.65625", y: "672", "xlink:href": "#b" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "390.648438", y: "672", "xlink:href": "#l" },
+                    }),
+                    _vm._v(" "),
+                    _c("use", {
+                      attrs: { x: "407.242188", y: "672", "xlink:href": "#a" },
+                    }),
+                  ]),
                 ]
               ),
             ]
           ),
-        ]),
-        _vm._v(" "),
-        _c(
-          "ul",
-          { staticClass: "listeAutoComplete" },
-          _vm._l(_vm.searchResults, function (result, index) {
-            return _c(
-              "li",
-              {
-                key: index,
-                on: {
-                  click: function ($event) {
-                    return _vm.selectResult(result)
-                  },
-                },
+        ]
+      ),
+    ]),
+    _vm._v(" "),
+    _c(
+      "ul",
+      { staticClass: "listeAutoComplete" },
+      _vm._l(_vm.searchResults, function (result, index) {
+        return _c(
+          "li",
+          {
+            key: index,
+            on: {
+              click: function ($event) {
+                return _vm.selectResult(result)
               },
-              [
-                _c("img", {
-                  attrs: { src: result.image, alt: "img-bouteille" },
-                }),
-                _vm._v(_vm._s(result.nom) + "\n    "),
-              ]
-            )
-          }),
-          0
-        ),
-      ]),
-      _vm._v(" "),
+            },
+          },
+          [
+            _c("img", { attrs: { src: result.image, alt: "img-bouteille" } }),
+            _vm._v(_vm._s(result.nom) + "\n    "),
+          ]
+        )
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c("section", { staticClass: "catalogue-container" }, [
       !_vm.selectedCard
         ? _c(
             "div",
             { staticClass: "catalogue-invisible" },
             _vm._l(_vm.filteredCatalogue, function (bouteille) {
-              return _c("div", { key: bouteille.id, staticClass: "card" }, [
-                _c("h3", { staticClass: "card-title" }, [
-                  _vm._v(_vm._s(bouteille.nom)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-subtitle" }, [
-                  _vm._v(
-                    _vm._s(bouteille.description) +
-                      " " +
-                      _vm._s(bouteille.format)
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-subtitle" }, [
-                  _vm._v(_vm._s(bouteille.pays)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-count" }, [
-                  _vm._v(_vm._s(bouteille.prix_saq) + "$"),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-footer" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn",
-                      on: {
-                        click: function ($event) {
-                          return _vm.selectCard(bouteille)
+              return _c(
+                "article",
+                {
+                  key: bouteille.id,
+                  staticClass: "card",
+                  staticStyle: { "background-color": "transparent" },
+                },
+                [
+                  _c("h3", { staticClass: "card-title" }, [
+                    _vm._v(_vm._s(bouteille.nom)),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-subtitle" }, [
+                    _vm._v(
+                      _vm._s(bouteille.description) +
+                        " " +
+                        _vm._s(bouteille.format)
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-subtitle" }, [
+                    _vm._v(_vm._s(bouteille.pays)),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-count" }, [
+                    _vm._v(_vm._s(bouteille.prix_saq) + "$"),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-footer" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn",
+                        on: {
+                          click: function ($event) {
+                            return _vm.selectCard(bouteille)
+                          },
                         },
                       },
-                    },
-                    [_vm._v("Buy Now")]
-                  ),
-                ]),
-              ])
+                      [_vm._v("Buy Now")]
+                    ),
+                  ]),
+                ]
+              )
             }),
             0
           )
-        : _c("div", { staticClass: "card" }, [
+        : _c("article", { staticClass: "card" }, [
             _c("div", { staticClass: "card-body" }, [
               _c("img", {
                 attrs: { src: _vm.selectedCard.image, alt: "img-bouteille" },
@@ -32115,75 +30934,79 @@ var render = function () {
           ]),
     ]),
     _vm._v(" "),
-    _c("div", [
-      _c("h2", [_vm._v("Nous recommandons")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "carousel-container" },
-        [
+    _vm.recomandation === true
+      ? _c("section", { staticClass: "catalogue__section" }, [
+          _c("h2", { staticClass: "catalogue_titre-section" }, [
+            _vm._v("Nous recommandons"),
+          ]),
+          _vm._v(" "),
           _c(
-            "carousel",
+            "div",
+            { staticClass: "container" },
             _vm._l(_vm.catalogue, function (bouteille) {
-              return _c("slide", { key: bouteille.id }, [
-                _c("div", { staticClass: "card" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("img", {
-                      attrs: { src: bouteille.image, alt: "img-bouteille" },
-                    }),
-                    _vm._v(" "),
-                    _c("picture", { staticClass: "modal" }, [
-                      _c("img", {
-                        attrs: { src: bouteille.image, alt: "img" },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-info" }, [
-                      _c("div", { staticClass: "card-info-title" }, [
-                        _c("h3", { staticClass: "card-title" }, [
-                          _vm._v(_vm._s(bouteille.nom)),
+              return _c("div", { key: bouteille.id }, [
+                bouteille.id > 10
+                  ? _c("article", { staticClass: "card" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("img", {
+                          attrs: { src: bouteille.image, alt: "img-bouteille" },
+                        }),
+                        _vm._v(" "),
+                        _c("picture", { staticClass: "modal" }, [
+                          _c("img", {
+                            attrs: { src: bouteille.image, alt: "img" },
+                          }),
                         ]),
                         _vm._v(" "),
-                        _c("p", { staticClass: "card-subtitle" }, [
-                          _vm._v(
-                            _vm._s(bouteille.description) +
-                              " " +
-                              _vm._s(bouteille.format)
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-subtitle" }, [
-                          _vm._v(_vm._s(bouteille.pays)),
+                        _c("div", { staticClass: "card-info" }, [
+                          _c("div", { staticClass: "card-info-title" }, [
+                            _c("h3", { staticClass: "card-title" }, [
+                              _vm._v(_vm._s(bouteille.nom)),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "card-subtitle" }, [
+                              _vm._v(
+                                _vm._s(bouteille.description) +
+                                  " " +
+                                  _vm._s(bouteille.format)
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "card-subtitle" }, [
+                              _vm._v(_vm._s(bouteille.pays)),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "card-info-client" }, [
+                            _c("p", { staticClass: "card-count" }, [
+                              _vm._v(_vm._s(bouteille.prix_saq) + "$"),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(1, true),
+                          ]),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-info-client" }, [
-                        _c("p", { staticClass: "card-count" }, [
-                          _vm._v(_vm._s(bouteille.prix_saq) + "$"),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-footer" }, [
-                          _c(
-                            "button",
-                            { staticClass: "btn", attrs: { value: "" } },
-                            [_vm._v("Buy Now")]
-                          ),
-                        ]),
-                      ]),
-                    ]),
-                  ]),
-                ]),
+                    ])
+                  : _vm._e(),
               ])
             }),
-            1
+            0
           ),
-        ],
-        1
-      ),
-    ]),
+        ])
+      : _vm._e(),
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-footer" }, [
+      _c("button", { staticClass: "btn", attrs: { value: "" } }, [
+        _vm._v("Buy Now"),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

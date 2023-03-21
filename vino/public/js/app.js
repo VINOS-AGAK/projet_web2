@@ -5863,6 +5863,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -30345,11 +30346,11 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "liste-container" }, [
+  return _c("section", { staticClass: "liste-container" }, [
     _c("h2", { staticClass: "liste__titre" }, [_vm._v("Mon cellier 1")]),
     _vm._v(" "),
     _c(
-      "div",
+      "article",
       { staticClass: "container" },
       [
         _vm._l(_vm.bouteilleHasCellier, function (bouteille) {
@@ -30427,7 +30428,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("ul", [
       _c("li", { staticClass: "text-danger" }, [
-        _vm._v("Aucune bouteilles disponible dans le cellier"),
+        _vm._v("Aucune bouteilles disponible dans ce cellier"),
       ]),
     ])
   },
@@ -30455,7 +30456,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "site-header" }, [
+    _c("header", { staticClass: "site-header" }, [
       _c(
         "form",
         { staticClass: "search", attrs: { action: "#", method: "GET" } },
@@ -30841,21 +30842,21 @@ var render = function () {
           },
           [
             _c("img", { attrs: { src: result.image, alt: "img-bouteille" } }),
-            _vm._v(_vm._s(result.nom) + "\n      "),
+            _vm._v(_vm._s(result.nom) + "\n    "),
           ]
         )
       }),
       0
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "catalogue-container" }, [
+    _c("section", { staticClass: "catalogue-container" }, [
       !_vm.selectedCard
         ? _c(
             "div",
             { staticClass: "catalogue-invisible" },
             _vm._l(_vm.filteredCatalogue, function (bouteille) {
               return _c(
-                "div",
+                "article",
                 {
                   key: bouteille.id,
                   staticClass: "card",
@@ -30901,7 +30902,7 @@ var render = function () {
             }),
             0
           )
-        : _c("div", { staticClass: "card" }, [
+        : _c("article", { staticClass: "card" }, [
             _c("div", { staticClass: "card-body" }, [
               _c("img", {
                 attrs: { src: _vm.selectedCard.image, alt: "img-bouteille" },
@@ -30945,7 +30946,7 @@ var render = function () {
     ]),
     _vm._v(" "),
     _vm.recomandation === true
-      ? _c("div", { staticClass: "catalogue__section" }, [
+      ? _c("section", { staticClass: "catalogue__section" }, [
           _c("h2", { staticClass: "catalogue_titre-section" }, [
             _vm._v("Nous recommandons"),
           ]),
@@ -30956,7 +30957,7 @@ var render = function () {
             _vm._l(_vm.catalogue, function (bouteille) {
               return _c("div", { key: bouteille.id }, [
                 bouteille.id > 10
-                  ? _c("div", { staticClass: "card" }, [
+                  ? _c("article", { staticClass: "card" }, [
                       _c("div", { staticClass: "card-body" }, [
                         _c("img", {
                           attrs: { src: bouteille.image, alt: "img-bouteille" },

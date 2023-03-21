@@ -1,7 +1,7 @@
 <template>
-    <div class="liste-container">
+    <section class="liste-container">
         <h2 class="liste__titre" >Mon cellier 1</h2>
-        <div class="container">
+        <article class="container">
     
             
             <div class="card" v-for="bouteille in bouteilleHasCellier" :key="bouteille.id" >
@@ -33,13 +33,13 @@
            
             <div class="catalogue-container"  v-if="bouteilleHasCellier.length === 0">
                 <ul>
-                    <li class="text-danger">Aucune bouteilles disponible dans le cellier</li>
+                    <li class="text-danger">Aucune bouteilles disponible dans ce cellier</li>
                 </ul>
             </div>
             
     
-        </div>
-    </div>
+        </article>
+    </section>
 </template>
 
 <script>

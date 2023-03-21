@@ -2,7 +2,7 @@
   <div>
 
     <!--------------- barre de recherche ------------->
-    <div class="site-header">
+    <header class="site-header">
       <form class="search" action="#" method="GET">
         <!-- <input placeholder="@lang('lang.recherche_un_vin')" type="search" name="query"> -->
         <input placeholder="Recherche dans catalogue" type="search" name="query" v-model="searchQuery"
@@ -133,7 +133,7 @@
         </button>
 
       </form>
-    </div>
+    </header>
     <ul class="listeAutoComplete">
       <!-- Affiche la liste d’autocompletes -->
       <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
@@ -159,10 +159,10 @@
     </form> -->
 
     <!-- Catalogue -->
-    <div class="catalogue-container">
+    <section class="catalogue-container">
 
       <div v-if="!selectedCard" class="catalogue-invisible">
-        <div class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id" style="background-color: transparent;">
+        <article class="card" v-for="bouteille in filteredCatalogue" :key="bouteille.id" style="background-color: transparent;">
           <h3 class="card-title">{{ bouteille.nom }}</h3>
           <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
           <p class="card-subtitle">{{ bouteille.pays }}</p>
@@ -170,10 +170,10 @@
           <div class="card-footer">
             <button class="btn" @click="selectCard(bouteille)">Buy Now</button>
           </div>
-        </div>
+        </article>
       </div>
 
-      <div class="card" v-else>
+      <article class="card" v-else>
         <div class="card-body">
           <img :src="selectedCard.image" alt="img-bouteille">
           <picture class="modal"><img :src="selectedCard.image" alt="img"></picture>
@@ -192,18 +192,18 @@
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-    </div>
+    </section>
 
     <!-- Section Recomendation -->
-    <div class="catalogue__section"  v-if="recomandation === true">
+    <section class="catalogue__section"  v-if="recomandation === true">
       <h2 class="catalogue_titre-section">Nous recommandons</h2>
       <!-- <div class="carousel-container"> -->
       <div class="container">
         <!-- <slide v-for="bouteille in catalogue" :key="bouteille.id"> -->
         <div v-for="bouteille in catalogue" :key="bouteille.id">
-          <div v-if="bouteille.id > 10" class="card">
+          <article v-if="bouteille.id > 10" class="card">
             <div class="card-body">
               <img :src="bouteille.image" alt="img-bouteille">
               <picture class="modal"><img :src="bouteille.image" alt="img"></picture>
@@ -222,14 +222,15 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
       <!-- </slide> -->
       <!-- </carousel> -->
-    </div>
+    </section>
   </div>
-</div></template>
+
+</template>
 
 <!-- recherche sans afficher catalogue au premier telechargement avec 2 lettres-->
 <script>

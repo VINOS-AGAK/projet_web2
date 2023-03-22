@@ -4,6 +4,10 @@ import Catalogue from '../components/Catalogue.vue'
 import CatalogueCreate from '../components/Create.vue'
 import CatalogueEdit from '../components/Edit.vue'
 
+import CellierIndex from '../components/Cellier/Index.vue'
+import CellierCreate from '../components/Cellier/Create.vue'
+import CellierEdit from '../components/Cellier/Edit.vue'
+
 import AuthenticatedLayout from '../layouts/Authenticated.vue'
 import GuestLayout from '../layouts/Guest.vue'
 
@@ -39,7 +43,6 @@ const routes = [
             name: 'catalogue.index', 
             component: Catalogue,
             meta: { title: "Catalogue"}
-       
            },
        
            {path: '/catalogue/create',
@@ -54,7 +57,31 @@ const routes = [
             meta: { title: "Modifier Catalogue"} 
            }
         ]
+    },
+    {
+        component: AuthenticatedLayout,
+        beforeEnter: auth,
+        children: [
+            {path: '/cellier',
+            name: 'cellier.index',
+            component: CellierIndex,
+            meta: { title: "Mes cellier"}
+           },
+       
+           {path: '/cellier/create',
+            name: 'cellier.create',
+            component: CellierCreate,
+            meta: { title: "Ajouter un cellier"} 
+           },
+       
+           {path: '/:id',
+            name: 'cellier.edit',
+            component: CellierEdit,
+            meta: { title: "Modifier un cellier"} 
+           }
+        ]
     }
+    
 
 ]
 

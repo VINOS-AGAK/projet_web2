@@ -1,98 +1,52 @@
-@extends('layouts.app')
+<x-guest-layout>
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
 
-@section('content')
-    <div class="container-signup">
-
-        <div class="header-form">
-            <h3>Sign up</h3>
+        <!-- Name -->
+        <div>
+            <x-input-label for="name" :value="__('Name')" />
+            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
-        <div class="container-form">
-
-            <form method="POST" action="{{ route('register') }}">
-                @csrf
-
-                @if (@session('success'))
-                    <p class="text-form">{{ session('success') }}</p>
-                @else
-                    <p class="text-form">Create an account to create a wine cellar</p>
-
-
-                    <!-- {{-- NAME --}} -->
-                    <div class="">
-                        <input class="name @error('name') is-invalid @enderror" type="text" name="name" id=""
-                            placeholder="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                        @error('name')
-                            <span class="text-form" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-
-                        {{-- @if ($errors->has('name'))
-                            <div class="">
-                                {{ $errors->first('name') }}
-                            </div>
-                        @endif --}}
-                    </div>
-
-
-                    <!-- {{-- EMAIL --}} -->
-                    <div class="">
-                        <input class="email @error('email') is-invalid @enderror" name="email" type="email"
-                            name="email" id="" placeholder="email" value="{{ old('email') }}" required
-                            autocomplete="email">
-
-                        @error('email')
-                            <span class="text-form" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-
-                        {{-- @if ($errors->has('email'))
-                            <div class="">
-                                {{ $errors->first('email') }}
-                            </div>
-                        @endif --}}
-                    </div>
-
-
-                    <!-- {{-- PASSWORD --}} -->
-                    <div class="">
-                        <input class="password  @error('password') is-invalid @enderror" name="password" type="password"
-                            name="password" id="" placeholder="password" required autocomplete="new-password">
-
-                        @error('password')
-                            <span class="text-form" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-
-                        {{-- @if ($errors->has('password'))
-                            <div class="">
-                                {{ $errors->first('password') }}
-                            </div>
-                        @endif --}}
-                    </div>
-
-                    {{-- PASSWORD CONFIRMATION --}}
-                    <div class="">
-                        <input class="password" name="password_confirmation" type="password" name="password" id=""
-                            placeholder="password" required autocomplete="new-password">
-                    </div>
-
-                    {{-- SUBMIT --}}
-                    <div class="">
-                        <input class="submit" type="submit" value="submit">
-                    </div>
-
-                    {{-- have an account --}}
-                    <p class="text-form">Already have an account? Click <a class="text-login"
-                            href="{{ route('login') }}">here</a> to login.</p>
-            </form>
-            @endif
+        <!-- Email Address -->
+        <div class="mt-4">
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-    </div>
+        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="password" :value="__('Password')" />
 
-@endsection
+            <x-text-input id="password" class="block mt-1 w-full"
+                            type="password"
+                            name="password"
+                            required autocomplete="new-password" />
+
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mt-4">
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+
+            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                            type="password"
+                            name="password_confirmation" required autocomplete="new-password" />
+
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+
+        <div class="flex items-center justify-end mt-4">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                {{ __('Already registered?') }}
+            </a>
+
+            <x-primary-button class="ml-4">
+                {{ __('Register') }}
+            </x-primary-button>
+        </div>
+    </form>
+</x-guest-layout>

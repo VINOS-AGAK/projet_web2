@@ -1,7 +1,7 @@
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * Tout d’abord, nous allons charger toutes les dépendances JavaScript de ce projet qui
+ * comprend Vue et d’autres bibliothèques. C’est un excellent point de départ lorsque
+ * construire des applications Web robustes et puissantes en utilisant Vue et Laravel.
  */
 
 require('./bootstrap');
@@ -9,9 +9,9 @@ require('./bootstrap');
 window.Vue = require('vue').default;
 
 /**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
+ * Le bloc de code suivant peut être utilisé pour enregistrer automatiquement votre
+ * Composants de Vue. Il analysera récursivement ce répertoire pour Vue
+ * les composants et les enregistrer automatiquement avec leur "nom de base".
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
@@ -23,9 +23,9 @@ Vue.component('header-component', require('./components/Header.vue').default);
  
 
 /**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
+ * Ensuite, nous allons créer une nouvelle instance d’application Vue et la joindre à
+ * la page. Ensuite, vous pouvez commencer à ajouter des composants à cette application
+ * ou personnaliser l’échafaudage JavaScript pour répondre à vos besoins uniques.
  */
 import "../../public/css/style.css";
 

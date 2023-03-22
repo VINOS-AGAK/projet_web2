@@ -5630,9 +5630,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-carousel'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-//
-//
 //
 //
 //
@@ -5868,8 +5865,10 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
 //
 
 
+//import { Carousel, Slide } from 'vue-carousel';
 
-var recomandation = null;
+//let recomandation = null;
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   // components: {
   //   Carousel,
@@ -5878,12 +5877,12 @@ var recomandation = null;
   data: function data() {
     return {
       catalogue: [],
-      searchQuery: "",
-      searchDelay: 500,
+      rechercheQuery: "",
+      rechercheDelay: 500,
       // délai avant pousser la requette
-      searchTimerId: null,
+      rechercheTimerId: null,
       // délai de minuterie d’id
-      searchResults: [],
+      rechercheResults: [],
       // liste d’autocompletes
       selectedCard: null,
       recomandation: true
@@ -5897,34 +5896,34 @@ var recomandation = null;
       var _this = this;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("api/bouteille", {
         params: {
-          query: this.searchQuery
+          query: this.rechercheQuery
         }
       }).then(function (response) {
         console.log(response.data);
         _this.catalogue = response.data.data;
-        _this.searchResults = _this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
+        _this.rechercheResults = _this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
       })["catch"](function (error) {
         return console.log(error);
       });
       recomandation = true;
     },
-    handleInput: function handleInput() {
+    traitementInput: function traitementInput() {
       var _this2 = this;
-      if (this.searchQuery.length >= 2) {
+      if (this.rechercheQuery.length >= 2) {
         // réinitialiser le minuteur pour éviter d’envoyer une demande avec retard précédent
-        clearTimeout(this.searchTimerId);
-        // lancer une nouvelle minuterie pour envoyer une requête via searchDelay milliseconds
-        this.searchTimerId = setTimeout(function () {
+        clearTimeout(this.rechercheTimerId);
+        // lancer une nouvelle minuterie pour envoyer une requête via rechercheDelay milliseconds
+        this.rechercheTimerId = setTimeout(function () {
           _this2.fetchCatalogue();
-        }, this.searchDelay);
+        }, this.rechercheDelay);
       } else {
-        this.searchResults = []; // efface la liste des autocompletes
+        this.rechercheResults = []; // efface la liste des autocompletes
       }
     },
     selectResult: function selectResult(result) {
-      this.searchQuery = result.nom; // choisi le résultat
+      this.rechercheQuery = result.nom; // choisi le résultat
       this.selectedCard = result; // installe la carte sélectionnée
-      this.searchResults = []; // effacer la liste des autocompletes
+      this.rechercheResults = []; // effacer la liste des autocompletes
       this.recomandation = false;
     },
     selectCard: function selectCard(card) {
@@ -5943,7 +5942,7 @@ var recomandation = null;
   },
   computed: {
     filteredCatalogue: function filteredCatalogue() {
-      var query = this.searchQuery.toLowerCase().trim();
+      var query = this.rechercheQuery.toLowerCase().trim();
       if (!query) {
         return this.catalogue;
       }
@@ -5967,18 +5966,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _public_css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/css/style.css */ "./public/css/style.css");
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * Tout d’abord, nous allons charger toutes les dépendances JavaScript de ce projet qui
+ * comprend Vue et d’autres bibliothèques. C’est un excellent point de départ lorsque
+ * construire des applications Web robustes et puissantes en utilisant Vue et Laravel.
  */
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
 
 /**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
+ * Le bloc de code suivant peut être utilisé pour enregistrer automatiquement votre
+ * Composants de Vue. Il analysera récursivement ce répertoire pour Vue
+ * les composants et les enregistrer automatiquement avec leur "nom de base".
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
@@ -5989,9 +5988,9 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 Vue.component('header-component', (__webpack_require__(/*! ./components/Header.vue */ "./resources/js/components/Header.vue")["default"]));
 
 /**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
+ * Ensuite, nous allons créer une nouvelle instance d’application Vue et la joindre à
+ * la page. Ensuite, vous pouvez commencer à ajouter des composants à cette application
+ * ou personnaliser l’échafaudage JavaScript pour répondre à vos besoins uniques.
  */
 
 
@@ -11571,7 +11570,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n    .site-header{\r\n      display: flex;\r\n      flex-direction: column;\r\n      max-width: 100vw;\r\n      height: fit-content;\r\n      background-color: var( --accent-color);\r\n    }\r\n    .site-header-container{\r\n      display: flex;\r\n      justify-content: space-between;\r\n    }\r\n\r\n    .site-header-container>a{\r\n      padding: 6px;\r\n    }\r\n\r\n    .header-icon-container{\r\n      display: flex;\r\n    }\r\n\r\n    /*================= barre de recherche ======================*/\r\n\r\n    .search{\r\n      padding: 10px;\r\n      display: flex;\r\n      border-radius: 10px;\r\n    }\r\n\r\n    form.search{\r\n      background-color: var(--primary-color);\r\n      margin: 10px;\r\n    }\r\n\r\n    .search-button{\r\n      height: 40px;\r\n      border: none;\r\n    }\r\n\r\n    .search>input[type=search]{\r\n      border: none;\r\n      background: transparent;\r\n      margin: 0;\r\n      padding: 7px 8px;\r\n      font-size: 14px;\r\n      color: inherit;\r\n      border: 1px solid transparent;\r\n      border-radius: inherit;\r\n      width: 90%;\r\n    }\r\n\r\n    .search>input[type=search]:focus{\r\n      box-shadow: 0 0 3px 0 var(--primary-color-variation);\r\n      border-color: var(--primary-color);\r\n      outline: none;\r\n    }\r\n\r\n    button[type=\"submit\"] {\r\n      overflow: hidden;\r\n      width: 40px;\r\n      padding: 0;\r\n      margin: 0;\r\n      border: 1px solid transparent;\r\n      border-radius: inherit;\r\n      cursor: pointer;\r\n      opacity: 0.7;\r\n    }\r\n\r\n    .icon-search{\r\n      fill: var(--color-dark);\r\n    }\r\n   \r\n/* =============== toggle-menu ===========*/\r\n  \r\n  label {\r\n    cursor: pointer;\r\n  }\r\n  \r\n  #menu-toggle {\r\n    display: none;\r\n  }\r\n  \r\n  li>a{\r\n    font-size: 10px;\r\n  }\r\n\r\n  #menu {\r\n    overflow: hidden;\r\n    height: 30vh;\r\n    max-height: 0;\r\n    padding: 0;\r\n    margin: 0 auto;\r\n    -webkit-transition: all 0.5s ease;\r\n    display: flex;\r\n    flex-direction:column;\r\n    position: absolute;\r\n    background-color: var(--primary-color);\r\n    z-index: 3;\r\n  }\r\n  \r\n  ul#menu{\r\n    margin-left: 50%;\r\n    padding: 0px;\r\n    width: 50%;\r\n    height: fit-content;\r\n    border-radius: 0px 0px 0px 15px;\r\n  }\r\n\r\n  #menu-toggle:checked + #menu {\r\n    max-height: 100%;\r\n  }\r\n\r\n  #menu li {\r\n    height: 100%;\r\n    padding: 10px;\r\n  }\r\n  \r\n  li.list-item{\r\n    font-size: 10px;\r\n    font-weight: bold;\r\n    letter-spacing: 5px;\r\n    text-transform: uppercase;\r\n  }\r\n\r\n\r\n/* =============== fin toggle-menu  ===========*/\r\n        \r\ndiv.container-header{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    letter-spacing: 10px;\r\n    position: relative;\r\n    background-color: var(--primary-color);\r\n}\r\n\r\n.list-icon{\r\n  text-align: center;\r\n  font-size: 30px;\r\n  letter-spacing: 20px;\r\n  display: flex;\r\n  justify-content: space-around;\r\n}\r\n\r\n.list-icon>a:hover{\r\n  text-decoration: none;\r\n  text-decoration-line: none;\r\n}\r\n\r\n.list-icon > .icon:hover{\r\n  background-color: var(--accent-color);\r\n}\r\n\r\n.list-item{\r\n  display: flex;\r\n  margin-left: 1rem;\r\n}\r\n  \r\n.username{\r\n  font-size: small;\r\n  letter-spacing: 5px;\r\n  margin-top: 20px;\r\n  text-transform: lowercase;\r\n}\r\n\r\n.logo-header {\r\n  font-weight: 700;\r\n  display: block;\r\n  width: 100%;\r\n  max-width: 100px;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n    .site-header{\r\n      display: flex;\r\n      flex-direction: column;\r\n      max-width: 100vw;\r\n      height: fit-content;\r\n      background-color: var( --accent-color);\r\n    }\r\n    .site-header-container{\r\n      display: flex;\r\n      justify-content: space-between;\r\n    }\r\n\r\n    .site-header-container>a{\r\n      padding: 6px;\r\n    }\r\n\r\n    .header-icon-container{\r\n      display: flex;\r\n    }\r\n\r\n    /*================= barre de recherche ======================*/\r\n\r\n    .recherche{\r\n      padding: 10px;\r\n      display: flex;\r\n      border-radius: 10px;\r\n    }\r\n\r\n    form.recherche{\r\n      background-color: var(--primary-color);\r\n      margin: 10px;\r\n    }\r\n\r\n    .recherche-button{\r\n      height: 40px;\r\n      border: none;\r\n    }\r\n\r\n    .recherche>input[type=recherche]{\r\n      border: none;\r\n      background: transparent;\r\n      margin: 0;\r\n      padding: 7px 8px;\r\n      font-size: 14px;\r\n      color: inherit;\r\n      border: 1px solid transparent;\r\n      border-radius: inherit;\r\n      width: 90%;\r\n    }\r\n\r\n    .recherche>input[type=recherche]:focus{\r\n      box-shadow: 0 0 3px 0 var(--primary-color-variation);\r\n      border-color: var(--primary-color);\r\n      outline: none;\r\n    }\r\n\r\n    button[type=\"submit\"] {\r\n      overflow: hidden;\r\n      width: 40px;\r\n      padding: 0;\r\n      margin: 0;\r\n      border: 1px solid transparent;\r\n      border-radius: inherit;\r\n      cursor: pointer;\r\n      opacity: 0.7;\r\n    }\r\n\r\n    .icon-recherche{\r\n      fill: var(--color-dark);\r\n    }\r\n   \r\n/* =============== toggle-menu ===========*/\r\n  \r\n  label {\r\n    cursor: pointer;\r\n  }\r\n  \r\n  #menu-toggle {\r\n    display: none;\r\n  }\r\n  \r\n  li>a{\r\n    font-size: 10px;\r\n  }\r\n\r\n  #menu {\r\n    overflow: hidden;\r\n    height: 30vh;\r\n    max-height: 0;\r\n    padding: 0;\r\n    margin: 0 auto;\r\n    -webkit-transition: all 0.5s ease;\r\n    display: flex;\r\n    flex-direction:column;\r\n    position: absolute;\r\n    background-color: var(--primary-color);\r\n    z-index: 3;\r\n  }\r\n  \r\n  ul#menu{\r\n    margin-left: 50%;\r\n    padding: 0px;\r\n    width: 50%;\r\n    height: fit-content;\r\n    border-radius: 0px 0px 0px 15px;\r\n  }\r\n\r\n  #menu-toggle:checked + #menu {\r\n    max-height: 100%;\r\n  }\r\n\r\n  #menu li {\r\n    height: 100%;\r\n    padding: 10px;\r\n  }\r\n  \r\n  li.list-item{\r\n    font-size: 10px;\r\n    font-weight: bold;\r\n    letter-spacing: 5px;\r\n    text-transform: uppercase;\r\n  }\r\n\r\n\r\n/* =============== fin toggle-menu  ===========*/\r\n        \r\ndiv.container-header{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    letter-spacing: 10px;\r\n    position: relative;\r\n    background-color: var(--primary-color);\r\n}\r\n\r\n.list-icon{\r\n  text-align: center;\r\n  font-size: 30px;\r\n  letter-spacing: 20px;\r\n  display: flex;\r\n  justify-content: space-around;\r\n}\r\n\r\n.list-icon>a:hover{\r\n  text-decoration: none;\r\n  text-decoration-line: none;\r\n}\r\n\r\n.list-icon > .icon:hover{\r\n  background-color: var(--accent-color);\r\n}\r\n\r\n.list-item{\r\n  display: flex;\r\n  margin-left: 1rem;\r\n}\r\n  \r\n.username{\r\n  font-size: small;\r\n  letter-spacing: 5px;\r\n  margin-top: 20px;\r\n  text-transform: lowercase;\r\n}\r\n\r\n.logo-header {\r\n  font-weight: 700;\r\n  display: block;\r\n  width: 100%;\r\n  max-width: 100px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30209,14 +30208,14 @@ var render = function () {
       { staticClass: "accueil-overlay" },
       [
         _c("h1", { staticClass: "accueil-titre" }, [
-          _vm._v("Welcome make text here"),
+          _vm._v("Bienvenue pour ecrire du texte ici"),
         ]),
         _vm._v(" "),
-        _c("p", { staticClass: "accueil-paragraph" }, [_vm._v("and here2")]),
+        _c("p", { staticClass: "accueil-paragraph" }, [_vm._v("et isi 2")]),
         _vm._v(" "),
         _c("router-link", { attrs: { to: "/cellier" } }, [
           _c("button", { staticClass: "accueil-button" }, [
-            _vm._v("Cellier for now. Login later"),
+            _vm._v("Cellier pour l’instant. Connexion ultérieure"),
           ]),
         ]),
         _vm._v(" "),
@@ -30448,44 +30447,44 @@ var render = function () {
     _c("header", { staticClass: "site-header" }, [
       _c(
         "form",
-        { staticClass: "search", attrs: { action: "#", method: "GET" } },
+        { staticClass: "recherche", attrs: { action: "#", method: "GET" } },
         [
           _c("input", {
             directives: [
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.searchQuery,
-                expression: "searchQuery",
+                value: _vm.rechercheQuery,
+                expression: "rechercheQuery",
               },
             ],
             attrs: {
               placeholder: "Recherche dans catalogue",
-              type: "search",
+              type: "recherche",
               name: "query",
             },
-            domProps: { value: _vm.searchQuery },
+            domProps: { value: _vm.rechercheQuery },
             on: {
               input: [
                 function ($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.searchQuery = $event.target.value
+                  _vm.rechercheQuery = $event.target.value
                 },
-                _vm.handleInput,
+                _vm.traitementInput,
               ],
             },
           }),
           _vm._v(" "),
           _c(
             "button",
-            { staticClass: "search-button", attrs: { type: "submit" } },
+            { staticClass: "recherche-button", attrs: { type: "submit" } },
             [
               _c(
                 "svg",
                 {
-                  staticClass: "icon-search",
+                  staticClass: "icon-recherche",
                   attrs: {
                     width: "35pt",
                     height: "35pt",
@@ -30818,7 +30817,7 @@ var render = function () {
     _c(
       "ul",
       { staticClass: "listeAutoComplete" },
-      _vm._l(_vm.searchResults, function (result, index) {
+      _vm._l(_vm.rechercheResults, function (result, index) {
         return _c(
           "li",
           {

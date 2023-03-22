@@ -3,12 +3,11 @@
 
     <!--------------- barre de recherche ------------->
     <header class="site-header">
-      <form class="search" action="#" method="GET">
-        <!-- <input placeholder="@lang('lang.recherche_un_vin')" type="search" name="query"> -->
-        <input placeholder="Recherche dans catalogue" type="search" name="query" v-model="searchQuery"
-          @input="handleInput">
-        <button type="submit" class="search-button">
-          <svg class="icon-search" width="35pt" height="35pt" version="1.1" viewBox="100 150 500 300"
+      <form class="recherche" action="#" method="GET">
+        <input placeholder="Recherche dans catalogue" type="recherche" name="query" v-model="rechercheQuery"
+          @input="traitementInput">
+        <button type="submit" class="recherche-button">
+          <svg class="icon-recherche" width="35pt" height="35pt" version="1.1" viewBox="100 150 500 300"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
               <symbol id="t" overflow="visible">
@@ -131,28 +130,27 @@
             </g>
           </svg>
         </button>
-
       </form>
     </header>
     <ul class="listeAutoComplete">
       <!-- Affiche la liste d’autocompletes -->
-      <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
+      <li v-for="(result, index) in rechercheResults" :key="index" @click="selectResult(result)">
         <img :src="result.image" alt="img-bouteille">{{ result.nom }}
       </li>
     </ul>
     <!--------------- barre de Anna ------------->
-    <!-- <form class="catalogue__liste-search">
-      <div class="search-box">
-        <input type="search" class="search-input" placeholder="Recherche dans catalogue" v-model="searchQuery"
-          @input="handleInput">
-        <button type="submit" class="search-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+    <!-- <form class="catalogue__liste-recherche">
+      <div class="recherche-box">
+        <input type="recherche" class="recherche-input" placeholder="Recherche dans catalogue" v-model="rechercheQuery"
+          @input="traitementInput">
+        <button type="submit" class="recherche-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
             <path
               d="m19.45 21.325-6.3-6.3q-.725.55-1.675.85-.95.3-2.05.3-2.775 0-4.712-1.937Q2.775 12.3 2.775 9.525q0-2.775 1.938-4.713Q6.65 2.875 9.425 2.875q2.775 0 4.712 1.937 1.938 1.938 1.938 4.713 0 1.1-.313 2.05-.312.95-.837 1.65l6.325 6.325ZM9.425 13.65q1.725 0 2.925-1.2 1.2-1.2 1.2-2.925 0-1.725-1.2-2.925-1.2-1.2-2.925-1.2Q7.7 5.4 6.5 6.6 5.3 7.8 5.3 9.525q0 1.725 1.2 2.925 1.2 1.2 2.925 1.2Z" />
           </svg></button>
       </div>
       <ul class="listeAutoComplete"> -->
     <!-- Affiche la liste d’autocompletes -->
-    <!-- <li v-for="(result, index) in searchResults" :key="index" @click="selectResult(result)">
+    <!-- <li v-for="(result, index) in rechercheResults" :key="index" @click="selectResult(result)">
           <img :src="result.image" alt="img-bouteille">{{ result.nom }}
         </li>
       </ul>
@@ -247,10 +245,10 @@
       data() {
         return {
           catalogue: [],
-          searchQuery: "",
-          searchDelay: 500, // délai avant pousser la requette
-          searchTimerId: null, // délai de minuterie d’id
-          searchResults: [], // liste d’autocompletes
+          rechercheQuery: "",
+          rechercheDelay: 500, // délai avant pousser la requette
+          rechercheTimerId: null, // délai de minuterie d’id
+          rechercheResults: [], // liste d’autocompletes
           selectedCard: null,
           recomandation: true,
         };
@@ -259,34 +257,34 @@
       methods: {
         fetchCatalogue() {
           axios
-            .get("api/bouteille", { params: { query: this.searchQuery } })
+            .get("api/bouteille", { params: { query: this.rechercheQuery } })
             .then((response) => {
               console.log(response.data);
               this.catalogue = response.data.data;
-              this.searchResults = this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
+              this.rechercheResults = this.filteredCatalogue.slice(0, 5); // sélectionne les 5 premiers résultats filtrés
             })
             .catch((error) => console.log(error));
           recomandation = true;
         },
       
-        handleInput() {
-          if (this.searchQuery.length >= 2) {
+        traitementInput() {
+          if (this.rechercheQuery.length >= 2) {
           
             // réinitialiser le minuteur pour éviter d’envoyer une demande avec retard précédent
-            clearTimeout(this.searchTimerId);
-            // lancer une nouvelle minuterie pour envoyer une requête via searchDelay milliseconds
-            this.searchTimerId = setTimeout(() => {
+            clearTimeout(this.rechercheTimerId);
+            // lancer une nouvelle minuterie pour envoyer une requête via rechercheDelay milliseconds
+            this.rechercheTimerId = setTimeout(() => {
               this.fetchCatalogue();
-            }, this.searchDelay);
+            }, this.rechercheDelay);
           } else {
-            this.searchResults = []; // efface la liste des autocompletes
+            this.rechercheResults = []; // efface la liste des autocompletes
           }
         
         },
         selectResult(result) {
-          this.searchQuery = result.nom; // choisi le résultat
+          this.rechercheQuery = result.nom; // choisi le résultat
           this.selectedCard = result; // installe la carte sélectionnée
-          this.searchResults = []; // effacer la liste des autocompletes
+          this.rechercheResults = []; // effacer la liste des autocompletes
           this.recomandation = false;
         },
         selectCard(card) {
@@ -305,7 +303,7 @@
       },
       computed: {
         filteredCatalogue() {
-          const query = this.searchQuery.toLowerCase().trim();
+          const query = this.rechercheQuery.toLowerCase().trim();
           if (!query) {
             return this.catalogue;
           }

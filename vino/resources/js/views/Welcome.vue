@@ -2,9 +2,9 @@
     <div class="accueil-container">
         <div class="accueil-overlay">
 
-          <h1 class="accueil-titre">Welcome make text here</h1>
-          <p class="accueil-paragraph">and here2</p>
-          <router-link  to="/cellier"> <button class="accueil-button">Cellier for now. Login later</button> </router-link>
+          <h1 class="accueil-titre">Bienvenue pour ecrire du texte ici</h1>
+          <p class="accueil-paragraph">et isi 2</p>
+          <router-link  to="/cellier"> <button class="accueil-button">Cellier pour l’instant. Connexion ultérieure</button> </router-link>
 
           <h1 class="accueil-titre">@lang('lang.hello') </h1>
           <p class="accueil-paragraph">@lang('lang.slogan')</p>

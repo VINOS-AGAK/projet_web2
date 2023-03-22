@@ -235,7 +235,7 @@
 <!-- recherche sans afficher catalogue au premier telechargement avec 2 lettres-->
 <script>
 import axios from "axios";
-import { Carousel, Slide } from 'vue-carousel';
+// import { Carousel, Slide } from 'vue-carousel';
 
 let recomandation = null;
 

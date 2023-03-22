@@ -11,10 +11,10 @@
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-                <p class="text-form">Log in to your account</p>
 
-                <label for="email" class="email">{{ __('Email Address') }}</label>
-                <input id="email" type="email" placeholder="email" class="email @error('email') is-invalid @enderror"
+
+                <label for="email" class="text-form">{{ __('Email Address') }}</label>
+                <input id="email" type="email" placeholder="" class="email @error('email') is-invalid @enderror"
                     name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                 @error('email')
@@ -23,7 +23,7 @@
                     </span>
                 @enderror
 
-                <label for="password" class="password">{{ __('Password') }}</label>
+                <label for="password" class="text-form">{{ __('Password') }}</label>
                 <input id="password" type="password" class="password @error('password') is-invalid @enderror"
                     name="password" required autocomplete="current-password">
 
@@ -46,12 +46,12 @@
                             </label>
                         </div>
                     </div>
+                    <input type="submit" class="submit">
                 </div>
 
-                <input type="submit" class="submit">
 
                 @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                    <a class="text-form" href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
                     </a>
                 @endif

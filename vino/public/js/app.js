@@ -19005,6 +19005,7 @@ function useCatalogue() {
           case 0:
             axios.get('api/catalogue').then(function (response) {
               catalogue.value = response.data.data;
+              catalogue.value = catalogue.value.slice(0, 6);
               console.log('le catalogue');
               console.log(catalogue.value);
             });

@@ -14,6 +14,7 @@ export default function useCatalogue() {
         axios.get('api/catalogue')
         .then(response=>{
             catalogue.value = response.data.data;
+            catalogue.value = catalogue.value.slice(0, 6);
             console.log('le catalogue');
             console.log(catalogue.value);
         })
@@ -119,3 +120,4 @@ export default function useCatalogue() {
             isLoading,
         } 
 }
+

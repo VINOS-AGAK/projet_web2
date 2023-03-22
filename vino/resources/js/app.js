@@ -1,4 +1,3 @@
-import './bootstrap';
 
 import { createApp, onMounted } from 'vue';
 import router from './routes/index'

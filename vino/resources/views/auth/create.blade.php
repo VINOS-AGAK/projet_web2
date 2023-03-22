@@ -32,7 +32,7 @@
 
             <!-- {{-- EMAIL--}} -->
             <div class="">
-                <input class="email" type="email" name="email" id="" placeholder="email" value="{{ old('email') }}">
+                <input class="text-form" type="email" name="email" id=""  value="{{ old('email') }}">
                 @if($errors->has('email'))
                 <div class="">
                     {{$errors->first('email')}}

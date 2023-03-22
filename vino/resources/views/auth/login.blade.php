@@ -1,68 +1,47 @@
-@extends('layouts.app')
+<x-guest-layout>
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
 
-@section('content')
-    <div class="container-signup">
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
 
-        <div class="header-form">
-            <h3>Log in</h3>
+        <!-- Email Address -->
+        <div>
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <div class="container-form">
+        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="password" :value="__('Password')" />
 
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
+            <x-text-input id="password" class="block mt-1 w-full"
+                            type="password"
+                            name="password"
+                            required autocomplete="current-password" />
 
-
-                <label for="email" class="text-form">{{ __('Email Address') }}</label>
-                <input id="email" type="email" placeholder="" class="email @error('email') is-invalid @enderror"
-                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                @error('email')
-                    <span class="text-form" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                <label for="password" class="text-form">{{ __('Password') }}</label>
-                <input id="password" type="password" class="password @error('password') is-invalid @enderror"
-                    name="password" required autocomplete="current-password">
-
-                @error('password')
-                    <span class="text-form" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                {{-- <input type="submit" value="submit" class="submit"> --}}
-
-                <div class="row mb-3">
-                    <div class="col-md-6 offset-md-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                {{ old('remember') ? 'checked' : '' }}>
-
-                            <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
-                            </label>
-                        </div>
-                    </div>
-                    <input type="submit" class="submit">
-                </div>
-
-
-                @if (Route::has('password.request'))
-                    <a class="text-form" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
-                    </a>
-                @endif
-
-                <p class="text-form">Don't have an account? Click <a class="text-login" href="{{ route('register') }}">here</a> to Sign up.</p>
-
-                {{-- @if (Route::has('register'))
-                    <a href="{{ route('register') }}">{{ __('Register') }}</a>
-                @endif --}}
-
-            </form>
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
-    </div>
-@endsection
+
+        <!-- Remember Me -->
+        <div class="block mt-4">
+            <label for="remember_me" class="inline-flex items-center">
+                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+            </label>
+        </div>
+
+        <div class="flex items-center justify-end mt-4">
+            @if (Route::has('password.request'))
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    {{ __('Forgot your password?') }}
+                </a>
+            @endif
+
+            <x-primary-button class="ml-3">
+                {{ __('Log in') }}
+            </x-primary-button>
+        </div>
+    </form>
+</x-guest-layout>

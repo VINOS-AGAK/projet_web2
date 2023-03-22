@@ -23,7 +23,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        
         return UserResource::collection(User::all());
     }
 
@@ -56,7 +55,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return new UserResource($user);
+
     }
 
     /**

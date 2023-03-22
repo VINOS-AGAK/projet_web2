@@ -1,12 +1,14 @@
 <template>
     <!-- <headerView /> -->
-          <h1 class="accueil-titre">cellier.vue</h1>
-          
-
+          <h1 class="accueil-titre">cellierzzzzzzzz.vue</h1>
+            <!-- <div id="users">{{ users }}</div> -->
 
 </template>
 
 <script>
+import axios from 'axios';
+import { onMounted } from 'vue';
+
 
 
 export default {
@@ -31,6 +33,3 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>

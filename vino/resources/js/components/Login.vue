@@ -31,11 +31,9 @@
             </p>
 
             <!-- Buttons -->
-            <div class="">
-                <button class="text-form">
-                    Log in
-                </button>
-            </div>
+            <button class="btn-submit"> login </button>
+
+
 
         </form>
     </div>

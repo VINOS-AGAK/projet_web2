@@ -109,6 +109,19 @@ input.email[type=email]{
     margin: var(--margin-small);
   }
 
+  .btn-submit{
+    border: none;
+    background-color: var(--accent-color);
+    margin: 0;
+    font-size: 14px;
+    color: inherit;
+    border: 1px solid ;
+    border-radius: inherit;
+    width: 90%;
+    padding: var(--padding-small);
+    margin: var(--margin-small);
+  }
+
   input.submit[type=submit]:hover{
     background-color: var(--accent-color-variation);
   }

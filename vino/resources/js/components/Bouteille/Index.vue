@@ -1,8 +1,8 @@
 <template>
     Hello I'm Bouteille component Index
 
-    <!-- <div class="product-grid">
-        <div class="product-card" v-for="bouteille in catalogue" :key="bouteille.id">
+    <div class="product-grid">
+        <div class="product-card" v-for="bouteille in mesBouteilles" :key="bouteille.id">
             <img :src="bouteille.image" alt="Product 1">
             <h3>{{ bouteille.nom }}</h3>
             <p>{{ bouteille.description }}</p>
@@ -14,7 +14,7 @@
             <br>
             <a href="#" @click.prevent="deleteCatalogue(bouteille.id)">Supprimer</a>
         </div>
-    </div> -->
+    </div>
 </template>
     
 <script>

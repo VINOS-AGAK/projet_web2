@@ -23,7 +23,6 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 
     Route::apiResource('catalogue', CatalogueController::class);
     Route::apiResource('cellier', CellierController::class);
-    Route::apiResource('bhs', BouteilleHasCellierController::class);
     Route::apiResource('bouteille', BouteilleController::class);
     
     Route::get('/user', function (Request $request) {

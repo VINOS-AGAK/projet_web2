@@ -40,7 +40,8 @@ export default function useAuth() {
     
     const loginUser = (response) => {
         user.name = response.data.name,
-        user.email = response.data.email
+        user.email = response.data.email,
+        user.id = response.data.id
         localStorage.setItem('loggedIn', JSON.stringify(true))
         router.push({ name: 'catalogue.index' })
     }
@@ -49,6 +50,8 @@ export default function useAuth() {
         axios.get('/api/user')
         .then(response => {
             loginUser(response)
+            console.log('user info');
+            console.log(response);
         })
     }
 

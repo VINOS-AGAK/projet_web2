@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\CatalogueController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\CatalogueController;
+use App\Http\Controllers\Api\CellierController;
+use App\Http\Controllers\Api\BouteilleHasCellierController;
+use App\Http\Controllers\Api\BouteilleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +19,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-
 Route::group(['middleware' => 'auth:sanctum'], function() {
 
     Route::apiResource('catalogue', CatalogueController::class);
+    Route::apiResource('cellier', CellierController::class);
+    Route::apiResource('bhs', BouteilleHasCellierController::class);
+    Route::apiResource('bouteille', BouteilleController::class);
+    
     Route::get('/user', function (Request $request) {
         return $request->user();
     });

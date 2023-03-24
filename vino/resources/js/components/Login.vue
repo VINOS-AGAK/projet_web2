@@ -1,7 +1,7 @@
 <template>
    <main  class="container-signup">
     <div class="header-form">
-            <h3>Welcome</h3>
+            <h3>Bienvenue</h3>
     </div>
     <div class="container-form">
 
@@ -27,7 +27,7 @@
             <!-- Remember me -->
             <p class="text-form">
                 <input type="checkbox" name="remember" v-model="loginForm.remember" class="text-form" />
-                <span class="text-form">Remember me</span>
+                <span class="text-form">souviens-toi</span>
             </p>
 
             <!-- Buttons -->
@@ -44,6 +44,7 @@
 
 <script>
 import useAuth from '../composables/auth'
+import IconLogo from './icons/IconLogo.vue'
 
 export default {
     setup() {

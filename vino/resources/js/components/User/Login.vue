@@ -1,7 +1,7 @@
 <template>
     <main  class="container-signup">
      <div class="header-form">
-             <h3>Welcome</h3>
+             <h3>Bienvenue</h3>
      </div>
      <div class="container-form">
  

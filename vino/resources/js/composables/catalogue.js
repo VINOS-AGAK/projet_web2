@@ -1,19 +1,22 @@
+
 import { ref, inject } from 'vue';
-import { useRouter} from 'vue-router'
+import { useRouter} from 'vue-router';
 
 export default function useCatalogue() {
 
-    const catalogue = ref({});
+    const catalogue = ref([]);
     const oneCatalogue = ref({});
     const router = useRouter();
     const validationErrors = ref ({});
     const isLoading = ref(false);
     const swal = inject('$swal');
+    const axios = require('axios');
 
     const getCatalogue = async () => {
         axios.get('api/catalogue')
         .then(response=>{
             catalogue.value = response.data.data;
+            // catalogue.value = catalogue.value.slice(0, 6);
             console.log('le catalogue');
             console.log(catalogue.value);
         })
@@ -119,3 +122,4 @@ export default function useCatalogue() {
             isLoading,
         } 
 }
+

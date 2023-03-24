@@ -18,6 +18,7 @@ export default function useAuth() {
             remember: false
     })
     const swal = inject('$swal');
+    const axios = require('axios');
 
 
     const submitLogin = async () => {

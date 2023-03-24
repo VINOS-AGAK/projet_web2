@@ -6,7 +6,7 @@
             <form class="search" action="#" method="GET">
                 <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" @change="selectProduct">
                 <button type="submit" class="search-button"> 
-        </button>
+                </button>
             </form>
 
         </header>

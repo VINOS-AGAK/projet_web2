@@ -1,6 +1,7 @@
 <script setup>
 import IconLogo from '../components/icons/IconLogo.vue';
 import IconContainer from "../components/IconContainer.vue";
+
 </script>
 
 <template>

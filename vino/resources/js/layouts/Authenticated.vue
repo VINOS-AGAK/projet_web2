@@ -1,16 +1,15 @@
+
+
 <template>
 
-        <nav class="site-header">
+        <nav class="container-header">
             <!-- Primary Navigation Menu -->
 
-                <div class="">
-                    <div class="">
+                <div class="site-header">
+                    <div class="site-header-content">
                         <!-- Logo -->
-                            <a href="/">
-                                catalogue
-                            </a>
+                            <a href="/">catalogue</a>
                         <!-- Navigation Links -->
-                        <div class="">
                             <router-link :to="{ name: 'catalogue.index' }" active-class="border-b-2 border-indigo-400" class="">
                                 Posts
                             </router-link>
@@ -23,7 +22,7 @@
                             <router-link :to="{ name: 'cellier.create' }" active-class="border-b-2 border-indigo-400" class="">
                                 Cellier create
                             </router-link>
-                        </div>
+
                     </div>
                     <div class="">
                         <div>
@@ -32,8 +31,15 @@
                         </div>
                     </div>
                     <button @click="logout" type="button" >
-                        Log out
+
+                        <IconContainer>
+                            <template #icon>
+                                <IconLogo/>
+                            </template>
+                        </IconContainer>
+                        logout
                     </button>
+
                 </div>
 
         </nav>
@@ -56,6 +62,9 @@
 <script>
 import { onMounted } from "vue";
 import useAuth from "../composables/auth";
+import IconContainer from "../components/IconContainer.vue";
+import IconProfil from "../components/icons/IconProfil.vue";
+import IconLogo from "../components/icons/IconLogo.vue";
 
 export default {
     setup() {

@@ -19,6 +19,12 @@
                             <router-link :to="{ name: 'catalogue.create' }" active-class="border-b-2 border-indigo-400" class="">
                                 Create Post
                             </router-link>
+                            <router-link :to="{ name: 'cellier.index' }" active-class="border-b-2 border-indigo-400" class="">
+                                Cellier Index
+                            </router-link>
+                            <router-link :to="{ name: 'cellier.create' }" active-class="border-b-2 border-indigo-400" class="">
+                                Cellier create
+                            </router-link>
                         </div>
                     </div>
                     <div class="">

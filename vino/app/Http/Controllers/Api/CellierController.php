@@ -7,12 +7,19 @@ use App\Http\Requests\StoreCellierRequest;
 use App\Http\Resources\CellierResource;
 use App\Models\Cellier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CellierController extends Controller
 {
     public function index(){
+        $user_id = Auth()->user()->id;
+        /* DB select * from vino__cellier where user_id = 2 */
+        // TODO: (il faut changer pour cette methode. Il faut trouve comment recevoire de vue.js id q'on envois et de le mettre apres "=")
+        // dd($user_id);
+        $mesCellier = CellierResource::collection(Cellier::select()->where("vino__cellier.user_id", '=', $user_id)->get());
 
-        return CellierResource::collection(Cellier::all());
+        return $mesCellier;
+        // return CellierResource::collection(Cellier::all());
     }
 
     public function store(StoreCellierRequest $request)
@@ -25,9 +32,6 @@ class CellierController extends Controller
 
     public function show(Cellier $cellier, Request $request)
     {
-        // TODO: (il faut changer pour cette methode. Il faut trouve comment recevoire de vue.js id q'on envois et de le mettre apres "=")
-        // $query = CellierResource::collection(Cellier::select()->where("user_id", '=', 2)->get());
-        // return $query;
         return new CellierResource($cellier);
     }
 

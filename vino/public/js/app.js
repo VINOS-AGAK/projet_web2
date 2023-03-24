@@ -17928,18 +17928,31 @@ __webpack_require__.r(__webpack_exports__);
       getCatalogue = _useCatalogue.getCatalogue,
       deleteCatalogue = _useCatalogue.deleteCatalogue;
     var searchTerm = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)('');
+    var selectedProduct = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
     (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(getCatalogue);
     var filteredCatalogue = (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
+      if (searchTerm.value.length < 2) {
+        // Если пользователь ввел меньше двух символов, то показываем пустой список
+        return [];
+      }
       return catalogue.value.filter(function (bouteille) {
         return bouteille.nom.toLowerCase().includes(searchTerm.value.toLowerCase());
       });
     });
+    var selectProduct = function selectProduct() {
+      // Устанавливаем выбранный продукт только после того, как пользователь выберет продукт из списка
+      if (searchTerm.value !== '' && selectedProduct.value === null) {
+        selectedProduct.value = filteredCatalogue.value[0];
+      }
+    };
     return {
       catalogue: catalogue,
       getCatalogue: getCatalogue,
       deleteCatalogue: deleteCatalogue,
       searchTerm: searchTerm,
-      filteredCatalogue: filteredCatalogue
+      filteredCatalogue: filteredCatalogue,
+      selectedProduct: selectedProduct,
+      selectProduct: selectProduct
     };
   }
 });
@@ -18115,54 +18128,108 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
+  "class": "site-header"
+};
+var _hoisted_2 = {
+  "class": "search",
+  action: "#",
+  method: "GET"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "search-button"
+}, null, -1 /* HOISTED */);
+var _hoisted_4 = {
+  "class": "listeAutoComplete",
   id: "catalogue-names"
 };
-var _hoisted_2 = ["value"];
-var _hoisted_3 = {
-  "class": "product-grid"
+var _hoisted_5 = ["value"];
+var _hoisted_6 = {
+  "class": "catalogue-container"
 };
-var _hoisted_4 = ["src"];
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_6 = ["onClick"];
+var _hoisted_7 = {
+  key: 0,
+  "class": "product-card"
+};
+var _hoisted_8 = {
+  "class": "card-body"
+};
+var _hoisted_9 = ["src"];
+var _hoisted_10 = {
+  "class": "modal"
+};
+var _hoisted_11 = ["src"];
+var _hoisted_12 = {
+  "class": "card-info"
+};
+var _hoisted_13 = {
+  "class": "card-info-title"
+};
+var _hoisted_14 = {
+  "class": "card-title"
+};
+var _hoisted_15 = {
+  "class": "card-subtitle"
+};
+var _hoisted_16 = {
+  "class": "card-subtitle"
+};
+var _hoisted_17 = {
+  "class": "card-info-client"
+};
+var _hoisted_18 = {
+  "class": "card-count"
+};
+var _hoisted_19 = {
+  "class": "card-footer"
+};
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "btn",
+  value: ""
+}, "Buy Now", -1 /* HOISTED */);
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "search",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $setup.searchTerm = $event;
     }),
     autocomplete: "off",
-    list: "catalogue-names"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.searchTerm]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("datalist", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.catalogue, function (bouteille) {
+    list: "catalogue-names",
+    onChange: _cache[1] || (_cache[1] = function () {
+      return $setup.selectProduct && $setup.selectProduct.apply($setup, arguments);
+    })
+  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.searchTerm]]), _hoisted_3])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("datalist", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.filteredCatalogue.slice(0, 6), function (bouteille) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
       value: bouteille.nom
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bouteille.nom), 9 /* TEXT, PROPS */, _hoisted_2);
-  }), 256 /* UNKEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.filteredCatalogue, function (bouteille) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-      "class": "product-card",
-      key: bouteille.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Код для отображения товара "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-      src: bouteille.image,
-      alt: "Product 1"
-    }, null, 8 /* PROPS */, _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bouteille.nom), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bouteille.description), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bouteille.pays), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bouteille.format), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-      to: {
-        name: 'catalogue.edit',
-        params: {
-          id: bouteille.id
-        }
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bouteille.nom), 9 /* TEXT, PROPS */, _hoisted_5);
+  }), 256 /* UNKEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_6, [$setup.selectedProduct ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("article", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img :src=\"selectedProduct.image\" alt=\"Selected Product\">\r\n            <h3>{{ selectedProduct.nom }}</h3>\r\n            <p>{{ selectedProduct.description }}</p>\r\n            <p>{{ selectedProduct.pays }}</p>\r\n            <p>{{ selectedProduct.format }}</p>\r\n            <router-link :to=\"{name: 'catalogue.edit', params:{ id: selectedProduct.id } }\">\r\n              Modifier\r\n            </router-link>\r\n            <br>\r\n            <a href=\"#\" @click.prevent=\"deleteCatalogue(selectedProduct.id)\">Supprimer</a> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: $setup.selectedProduct.image,
+    alt: "img-bouteille"
+  }, null, 8 /* PROPS */, _hoisted_9), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("picture", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: $setup.selectedProduct.image,
+    alt: "img-bouteille"
+  }, null, 8 /* PROPS */, _hoisted_11)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.selectedProduct.nom), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.selectedProduct.description) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.selectedProduct.format), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.selectedProduct.pays), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.selectedProduct.prix_saq) + "$", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: {
+      name: 'catalogue.edit',
+      params: {
+        id: $setup.selectedProduct.id
       }
-    }, {
-      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Modifier ")];
-      }),
-      _: 2 /* DYNAMIC */
-    }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["to"]), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: "#",
-      onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-        return $setup.deleteCatalogue(bouteille.id);
-      }, ["prevent"])
-    }, "Supprimer", 8 /* PROPS */, _hoisted_6)]);
-  }), 128 /* KEYED_FRAGMENT */))])]);
+    }
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Modifier ")];
+    }),
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["to"]), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "#",
+    onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $setup.deleteCatalogue($setup.selectedProduct.id);
+    }, ["prevent"])),
+    "class": "btn"
+  }, "Supprimer")])])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
 }
 
 /***/ }),

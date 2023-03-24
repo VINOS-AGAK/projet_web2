@@ -5,7 +5,7 @@
      </div>
      <div class="container-form">
  
-         <form @submit.prevent="submitLogin">
+         <form @submit.prevent="submitLogin" >
  
              <p class="text-form">courriel</p>
              <input v-model="loginForm.email" id="email" type="email" class="email" required autofocus autocomplete="username">

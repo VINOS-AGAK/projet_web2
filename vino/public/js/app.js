@@ -20235,11 +20235,25 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Hello I'm Cellier component Index ");
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link :to=\"{ name: 'bouteille.index', params: { id: unCellier.id } }\">\n            <div class=\"product-card\">\n                <p>Cellier: {{ unCellier.nom }}</p>\n                <p>Description: {{ unCellier.description }}</p>\n                <h5>Voire mes bouteilles</h5>\n            </div>\n            <br>\n        </router-link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a href=\"#\" @click.prevent=\"deleteCatalogue(bouteille.id)\">Supprimer</a> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Pour pluseur cellier TODO: ( Later ) "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.mesCellier, function (unCellier) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "product-card",
       key: unCellier.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Nom: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(unCellier.nom), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Description : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(unCellier.description), 1 /* TEXT */)]);
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+      to: {
+        name: 'bouteille.index',
+        params: {
+          id: unCellier.id
+        }
+      }
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Nom: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(unCellier.nom), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Description : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(unCellier.description), 1 /* TEXT */)];
+      }),
+
+      _: 2 /* DYNAMIC */
+    }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["to"])]);
   }), 128 /* KEYED_FRAGMENT */))]);
 }
 
@@ -21419,7 +21433,7 @@ function useCellier() {
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            axios.get('api/cellier/' + user.id).then(function (response) {
+            axios.get('api/cellier/').then(function (response) {
               mesCellier.value = response.data.data;
               mesCellier = mesCellier.value;
               console.log('mes Cellier');

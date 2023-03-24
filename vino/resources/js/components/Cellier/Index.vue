@@ -15,8 +15,10 @@
 
         <!-- Pour pluseur cellier TODO: ( Later ) -->
         <div class="product-card" v-for="unCellier in mesCellier" :key="unCellier.id">
-            <p>Nom: {{ unCellier.nom }}</p>
-            <p>Description : {{ unCellier.description }}</p>
+            <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
+                <p>Nom: {{ unCellier.nom }}</p>
+                <p>Description : {{ unCellier.description }}</p>
+            </router-link>
         </div>
     </div>
 </template>

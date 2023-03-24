@@ -15,7 +15,7 @@ export default function useCellier() {
 
     /* TODO: Pour pluseur cellier( Later ) */
     const getMesCellier = async () => {
-        axios.get('api/cellier/' + user.id )
+        axios.get('api/cellier/')
         .then(response=>{
             mesCellier.value = response.data.data;
             mesCellier = mesCellier.value;

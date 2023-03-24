@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Auth;
 class CellierController extends Controller
 {
     public function index(){
-        $user_Id = Auth::id();
+        $user_id = Auth()->user()->id;
         /* DB select * from vino__cellier where user_id = 2 */
         // TODO: (il faut changer pour cette methode. Il faut trouve comment recevoire de vue.js id q'on envois et de le mettre apres "=")
-        $mesCellier = CellierResource::collection(Cellier::select()->where("vino__cellier.user_id", '=', $user_Id)->get());
+        // dd($user_id);
+        $mesCellier = CellierResource::collection(Cellier::select()->where("vino__cellier.user_id", '=', $user_id)->get());
 
         return $mesCellier;
         // return CellierResource::collection(Cellier::all());

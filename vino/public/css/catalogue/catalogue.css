@@ -18,6 +18,15 @@
     
 }
 
+    input::-webkit-calendar-picker-indicator,
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+        display: none;
+    }
+    input[type="search"]::-moz-search-cancel-button {
+      display: none;
+    }
+
 
 .catalogue__liste-search {
     position: relative;

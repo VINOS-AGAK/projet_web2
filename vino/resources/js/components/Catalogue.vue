@@ -1,52 +1,47 @@
 
 
-<template>
-    <div>
-        <header class="site-header">
-            <form class="search" action="#" method="GET">
-                <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" @change="selectProduct">
-                <button type="submit" class="search-button"> 
-                </button>
-            </form>
+ <template>
+  <div>
+    <header class="site-header">
+      <form class="search" action="#" method="GET">
+        <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" @change="selectProduct" @input="selectedProduct = null">
+        <button type="submit" class="search-button"></button>
+      </form>
+    </header>
 
-        </header>
-      
-    
-      <datalist class="listeAutoComplete" id="catalogue-names">
-        <option v-for="bouteille in filteredCatalogue.slice(0, 6)" :value="bouteille.nom">{{ bouteille.nom }}</option>
-      </datalist>
-      <section class="catalogue-container">
+    <datalist class="listeAutoComplete" id="catalogue-names">
+      <option v-for="bouteille in filteredCatalogue.slice(0, 6)" :value="bouteille.nom">{{ bouteille.nom }}</option>
+    </datalist>
 
-          <article v-if="selectedProduct" class="product-card">
-    
-            <div class="card-body">
-              <img :src="selectedProduct.image" alt="img-bouteille">
-              <picture class="modal"><img :src="selectedProduct.image" alt="img-bouteille"></picture>
-              <div class="card-info">
-                <div class="card-info-title">
-                  <h3 class="card-title">{{ selectedProduct.nom }}</h3>
-                  <p class="card-subtitle">{{ selectedProduct.description }} {{ selectedProduct.format }}</p>
-                  <p class="card-subtitle">{{ selectedProduct.pays }}</p>
-                </div>
-                <div class="card-info-client">
-                  <p class="card-count">{{ selectedProduct.prix_saq }}$</p>
-                  <div class="card-footer">
-                    <button class="btn" value="">Buy Now</button>
-                    <router-link :to="{name: 'catalogue.edit', params:{ id: selectedProduct.id } }">
-                        Modifier
-                    </router-link>
-                    <br>
-                    <a href="#" @click.prevent="deleteCatalogue(selectedProduct.id)" class="btn">Supprimer</a>
-                  </div>
-                </div>
+    <section class="catalogue-container">
+      <article v-if="selectedProduct" class="product-card">
+        <div class="card-body">
+          <img :src="selectedProduct.image" alt="img-bouteille">
+          <picture class="modal"><img :src="selectedProduct.image" alt="img-bouteille"></picture>
+          <div class="card-info">
+            <div class="card-info-title">
+              <h3 class="card-title">{{ selectedProduct.nom }}</h3>
+              <p class="card-subtitle">{{ selectedProduct.description }} {{ selectedProduct.format }}</p>
+              <p class="card-subtitle">{{ selectedProduct.pays }}</p>
+            </div>
+            <div class="card-info-client">
+              <p class="card-count">{{ selectedProduct.prix_saq }}$</p>
+              <div class="card-footer">
+                <button class="btn" value="">Buy Now</button>
+                <router-link :to="{name: 'catalogue.edit', params:{ id: selectedProduct.id } }">
+                  Modifier
+                </router-link>
+                <br>
+                <a href="#" @click.prevent="deleteCatalogue(selectedProduct.id)" class="btn">Supprimer</a>
               </div>
             </div>
-          </article>
-      </section>
-    </div>
-  </template>
-  
-  <script>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</template> 
+ <script>
   import useCatalogue from '../composables/catalogue'
   import { onMounted, ref, computed } from 'vue'
   
@@ -83,7 +78,7 @@
       }
     }
   }
-  </script>
+  </script> 
    
     <!-- <template>
 

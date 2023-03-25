@@ -25,9 +25,9 @@
             <div class="card-info-client">
               <p class="card-count">{{ selectedProduct.prix_saq }}$</p>
               <div class="card-footer">
-                <button class="btn" value="">Buy Now</button>
-                <router-link :to="{name: 'catalogue.edit', params:{ id: selectedProduct.id } }">
-                  Modifier
+                
+                <router-link class="btn" :to="{name: 'catalogue.edit', params:{ id: selectedProduct.id } }">
+                  Acheter
                 </router-link>
                 <br>
                 <a href="#" @click.prevent="deleteCatalogue(selectedProduct.id)" class="btn">Supprimer</a>

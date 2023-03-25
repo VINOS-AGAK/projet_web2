@@ -20,20 +20,20 @@ class Cellier extends Model
     ];
 
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
 
-    public function bouteille()
-    {
-        return $this->hasMany(Bouteille::class, 'bouteille__has__cellier')
-                        ->withPivot([
-                            'id',
-                            'quantite',
-                            'note',
-                            'created_at',
-                            'updated_at'
-                        ]);
-    }
+    // public function bouteille()
+    // {
+    //     return $this->hasMany(Bouteille::class, 'bouteille__has__cellier')
+    //                     ->withPivot([
+    //                         'id',
+    //                         'quantite',
+    //                         'note',
+    //                         'created_at',
+    //                         'updated_at'
+    //                     ]);
+    // }
 }

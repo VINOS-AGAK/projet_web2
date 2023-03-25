@@ -31,10 +31,6 @@
   background: rgba(249, 244, 204, 0.29);
   
 }
-.card-info-client .btn{
-  margin-top: 5px;
-  margin-left: 0px;
-}
 .catalogue__card img:hover ~ .modal {
   opacity: 1;
   scale: 1.5;
@@ -58,6 +54,10 @@
   color:var(--color-dark);
   font-size: var(--font-size-x-small);
   text-align: start;
+}
+.card-info-client .btn{
+  margin-top: 5px;
+  margin-left: 0px;
 }
 
 

@@ -131,7 +131,7 @@ export default {
       <h2 class="catalogue_titre-section">Nous recommandons</h2>
 
       <div class="container">
-        <div v-for="bouteille in catalogue.slice(0, 6)" :key="bouteille.id">
+        <div v-for="(bouteille, index) in recommandons.slice(49, 55)" :key="index">
           <article v-if="bouteille.id > 10" class="card">
             <div class="card-body">
               <img :src="bouteille.image" alt="img-bouteille">

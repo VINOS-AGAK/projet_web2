@@ -132,22 +132,22 @@ export default {
 
       <div class="container">
         <div v-for="(bouteille, index) in recommandons.slice(49, 55)" :key="index">
-          <article v-if="bouteille.id > 10" class="card">
-            <div class="card-body">
+          <article v-if="bouteille.id > 10" class="catalogue__card">
+            <div class="catalogue__card-body">
               <img :src="bouteille.image" alt="img-bouteille">
               <picture class="modal"><img :src="bouteille.image" alt="img"></picture>
-              <div class="card-info">
+              <div class="catalogue__card-info">
                 <div class="card-info-title">
                   <h3 class="card-title">{{ bouteille.nom }}</h3>
                   <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
                   <p class="card-subtitle">{{ bouteille.pays }}</p>
                 </div>
                 <div class="card-info-client">
-                  <p class="card-count">{{ bouteille.prix_saq }}$</p>
-                  <div class="card-footer">
-                    <button class="btn" value="">Buy Now</button>
-
-                  </div>
+                  <p class="catalogue__card-count">{{ bouteille.prix_saq }}$</p>
+        
+                  <router-link class="btn" :to="{name: 'catalogue.edit', params:{ id: bouteille.id } }">
+                  Acheter
+                </router-link>
                 </div>
               </div>
             </div>

@@ -71,60 +71,6 @@
     }
 
 
-   
-/* =============== toggle-menu ===========*/
-  
-  label {
-    cursor: pointer;
-  }
-  
-  #menu-toggle {
-    display: none;
-  }
-  
-  li>a{
-    font-size: 10px;
-  }
-
-  #menu {
-    overflow: hidden;
-    height: 30vh;
-    max-height: 0;
-    padding: 0;
-    margin: 0 auto;
-    -webkit-transition: all 0.5s ease;
-    display: flex;
-    flex-direction:column;
-    position: absolute;
-    background-color: var(--primary-color);
-    z-index: 3;
-  }
-  
-  ul#menu{
-    margin-left: 50%;
-    padding: 0px;
-    width: 50%;
-    height: fit-content;
-    border-radius: 0px 0px 0px 15px;
-  }
-
-  #menu-toggle:checked + #menu {
-    max-height: 100%;
-  }
-
-  #menu li {
-    height: 100%;
-    padding: 10px;
-  }
-  
-  li.list-item{
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-  }
-
-
 /* =============== fin toggle-menu  ===========*/
         
 div.container-header{
@@ -134,23 +80,6 @@ div.container-header{
     letter-spacing: 10px;
     position: relative;
     background-color: var(--primary-color);
-}
-
-.list-icon{
-  text-align: center;
-  font-size: 30px;
-  letter-spacing: 20px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.list-icon>a:hover{
-  text-decoration: none;
-  text-decoration-line: none;
-}
-
-.list-icon > .icon:hover{
-  background-color: var(--accent-color);
 }
 
 .list-item{
@@ -170,4 +99,22 @@ div.container-header{
   display: block;
   width: 100%;
   max-width: 100px;
+}
+
+.menu{
+  height: 5rem;
+  background-color: var(--accent-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-item{
+  padding: 10px;
+  align-self: center;
+  display: flex;
+}
+
+.menu-username{
+  align-self: center;
+  margin-right: 10px;
 }

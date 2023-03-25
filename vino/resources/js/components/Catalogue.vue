@@ -1,6 +1,92 @@
+<template>
+  <div>
+    <header class="site-header">
+      <form class="search" action="#" method="GET">
+        <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" @change="selectProduct">
+        <button type="submit" class="search-button"></button>
+      </form>
+    </header>
 
+    <datalist class="listeAutoComplete" id="catalogue-names">
+      <option v-for="bouteille in filteredCatalogue.slice(0, 6)" :value="bouteille.nom">{{ bouteille.nom }}</option>
+    </datalist>
 
- <template>
+    <section class="catalogue-container">
+      <article v-if="selectedProduct" class="product-card">
+        <div class="card-body">
+          <img :src="selectedProduct.image" alt="img-bouteille">
+          <picture class="modal"><img :src="selectedProduct.image" alt="img-bouteille"></picture>
+          <div class="card-info">
+            <div class="card-info-title">
+              <h3 class="card-title">{{ selectedProduct.nom }}</h3>
+              <p class="card-subtitle">{{ selectedProduct.description }} {{ selectedProduct.format }}</p>
+              <p class="card-subtitle">{{ selectedProduct.pays }}</p>
+            </div>
+            <div class="card-info-client">
+              <p class="card-count">{{ selectedProduct.prix_saq }}$</p>
+              <div class="card-footer">
+                <button class="btn" value="">Buy Now</button>
+                <router-link :to="{name: 'catalogue.edit', params:{ id: selectedProduct.id } }">
+                  Modifier
+                </router-link>
+                <br>
+                <a href="#" @click.prevent="deleteCatalogue(selectedProduct.id)" class="btn">Supprimer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</template>
+
+<script>
+import useCatalogue from '../composables/catalogue'
+import { onMounted, ref, computed, watch } from 'vue'
+
+export default {
+  setup() {
+    const { catalogue, getCatalogue, deleteCatalogue } = useCatalogue()
+    const searchTerm = ref('')
+    const selectedProduct = ref(null)
+    onMounted(getCatalogue)
+
+    const filteredCatalogue = computed(() => {
+      if (searchTerm.value.length < 2) {
+        return []
+      }
+      return catalogue.value.filter(bouteille => {
+        return bouteille.nom.toLowerCase().includes(searchTerm.value.toLowerCase())
+      })
+    })
+
+    const selectProduct = () => {
+      if (searchTerm.value !== '' && selectedProduct.value === null) {
+        selectedProduct.value = filteredCatalogue.value[0]
+      }
+    }
+
+    watch(searchTerm, (newVal) => {
+      const index = filteredCatalogue.value.findIndex(bouteille => bouteille === selectedProduct.value)
+      if (index === -1) {
+        selectedProduct.value = filteredCatalogue.value[0] || null
+      }
+    })
+
+    return {
+      catalogue,
+      getCatalogue,
+      deleteCatalogue,
+      searchTerm,
+      filteredCatalogue,
+      selectedProduct,
+      selectProduct
+    }
+  }
+}
+</script>
+
+ <!-- <template>
   <div>
     <header class="site-header">
       <form class="search" action="#" method="GET">
@@ -78,7 +164,7 @@
       }
     }
   }
-  </script> 
+  </script>  -->
    
     <!-- <template>
 

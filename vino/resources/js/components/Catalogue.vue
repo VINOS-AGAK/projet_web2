@@ -7,7 +7,6 @@
                 </button>
             </form>
         </header>
-      
       <datalist class="listeAutoComplete" id="catalogue-names">
         <option v-for="bouteille in filteredCatalogue.slice(0, 6)" :value="bouteille.nom">{{ bouteille.nom }}</option>
       </datalist>

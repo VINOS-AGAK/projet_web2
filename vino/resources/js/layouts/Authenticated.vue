@@ -1,54 +1,69 @@
-
-
 <template>
-
         <nav class="container-header">
             <!-- Primary Navigation Menu -->
-
                 <div class="site-header">
                     <div class="site-header-content">
-                        <!-- Logo -->
-                            <a href="/">catalogue</a>
-                        <!-- Navigation Links -->
-                            <router-link :to="{ name: 'catalogue.index' }" active-class="border-b-2 border-indigo-400" class="">
-                                Posts
-                            </router-link>
-                            <router-link :to="{ name: 'catalogue.create' }" active-class="border-b-2 border-indigo-400" class="">
-                                Create Post
-                            </router-link>
-                            <router-link :to="{ name: 'cellier.index' }" active-class="border-b-2 border-indigo-400" class="">
-                                Cellier Index
-                            </router-link>
-                            <router-link :to="{ name: 'cellier.create' }" active-class="border-b-2 border-indigo-400" class="">
-                                Cellier create
+                        <ul class="menu">
+                            <!-- Logo -->
+                            <li class="menu-item">
+                                <a href="/">
+                                    <IconContainer>
+                                        <template #icon>
+                                            <IconLogo/>
+                                        </template>
+                                    </IconContainer>
+                                </a>
+                            </li>
+                            <li class="menu-item">                          
+                                <router-link :to="{ name: 'catalogue.index' }" active-class="border-b-2 border-indigo-400" class="">
+                                    <IconContainer>
+                                        <template #icon>
+                                            <IconSearch/>
+                                        </template>
+                                    </IconContainer>
+                                </router-link>
+                            </li>
+                            <li class="menu-item">
+                                <router-link :to="{ name: 'catalogue.create' }" active-class="border-b-2 border-indigo-400" class="">
+                                    <IconContainer>
+                                        <template #icon>
+                                            <IconBouteille/>
+                                        </template>
+                                    </IconContainer>
+                                </router-link>
+                            </li>
+                            <li class="menu-item">
+                                <router-link :to="{ name: 'cellier.index' }" active-class="border-b-2 border-indigo-400" class="">
+                                    <IconContainer>
+                                        <template #icon>
+                                            <IconCellier/>
+                                        </template>
+                                    </IconContainer>
                             </router-link>
 
-                    </div>
-                    <div class="">
-                        <div>
-                            <div>Hi, {{ user.name }}</div>
-                            <div class="text-sm text-gray-500">{{ user.email }}</div>
-                        </div>
-                    </div>
-                    <button @click="logout" type="button" >
+                            </li>
+                            <!-- Cellier create -->
+                            <!-- <li class="menu-item">
+                                <router-link :to="{ name: 'cellier.create' }" active-class="border-b-2 border-indigo-400" class="">
+                                </router-link>
+                            </li> -->
 
-                        <IconContainer>
-                            <template #icon>
-                                <IconLogo/>
-                            </template>
-                        </IconContainer>
-                        logout
-                    </button>
+                            <li class="menu-item">
+                                <div class="menu-username">{{ user.name }}</div>
+                                    <button @click="logout" type="button" >
+                                        <IconContainer>
+                                            <template #icon>
+                                                <IconProfil/>
+                                            </template>
+                                         </IconContainer>
+                                    </button>
+                            </li>
+                        </ul>
+
+                    </div>
 
                 </div>
-
         </nav>
-        <!-- Page Heading -->
-
-        <h2 class="">
-            {{ currentPageTitle }}
-        </h2>
-
 
         <!-- Page Content -->
         <main>
@@ -56,19 +71,30 @@
                 <router-view></router-view>
             </div>
         </main>
+        
+        <!-- Page Heading -->
+        <h2 class="">
+            {{ currentPageTitle }}
+        </h2>
 
 </template>
 
 <script>
 import { onMounted } from "vue";
 import useAuth from "../composables/auth";
+import IconLogo from '../components/icons/IconLogo.vue';
+import IconProfil from '../components/icons/IconProfil.vue';
+import IconCellier from '../components/icons/IconCellier.vue';
+import IconCellier2 from '../components/icons/IconCellier2.vue';
+import IconBouteille from '../components/icons/IconBouteille.vue';
+import IconSearch from '../components/icons/IconSearch.vue';
 import IconContainer from "../components/IconContainer.vue";
-import IconProfil from "../components/icons/IconProfil.vue";
-import IconLogo from "../components/icons/IconLogo.vue";
 
-export default {
+export default { 
+
     setup() {
         const { user, processing, logout, getUser } = useAuth()
+
         onMounted(getUser)
         return { user, processing, logout }
     },
@@ -76,6 +102,15 @@ export default {
         currentPageTitle() {
             return this.$route.meta.title;
         }
+    },
+    components: {
+        'IconContainer': IconContainer,
+        'IconLogo': IconLogo,
+        'IconProfil': IconProfil,
+        'IconCellier': IconCellier,
+        'IconCellier2': IconCellier2,
+        'IconBouteille': IconBouteille,
+        'IconSearch': IconSearch,
     }
 }
 </script>

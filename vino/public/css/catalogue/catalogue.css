@@ -18,14 +18,17 @@
     
 }
 
-    input::-webkit-calendar-picker-indicator,
-    input::-webkit-inner-spin-button,
-    input::-webkit-outer-spin-button {
-        display: none;
-    }
-    input[type="search"]::-moz-search-cancel-button {
-      display: none;
-    }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+    display: none;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+   
 
 
 .catalogue__liste-search {
@@ -169,6 +172,9 @@ a.btn{
 
 }
 
+
+
+
 .card-header{
 
     height: 60px;
@@ -221,4 +227,49 @@ a.btn{
     background: rgba(249, 244, 204, 0.29);
   }
 
+}
+
+
+
+.catalogue__card {
+  width: 100%;
+  height: 250px;
+  border-radius: var(--border-radius-large);
+  margin-top: var(--margin-small);
+  padding: var(--padding-small);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.142);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(249, 244, 204, 0.29);
+  
+}
+.card-info-client .btn{
+  margin-top: 5px;
+  margin-left: 0px;
+}
+.catalogue__card img:hover ~ .modal {
+  opacity: 1;
+  scale: 1.5;
+  transition-duration: 800ms ;
+}
+.catalogue__card-body{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: var(--margin-medium);
+    /* background-image: linear-gradient(to bottom, rgb(144, 24, 24), rgb(86, 86, 85)); */
+}
+.catalogue__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+  margin-right:  var(--margin-small);
+}
+.catalogue__card-count{
+  margin-bottom: 20px;
+  color:var(--color-dark);
+  font-size: var(--font-size-x-small);
+  text-align: start;
 }

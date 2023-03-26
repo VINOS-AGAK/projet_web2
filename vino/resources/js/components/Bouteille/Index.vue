@@ -20,7 +20,7 @@
                             <p class="card-rating"> &#9733;&#9733;&#9733;&#10025;</p>
                             <div class="card-footer">
                               <router-link  class="card-btn_modif " value="" :to="{ name: 'bouteille.edit', params: { id: bouteille.id } }">Modifier</router-link>   
-                              <button  class="card-btn_supp deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer</button>   
+                              <button  class="card-btn_supp deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >-</button>   
                             </div>
                         </div>  
                     </div> 
@@ -30,7 +30,7 @@
                   
             </div>
            
-            <div class="catalogue-container"  v-if="mesBouteilles.length === 0">
+            <div class="container"  v-if="mesBouteilles.length === 0">
                 <ul>
                     <li class="text-danger">Aucune bouteilles disponible dans ce cellier</li>
                 </ul>

@@ -30,7 +30,7 @@
                   
             </div>
            
-            <div class="catalogue-container"  v-if="mesBouteilles.length === 0">
+            <div class="container"  v-if="mesBouteilles.length === 0">
                 <ul>
                     <li class="text-danger">Aucune bouteilles disponible dans ce cellier</li>
                 </ul>

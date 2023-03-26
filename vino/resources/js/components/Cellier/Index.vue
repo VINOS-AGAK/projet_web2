@@ -1,6 +1,20 @@
 <template>
-    <div>
-        Hello I'm Cellier component Index Anna
+    <section>
+        <h2 class="liste__titre" >Mes cellier</h2>
+        <article class="container">
+
+            <div class="card" v-for="unCellier in mesCellier" :key="unCellier.id">
+                <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
+                    <p>Nom: {{ unCellier.nom }}</p>
+                    <p>Description : {{ unCellier.description }}</p>
+                </router-link>
+            </div>
+            <div   v-if="mesCellier.length === 0">
+                
+                    <p class="text-danger">Vous n'avez pas de cellier. Voulez-vous en créer un? Cliquez <a href="#">ici</a> </p>
+                
+            </div>
+        </article>
 
         <!-- <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
             <div class="product-card">
@@ -14,13 +28,7 @@
         <!-- <a href="#" @click.prevent="deleteCatalogue(bouteille.id)">Supprimer</a> -->
 
         <!-- Pour pluseur cellier TODO: ( Later ) -->
-        <div class="product-card" v-for="unCellier in mesCellier" :key="unCellier.id">
-            <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
-                <p>Nom: {{ unCellier.nom }}</p>
-                <p>Description : {{ unCellier.description }}</p>
-            </router-link>
-        </div>
-    </div>
+    </section>
 </template>
 
 <script>

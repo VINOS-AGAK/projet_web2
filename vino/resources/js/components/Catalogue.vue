@@ -42,7 +42,7 @@
     </section>
     <!-- Section Recomendation -->
     <section  v-show="!selectedProduct" >
-      <h2 class="catalogue_titre-section">Nous recommandons</h2>
+      <h2 class="ajouter-cellier">Nous recommandons</h2>
 
       <div class="container">
         <div v-for="(bouteille, index) in recommandons.slice(49, 55)" :key="index">

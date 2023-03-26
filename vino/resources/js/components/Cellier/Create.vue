@@ -1,28 +1,35 @@
 <template>
-    <div>
-        <form @submit.prevent="storeCellier(cellier)">
-
-            <!-- User id -->
-            <label class="" for="cellierNom">Nom du cellier</label>
-            <input class="number" v-model="cellier.user_id" type="hidden" name="cellierNom" id="cellierNom" >
-
-            <!-- Nom -->
-            <label class="" for="cellierNom">Nom du cellier</label>
-            <input class="number" v-model="cellier.nom" type="text" name="cellierNom" id="cellierNom">
+    <main class="">
+        <div class="container-form">
+            <div class="header-form">
+                <h3>nouveau cellier</h3>
+            </div>
             
+            <form @submit.prevent="storeCellier(cellier)">
+    
+            <!-- User id -->
+            <input class="number" v-model="cellier.user_id" type="hidden" name="cellierNom" id="cellierNom" >
+    
+            <!-- Nom -->
+            <p class="text-form" for="cellierNom">Nom du cellier</p>
+            <input class="input" v-model="cellier.nom" type="text" name="cellierNom" id="cellierNom">
+    
             <!-- Description -->
-            <label class="" for="cellierNom">Description du cellier</label>
-            <input class="number" v-model="cellier.description" type="text" name="cellierNom" id="cellierNom">
-
+            <p class="text-form" for="cellierNom">Description du cellier</p>
+            <input class="input" v-model="cellier.description" type="text" name="cellierNom" id="cellierNom">
+    
             <!-- button -->
             <button :disabled="isLoading" class="btn-submit">
                 <div v-show="isLoading"></div>
                 <span v-if="isLoading">Processing...</span>
                 <span v-else>Save</span>
             </button>
+            </form>
+        </div>
 
-        </form>
-    </div>
+    </main>
+
+    
 </template>
 
 <script>

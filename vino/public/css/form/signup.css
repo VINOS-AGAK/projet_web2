@@ -40,6 +40,19 @@
 }
 
 /*-------------------------- input --------------------------*/
+input.input[type=text]{
+  border: none;
+  background: transparent;
+  margin: 0;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid;
+  border-radius: 0px;
+  width: 90%;
+  padding: var(--padding-small);
+  margin: var(--margin-small);
+}
+
 
 input.name[type=text]{
     border: none;
@@ -61,7 +74,7 @@ input.name[type=text]{
     font-size: 14px;
     color: inherit;
     border: 1px solid;
-    border-radius: inherit;
+    border-radius: 0px;
     width: 90%;
     padding: var(--padding-small);
     margin: var(--margin-small);
@@ -114,7 +127,7 @@ input.email[type=email]{
     font-size: 14px;
     color: inherit;
     border: 1px solid ;
-    border-radius: inherit;
+    border-radius: 0px;
     width: 90%;
     padding: var(--padding-small);
     margin: var(--margin-small);
@@ -127,7 +140,7 @@ input.email[type=email]{
     font-size: 14px;
     color: inherit;
     border: 1px solid ;
-    border-radius: inherit;
+    border-radius: 0px;
     width: 90%;
     padding: var(--padding-small);
     margin: var(--margin-small);

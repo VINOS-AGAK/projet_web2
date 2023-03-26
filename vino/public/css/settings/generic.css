@@ -9,6 +9,10 @@
 	padding: 0;
 }
 
+main{
+    margin: 0px;
+}
+
 html {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	line-height: 1.25;

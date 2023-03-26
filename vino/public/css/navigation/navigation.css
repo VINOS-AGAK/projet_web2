@@ -30,6 +30,7 @@
     form.search{
       background-color: var(--primary-color);
       margin: 10px;
+      color: var(--color-dark);
     }
 
     .search-button{
@@ -44,13 +45,12 @@
       padding: 7px 8px;
       font-size: 14px;
       color: inherit;
-      border: 1px solid transparent;
       border-radius: inherit;
-      width: 90%;
+      width: 100%;
     }
 
     .search>input[type=search]:focus{
-      box-shadow: 0 0 3px 0 var(--primary-color-variation);
+      box-shadow: 0 0 3px 0 var(--color-dark);
       border-color: var(--primary-color);
       outline: none;
     }
@@ -80,11 +80,6 @@ div.container-header{
     letter-spacing: 10px;
     position: relative;
     background-color: var(--primary-color);
-}
-
-.list-item{
-  display: flex;
-  margin-left: 1rem;
 }
   
 .username{

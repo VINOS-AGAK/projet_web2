@@ -19,7 +19,7 @@
 }
 
 .catalogue__card {
-  width: 100%;
+  width: 95vw;
   height: 250px;
   border-radius: var(--border-radius-large);
   margin-top: var(--margin-small);

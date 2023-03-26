@@ -8,10 +8,32 @@
     <article class="container">
         <div class="card" v-for="unCellier in mesCellier" :key="unCellier.id">
             <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
-                <!-- <p>Nom: {{ unCellier.nom }}</p>
-                <p>Description : {{ unCellier.description }}</p> -->
 
-                <div class="card-body">
+                <div class="card-body cellier__card-body">
+                    <img src="https://img.freepik.com/premium-photo/wine-glass-watercolor_726745-164.jpg?w=360"  alt="img-bouteille">
+                    <div class="cellier-info">
+                        <div class="card-info-title">
+                            <h3 class="cellier__card-title">{{ unCellier.nom }}</h3>
+                  
+                        </div>
+                        <div class="card-info-client">
+                            <p class="card-subtitle">{{ unCellier.description }}</p>
+                  
+                        </div>
+                    </div>
+                </div>
+            </router-link>
+        </div>
+        <div v-if="mesCellier.length === 0">
+            <p class="text-danger">Vous n'avez pas de cellier. Voulez-vous en créer un? Cliquez  <router-link :to="{name: 'cellier.create'}" >ici</router-link></p>
+        </div>
+    </article>
+    
+    <article class="container">
+        <div class="card" v-for="unCellier in mesCellier" :key="unCellier.id">
+            <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
+
+                <div class="card-body cellier__card-body">
                     <img src="https://img.freepik.com/premium-photo/wine-glass-watercolor_726745-164.jpg?w=360"  alt="img-bouteille">
                     <div class="cellier-info">
                         <div class="card-info-title">

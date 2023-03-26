@@ -12,6 +12,9 @@
     border-radius: 5px;
     text-decoration: none;
 } */
+.cellier__card-body{
+    margin-left: 20px;
+}
 .cellier-info{
     display: flex;
     flex-direction: column;
@@ -20,6 +23,7 @@
     margin-right: var(--margin-small);
     margin-left: 20px;
 }
+
 .cellier__card-title{
     font-size: var(--font-size-regular);
     font-weight: var(--font-weight-medium);

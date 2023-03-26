@@ -1,7 +1,10 @@
 <template>
   <main>
-    <div class="container-form">
 
+    <div class="container-form">
+      <div class="header-form">
+             <h3>Ajoute un bouteille</h3>
+     </div>
       <form @submit.prevent='storeCatalogue(catalogue)'>
 
         <p class="text-form">Type:</p>

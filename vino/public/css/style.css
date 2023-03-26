@@ -12,12 +12,14 @@
 @import "./detail/detail.css";
 @import "./navigation/navigation.css";
 
+
 /* Cellier view */
 @import "./liste/liste.css";
 @import "./liste/menu.css";
 @import "./liste/dialogue.css";
 
 @import "./form/signup.css";
+@import "./carte_produit/card.css";
 
 
 

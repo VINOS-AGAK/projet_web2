@@ -15,11 +15,11 @@ class CellierController extends Controller
         $user_id = Auth()->user()->id;
         $mesCellier = CellierResource::collection(Cellier::select()->where("vino__cellier.user_id", '=', $user_id)->get());
         return $mesCellier;
-        // return CellierResource::collection(Cellier::all());
     }
 
     public function store(StoreCellierRequest $request)
     {
+        // dd($request);
         $cellier = Cellier::create($request->validated());
 
         // $cellier = Cellier::create([

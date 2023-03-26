@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cellier extends Model
 {
+    const TABLE = 'vino__cellier';
+
     protected $table = "vino__cellier";
 
     use HasFactory;
@@ -19,6 +21,9 @@ class Cellier extends Model
 
     ];
 
+    // public function CellierHasUser(){
+    //     return $this->hasOne('App\Models\User', 'id', 'users_id');
+    // }
 
     // public function user()
     // {

@@ -1,24 +1,24 @@
 <template>
     <div>
-        Hello I'm Cellier component Index Anna
+        <div>Cellier component Index</div>
+        <br>
+        <div class="">
+            <router-link :to="{ name: 'cellier.create' }" class="btn">Crée un nouveau cellier</router-link>
+        </div>
 
-        <!-- <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
-            <div class="product-card">
-                <p>Cellier: {{ unCellier.nom }}</p>
-                <p>Description: {{ unCellier.description }}</p>
-                <h5>Voire mes bouteilles</h5>
-            </div>
-            <br>
-        </router-link> -->
-
-        <!-- <a href="#" @click.prevent="deleteCatalogue(bouteille.id)">Supprimer</a> -->
-
-        <!-- Pour pluseur cellier TODO: ( Later ) -->
         <div class="product-card" v-for="unCellier in mesCellier" :key="unCellier.id">
             <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
                 <p>Nom: {{ unCellier.nom }}</p>
                 <p>Description : {{ unCellier.description }}</p>
             </router-link>
+            <!-- TODO: -->
+            <div class="card-footer">
+                <!-- <router-link :to="{ name: 'cellier.edit', params: { id: selectedProduct.id } }">
+                    Modifier
+                </router-link> -->
+                <br>
+                <a href="#" @click.prevent="deleteCellier(selectedProduct)" class="btn">Supprimer</a>
+            </div>
         </div>
     </div>
 </template>
@@ -26,23 +26,28 @@
 <script>
 
 import useCellier from '../../composables/cellier';
-import { onMounted } from 'vue';
+import { onMounted, ref, computed } from 'vue'
 
 export default {
 
-    // setup() {
-    //     const { unCellier, getOneCellier } = useCellier()
-    //     onMounted(getOneCellier)
-    //     return {
-    //         unCellier,
-    //     }
-    // }
-
     setup() {
-        const { mesCellier, getMesCellier } = useCellier()
+        const { mesCellier, getMesCellier, deleteCellier } = useCellier()
+        const selectedProduct = ref(null)
+        const searchTerm = ref('')
         onMounted(getMesCellier)
+
+        const selectProduct = () => {
+            if (searchTerm.value !== '' && selectedProduct.value === null) {
+                selectedProduct = unCellier.id
+            }
+        }
+
         return {
             mesCellier,
+            getMesCellier,
+            deleteCellier,
+            selectedProduct,
+            selectProduct
         }
     }
 }

@@ -13,19 +13,20 @@ class CellierController extends Controller
 {
     public function index(){
         $user_id = Auth()->user()->id;
-        /* DB select * from vino__cellier where user_id = 2 */
-        // TODO: (il faut changer pour cette methode. Il faut trouve comment recevoire de vue.js id q'on envois et de le mettre apres "=")
-        // dd($user_id);
         $mesCellier = CellierResource::collection(Cellier::select()->where("vino__cellier.user_id", '=', $user_id)->get());
-
         return $mesCellier;
-        // return CellierResource::collection(Cellier::all());
     }
 
     public function store(StoreCellierRequest $request)
     {
+        // dd($request);
         $cellier = Cellier::create($request->validated());
-        
+
+        // $cellier = Cellier::create([
+        //     'nom' => $request->nom,
+        //     'description'=>$request->description,
+        //     'user_id'=> $request->user_id
+        //     ]);
 
         return new CellierResource($cellier);
     }

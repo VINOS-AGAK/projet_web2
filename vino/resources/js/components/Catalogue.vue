@@ -99,11 +99,11 @@ export default {
       </form>
     </header>
 
-    <datalist class="listeAutoComplete" id="catalogue-names">
+    <datalist  id="catalogue-names">
       <option v-for="bouteille in filteredCatalogue.slice(0, 6)" :value="bouteille.nom">{{ bouteille.nom }}</option>
     </datalist>
 
-    <section class="">
+    <section >
       <article v-if="selectedProduct" class="catalogue__card">
         <div class="catalogue__card-body">
           <img :src="selectedProduct.image" alt="img-bouteille">
@@ -128,6 +128,35 @@ export default {
         </div>
       </article>
     </section>
+    <!-- Section Recomendation -->
+    <section  v-show="!selectedProduct" >
+      <h2 class="catalogue_titre-section">Nous recommandons</h2>
+
+      <div class="container">
+        <div v-for="(bouteille, index) in recommandons.slice(49, 55)" :key="index">
+          <article v-if="bouteille.id > 10" class="catalogue__card">
+            <div class="catalogue__card-body">
+              <img :src="bouteille.image" alt="img-bouteille">
+              <picture class="modal"><img :src="bouteille.image" alt="img"></picture>
+              <div class="catalogue__card-info">
+                <div class="card-info-title">
+                  <h3 class="card-title">{{ bouteille.nom }}</h3>
+                  <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
+                  <p class="card-subtitle">{{ bouteille.pays }}</p>
+                </div>
+                <div class="card-info-client">
+                  <p class="catalogue__card-count">{{ bouteille.prix_saq }}$</p>
+        
+                  <router-link class="btn" :to="{name: 'catalogue.edit', params:{ id: bouteille.id } }">
+                  Acheter
+                </router-link>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </div>
 </template> 
  <script>
@@ -140,6 +169,11 @@ export default {
       const searchTerm = ref('')
       const selectedProduct = ref(null)
       onMounted(getCatalogue)
+
+      const recommandons = computed(() =>{
+
+return catalogue.value;
+})
   
       const filteredCatalogue = computed(() => {
         if (searchTerm.value.length < 2) {
@@ -163,6 +197,7 @@ export default {
         searchTerm,
         filteredCatalogue,
         selectedProduct,
+        recommandons,
         selectProduct
       }
     }

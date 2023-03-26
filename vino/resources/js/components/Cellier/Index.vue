@@ -68,7 +68,6 @@
     </router-link> -->
 
     <!-- <a href="#" @click.prevent="deleteCatalogue(bouteille.id)">Supprimer</a> -->
-
 </template>
 
 <script>

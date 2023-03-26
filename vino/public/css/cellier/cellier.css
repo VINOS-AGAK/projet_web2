@@ -12,6 +12,20 @@
     border-radius: 5px;
     text-decoration: none;
 } */
+.cellier-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-grow: 1;
+    margin-right: var(--margin-small);
+    margin-left: 20px;
+}
+.cellier__card-title{
+    font-size: var(--font-size-regular);
+    font-weight: var(--font-weight-medium);
+    margin: 0;
+    color: var(--color-dark);
+}
 .ajouter-cellier__bouton {
     display: inline-block;
     padding: 16px 32px;

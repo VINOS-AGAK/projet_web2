@@ -11,11 +11,11 @@
             <input class="number" v-model="cellier.user_id" type="hidden" name="cellierNom" id="cellierNom" >
     
             <!-- Nom -->
-            <p class="text-form" for="cellierNom">Nom du cellier</p>
+            <label class="text-form" for="cellierNom">Nom du cellier</label>
             <input class="input" v-model="cellier.nom" type="text" name="cellierNom" id="cellierNom">
     
             <!-- Description -->
-            <p class="text-form" for="cellierNom">Description du cellier</p>
+            <label class="text-form" for="cellierNom">Description du cellier</label>
             <input class="input" v-model="cellier.description" type="text" name="cellierNom" id="cellierNom">
     
             <!-- button -->

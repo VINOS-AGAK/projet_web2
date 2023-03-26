@@ -27,6 +27,14 @@
                     </div>
                 </div>
             </router-link>
+            <!-- TODO: -->
+            <div class="card-footer">
+                <!-- <router-link :to="{ name: 'cellier.edit', params: { id: selectedProduct.id } }">
+                    Modifier
+                </router-link> -->
+                <br>
+                <a href="#" @click.prevent="deleteCellier(selectedProduct)" class="btn">Supprimer</a>
+            </div>
         </div>
         <div class="card" v-for="unCellier in mesCellier" :key="unCellier.id">
             <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
@@ -70,23 +78,28 @@
 <script>
 
 import useCellier from '../../composables/cellier';
-import { onMounted } from 'vue';
+import { onMounted, ref, computed } from 'vue'
 
 export default {
 
-    // setup() {
-    //     const { unCellier, getOneCellier } = useCellier()
-    //     onMounted(getOneCellier)
-    //     return {
-    //         unCellier,
-    //     }
-    // }
-
     setup() {
-        const { mesCellier, getMesCellier } = useCellier()
+        const { mesCellier, getMesCellier, deleteCellier } = useCellier()
+        const selectedProduct = ref(null)
+        const searchTerm = ref('')
         onMounted(getMesCellier)
+
+        const selectProduct = () => {
+            if (searchTerm.value !== '' && selectedProduct.value === null) {
+                selectedProduct = unCellier.id
+            }
+        }
+
         return {
             mesCellier,
+            getMesCellier,
+            deleteCellier,
+            selectedProduct,
+            selectProduct
         }
     }
 }

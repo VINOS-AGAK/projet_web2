@@ -68,7 +68,22 @@
         <!-- Page Content -->
         <main>
             <div class="">
-                <router-view></router-view>
+                <!-- Logo -->
+                <a href="/">
+                    catalogue
+                </a>
+                <!-- Navigation Links -->
+                <div class="">
+                    <router-link :to="{ name: 'catalogue.index' }" active-class="border-b-2 border-indigo-400" class="">
+                        Posts
+                    </router-link>
+                    <router-link :to="{ name: 'catalogue.create' }" active-class="border-b-2 border-indigo-400" class="">
+                        Create Post
+                    </router-link>
+                    <router-link :to="{ name: 'cellier.index' }" active-class="border-b-2 border-indigo-400" class="">
+                        Cellier Index
+                    </router-link>
+                </div>
             </div>
         </main>
         
@@ -77,6 +92,19 @@
             {{ currentPageTitle }}
         </h2>
 
+    <!-- Page Heading -->
+
+    <h2 class="">
+        {{ currentPageTitle }}
+    </h2>
+
+
+    <!-- Page Content -->
+    <main>
+        <div class="">
+            <router-view></router-view>
+        </div>
+    </main>
 </template>
 
 <script>

@@ -1,23 +1,8 @@
 <template>
-    <!-- <div class="product-grid">
-        <div class="product-card" v-for="bouteille in mesBouteilles" :key="bouteille.id">
-            <img :src="bouteille.image" alt="Product 1">
-            <h3>{{ bouteille.nom }}</h3>
-            <p>{{ bouteille.description }}</p>
-            <p>{{ bouteille.pays }}</p>
-            <p>{{ bouteille.format }}</p>
-            <router-link :to="{ name: 'bouteille.edit', params: { id: bouteille.id } }">
-                Modifier
-            </router-link>
-            <br>
-            <a href="#" @click.prevent="deleteBouteille(bouteille.id)">Supprimer</a>
-        </div>
-    </div> -->
+    
     <section class="liste-container">
         <h2 class="liste__titre" >Mon cellier 1</h2>
         <article class="container">
-    
-            
             <div class="card" v-for="bouteille in mesBouteilles" :key="bouteille.id" >
                 <div class="card-body">
                     <img :src="bouteille.image" :alt="bouteille.nom">
@@ -34,8 +19,8 @@
                             <p class="card-count"> {{ bouteille.prix_saq }} $</p>
                             <p class="card-rating"> &#9733;&#9733;&#9733;&#10025;</p>
                             <div class="card-footer">
-                              <router-link  class="card-btn_add " value="" :to="{ name: 'bouteille.edit', params: { id: bouteille.id } }">Modifier</router-link>   
-                              <button  class="card-btn_add deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer</button>   
+                              <router-link  class="card-btn_modif " value="" :to="{ name: 'bouteille.edit', params: { id: bouteille.id } }">Modifier</router-link>   
+                              <button  class="card-btn_supp deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer</button>   
                             </div>
                         </div>  
                     </div> 

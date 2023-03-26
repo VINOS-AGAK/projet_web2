@@ -60,6 +60,12 @@
   margin-left: 0px;
 }
 
+.catalogue_titre-section{
+  margin-top: var(--margin-medium);
+  text-align: center;
+  font-size: var(--font-size-medium);
+}
+
 
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,

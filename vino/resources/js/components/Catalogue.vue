@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="liste-container">
     <header class="site-header">
       <form class="search" action="#" method="GET">
         <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" @change="selectProduct" @input="selectedProduct = null">

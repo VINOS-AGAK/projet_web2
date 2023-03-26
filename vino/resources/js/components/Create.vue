@@ -2,7 +2,7 @@
   <main>
 
     <div class="container-form">
-      <div class="header-form">
+      <div class="ajouter-cellier">
              <h3>Ajoute un bouteille</h3>
      </div>
       <form @submit.prevent='storeCatalogue(catalogue)'>
@@ -82,8 +82,7 @@
     
   </main>
    
-    
-    </template>
+</template>
     
     <script>
     import { onMounted, reactive} from "vue";

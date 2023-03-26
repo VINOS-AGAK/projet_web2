@@ -1,9 +1,9 @@
 <template>
     <main class="">
         <div class="container-form">
-            <div class="header-form">
+            <p class="text-form">
                 <h3>nouveau cellier</h3>
-            </div>
+            </p>
             
             <form @submit.prevent="storeCellier(cellier)">
     
@@ -22,7 +22,7 @@
             <button :disabled="isLoading" class="btn-submit">
                 <div v-show="isLoading"></div>
                 <span v-if="isLoading">Processing...</span>
-                <span v-else>Save</span>
+                <span v-else>sauvegarder</span>
             </button>
             </form>
         </div>

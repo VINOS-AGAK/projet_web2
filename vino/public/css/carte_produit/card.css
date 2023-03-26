@@ -109,9 +109,7 @@
   }
 
   @media only screen and (min-width: 700px) {
-    .container {
-      justify-content: space-between;
-    }
+    
     .card {
       max-width: 300px;
     }

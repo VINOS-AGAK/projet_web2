@@ -12,9 +12,7 @@
     border-radius: 5px;
     text-decoration: none;
 } */
-.cellier__card-body{
-    margin-left: 20px;
-}
+
 .cellier-info{
     display: flex;
     flex-direction: column;
@@ -56,6 +54,7 @@
 @media only screen and (min-width: 768px) {
     .ajouter-cellier {
         margin-bottom: 40px;
+        margin-left: 80%;
     }
 
     .ajouter-cellier__bouton {

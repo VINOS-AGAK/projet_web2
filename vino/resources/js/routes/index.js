@@ -16,6 +16,8 @@ import GuestLayout from '../layouts/Guest.vue'
 
 import Login from '../components/User/Login.vue'
 
+import Accueil from '../components/Accueil.vue'
+
 
 
 function auth(to, from, next) {
@@ -36,6 +38,12 @@ const routes = [
                 name: 'login',
                 component: Login,
                 meta: { title: 'Login' }
+            },
+            {
+                path: '/accueil',
+                name: 'accueil',
+                component: Accueil,
+                meta: { title: 'Accueil' }
             }
         ]
 

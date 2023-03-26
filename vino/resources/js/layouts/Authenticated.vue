@@ -6,7 +6,7 @@
                         <ul class="menu">
                             <!-- Logo -->
                             <li class="menu-item">
-                                <a href="/">
+                                <a href="/Accueil">
                                     <IconContainer>
                                         <template #icon>
                                             <IconLogo/>

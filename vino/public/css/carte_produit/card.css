@@ -106,6 +106,15 @@
     background-color: var(--accent-color);
   }
 
+  section.card-cellier{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+
+  }
+
   @media only screen and (min-width: 700px) {
     .container {
       justify-content: space-between;

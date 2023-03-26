@@ -1,26 +1,23 @@
 <template>
-    <div>
-        <div>Cellier component Index</div>
-        <br>
-        <div class="">
-            <router-link :to="{ name: 'cellier.create' }" class="btn">Crée un nouveau cellier</router-link>
-        </div>
+    <section class="liste-container">
 
-        <div class="product-card" v-for="unCellier in mesCellier" :key="unCellier.id">
-            <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
-                <p>Nom: {{ unCellier.nom }}</p>
-                <p>Description : {{ unCellier.description }}</p>
-            </router-link>
-            <!-- TODO: -->
-            <div class="card-footer">
-                <!-- <router-link :to="{ name: 'cellier.edit', params: { id: selectedProduct.id } }">
-                    Modifier
-                </router-link> -->
-                <br>
-                <a href="#" @click.prevent="deleteCellier(selectedProduct)" class="btn">Supprimer</a>
-            </div>
+        <div class="">
+            <router-link :to="{ name: 'cellier.create' }" class="">Crée un nouveau cellier</router-link>
         </div>
-    </div>
+        <article class="container">
+            <div class="card" v-for="unCellier in mesCellier" :key="unCellier.id">
+                <div class="">
+                    <section class="card-cellier">
+                        <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
+                                <p>Nom: {{ unCellier.nom }}</p>
+                                <p>Description : {{ unCellier.description }}</p>
+                        </router-link>
+                        <a href="#" @click.prevent="deleteCellier(selectedProduct)" class="btn-submit">Supprimer</a>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </section>
 </template>
 
 <script>

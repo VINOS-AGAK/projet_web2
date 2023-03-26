@@ -21,3 +21,5 @@ Route::post('logout', [AuthenticatedSessionController::class, 'destroy']);
 Route::view('/{any?}', view:'dashboard')
     ->name( name: 'dashboard')
     ->where('any', '.*');
+    
+//Route::get('/login', [AuthenticatedSessionController::class, 'index'])->name('login');

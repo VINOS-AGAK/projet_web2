@@ -9,7 +9,7 @@
 
                 <p class="text-form">courriel</p>
                 <input v-model="loginForm.email" id="email" type="email" class="email" required autofocus
-                    autocomplete="username" placeholder="courriel">
+                    autocomplete="username">
 
                 <!-- Validation Errors -->
                 <div v-for="message in validationErrors?.email">
@@ -19,7 +19,7 @@
                 <!-- Password -->
                 <p class="text-form">mot de passe</p>
                 <input v-model="loginForm.password" id="password" type="password" class="password" required
-                    autocomplete="current-password" placeholder="mot de passe">
+                    autocomplete="current-password">
 
                 <!-- Validation Errors -->
                 <div v-for="message in validationErrors?.password">
@@ -31,6 +31,7 @@
                     <input type="checkbox" name="remember" v-model="loginForm.remember" class="text-form" />
                     <span class="text-form">Remember me</span>
                 </p>
+                <p class="text-form">Vous n'avez pas de compte? Cliquez <a class="text-login">ici</a></p>
 
                 <!-- Buttons -->
                 <button class="btn-submit" :disabled="processing">

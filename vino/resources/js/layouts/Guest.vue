@@ -1,7 +1,4 @@
-<script setup>
-import IconLogo from '../components/icons/IconLogo.vue';
-import IconContainer from "../components/IconContainer.vue";
-</script>
+
 
 <template>
 
@@ -24,4 +21,10 @@ import IconContainer from "../components/IconContainer.vue";
     </div>
 
 </template>
+
+<script setup>
+import IconLogo from '../components/icons/IconLogo.vue';
+import IconContainer from "../components/IconContainer.vue";
+
+</script>
 

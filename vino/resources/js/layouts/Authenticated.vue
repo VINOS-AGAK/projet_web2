@@ -1,8 +1,72 @@
 <template>
-    <nav class="site-header">
-        <!-- Primary Navigation Menu -->
+        <nav class="container-header">
+            <!-- Primary Navigation Menu -->
+                <div class="site-header">
+                    <div class="site-header-content">
+                        <ul class="menu">
+                            <!-- Logo -->
+                            <li class="menu-item">
+                                <a href="/">
+                                    <IconContainer>
+                                        <template #icon>
+                                            <IconLogo/>
+                                        </template>
+                                    </IconContainer>
+                                </a>
+                            </li>
+                            <li class="menu-item">                          
+                                <router-link :to="{ name: 'catalogue.index' }" active-class="border-b-2 border-indigo-400" class="">
+                                    <IconContainer>
+                                        <template #icon>
+                                            <IconSearch/>
+                                        </template>
+                                    </IconContainer>
+                                </router-link>
+                            </li>
+                            <li class="menu-item">
+                                <router-link :to="{ name: 'catalogue.create' }" active-class="border-b-2 border-indigo-400" class="">
+                                    <IconContainer>
+                                        <template #icon>
+                                            <IconBouteille/>
+                                        </template>
+                                    </IconContainer>
+                                </router-link>
+                            </li>
+                            <li class="menu-item">
+                                <router-link :to="{ name: 'cellier.index' }" active-class="border-b-2 border-indigo-400" class="">
+                                    <IconContainer>
+                                        <template #icon>
+                                            <IconCellier/>
+                                        </template>
+                                    </IconContainer>
+                            </router-link>
 
-        <div class="">
+                            </li>
+                            <!-- Cellier create -->
+                            <!-- <li class="menu-item">
+                                <router-link :to="{ name: 'cellier.create' }" active-class="border-b-2 border-indigo-400" class="">
+                                </router-link>
+                            </li> -->
+
+                            <li class="menu-item">
+                                <div class="menu-username">{{ user.name }}</div>
+                                    <button @click="logout" type="button" >
+                                        <IconContainer>
+                                            <template #icon>
+                                                <IconProfil/>
+                                            </template>
+                                         </IconContainer>
+                                    </button>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+        </nav>
+
+        <!-- Page Content -->
+        <main>
             <div class="">
                 <!-- Logo -->
                 <a href="/">
@@ -21,17 +85,13 @@
                     </router-link>
                 </div>
             </div>
-            <div class="header-icon-container">
-                <div>Hi: {{ user.name }}</div>
-                <div>id: {{ user.id }}</div>
-                <div class="text-sm text-gray-500">{{ user.email }}</div>
-                <button @click="logout" type="button" :class="{ 'opacity-25': processing }" :disabled="processing">
-                    Log out
-                </button>
-            </div>
-        </div>
+        </main>
+        
+        <!-- Page Heading -->
+        <h2 class="">
+            {{ currentPageTitle }}
+        </h2>
 
-    </nav>
     <!-- Page Heading -->
 
     <h2 class="">
@@ -50,10 +110,19 @@
 <script>
 import { onMounted } from "vue";
 import useAuth from "../composables/auth";
+import IconLogo from '../components/icons/IconLogo.vue';
+import IconProfil from '../components/icons/IconProfil.vue';
+import IconCellier from '../components/icons/IconCellier.vue';
+import IconCellier2 from '../components/icons/IconCellier2.vue';
+import IconBouteille from '../components/icons/IconBouteille.vue';
+import IconSearch from '../components/icons/IconSearch.vue';
+import IconContainer from "../components/IconContainer.vue";
 
-export default {
+export default { 
+
     setup() {
         const { user, processing, logout, getUser } = useAuth()
+
         onMounted(getUser)
         return { user, processing, logout }
     },
@@ -61,6 +130,15 @@ export default {
         currentPageTitle() {
             return this.$route.meta.title;
         }
+    },
+    components: {
+        'IconContainer': IconContainer,
+        'IconLogo': IconLogo,
+        'IconProfil': IconProfil,
+        'IconCellier': IconCellier,
+        'IconCellier2': IconCellier2,
+        'IconBouteille': IconBouteille,
+        'IconSearch': IconSearch,
     }
 }
 </script>

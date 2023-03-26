@@ -1,6 +1,10 @@
 <template>
     
     <section class="liste-container">
+        <div class="ajouter-cellier">
+          
+        <router-link :to="{name: 'catalogue.create'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
+    </div>
         <h2 class="liste__titre" >Mon cellier 1</h2>
         <article class="container">
             <div class="card" v-for="bouteille in mesBouteilles" :key="bouteille.id" >

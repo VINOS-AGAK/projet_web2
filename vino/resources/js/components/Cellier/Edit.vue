@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent='updateCatalogue(oneCatalogue)'>
+    <form @submit.prevent='updateCellier(oneCellier)'>
 
         <div class="container-form">
             <div class="header-form">

@@ -11,16 +11,16 @@
                     <!-- Nom -->
                     <label class="text-form" for="cellierNom">Nom du cellier</label>
                     <input class="input" v-model="oneCellier.nom" type="text" name="cellierNom" id="cellierNom">
-                    <!-- <div class="text-red">
+                    <div class="text-red">
                         <div v-for="message in validationErrors?.nom">{{ message }}</div>
-                    </div> -->
+                    </div>
 
                     <!-- Description -->
                     <label class="text-form" for="cellierDescription">Description du cellier</label>
                     <input class="input" v-model="oneCellier.description" type="text" name="cellierDescription" id="cellierDescription">
-                    <!-- <div class="text-red">
+                    <div class="text-red">
                         <div v-for="message in validationErrors?.description">{{ message }}</div>
-                    </div> -->
+                    </div>
                     
                     <!-- button -->
                     <button :disabled="isLoading" class="btn-submit">

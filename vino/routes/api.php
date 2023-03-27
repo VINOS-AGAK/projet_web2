@@ -31,4 +31,4 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     });
 });
 
-Route::apiResource('user', RegisteredUserController::class);
+Route::apiResource('user', RegisteredUserController::class)->only(['store']);

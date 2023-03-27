@@ -7,6 +7,7 @@ import useAuth from "../composables/auth";
 export default function useCellier() {
 
     let mesCellier = ref({});
+    const oneCellier = ref({});
     const router = useRouter();
     const { user } = useAuth();
     const validationErrors = ref ({});
@@ -15,8 +16,12 @@ export default function useCellier() {
     const axios = require('axios');
 
 
-    /* afficher mes cellires */
-    const getMesCellier = async () => {
+    /**
+     * Affiche les cellires de usager
+     * @param {object} cellier 
+     * @returns {Array} mesCellier
+     */
+    const getCelliers = async () => {
         axios.get('api/cellier/')
         .then(response=>{
             mesCellier.value = response.data.data;
@@ -26,10 +31,28 @@ export default function useCellier() {
         })
     } 
 
+    /**
+     * Afficher un Cellie de usager
+     * @param {id} id 
+     * @returns {Array} oneCellier
+     */
+    const getOneCellier = async (id) => {
+        axios.get('api/cellier/' + id )
+        .then(response=>{
+            oneCellier.value = response.data.data;
+            console.log('un cellier');
+            console.log(oneCellier);
+        })
+    } 
 
-    /* modifier mon cellier */
+
+    /**
+     * Cree un Cellie de usager
+     * @param {object} cellier 
+     * @returns 
+     */
     const storeCellier = async (cellier) => { 
-        if(isLoading.value) return;
+        if (isLoading.value) return;
 
         isLoading.value = true
         validationErrors.value = {}
@@ -50,10 +73,13 @@ export default function useCellier() {
         .finally(() => isLoading.value = false)
     }
 
-
-    /* modifier mon cellie */
+    /**
+     * Modifier un Cellie de usager
+     * @param {object} cellier
+     * @returns 
+     */
     const updateCellier = async (cellier) => { 
-        if(isLoading.value) return;
+        if (isLoading.value) return;
 
         isLoading.value = true
         validationErrors.value = {}
@@ -75,14 +101,17 @@ export default function useCellier() {
     }
 
 
-    /* effacer mon cellier */
+    /**
+     * Efface un Cellie de usager
+     * @param {id} id 
+     */
     const deleteCellier = async (id) => { 
         swal({
-            title: 'Are you sure?',
-            text: 'You won\'t be able to revert this action!',
+            title: 'Vous êtes sûr??',
+            text: 'Vous ne pourrez pas annuler cette action !',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
+            confirmButtonText: 'Oui, efface mon cellier!',
             confirmButtonColor: '#ef4444',
             timer: 20000,
             timerProgressBar: true,
@@ -92,11 +121,11 @@ export default function useCellier() {
             if (result.isConfirmed){
                 axios.delete('/api/cellier/' + id)
                 .then(response => {
-                    getMesCellier()
+                    getCelliers()
                     router.push({name: 'cellier.index'})
                     swal({
                             icon: 'success',
-                            title : 'Suppression Effecté Avec Succès'
+                            title : 'Suppression effectuée avec Succès'
                         })
                 })
                 .catch(error =>{
@@ -112,7 +141,9 @@ export default function useCellier() {
 
     return {
         mesCellier,
-        getMesCellier,
+        oneCellier,
+        getOneCellier,
+        getCelliers,
         storeCellier,
         updateCellier,
         deleteCellier,

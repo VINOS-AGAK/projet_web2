@@ -15,7 +15,11 @@ export default function useCellier() {
     const axios = require('axios');
 
 
-    /* afficher mes cellires */
+    /**
+     * afficher mes cellires
+     * @param {object} cellier 
+     * @returns {Array} mesCellier
+     */
     const getMesCellier = async () => {
         axios.get('api/cellier/')
         .then(response=>{
@@ -27,7 +31,11 @@ export default function useCellier() {
     } 
 
 
-    /* modifier mon cellier */
+    /**
+     * Cree un Cellie de usager
+     * @param {object} cellier 
+     * @returns 
+     */
     const storeCellier = async (cellier) => { 
         if(isLoading.value) return;
 
@@ -50,8 +58,11 @@ export default function useCellier() {
         .finally(() => isLoading.value = false)
     }
 
-
-    /* modifier mon cellie */
+    /**
+     * Modifier un Cellie de usager
+     * @param {object} cellier
+     * @returns 
+     */
     const updateCellier = async (cellier) => { 
         if(isLoading.value) return;
 
@@ -75,14 +86,17 @@ export default function useCellier() {
     }
 
 
-    /* effacer mon cellier */
+    /**
+     * Efface un Cellie de usager
+     * @param {*} id 
+     */
     const deleteCellier = async (id) => { 
         swal({
-            title: 'Are you sure?',
-            text: 'You won\'t be able to revert this action!',
+            title: 'Vous êtes sûr??',
+            text: 'Vous ne pourrez pas annuler cette action !',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
+            confirmButtonText: 'Oui, efface mon cellier!',
             confirmButtonColor: '#ef4444',
             timer: 20000,
             timerProgressBar: true,
@@ -96,7 +110,7 @@ export default function useCellier() {
                     router.push({name: 'cellier.index'})
                     swal({
                             icon: 'success',
-                            title : 'Suppression Effecté Avec Succès'
+                            title : 'Suppression effectuée avec Succès'
                         })
                 })
                 .catch(error =>{

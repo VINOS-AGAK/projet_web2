@@ -26,8 +26,7 @@
                         <div class="card-footer">
                             <!-- TODO: -->
                             <!-- <router-link :to="{ name: 'cellier.edit', params: { id: selectedProduct.id } }">
-                                Modifier
-                                </router-link> -->
+                                Modifier</router-link> -->
                             <router-link class="card-btn_modif " value="" :to="{ name: 'cellier.edit', params: { id: unCellier.id }}">Modifier</router-link>
                             <button class="card-btn_supp deleteModalBtn" @click.prevent="deleteCellier(unCellier.id)">X</button>
                         </div>

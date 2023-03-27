@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\CatalogueController;
 use App\Http\Controllers\Api\CellierController;
 use App\Http\Controllers\Api\BouteilleHasCellierController;
 use App\Http\Controllers\Api\BouteilleController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
         return $request->user();
     });
 });
+
+Route::apiResource('user', RegisteredUserController::class)->only(['store']);

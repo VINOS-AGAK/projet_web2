@@ -1,11 +1,16 @@
 <template>
   <div>
     <header class="site-header">
-      <form class="search" action="#" method="GET">
-        <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" @change="selectProduct" @input="selectedProduct = null">
+      <form class="search" action="#" method="GET" @submit.prevent="selectProduct">
+        <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names">
         <button type="submit" class="search-button">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
             <path d="m19.45 21.325-6.3-6.3q-.725.55-1.675.85-.95.3-2.05.3-2.775 0-4.712-1.937Q2.775 12.3 2.775 9.525q0-2.775 1.938-4.713Q6.65 2.875 9.425 2.875q2.775 0 4.712 1.937 1.938 1.938 1.938 4.713 0 1.1-.313 2.05-.312.95-.837 1.65l6.325 6.325ZM9.425 13.65q1.725 0 2.925-1.2 1.2-1.2 1.2-2.925 0-1.725-1.2-2.925-1.2-1.2-2.925-1.2Q7.7 5.4 6.5 6.6 5.3 7.8 5.3 9.525q0 1.725 1.2 2.925 1.2 1.2 2.925 1.2Z" />
+          </svg>
+        </button>
+        <button type="submit" class="clear-button" @click="clearSearch">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+            <path d="M19.3,5.7l-0.7-0.7L12,11.3L5.4,4.7L4.7,5.4L11.3,12L4.7,18.6l0.7,0.7L12,12.7l6.6,6.6l0.7-0.7L12.7,12L19.3,5.7z"/>
           </svg>
         </button>
       </form>
@@ -71,9 +76,10 @@
     </section>
   </div>
 </template> 
+
  <script>
   import useCatalogue from '../composables/catalogue'
-  import { onMounted, ref, computed } from 'vue'
+  import { onMounted, ref, computed, watch } from 'vue'
   
   export default {
     setup() {
@@ -101,6 +107,20 @@ return catalogue.value;
           selectedProduct.value = filteredCatalogue.value[0]
         }
       }
+
+        
+      const clearSearch = () => {
+      searchTerm.value = ''
+      selectedProduct.value = null
+      }
+
+      watch(searchTerm, () => {
+        if (filteredCatalogue.value.length > 0) {
+          selectedProduct.value = filteredCatalogue.value[0]
+        } else {
+          selectedProduct.value = null
+        }
+      })
   
       return {
         catalogue,
@@ -110,7 +130,9 @@ return catalogue.value;
         filteredCatalogue,
         selectedProduct,
         recommandons,
-        selectProduct
+        selectProduct,
+        watch,
+        clearSearch,
       }
     }
   }

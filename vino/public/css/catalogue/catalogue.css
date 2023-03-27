@@ -8,7 +8,6 @@
   font-family:  var(--font-primary);
   margin-left:  var(--margin-small);
   margin-right: var(--margin-small);
-  /* background: rgba(255, 255, 255, 0.29); */
   background: rgba(249, 244, 204, 0.29);
   border-radius: var(--border-radius-meduim);    
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -32,110 +31,12 @@
   
 }
 
-/* Для экранов шириной от 768px и выше */
-@media only screen and (min-width: 768px) {
-  .catalogue__card {
-    width: 70%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    padding-bottom: 30px;
-    
-  }
-  .catalogue__card-body {
-    flex-direction: row;
-    margin-top: var(--margin-medium);
-    margin-left: 50px;
-  }
-  .catalogue__card-body img{
-    max-width: 100%;
-    height: 350px;
-    padding-left: 40px;
-    padding-right: 60px;
-  }
-  .catalogue__card-info {
-    margin-right: var(--margin-medium);
-  }
-  .card-info-title {
-    margin-bottom: 20px;
-  }
-  
-  .catalogue__card-info .card-title{
-    font-size: 24px;
-  }
-  
-  .catalogue__card-info .card-subtitle{
-    font-size: 20px;
-  }
-  
-  .card-info-client .catalogue__card-count {
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .card-info-client .btn{
-    margin-top: 10px;
-    font-size: 20px;
-    padding: 10px 40px;
-  }
-}
-
-/* Для экранов шириной от 1024px и выше */
-@media only screen and (min-width: 1024px) {
-  .catalogue__card {
-    width: 70%;
-   
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-  }
-  .catalogue__card-body {
-    margin-top: var(--margin-large);
-  }
-  .catalogue__card-info {
-    margin-right: var(--margin-large);
-  }
-  .card-title {
-    font-size: var(--font-size-medium);
-  }
-  .catalogue__card-count {
-    font-size: var(--font-size-large);
-    margin-bottom: 40px;
-  }
-}
-
-
-
-/* @media only screen and (min-width: 768px) {
-  .catalogue__card {
-    width: 45vw;
-    height: 400px;
-    margin-top: var(--margin-medium);
-    padding: var(--padding-medium);
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .catalogue__card {
-    width: 30vw;
-    height: 500px;
-    margin-top: var(--margin-large);
-    padding: var(--padding-large);
-  }
-} */
-
-
-
-
-
-
-
 .catalogue__card img:hover ~ .modal {
   opacity: 1;
   scale: 1.5;
   transition-duration: 800ms ;
 }
+
 .catalogue__card-body{
   display: flex;
   flex-direction: row;
@@ -192,10 +93,84 @@ input[type="date"]::-webkit-outer-spin-button {
     display: none;
 }
 
-@media screen and (min-width: 768px){
-
-
+/* Pour les écrans à partir de 768px */
+@media only screen and (min-width: 768px) {
+  .catalogue__card {
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    
+  }
+  .catalogue__card-body {
+    flex-direction: row;
+    margin-top: var(--margin-medium);
+    margin-left: 50px;
+  }
+  .catalogue__card-body img{
+    max-width: 100%;
+    height: 350px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .catalogue__card-info {
+    margin-right: var(--margin-medium);
+  }
+  .card-info-title {
+    margin-bottom: 20px;
+  }
+  
+  .catalogue__card-info .card-title{
+    font-size: 24px;
+  }
+  
+  .catalogue__card-info .card-subtitle{
+    font-size: 20px;
+  }
+  
+  .card-info-client .catalogue__card-count {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .card-info-client .btn{
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px 40px;
+  }
 }
+
+/* Pour les écrans à partir de 1024px */
+@media only screen and (min-width: 1024px) {
+  .catalogue__card {
+    width: 70%;
+   
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+  .catalogue__card-body {
+    margin-top: var(--margin-large);
+  }
+  .catalogue__card-body img{
+    
+    padding-left: 40px;
+    padding-right: 60px;
+  }
+  .catalogue__card-info {
+    margin-right: var(--margin-large);
+  }
+  .card-title {
+    font-size: var(--font-size-medium);
+  }
+  .catalogue__card-count {
+    font-size: var(--font-size-large);
+    margin-bottom: 40px;
+  }
+}
+
 
 
 

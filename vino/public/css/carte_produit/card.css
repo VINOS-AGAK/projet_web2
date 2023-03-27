@@ -87,6 +87,11 @@
     margin-left: -5px;
     /* margin-top: var(--margin-medium); */
   }
+  .cellier__card-footer{
+    margin-top: 5px;
+    display: flex;
+    gap: 20px;
+  }
   
   .card-btn_supp, .card-btn_modif  {
     border-radius: var(--border-radius-ex-small);

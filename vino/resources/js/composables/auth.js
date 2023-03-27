@@ -11,15 +11,45 @@ export default function useAuth() {
 
     const processing = ref(false);
     const validationErrors = ref ({});
+    const isLoading = ref(false);
     const router = useRouter();
+    const swal = inject('$swal');
+    const axios = require('axios');
+
     const loginForm = reactive({
             email: '',
             password: '',
             remember: false
     })
-    const swal = inject('$swal');
-    const axios = require('axios');
+    const registerForm = reactive({
+            name: '',
+            email: '',
+            password: '',
+            password_confirmation: '',
+    })
 
+
+    const registerUser = async () => {
+        if (isLoading.value) return;
+
+        isLoading.value = true;
+        validationErrors.value = {};
+
+        axios.post('/api/user', registerForm)
+            .then(response => {
+                router.push({name: 'login'});
+                swal({
+                    icon: 'success',
+                    title: 'Usagé enregistré avec succès, veuillez vous connecter!',
+                });
+            })
+        .catch(error => {
+            if (error.response?.data) {
+                validationErrors.value = error.response.data.errors;
+            }
+        })
+        .finally(() => isLoading.value = false);
+    };
 
     const submitLogin = async () => {
         if (processing.value) return
@@ -75,12 +105,14 @@ export default function useAuth() {
             })
     }
 
-    return { loginForm, 
+    return { loginForm,
+             registerForm, 
             validationErrors,
             processing,
             user,
             submitLogin,
+            registerUser,
             getUser,
-            logout
+            logout,
             } 
 }

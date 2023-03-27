@@ -11,13 +11,19 @@ import App from './layouts/Authenticated.vue'
 
 
 
-const app = createApp({App});
+// const app = createApp({App});
+// const { getUser } = useAuth()
+// onMounted(getUser)
+
+const app = createApp({
+    setup() {
+        const { getUser } = useAuth()
+        onMounted(getUser)
+    }
+})
 
 
 app.use(router)
 app.use(VueSweetalert2)
 
 app.mount('#app')
-
-const { getUser } = useAuth()
-onMounted(getUser)

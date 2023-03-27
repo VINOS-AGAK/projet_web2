@@ -19,14 +19,7 @@ class CellierController extends Controller
 
     public function store(StoreCellierRequest $request)
     {
-        // dd($request);
         $cellier = Cellier::create($request->validated());
-
-        // $cellier = Cellier::create([
-        //     'nom' => $request->nom,
-        //     'description'=>$request->description,
-        //     'user_id'=> $request->user_id
-        //     ]);
 
         return new CellierResource($cellier);
     }

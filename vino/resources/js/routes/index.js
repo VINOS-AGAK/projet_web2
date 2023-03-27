@@ -24,6 +24,7 @@ import Accueil from '../components/Accueil.vue'
 function auth(to, from, next) {
     if(JSON.parse(localStorage.getItem('loggedIn'))) {
         next()
+        return
     }
     next('/login')
 }

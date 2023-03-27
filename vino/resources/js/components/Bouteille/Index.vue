@@ -52,18 +52,18 @@ import { onMounted } from 'vue'
 export default {
 
     setup() {
-        const { mesBouteilles, getMesBouteilles,deleteBouteille } = useBouteille()
+        const { mesBouteilles, getMesBouteilles, deleteBouteille } = useBouteille()
         onMounted(getMesBouteilles)
         const axios = require('axios');
 
-    //     const deleteBouteille = async (id) => {
-    //   try {
-    //     await axios.delete(`api/bouteille/`+id)
-    //     await getMesBouteilles()
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // }
+        // const deleteBouteille = async (id) => {
+        //     try {
+        //       await axios.delete(`api/bouteille/`+id)
+        //       await getMesBouteilles()
+        //     } catch (error) {
+        //       console.error(error)
+        //     }
+        // }
         return {
             mesBouteilles,
             getMesBouteilles,

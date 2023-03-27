@@ -105,7 +105,7 @@ class BouteilleController extends Controller
     {
         // $bouteille->delete();
         // return response(null, 204);
-        dd($bouteille);
+        // dd($bouteille);
         $bouteille->delete();
         return redirect()->route('bouteille.index')
                     ->with('success','Bouteille deleted successfully');

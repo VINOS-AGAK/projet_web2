@@ -15,6 +15,7 @@ import AuthenticatedLayout from '../layouts/Authenticated.vue'
 import GuestLayout from '../layouts/Guest.vue'
 
 import Login from '../components/User/Login.vue'
+import Register from '../components/User/Register.vue'
 
 import Accueil from '../components/Accueil.vue'
 
@@ -23,6 +24,7 @@ import Accueil from '../components/Accueil.vue'
 function auth(to, from, next) {
     if(JSON.parse(localStorage.getItem('loggedIn'))) {
         next()
+        return
     }
     next('/login')
 }
@@ -33,6 +35,12 @@ const routes = [
         redirect:{ name: 'login'},
         component: GuestLayout,
         children: [
+            {
+                path: '/register',
+                name: 'register',
+                component: Register,
+                meta: { title: 'Register' }
+            },
             {
                 path: '/login',
                 name: 'login',

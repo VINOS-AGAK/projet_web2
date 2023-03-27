@@ -1,38 +1,38 @@
 <template>
-    <form @submit.prevent='updateCellier(oneCellier)'>
-
+    <main class="">
         <div class="container-form">
-            <div class="header-form">
-                <h3>Ajoute un bouteille</h3>
-            </div>
+            <h3 class="text-form">Editer mon cellier</h3>
 
+            <!-- FORM Editer d'un cellier -->
+            <form @submit.prevent='updateCellier(oneCellier)'>
 
-            <!-- Nom -->
-            <label class="text-form" for="cellierNom">Nom du cellier</label>
-            <input class="input" v-model="cellier.nom" type="text" name="cellierNom" id="cellierNom">
+                <div class="container-form">
 
-            <!-- Description -->
-            <label class="text-form" for="cellierNom">Description du cellier</label>
-            <input class="input" v-model="cellier.description" type="text" name="cellierNom" id="cellierNom">
+                    <!-- Nom -->
+                    <label class="text-form" for="cellierNom">Nom du cellier</label>
+                    <input class="input" v-model="oneCellier.nom" type="text" name="cellierNom" id="cellierNom">
+                    <!-- <div class="text-red">
+                        <div v-for="message in validationErrors?.nom">{{ message }}</div>
+                    </div> -->
 
+                    <!-- Description -->
+                    <label class="text-form" for="cellierDescription">Description du cellier</label>
+                    <input class="input" v-model="oneCellier.description" type="text" name="cellierDescription" id="cellierDescription">
+                    <!-- <div class="text-red">
+                        <div v-for="message in validationErrors?.description">{{ message }}</div>
+                    </div> -->
+                    
+                    <!-- button -->
+                    <button :disabled="isLoading" class="btn-submit">
+                        <div v-show="isLoading" class=""></div>
+                        <span v-if="isLoading">Processing...</span>
+                        <span v-else>Sauvegarder les changements</span>
+                    </button>
 
-
-
-            <p class="text-form">Nom:</p>
-            <input v-model="oneCellier.nom" id="cellier-nom" type="text" class="input">
-            <div class="text-red">
-                <div v-for="message in validationErrors?.nom">{{ message }}</div>
-            </div>
-            <button :disabled="isLoading" class="btn-submit">
-                <div v-show="isLoading" class=""></div>
-                <span v-if="isLoading">Processing...</span>
-                <span v-else>Save</span>
-            </button>
-
-
-
+                </div>
+            </form>
         </div>
-    </form>
+    </main>
 </template>
     
 <script>

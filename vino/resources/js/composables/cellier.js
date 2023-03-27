@@ -7,6 +7,7 @@ import useAuth from "../composables/auth";
 export default function useCellier() {
 
     let mesCellier = ref({});
+    const oneCellier = ref({});
     const router = useRouter();
     const { user } = useAuth();
     const validationErrors = ref ({});
@@ -16,17 +17,31 @@ export default function useCellier() {
 
 
     /**
-     * afficher mes cellires
+     * Affiche les cellires de usager
      * @param {object} cellier 
      * @returns {Array} mesCellier
      */
-    const getMesCellier = async () => {
+    const getCelliers = async () => {
         axios.get('api/cellier/')
         .then(response=>{
             mesCellier.value = response.data.data;
             mesCellier = mesCellier.value;
             console.log('mes Cellier');
             console.log(mesCellier);
+        })
+    } 
+
+    /**
+     * Afficher un Cellie de usager
+     * @param {id} id 
+     * @returns {Array} oneCellier
+     */
+    const getOneCellier = async (id) => {
+        axios.get('api/cellier/' + id )
+        .then(response=>{
+            oneCellier.value = response.data.data;
+            console.log('un cellier');
+            console.log(oneCellier);
         })
     } 
 
@@ -37,7 +52,7 @@ export default function useCellier() {
      * @returns 
      */
     const storeCellier = async (cellier) => { 
-        if(isLoading.value) return;
+        if (isLoading.value) return;
 
         isLoading.value = true
         validationErrors.value = {}
@@ -64,7 +79,7 @@ export default function useCellier() {
      * @returns 
      */
     const updateCellier = async (cellier) => { 
-        if(isLoading.value) return;
+        if (isLoading.value) return;
 
         isLoading.value = true
         validationErrors.value = {}
@@ -88,12 +103,12 @@ export default function useCellier() {
 
     /**
      * Efface un Cellie de usager
-     * @param {*} id 
+     * @param {id} id 
      */
     const deleteCellier = async (id) => { 
         swal({
             title: 'Vous êtes sûr??',
-            text: 'Vous ne pourrez pas annuler cette action !',
+            text: 'Vous ne pourrez pas annuler cette action !',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Oui, efface mon cellier!',
@@ -106,7 +121,7 @@ export default function useCellier() {
             if (result.isConfirmed){
                 axios.delete('/api/cellier/' + id)
                 .then(response => {
-                    getMesCellier()
+                    getCelliers()
                     router.push({name: 'cellier.index'})
                     swal({
                             icon: 'success',
@@ -126,7 +141,9 @@ export default function useCellier() {
 
     return {
         mesCellier,
-        getMesCellier,
+        oneCellier,
+        getOneCellier,
+        getCelliers,
         storeCellier,
         updateCellier,
         deleteCellier,

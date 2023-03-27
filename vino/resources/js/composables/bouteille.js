@@ -1,4 +1,4 @@
-import { ref, inject } from 'vue';
+import { ref, inject, reactive } from 'vue';
 import { useRouter} from 'vue-router'
 import { onMounted } from "vue";
 import useAuth from "../composables/auth";
@@ -12,6 +12,7 @@ export default function useBouteille() {
     const { user } = useAuth();
     const swal = inject('$swal');
     const axios = require('axios');
+
 
     const getMesBouteilles = async () => {
         axios.get('api/bouteille')
@@ -29,6 +30,35 @@ export default function useBouteille() {
             console.log(uneBouteille);
         })
     } 
+
+        /**
+     * Ajoute une bouteille dans le cellier choisi
+     * @param {object} cellier 
+     * @returns 
+     */
+    const storeBouteille = async (bouteille) => { 
+        if (isLoading.value) return;
+
+        isLoading.value = true
+        validationErrors.value = {}
+
+        axios.post('/api/bouteille', bouteille)
+        .then(response => {
+            router.push({name: 'bouteille.index'})
+            swal({
+                    icon : 'success',
+                    title: 'bouteille Ajouté Avec Succès'
+                })
+        })
+        .catch(error =>{
+            if(error.response?.data){
+                validationErrors.value = error.response.data.errors
+            }
+        })
+        .finally(() => isLoading.value = false)
+    }
+
+
     const deleteBouteille = async (id) => { 
         swal({
             title: 'Are you sure?',
@@ -70,6 +100,7 @@ export default function useBouteille() {
         getMesBouteilles,
         getUneBouteille,
         deleteBouteille,
+        storeBouteille,
         validationErrors, 
         isLoading,
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBouteilleRequest;
 use App\Models\Bouteille;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +19,7 @@ class BouteilleController extends Controller
     public function index()
     {
         $user_id = Auth()->user()->id;
-        //$user_id= 1;
+        
         $query = 'q';
     
         // $bouteilles = DB::table('bouteille__has__cellier')
@@ -44,8 +45,7 @@ class BouteilleController extends Controller
         //     ->get();
         $bouteilles = DB::table('bouteille__has__cellier')
             ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
-              ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
-            
+            ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
             ->select('bouteille__has__cellier.*', 'vino__bouteille.*')
             ->get();
 
@@ -69,9 +69,11 @@ class BouteilleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBouteilleRequest $request)
     {
-        //
+        $bouteille = Bouteille::create($request->validated());
+
+        return new BouteilleResource($bouteille);
     }
 
     /**

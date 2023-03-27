@@ -19,7 +19,7 @@ class BouteilleResource extends JsonResource
         'vino__bouteille_id'=> $this->vino__bouteille_id,
         'vino__cellier_id'=> $this->vino__cellier_id,
         'date_achat'=> $this->date_achat,
-       
+        
         'nom'=> $this->nom,
         'image'=> $this->image,
         'description'=> substr($this->description, offset:0, length:9),

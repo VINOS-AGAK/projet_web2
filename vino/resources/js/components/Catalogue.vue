@@ -37,6 +37,7 @@
                 <router-link class="btn" :to="{name: 'catalogue.edit', params:{ id: selectedProduct.id } }">
                   Acheter
                 </router-link>
+
                 <br>
                 <!-- <a href="#" @click.prevent="deleteCatalogue(selectedProduct.id)" class="btn">Supprimer</a> -->
              
@@ -74,24 +75,33 @@
         </div>
       </div>
     </section>
+
+
   </div>
+
 </template> 
 
  <script>
   import useCatalogue from '../composables/catalogue'
+  import useCellier from '../composables/cellier'
+  import useBouteille from '../composables/bouteille'
   import { onMounted, ref, computed, watch } from 'vue'
   
   export default {
     setup() {
       const { catalogue, getCatalogue, deleteCatalogue } = useCatalogue()
+      const { cellier, getCelliers } = useCellier()
+      const { bouteille, storeBouteille } = useBouteille()
       const searchTerm = ref('')
       const selectedProduct = ref(null)
       onMounted(getCatalogue)
+      onMounted(getCelliers)
+
 
       const recommandons = computed(() =>{
 
-return catalogue.value;
-})
+        return catalogue.value;
+      })
   
       const filteredCatalogue = computed(() => {
         if (searchTerm.value.length < 2) {
@@ -121,6 +131,7 @@ return catalogue.value;
           selectedProduct.value = null
         }
       })
+      
   
       return {
         catalogue,
@@ -138,37 +149,3 @@ return catalogue.value;
   }
   </script> 
    
-    <!-- <template>
-
-    <div class="product-grid" >
-      <div class="product-card" v-for="bouteille in catalogue" :key="bouteille.id">
-        <img :src="bouteille.image" alt="Product 1">
-        <h3>{{bouteille.nom}}</h3>
-        <p>{{bouteille.description}}</p>
-        <p>{{bouteille.pays}}</p>
-        <p>{{bouteille.format}}</p>
-        <router-link :to="{name: 'catalogue.edit', params:{ id: bouteille.id } }">
-            Modifier
-        </router-link>
-        <br>
-        <a href="#" @click.prevent="deleteCatalogue(bouteille.id)">Supprimer</a>
-      </div>
-    </div>
-    </template>
-    
-    <script>
-    import useCatalogue from '../composables/catalogue'
-    import { onMounted } from 'vue'
-        export default{
-    
-            setup(){
-                const { catalogue, getCatalogue, deleteCatalogue } = useCatalogue()
-                onMounted(getCatalogue)
-                return { 
-                    catalogue, 
-                    getCatalogue, 
-                    deleteCatalogue 
-                }
-            }
-        }
-    </script> -->

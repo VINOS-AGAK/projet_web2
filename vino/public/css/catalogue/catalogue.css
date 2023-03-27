@@ -40,16 +40,19 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    padding-bottom: 30px;
+    
   }
   .catalogue__card-body {
     flex-direction: row;
     margin-top: var(--margin-medium);
+    margin-left: 50px;
   }
   .catalogue__card-body img{
     max-width: 100%;
     height: 350px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 60px;
   }
   .catalogue__card-info {
     margin-right: var(--margin-medium);
@@ -57,17 +60,24 @@
   .card-info-title {
     margin-bottom: 20px;
   }
-
+  
   .catalogue__card-info .card-title{
     font-size: 24px;
   }
-
-  .catalogue__card-count {
-    font-size: var(--font-size-medium);
+  
+  .catalogue__card-info .card-subtitle{
+    font-size: 20px;
+  }
+  
+  .card-info-client .catalogue__card-count {
+    font-size: 20px;
     margin-bottom: 30px;
   }
-  .btn {
+  
+  .card-info-client .btn{
     margin-top: 10px;
+    font-size: 20px;
+    padding: 10px 40px;
   }
 }
 

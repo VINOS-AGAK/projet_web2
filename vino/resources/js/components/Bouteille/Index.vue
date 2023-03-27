@@ -54,7 +54,8 @@ export default {
     setup() {
         const { mesBouteilles, getMesBouteilles, deleteBouteille } = useBouteille()
         onMounted(getMesBouteilles)
-        const axios = require('axios');
+       
+        //const axios = require('axios');
 
         // const deleteBouteille = async (id) => {
         //     try {

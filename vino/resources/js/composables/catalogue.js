@@ -16,7 +16,7 @@ export default function useCatalogue() {
         axios.get('api/catalogue')
         .then(response=>{
             catalogue.value = response.data.data;
-            console.log('le catalogue');
+            //console.log('le catalogue');
             console.log(catalogue.value);
         })
     }

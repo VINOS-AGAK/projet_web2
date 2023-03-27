@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Catalogue;
 use App\Http\Resources\BouteilleResource;
+use App\Http\Requests\StoreCellierRequest;
 
 
 class BouteilleController extends Controller
@@ -52,8 +53,8 @@ class BouteilleController extends Controller
         // $bouteilles = Bouteille::all();    
         return ['data' => $bouteilles];
 
+        //dd($bouteilles);
          return BouteilleResource::collection($bouteilles);
-        //dd('BouteilleController@index');
     
 
     }
@@ -107,7 +108,8 @@ class BouteilleController extends Controller
         // return response(null, 204);
         // dd($bouteille);
         $bouteille->delete();
-        return redirect()->route('bouteille.index')
-                    ->with('success','Bouteille deleted successfully');
+        // return redirect()->route('bouteille.index')
+        //             ->with('success','Bouteille deleted successfully');
+        return response()->noContent();
     }
 }

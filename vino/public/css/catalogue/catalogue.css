@@ -36,7 +36,7 @@
 @media only screen and (min-width: 768px) {
   .catalogue__card {
     width: 70%;
-    height: 450px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -45,12 +45,23 @@
     flex-direction: row;
     margin-top: var(--margin-medium);
   }
+  .catalogue__card-body img{
+    max-width: 100%;
+    height: 350px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .catalogue__card-info {
     margin-right: var(--margin-medium);
   }
   .card-info-title {
     margin-bottom: 20px;
   }
+
+  .catalogue__card-info .card-title{
+    font-size: 24px;
+  }
+
   .catalogue__card-count {
     font-size: var(--font-size-medium);
     margin-bottom: 30px;
@@ -64,7 +75,7 @@
 @media only screen and (min-width: 1024px) {
   .catalogue__card {
     width: 70%;
-    height: 450px;
+   
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;

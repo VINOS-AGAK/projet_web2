@@ -63,6 +63,7 @@
 
 .catalogue_titre-section{
   margin-top: var(--margin-medium);
+  margin-bottom:var(--margin-medium) ;
   text-align: center;
   font-size: var(--font-size-medium);
 }

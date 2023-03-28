@@ -33,65 +33,66 @@
             </div>
             <div class="card-info-client">
               <p class="catalogue__card-count">{{ selectedProduct.prix_saq }}$</p>
-             
-                <router-link class="btn" :to="{name: 'catalogue.edit', params:{ id: selectedProduct.id } }">
-                  Acheter
-                </router-link>
+          
+
+                <form @submit.prevent="storeBouteille(bouteille)">
+
+                  <div class="">
+                    <label for="selectField">Choisir Cellier</label>
+                    <select v-model="bouteille.vino__cellier_id" name="vino__cellier_id" id="selectField" class="">
+                      <option value="" disabled>---Choisissez un cellier---</option>
+                      <option  v-for="cellier in mesCellier" :value="cellier.id" >{{ cellier.nom }}</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="quantityField">Quantite</label>
+                    <input v-model="bouteille.quantite" name="quantite" type="number" id="quantityField" class="" min="1" max="100">
+                  </div>
+
+                  <div>
+                    <label for="ajouter">Confirmation</label>
+                    <input v-model="bouteille.vino__bouteille_id" type="radio" name="vino__bouteille_id" :value="selectedProduct.id" id="ajouter">
+                  </div>
+
+                  <button type="submit" class="btn">Add to cart</button>
+
+                </form>
+
                 <br>
-                <!-- <a href="#" @click.prevent="deleteCatalogue(selectedProduct.id)" class="btn">Supprimer</a> -->
              
             </div>
           </div>
         </div>
       </article>
     </section>
-    <!-- Section Recomendation -->
-    <section  v-show="!selectedProduct" >
-      <h2 class="ajouter-cellier">Nous recommandons</h2>
-
-      <div class="container">
-        <div v-for="(bouteille, index) in recommandons.slice(49, 55)" :key="index">
-          <article v-if="bouteille.id > 10" class="catalogue__card">
-            <div class="catalogue__card-body">
-              <img :src="bouteille.image" alt="img-bouteille">
-              <picture class="modal"><img :src="bouteille.image" alt="img"></picture>
-              <div class="catalogue__card-info">
-                <div class="card-info-title">
-                  <h3 class="card-title">{{ bouteille.nom }}</h3>
-                  <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
-                  <p class="card-subtitle">{{ bouteille.pays }}</p>
-                </div>
-                <div class="card-info-client">
-                  <p class="catalogue__card-count">{{ bouteille.prix_saq }}$</p>
-        
-                  <router-link class="btn" :to="{name: 'catalogue.edit', params:{ id: bouteille.id } }">
-                  Acheter
-                </router-link>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
   </div>
+
 </template> 
 
  <script>
+
   import useCatalogue from '../composables/catalogue'
-  import { onMounted, ref, computed, watch } from 'vue'
+  import useCellier from '../composables/cellier'
+  import useBouteille from '../composables/bouteille'
+  import { onMounted, ref, computed, watch, reactive } from 'vue'
   
   export default {
     setup() {
       const { catalogue, getCatalogue, deleteCatalogue } = useCatalogue()
+      const { mesCellier, getCelliers } = useCellier()
+      const { storeBouteille } = useBouteille()
       const searchTerm = ref('')
       const selectedProduct = ref(null)
       onMounted(getCatalogue)
+      onMounted(getCelliers)
+
+
 
       const recommandons = computed(() =>{
 
-return catalogue.value;
-})
+        return catalogue.value;
+      })
   
       const filteredCatalogue = computed(() => {
         if (searchTerm.value.length < 2) {
@@ -121,54 +122,31 @@ return catalogue.value;
           selectedProduct.value = null
         }
       })
+
+      const bouteille = reactive ({
+        vino__bouteille_id: '',
+        vino__cellier_id: '',
+        quantite: '',
+      })
+      
   
       return {
         catalogue,
-        getCatalogue,
-        deleteCatalogue,
         searchTerm,
         filteredCatalogue,
         selectedProduct,
         recommandons,
+        bouteille,
+        mesCellier,
+        getCatalogue,
+        deleteCatalogue,
         selectProduct,
+        storeBouteille,
         watch,
         clearSearch,
+        getCelliers,
       }
     }
   }
   </script> 
    
-    <!-- <template>
-
-    <div class="product-grid" >
-      <div class="product-card" v-for="bouteille in catalogue" :key="bouteille.id">
-        <img :src="bouteille.image" alt="Product 1">
-        <h3>{{bouteille.nom}}</h3>
-        <p>{{bouteille.description}}</p>
-        <p>{{bouteille.pays}}</p>
-        <p>{{bouteille.format}}</p>
-        <router-link :to="{name: 'catalogue.edit', params:{ id: bouteille.id } }">
-            Modifier
-        </router-link>
-        <br>
-        <a href="#" @click.prevent="deleteCatalogue(bouteille.id)">Supprimer</a>
-      </div>
-    </div>
-    </template>
-    
-    <script>
-    import useCatalogue from '../composables/catalogue'
-    import { onMounted } from 'vue'
-        export default{
-    
-            setup(){
-                const { catalogue, getCatalogue, deleteCatalogue } = useCatalogue()
-                onMounted(getCatalogue)
-                return { 
-                    catalogue, 
-                    getCatalogue, 
-                    deleteCatalogue 
-                }
-            }
-        }
-    </script> -->

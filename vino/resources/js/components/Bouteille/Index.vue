@@ -47,28 +47,26 @@
     
 <script>
 import useBouteille from '../../composables/bouteille'
-import { onMounted } from 'vue'
+import { onMounted, getCurrentInstance } from 'vue'
 
 export default {
 
     setup() {
+        
         const { mesBouteilles, getMesBouteilles,deleteBouteille } = useBouteille()
-        onMounted(getMesBouteilles)
-        const axios = require('axios');
+        const { $route } = getCurrentInstance().proxy
 
-    //     const deleteBouteille = async (id) => {
-    //   try {
-    //     await axios.delete(`api/bouteille/`+id)
-    //     await getMesBouteilles()
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // }
+        onMounted(() => {
+            console.log('le param id passe du cellier' ,$route.params.id);
+            getMesBouteilles()
+        })
+        
+
         return {
             mesBouteilles,
             getMesBouteilles,
             deleteBouteille,
-
+            
         }
     }
 }

@@ -24,7 +24,7 @@ class CellierController extends Controller
         return new CellierResource($cellier);
     }
 
-    public function show(Cellier $cellier, Request $request)
+    public function show(Cellier $cellier)
     {
         return new CellierResource($cellier);
     }

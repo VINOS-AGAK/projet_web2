@@ -117,6 +117,6 @@
 
 <script>
 export default {
-  name: 'IconBouteille',
+  name: 'IconCellier3',
 }
 </script>

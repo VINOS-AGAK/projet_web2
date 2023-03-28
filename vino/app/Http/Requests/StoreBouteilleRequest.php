@@ -24,6 +24,7 @@ class StoreBouteilleRequest extends FormRequest
         return [
             'vino__bouteille_id'=>'required',
             'vino__cellier_id'=>'required',
+<<<<<<< HEAD
             'date_achat'=>'required',
             'nom'=> 'required',
             'image'=> 'required',
@@ -31,6 +32,9 @@ class StoreBouteilleRequest extends FormRequest
             'pays'=>'required',
             'prix_saq'=>'required',
             'format'=> 'required',
+=======
+            'quantite'=>'required',
+>>>>>>> bc29b79a4eceb6a830821b7ad7946f2918cc007b
         ];
     }
 }

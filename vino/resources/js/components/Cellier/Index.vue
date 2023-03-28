@@ -18,9 +18,12 @@
                         <div class="card-info-title">
                             <h3 class="cellier__card-title">{{ unCellier.nom
                                     }}</h3>
+                        <p class="card-subtitle">{{ unCellier.description }}</p>
                         </div>
+                        
+
                         <div class="card-info-client">
-                            <p class="card-subtitle">{{ unCellier.description }}</p>
+                            <p class="card-subtitle">Quantite bouteille dans cellier</p>
                         </div>
 
                         

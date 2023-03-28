@@ -35,10 +35,32 @@
             </div>
             <div class="card-info-client">
               <p class="catalogue__card-count">{{ selectedProduct.prix_saq }}$</p>
-             
-                <router-link class="btn" :to="{name: 'catalogue.edit', params:{ id: selectedProduct.id } }">
-                  Acheter
-                </router-link>
+          
+
+                <form @submit.prevent="storeBouteille(bouteille)">
+
+                  <div class="">
+                    <label for="selectField">Choisir Cellier</label>
+                    <select v-model="bouteille.vino__cellier_id" name="vino__cellier_id" id="selectField" class="">
+                      <option value="" disabled>---Choisissez un cellier---</option>
+                      <option  v-for="cellier in mesCellier" :value="cellier.id" >{{ cellier.nom }}</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="quantityField">Quantite</label>
+                    <input v-model="bouteille.quantite" name="quantite" type="number" id="quantityField" class="" min="1" max="100">
+                  </div>
+
+                  <div>
+                    <label for="ajouter">Confirmation</label>
+                    <input v-model="bouteille.vino__bouteille_id" type="radio" name="vino__bouteille_id" :value="selectedProduct.id" id="ajouter">
+                  </div>
+
+                  <button type="submit" class="btn">Add to cart</button>
+
+                </form>
+
                 <br>
                 
              
@@ -186,20 +208,28 @@
 </template> 
 
  <script>
+
   import useCatalogue from '../composables/catalogue'
-  import { onMounted, ref, computed, watch } from 'vue'
+  import useCellier from '../composables/cellier'
+  import useBouteille from '../composables/bouteille'
+  import { onMounted, ref, computed, watch, reactive } from 'vue'
   
   export default {
     setup() {
       const { catalogue, getCatalogue, deleteCatalogue } = useCatalogue()
+      const { mesCellier, getCelliers } = useCellier()
+      const { storeBouteille } = useBouteille()
       const searchTerm = ref('')
       const selectedProduct = ref(null)
       onMounted(getCatalogue)
+      onMounted(getCelliers)
+
+
 
       const recommandons = computed(() =>{
 
-return catalogue.value;
-})
+        return catalogue.value;
+      })
   
       const filteredCatalogue = computed(() => {
         if (searchTerm.value.length < 2) {
@@ -229,18 +259,29 @@ return catalogue.value;
           selectedProduct.value = null
         }
       })
+
+      const bouteille = reactive ({
+        vino__bouteille_id: '',
+        vino__cellier_id: '',
+        quantite: '',
+      })
+      
   
       return {
         catalogue,
-        getCatalogue,
-        deleteCatalogue,
         searchTerm,
         filteredCatalogue,
         selectedProduct,
         recommandons,
+        bouteille,
+        mesCellier,
+        getCatalogue,
+        deleteCatalogue,
         selectProduct,
+        storeBouteille,
         watch,
         clearSearch,
+        getCelliers,
       }
     }
   }

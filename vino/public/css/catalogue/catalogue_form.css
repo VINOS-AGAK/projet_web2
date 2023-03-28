@@ -1,0 +1,88 @@
+  
+  .catalogue__card label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .catalogue__card select {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .catalogue__card input[type="number"] {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .catalogue__card input[type="radio"] {
+    margin-right: 0.5rem;
+  }
+  
+  .catalogue__card button[type="submit"] {
+    padding: 0.5rem 1rem;
+    background-color:#fed240;
+    color: #000000;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    opacity: 1;
+  }
+  
+  .catalogue__card button[type="submit"]:hover {
+    background-color: #fed240;
+  }
+  
+  /* Styles for phone-sized displays */
+
+@media (max-width: 480px) {
+
+    /* Make the form inputs full width */
+    form input[type="text"],
+    form input[type="email"],
+    form select,
+    form textarea {
+      width: 100%;
+    }
+  
+    /* Adjust the margins and padding for the form */
+    form {
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Adjust the layout of the form */
+    form div {
+      margin-bottom: 10px;
+    }
+    
+    /* Adjust the layout of the form labels */
+    form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    /* Adjust the layout of the form buttons */
+    form button[type="submit"] {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+  }
+  

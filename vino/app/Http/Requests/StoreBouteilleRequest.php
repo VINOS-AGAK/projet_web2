@@ -11,7 +11,7 @@ class StoreBouteilleRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,6 +24,7 @@ class StoreBouteilleRequest extends FormRequest
         return [
             'vino__bouteille_id'=>'required',
             'vino__cellier_id'=>'required',
+            'quantite'=>'required',
         ];
     }
 }

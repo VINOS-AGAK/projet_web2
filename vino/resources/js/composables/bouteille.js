@@ -1,4 +1,4 @@
-import { ref, inject, reactive } from 'vue';
+import { ref, inject, reactive, getCurrentInstance } from 'vue';
 import { useRouter} from 'vue-router'
 import { onMounted } from "vue";
 import useAuth from "../composables/auth";
@@ -12,6 +12,8 @@ export default function useBouteille() {
     const { user } = useAuth();
     const swal = inject('$swal');
     const axios = require('axios');
+    const { $route } = getCurrentInstance().proxy
+    const cellier_id = $route.params.id
 
 
     const getMesBouteilles = async () => {
@@ -41,7 +43,7 @@ export default function useBouteille() {
 
         isLoading.value = true
         validationErrors.value = {}
-
+        console.log('Log de la bouteille dans la fonction storeBouteille', bouteille);
         axios.post('/api/bouteille', bouteille)
         .then(response => {
             router.push({name: 'bouteille.index'})

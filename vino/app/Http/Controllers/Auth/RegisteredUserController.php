@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\Cellier;
 
 class RegisteredUserController extends Controller
 {
@@ -41,6 +42,13 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+        ]);
+        $userId = $user->id;
+
+        Cellier::create([
+            'nom' => "Cellier nom par defaut",
+            'description' => "Cellier description par defaut",
+            'user_id' => $userId
         ]);
 
         event(new Registered($user));

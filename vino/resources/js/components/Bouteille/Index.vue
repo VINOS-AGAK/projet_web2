@@ -26,7 +26,8 @@
                             
                         </div> 
                         <div class="card-footer">
-                              <router-link  class="card-btn_supp " value="" :to="{ name: 'bouteille.edit', params: { id: bouteille.id } }">+</router-link>   
+                              
+                              <button  class="card-btn_add " @click.prevent="increment(bouteille.id)" >+</button>    
                               <button  class="card-btn_supp deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >-</button>   
                         </div> 
                     </div> 
@@ -60,6 +61,16 @@ export default {
         const { $route } = getCurrentInstance().proxy
         const { oneCellier, getOneCellier } = useCellier();
 
+        const increment = async (id) => {
+            axios.put('api/bouteille/' + id + '/increment')
+                .then(response => {
+                    getMesBouteilles();
+                })
+                .catch(error =>{
+                    console.log(error.response.data.errors);
+                })
+        }
+
         onMounted(() => {
             console.log('le param id passe du cellier' ,$route.params.id);
             getMesBouteilles();
@@ -75,7 +86,7 @@ export default {
             deleteBouteille,
             oneCellier,
             getOneCellier,
-            
+            increment,
         }
     }
 }

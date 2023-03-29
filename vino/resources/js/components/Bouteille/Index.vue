@@ -26,9 +26,9 @@
                             
                         </div> 
                         <div class="card-footer">
-                              <router-link  class="card-btn_modif " value="" :to="{ name: 'bouteille.edit', params: { id: bouteille.id } }">Modifier</router-link>   
+                              <router-link  class="card-btn_supp " value="" :to="{ name: 'bouteille.edit', params: { id: bouteille.id } }">+</router-link>   
                               <button  class="card-btn_supp deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >-</button>   
-                            </div> 
+                        </div> 
                     </div> 
                 
                 </div>

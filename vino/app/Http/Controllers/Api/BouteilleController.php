@@ -62,8 +62,6 @@ class BouteilleController extends Controller
 
         // $bouteilles = Bouteille::all();    
         return ['data' => $bouteilles];
-
-        //dd($bouteilles);
          //return BouteilleResource::collection($bouteilles);
     
 

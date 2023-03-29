@@ -15,6 +15,14 @@
     color: var(--color-dark);
 }
 
+.cellier__card-footer{
+    margin-top: 5px;
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: space-between;
+  }
+
 .ajouter-cellier {
     margin: 20px;
 }

@@ -42,7 +42,7 @@ export default function useCellier() {
         .then(response=>{
             oneCellier.value = response.data.data;
             console.log('un cellier');
-            console.log(oneCellier.value);
+            console.log(oneCellier);
         })
     } 
 

@@ -116,7 +116,6 @@ const routes = [
            component: BouteilleEdit,
            meta: { title: "Modifier Bouteille"}
           },
-      
        
         ]
     }

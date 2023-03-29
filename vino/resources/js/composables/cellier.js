@@ -22,7 +22,7 @@ export default function useCellier() {
      * @returns {Array} mesCellier
      */
     const getCelliers = async () => {
-        axios.get('api/cellier/')
+        axios.get('api/cellier')
         .then(response=>{
             mesCellier.value = response.data.data;
             mesCellier = mesCellier.value;
@@ -37,11 +37,12 @@ export default function useCellier() {
      * @returns {Array} oneCellier
      */
     const getOneCellier = async (id) => {
+        console.log(id)
         axios.get('api/cellier/' + id )
         .then(response=>{
             oneCellier.value = response.data.data;
             console.log('un cellier');
-            console.log(oneCellier);
+            console.log(oneCellier.value);
         })
     } 
 

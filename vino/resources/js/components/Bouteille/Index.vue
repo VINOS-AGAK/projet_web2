@@ -5,7 +5,7 @@
             <router-link :to="{name: 'catalogue.create'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
         </div>
     
-        <h2 class="liste__titre" ></h2>
+        <h2 class="liste__titre" >{{ oneCellier.nom }}</h2>
         <article class="container">
             <div class="card" v-for="bouteille in mesBouteilles" :key="bouteille.id" >
                 <div class="card-body">
@@ -21,12 +21,14 @@
                         </div>
                         <div class="card-info-client">
                             <p class="card-count"> {{ bouteille.prix_saq }} $</p>
+                            <p class="card-rating"> {{ bouteille.quantite }} bouteille</p>
                             <p class="card-rating"> &#9733;&#9733;&#9733;&#10025;</p>
-                            <div class="card-footer">
+                            
+                        </div> 
+                        <div class="card-footer">
                               <router-link  class="card-btn_modif " value="" :to="{ name: 'bouteille.edit', params: { id: bouteille.id } }">Modifier</router-link>   
                               <button  class="card-btn_supp deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >-</button>   
-                            </div>
-                        </div>  
+                            </div> 
                     </div> 
                 
                 </div>
@@ -56,12 +58,12 @@ export default {
         
         const { mesBouteilles, getMesBouteilles,deleteBouteille } = useBouteille()
         const { $route } = getCurrentInstance().proxy
-        const { oneCellier, getOneCellier } = useCellier()
+        const { oneCellier, getOneCellier } = useCellier();
 
         onMounted(() => {
             console.log('le param id passe du cellier' ,$route.params.id);
             getMesBouteilles();
-            getOneCellier();
+            getOneCellier($route.params.id);
             console.log(oneCellier);
 
         })
@@ -71,8 +73,6 @@ export default {
             mesBouteilles,
             getMesBouteilles,
             deleteBouteille,
-            // mesCellier,
-            // getCelliers,
             oneCellier,
             getOneCellier,
             

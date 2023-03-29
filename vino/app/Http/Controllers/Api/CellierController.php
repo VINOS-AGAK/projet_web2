@@ -26,6 +26,7 @@ class CellierController extends Controller
 
     public function show(Cellier $cellier)
     {
+        
         return new CellierResource($cellier);
     }
 

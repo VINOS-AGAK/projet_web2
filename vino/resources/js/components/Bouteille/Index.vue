@@ -2,7 +2,7 @@
     
     <section class="liste-container">
         <div class="ajouter-cellier">      
-            <router-link :to="{name: 'catalogue.create'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
+            <router-link :to="{name: 'catalogue.index'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
         </div>
     
         <h2 class="liste__titre" >{{ oneCellier.nom }}</h2>
@@ -29,7 +29,7 @@
                               
                               <button  class="card-btn_add " @click.prevent="increment(bouteille.id)" >+</button>    
                               <button  class="card-btn_supp " @click.prevent="decrement(bouteille.id)">-</button>   
-                              <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer de cellier</button>   
+                              <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer du cellier</button>   
                         </div> 
                     </div> 
                 

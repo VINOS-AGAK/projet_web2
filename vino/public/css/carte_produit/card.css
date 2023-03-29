@@ -40,7 +40,7 @@
 
   .card-title {
     font-size: var(--font-size-small);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-bold);
     margin: 0;
     font-family: var(--font-third);
     color: var(--color-dark);

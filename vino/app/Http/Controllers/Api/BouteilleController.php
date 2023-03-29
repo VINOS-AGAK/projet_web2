@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Catalogue;
 use App\Http\Resources\BouteilleResource;
+use App\Http\Requests\StoreCellierRequest;
 
 
 class BouteilleController extends Controller
@@ -20,7 +21,7 @@ class BouteilleController extends Controller
     {
         $user_id = Auth()->user()->id;
         
-        $query = 'q';
+       // $query = 'q';
     
         // $bouteilles = DB::table('bouteille__has__cellier')
         //     ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
@@ -46,14 +47,23 @@ class BouteilleController extends Controller
         $bouteilles = DB::table('bouteille__has__cellier')
             ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
             ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
-            ->select('bouteille__has__cellier.*', 'vino__bouteille.*')
+            ->select('bouteille__has__cellier.id', 
+                         'vino__bouteille.nom', 
+                         'vino__bouteille.description', 
+                         'vino__bouteille.image', 
+                         'vino__bouteille.prix_saq' , 
+                         'vino__bouteille.pays' , 
+                         'vino__bouteille.url_saq' , 
+                         'vino__bouteille.format' , 
+                         'vino__bouteille.vino__type_id' , 
+                        'bouteille__has__cellier.created_at')
             ->get();
 
         // $bouteilles = Bouteille::all();    
         return ['data' => $bouteilles];
 
-         return BouteilleResource::collection($bouteilles);
-        //dd('BouteilleController@index');
+        //dd($bouteilles);
+         //return BouteilleResource::collection($bouteilles);
     
 
     }
@@ -105,11 +115,8 @@ class BouteilleController extends Controller
      */
     public function destroy(Bouteille $bouteille)
     {
-        // $bouteille->delete();
-        // return response(null, 204);
-        dd($bouteille);
+        
         $bouteille->delete();
-        return redirect()->route('bouteille.index')
-                    ->with('success','Bouteille deleted successfully');
+        return response()->noContent();
     }
 }

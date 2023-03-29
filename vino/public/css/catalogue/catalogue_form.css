@@ -1,15 +1,17 @@
   
   .catalogue__card label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--padding-ex-small);
+    margin-top: var(--padding-ex-small);
     /* font-weight: bold; */
     color: var(--color-dark);
+    font-size: var(--font-size-small);
   }
   
   .catalogue__card select {
     display: block;
     width: 100%;
-    padding: 0.5rem;
+    padding: var(--padding-ex-small);
     border: 1px solid #ccc;
     border-radius: 0.25rem;
     background-color: #fff;
@@ -21,7 +23,7 @@
   .catalogue__card input[type="number"] {
     display: block;
     width: 100%;
-    padding: 0.5rem;
+    padding: var(--padding-ex-small);
     border: 1px solid #ccc;
     border-radius: 0.25rem;
     background-color: #fff;

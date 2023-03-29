@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('catalogue', CatalogueController::class);
     Route::apiResource('cellier', CellierController::class);
     Route::apiResource('bouteille', BouteilleController::class);
+    Route::put('/bouteille/{bouteille}/increment', [BouteilleController::class, 'increment']);
     
     Route::get('/user', function (Request $request) {
         return $request->user();

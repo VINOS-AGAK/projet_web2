@@ -118,4 +118,11 @@ class BouteilleController extends Controller
         $bouteille->delete();
         return response()->noContent();
     }
+
+    public function increment(Bouteille $bouteille)
+{
+    $bouteille->quantite += 1;
+    $bouteille->save();
+    return response()->json(['success' => true]);
+}
 }

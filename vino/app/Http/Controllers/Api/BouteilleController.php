@@ -47,7 +47,6 @@ class BouteilleController extends Controller
         $bouteilles = DB::table('bouteille__has__cellier')
             ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
             ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
-            // ->select('bouteille__has__cellier.*', 'vino__bouteille.*')
             ->select('bouteille__has__cellier.id', 
                          'vino__bouteille.nom', 
                          'vino__bouteille.description', 

@@ -1,11 +1,11 @@
 <template>
     
     <section class="liste-container">
-        <div class="ajouter-cellier">
-          
-        <router-link :to="{name: 'catalogue.create'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
-    </div>
-        <h2 class="liste__titre" >Mon cellier 1</h2>
+        <div class="ajouter-cellier">      
+            <router-link :to="{name: 'catalogue.create'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
+        </div>
+    
+        <h2 class="liste__titre" ></h2>
         <article class="container">
             <div class="card" v-for="bouteille in mesBouteilles" :key="bouteille.id" >
                 <div class="card-body">
@@ -48,6 +48,7 @@
 <script>
 import useBouteille from '../../composables/bouteille'
 import { onMounted, getCurrentInstance } from 'vue'
+import useCellier from '../../composables/cellier'
 
 export default {
 
@@ -55,10 +56,14 @@ export default {
         
         const { mesBouteilles, getMesBouteilles,deleteBouteille } = useBouteille()
         const { $route } = getCurrentInstance().proxy
+        const { oneCellier, getOneCellier } = useCellier()
 
         onMounted(() => {
             console.log('le param id passe du cellier' ,$route.params.id);
-            getMesBouteilles()
+            getMesBouteilles();
+            getOneCellier();
+            console.log(oneCellier);
+
         })
         
 
@@ -66,6 +71,10 @@ export default {
             mesBouteilles,
             getMesBouteilles,
             deleteBouteille,
+            // mesCellier,
+            // getCelliers,
+            oneCellier,
+            getOneCellier,
             
         }
     }

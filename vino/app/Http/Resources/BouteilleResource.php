@@ -16,9 +16,9 @@ class BouteilleResource extends JsonResource
     {
        
        return [
-        'id'=>$this->id,
-        'vino__bouteille_id'=> $this->vino__bouteille_id,
-        'vino__cellier_id'=> $this->vino__cellier_id,
+        'id' => $this->bouteille__has__cellier_id,
+        'vino__bouteille_id'=> $this->bouteille__has__cellier_vino__bouteille_id,
+        'vino__cellier_id'=> $this->bouteille__has__cellier_vino__cellier_id,
         'date_achat'=> $this->date_achat,
         'nom'=> $this->nom,
         'image'=> $this->image,

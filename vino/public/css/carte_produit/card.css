@@ -91,7 +91,7 @@
   
 
 
-  .card-btn_supp, .card-btn_add  {
+  .card-btn_supp, .card-btn_add, .card-btn_modif {
     border-radius: var(--border-radius-ex-small);
     box-shadow: 0px 0px 2px var(--color-dark); 
     padding: 5px;
@@ -114,10 +114,10 @@
    
   }
 
-  /* .card-btn_modif{
+  .card-btn_modif{
     background-color: var(--accent-color);
-    width: 30%;
-  } */
+    /* width: 30%; */
+  }
 
   section.card-cellier{
 

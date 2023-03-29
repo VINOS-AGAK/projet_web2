@@ -20,7 +20,7 @@ export default function useBouteille() {
         axios.get('api/bouteille')
         .then(response=>{
             mesBouteilles.value = response.data.data;
-            console.log('Mes Bouteilles');
+            //console.log('Mes Bouteilles');
             console.log(mesBouteilles.value);
         })
     }
@@ -75,9 +75,12 @@ export default function useBouteille() {
         })
         .then(result =>{
             if (result.isConfirmed){
+                console.log(id);
+
                 axios.delete('/api/bouteille/' + id)
                 .then(response => {
-                    getCatalogue()
+                   
+                    getMesBouteilles()
                     router.push({name: 'bouteille.index'})
                     swal({
                             icon: 'success',

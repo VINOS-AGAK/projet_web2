@@ -1,12 +1,14 @@
 <template>
+
   <header class="site-header">
     <form class="search" action="#" method="GET" @submit.prevent="selectProduct">
-      <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" placeholder="rechercher un vin">
-      <button type="submit" @click="clearSearch">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-          <path d="M19.3,5.7l-0.7-0.7L12,11.3L5.4,4.7L4.7,5.4L11.3,12L4.7,18.6l0.7,0.7L12,12.7l6.6,6.6l0.7-0.7L12.7,12L19.3,5.7z"/>
-        </svg>
-      </button>
+        <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" placeholder="rechercher un vin">
+        
+        <button type="submit" @click="clearSearch">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+            <path d="M19.3,5.7l-0.7-0.7L12,11.3L5.4,4.7L4.7,5.4L11.3,12L4.7,18.6l0.7,0.7L12,12.7l6.6,6.6l0.7-0.7L12.7,12L19.3,5.7z"/>
+          </svg>
+        </button>
     </form>
   </header>
 
@@ -61,11 +63,9 @@
       </article>
     </section>
 
-        <div   v-show="!selectedProduct" class="container-form">
+    <div   v-show="!selectedProduct" class="container-form">
     
-          <div class="ajouter-cellier">
-             <h3>Ajoute un bouteille</h3>
-          </div>
+          <h2 class="catalogue_titre-section">Ajouter votre vin</h2>
 
           <form @submit.prevent='storeCatalogue(catalogue)'>
 
@@ -109,13 +109,11 @@
                 <span v-if="isLoading">Processing...</span>
                 <span v-else>Ajouter</span>
             </button>
+
           </form>
-        </div>
+    </div>
   </div>
 </template> 
-
-
-
 <script>
 
   import useCatalogue from '../composables/catalogue'

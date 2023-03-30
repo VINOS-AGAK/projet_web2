@@ -47,7 +47,8 @@ class BouteilleController extends Controller
         $bouteilles = DB::table('bouteille__has__cellier')
             ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
             ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
-            ->select('bouteille__has__cellier.id', 
+            ->select(    'bouteille__has__cellier.id', 
+            'bouteille__has__cellier.quantite', 
                          'vino__bouteille.nom', 
                          'vino__bouteille.description', 
                          'vino__bouteille.image', 
@@ -61,8 +62,6 @@ class BouteilleController extends Controller
 
         // $bouteilles = Bouteille::all();    
         return ['data' => $bouteilles];
-
-        //dd($bouteilles);
          //return BouteilleResource::collection($bouteilles);
     
 
@@ -119,4 +118,11 @@ class BouteilleController extends Controller
         $bouteille->delete();
         return response()->noContent();
     }
+
+    public function increment(Bouteille $bouteille)
+{
+    $bouteille->quantite += 1;
+    $bouteille->save();
+    return response()->json(['success' => true]);
+}
 }

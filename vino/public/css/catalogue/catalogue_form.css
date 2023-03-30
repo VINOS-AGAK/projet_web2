@@ -1,17 +1,16 @@
   
   .catalogue__card label {
     display: block;
-    margin-bottom: var(--padding-ex-small);
-    margin-top: var(--padding-ex-small);
-    /* font-weight: bold; */
+    margin: 10px;
+    font-weight: bold; 
     color: var(--color-dark);
-    font-size: var(--font-size-small);
+   
   }
   
   .catalogue__card select {
     display: block;
     width: 100%;
-    padding: var(--padding-ex-small);
+    padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 0.25rem;
     background-color: #fff;
@@ -23,7 +22,7 @@
   .catalogue__card input[type="number"] {
     display: block;
     width: 100%;
-    padding: var(--padding-ex-small);
+    padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 0.25rem;
     background-color: #fff;
@@ -56,6 +55,20 @@
   /* Styles for phone-sized displays */
 
 @media (max-width: 480px) {
+    
+    .catalogue__card label{
+      font-weight: var(--font-weight-medium); 
+      margin-bottom: var(--padding-ex-small);
+      margin-top: var(--padding-ex-small);
+      font-size: var(--font-size-small);
+    }
+  
+    .catalogue__card select, 
+    .catalogue__card input[type="number"]{
+      padding: 4px;
+    }
+
+
 
     /* Make the form inputs full width */
     form input[type="text"],

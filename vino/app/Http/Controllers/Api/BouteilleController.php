@@ -49,6 +49,7 @@ class BouteilleController extends Controller
             ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
             ->select(    'bouteille__has__cellier.id', 
                          'bouteille__has__cellier.quantite', 
+                         'bouteille__has__cellier.notes', 
                          'vino__bouteille.nom', 
                          'vino__bouteille.description', 
                          'vino__bouteille.image', 

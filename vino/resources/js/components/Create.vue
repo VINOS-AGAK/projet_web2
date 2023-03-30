@@ -51,14 +51,13 @@
             <div v-for="message in validationErrors?.prix_saq">{{ message }}</div>
         </div>
 
-        <p class="text-form">URL SAQ:</p>
-        <input v-model="catalogue.url_saq" id="catalogue-url_saq" type="text" class="name">
+
+        <input v-model="catalogue.url_saq" id="catalogue-url_saq" type="hidden" class="name">
         <div class="text-red">
             <div v-for="message in validationErrors?.url_saq">{{ message }}</div>
         </div>
-  
-        <p class="text-form">URL Image:</p>
-        <input v-model="catalogue.url_img" id="catalogue-url_img" type="text" class="name">
+
+        <input v-model="catalogue.url_img" id="catalogue-url_img" type="hidden" class="name">
         <div class="text-red">
             <div v-for="message in validationErrors?.url_img">{{ message }}</div>
         </div>

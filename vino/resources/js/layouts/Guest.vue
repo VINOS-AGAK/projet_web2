@@ -5,7 +5,7 @@
     <nav class="site-header">
         <ul>
             <li class="liste-item">
-                <a href="/">
+                <a href="/login">
                     <IconContainer>
                         <template #icon>
                             <IconLogo />

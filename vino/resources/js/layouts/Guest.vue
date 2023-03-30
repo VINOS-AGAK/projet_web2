@@ -1,5 +1,3 @@
-
-
 <template>
 
     <nav class="site-header">

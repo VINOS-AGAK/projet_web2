@@ -98,4 +98,8 @@ button{
     background: none
 }
 
+.hidden{
+    visibility: hidden;
+}
+
 /*============================ END GENERIC ================================*/

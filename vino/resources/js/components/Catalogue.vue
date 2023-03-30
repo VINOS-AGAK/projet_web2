@@ -132,7 +132,7 @@
   
   export default {
     setup() {
-      const { catalogue, getCatalogue, deleteCatalogue, isLoading } = useCatalogue()
+      const { catalogue, getCatalogue, deleteCatalogue, isLoading, validationErrors } = useCatalogue()
       const { mesCellier, getCelliers } = useCellier()
       const { storeBouteille } = useBouteille()
       const searchTerm = ref('')
@@ -198,7 +198,8 @@
         watch,
         clearSearch,
         getCelliers,
-        isLoading
+        isLoading,
+        validationErrors
       }
     }
   }

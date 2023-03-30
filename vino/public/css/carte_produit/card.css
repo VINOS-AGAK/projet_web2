@@ -44,6 +44,7 @@
     margin: 0;
     font-family: var(--font-third);
     color: var(--color-dark);
+    margin-bottom: var(--margin-small);
 
   }
 

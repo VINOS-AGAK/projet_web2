@@ -120,9 +120,16 @@ class BouteilleController extends Controller
     }
 
     public function increment(Bouteille $bouteille)
-{
-    $bouteille->quantite += 1;
-    $bouteille->save();
-    return response()->json(['success' => true]);
-}
+    {
+        $bouteille->quantite += 1;
+        $bouteille->save();
+        return response()->json(['success' => true]);
+    }
+
+    public function decrement(Bouteille $bouteille)
+    {
+        $bouteille->quantite +=  -1;
+        $bouteille->save();
+        return response()->json(['success' => true]);
+    }
 }

@@ -7,11 +7,11 @@
                             <!-- Logo -->
                     <li class="menu-item">
                         <a href="/Accueil">
-                                    <IconContainer>
-                                        <template #icon>
-                                            <IconLogo/>
-                                        </template>
-                                    </IconContainer>
+                            <IconContainer>
+                                <template #icon>
+                                    <IconLogo/>
+                                </template>
+                            </IconContainer>
                         </a>
                     </li>
 

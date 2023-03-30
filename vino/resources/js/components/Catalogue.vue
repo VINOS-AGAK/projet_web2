@@ -1,10 +1,9 @@
 
  <template>
   <div class="liste-container">
-    <h2 class="catalogue_titre-section">Trouver dans catalogue</h2>
     <header class="site-header">
       <form class="search" action="#" method="GET" @submit.prevent="selectProduct">
-        <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names">
+        <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" placeholder="rechercher un vin">
         
         <button class="btn-recherche" type="submit" @click="clearSearch">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
@@ -131,7 +130,7 @@
   
   export default {
     setup() {
-      const { catalogue, getCatalogue, deleteCatalogue } = useCatalogue()
+      const { catalogue, getCatalogue, deleteCatalogue, isLoading } = useCatalogue()
       const { mesCellier, getCelliers } = useCellier()
       const { storeBouteille } = useBouteille()
       const searchTerm = ref('')
@@ -197,6 +196,7 @@
         watch,
         clearSearch,
         getCelliers,
+        isLoading
       }
     }
   }

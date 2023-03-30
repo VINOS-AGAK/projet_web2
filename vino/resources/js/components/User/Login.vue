@@ -32,7 +32,7 @@
                     <span class="text-form">Remember me</span>
                 </p>
                 <p class="text-form">Vous n'avez pas de compte? Cliquez                                 
-                    <router-link :to="{ name: 'register' }" active-class="border-b-2 border-indigo-400" class="">Ici !
+                    <router-link :to="{ name: 'register' }" active-class="border-b-2 border-indigo-400" class="text-login">ici
                     </router-link></p>
 
                 <!-- Buttons -->

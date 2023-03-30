@@ -35,27 +35,27 @@
             <div>
               <form @submit.prevent="storeBouteille(bouteille)">
 
-<div class="">
-  <label for="selectField">Choisir Cellier</label>
-  <select v-model="bouteille.vino__cellier_id" name="vino__cellier_id" id="selectField" class="">
-    <option value="" disabled>--Choisissez un cellier--</option>
-    <option  v-for="cellier in mesCellier" :value="cellier.id" >{{ cellier.nom }}</option>
-  </select>
-</div>
+                <div class="">
+                  <label for="selectField">Choisir Cellier</label>
+                  <select v-model="bouteille.vino__cellier_id" name="vino__cellier_id" id="selectField" class="">
+                    <option value="" disabled>--Choisissez un cellier--</option>
+                    <option  v-for="cellier in mesCellier" :value="cellier.id" >{{ cellier.nom }}</option>
+                  </select>
+                </div>
 
-<div>
-  <label for="quantityField">Quantite</label>
-  <input v-model="bouteille.quantite" name="quantite" type="number" id="quantityField" class="" min="1" max="100">
-</div>
+                <div>
+                  <label for="quantityField">Quantite</label>
+                  <input v-model="bouteille.quantite" name="quantite" type="number" id="quantityField" class="" min="1" max="100">
+                </div>
 
-<div>
-  <label for="ajouter">Confirmation</label>
-  <input v-model="bouteille.vino__bouteille_id" type="radio" name="vino__bouteille_id" :value="selectedProduct.id" id="ajouter">
-</div>
+                <div>
+                  <label for="ajouter">Confirmation</label>
+                  <input v-model="bouteille.vino__bouteille_id" type="radio" name="vino__bouteille_id" :value="selectedProduct.id" id="ajouter">
+                </div>
 
-<button type="submit" class="btn">Add to cart</button>
+                <button type="submit" class="btn">Ajouter</button>
 
-</form>
+              </form>
 
             </div>
           </div>

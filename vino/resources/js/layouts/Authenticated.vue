@@ -23,7 +23,17 @@
                                         </template>
                                     </IconContainer>
                                 </router-link>
+                                
                             </li>
+                            <!-- <li class="menu-item">
+                                <router-link :to="{ name: 'catalogue.create' }" active-class="border-b-2 border-indigo-400" class="">
+                                    <IconContainer>
+                                        <template #icon>
+                                            <IconSearch/>   
+                                        </template>
+                                    </IconContainer>
+                                </router-link>
+                            </li> -->
                             <li class="menu-item">
                                 <router-link :to="{ name: 'cellier.index' }" active-class="border-b-2 border-indigo-400" class="">
                                     <IconContainer>

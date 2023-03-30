@@ -74,7 +74,7 @@ export default function useAuth() {
         user.email = response.data.email,
         user.id = response.data.id
         localStorage.setItem('loggedIn', JSON.stringify(true))
-        router.push({ name: 'catalogue.index' })
+        router.push({ name: 'cellier.index' })
     }
 
     const getUser = () => {

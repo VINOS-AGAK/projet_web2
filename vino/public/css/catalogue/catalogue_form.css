@@ -80,7 +80,6 @@
     /* Adjust the layout of the form buttons */
     form button[type="submit"] {
       display: block;
-      width: 100%;
       margin-top: 10px;
     }
   

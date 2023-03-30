@@ -9,7 +9,7 @@ import CellierCreate from '../components/Cellier/Create.vue'
 import CellierEdit from '../components/Cellier/Edit.vue'
 
 import BouteilleIndex from '../components/Bouteille/Index.vue'
-import BouteilleEdit from '../components/Bouteille/Edit.vue'
+
 
 import AuthenticatedLayout from '../layouts/Authenticated.vue'
 import GuestLayout from '../layouts/Guest.vue'
@@ -110,12 +110,7 @@ const routes = [
             name: 'bouteille.index',
             component: BouteilleIndex,
             meta: { title: "Mes Bouteille"}
-           },
-           {path: '/:id',
-           name: 'bouteille.edit',
-           component: BouteilleEdit,
-           meta: { title: "Modifier Bouteille"}
-          },
+           }
        
         ]
     }

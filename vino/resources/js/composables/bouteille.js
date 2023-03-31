@@ -26,7 +26,7 @@ export default function useBouteille() {
     }
 
     const trierMesBouteilles = async (itemName) => {
-        axios.get('api/bouteille')
+        axios.get('api/bouteille/{$itemName}')
         .then(response=>{
             mesBouteilles.value = response.data.data;
            console.log(itemName)

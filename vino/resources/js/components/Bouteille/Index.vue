@@ -1,13 +1,14 @@
 <template>
     <div class="trier-container">
         <ul class="trier-liste">
-            <li class="trier-item" @click="trierItem('vin rouge')">vin rouge</li>
-            <li class="trier-item" @click="trierItem('vin blanc')">vin blanc</li>
             <li class="trier-item" @click="trierItem('italie')">italie</li>
             <li class="trier-item" @click="trierItem('france')">france</li>
             <li class="trier-item" @click="trierItem('espagne')">espagne</li>
             <li class="trier-item" @click="trierItem('australie')">australie</li>
             <li class="trier-item" @click="trierItem('canada')">canada</li>
+            <li class="trier-item" @click="trierItem('etats-unis')">etats-unis</li>
+            <li class="trier-item" @click="trierItem('allemagne')">allemagne</li>
+            <li class="trier-item" @click="trierItem('Arménie')">Arménie</li>
         </ul>
     </div>
     <section class="liste-container">

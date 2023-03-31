@@ -111,24 +111,3 @@ export default function useBouteille() {
     }
 }
 
-// const updateBouteille = async (mesBouteilles) => { 
-//     if(isLoading.value) return;
-
-//     isLoading.value = true
-//     validationErrors.value = {}
-
-//     axios.put('/api/bouteille/' + mesBouteilles.id, mesBouteilles)
-//     .then(response => {
-//         router.push({name: 'bouteille.index'})
-//         swal({
-//                 icon: 'success',
-//                 title : 'Modification Effecté Avec Succès'
-//             })
-//     })
-//     .catch(error =>{
-//         if(error.response?.data){
-//             validationErrors.value = error.response.data.errors
-//         }
-//     })
-//     .finally(() => isLoading.value = false)
-// }

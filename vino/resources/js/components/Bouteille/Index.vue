@@ -1,13 +1,13 @@
 <template>
     <div class="trier-container">
         <ul class="trier-liste">
-            <li class="trier-item" @click="trierItem">vin rouge</li>
-            <li class="trier-item" @click="trierItem">vin blanc</li>
-            <li class="trier-item" @click="trierItem">italie</li> 
-            <li class="trier-item" @click="trierItem">france</li>
-            <li class="trier-item" @click="trierItem">espagne</li>
-            <li class="trier-item" @click="trierItem">australie</li>
-            <li class="trier-item" @click="trierItem">canada</li>
+            <li class="trier-item" @click="trierItem('vin rouge')">vin rouge</li>
+            <li class="trier-item" @click="trierItem('vin blanc')">vin blanc</li>
+            <li class="trier-item" @click="trierItem('italie')">italie</li>
+            <li class="trier-item" @click="trierItem('france')">france</li>
+            <li class="trier-item" @click="trierItem('espagne')">espagne</li>
+            <li class="trier-item" @click="trierItem('australie')">australie</li>
+            <li class="trier-item" @click="trierItem('canada')">canada</li>
         </ul>
     </div>
     <section class="liste-container">
@@ -93,8 +93,8 @@ export default {
 
         })
 
-        const trierItem=()=>{
-            console.log("yeehaw");
+        const trierItem=(itemName)=>{
+            console.log(itemName);
         }
         
 

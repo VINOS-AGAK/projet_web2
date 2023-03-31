@@ -1,11 +1,13 @@
 <template>
     <div class="trier-container">
         <ul class="trier-liste">
-            <li class="trier-item">vin rouge</li>
-            <li class="trier-item">vin blanc</li>
-            <li class="trier-item">italie</li> 
-            <li class="trier-item">france</li>
-            <li class="trier-item">espagne</li>
+            <li class="trier-item" @click="trierItem">vin rouge</li>
+            <li class="trier-item" @click="trierItem">vin blanc</li>
+            <li class="trier-item" @click="trierItem">italie</li> 
+            <li class="trier-item" @click="trierItem">france</li>
+            <li class="trier-item" @click="trierItem">espagne</li>
+            <li class="trier-item" @click="trierItem">australie</li>
+            <li class="trier-item" @click="trierItem">canada</li>
         </ul>
     </div>
     <section class="liste-container">
@@ -25,25 +27,19 @@
                         <div class="card-info-title">
                             <h3 class="card-title">{{ bouteille.nom }}</h3>
                             <p class="card-subtitle">{{ bouteille.description }} {{ bouteille.format }}</p>
-                            <!-- <p class="card-subtitle">{{ bouteille.pays }}</p> -->
                         </div>
                         <div class="card-info-client">
                             <p class="card-count"> {{ bouteille.prix_saq }} $</p>
                             <p class="card-rating"> {{ bouteille.quantite }} bouteille</p>
                             <p class="card-rating"> &#9733;&#9733;&#9733;&#10025;</p>
-                            
                         </div> 
                         <div class="card-footer">
-                              
                               <button  class="card-btn_add " @click.prevent="increment(bouteille.id)" >+</button>    
                               <button  class="card-btn_supp " @click.prevent="decrement(bouteille.id)">-</button>   
                               <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer du cellier</button>   
                         </div> 
                     </div> 
-                
-                </div>
-    
-                  
+                </div>         
             </div>
            
             <div class="container"  v-if="mesBouteilles.length === 0">
@@ -51,6 +47,7 @@
                     <li class="text-danger">Aucune bouteilles disponible dans ce cellier</li>
                 </ul>
             </div>
+
         </article>
     </section>
 </template>
@@ -95,6 +92,10 @@ export default {
             console.log(oneCellier);
 
         })
+
+        const trierItem=()=>{
+            console.log("yeehaw");
+        }
         
 
         return {
@@ -105,6 +106,7 @@ export default {
             getOneCellier,
             increment,
             decrement,
+            trierItem
         }
     }
 }

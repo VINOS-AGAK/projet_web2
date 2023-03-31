@@ -38,12 +38,16 @@ export default function useCellier() {
      */
     const getOneCellier = async (id) => {
         console.log(id)
-        axios.get('api/cellier/' + id )
-        .then(response=>{
+        try{
+            const response = await axios.get('api/cellier/' + id )
             oneCellier.value = response.data.data;
             console.log('un cellier');
             console.log(oneCellier);
-        })
+            return oneCellier.value;
+        }
+        catch (error){
+            console.error('Error fetching one cellier', error);
+        }
     } 
 
 
@@ -143,13 +147,13 @@ export default function useCellier() {
     return {
         mesCellier,
         oneCellier,
+        isLoading,
+        user,
+        validationErrors,
         getOneCellier,
         getCelliers,
         storeCellier,
         updateCellier,
         deleteCellier,
-        isLoading,
-        validationErrors,
-        user
     }
 }

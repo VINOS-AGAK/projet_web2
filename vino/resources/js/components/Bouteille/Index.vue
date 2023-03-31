@@ -61,7 +61,7 @@ export default {
 
     setup() {
         
-        const { mesBouteilles, getMesBouteilles,deleteBouteille } = useBouteille()
+        const { mesBouteilles, getMesBouteilles,deleteBouteille, trierMesBouteilles } = useBouteille()
         const { $route } = getCurrentInstance().proxy
         const { oneCellier, getOneCellier } = useCellier();
 
@@ -94,7 +94,8 @@ export default {
         })
 
         const trierItem=(itemName)=>{
-            console.log(itemName);
+            trierMesBouteilles(itemName);
+            console.log('inside of trier item');
         }
         
 

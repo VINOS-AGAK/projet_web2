@@ -80,11 +80,11 @@ export default function useBouteille() {
 
     const deleteBouteille = async (id) => { 
         swal({
-            title: 'Are you sure?',
-            text: 'You won\'t be able to revert this action!',
+            title: 'Êtes-vous sûr(e)?',
+            text: 'Vous ne pourrez pas annuler cette action !',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
+            confirmButtonText: 'Oui, supprimez-le !',
             confirmButtonColor: '#ef4444',
             timer: 20000,
             timerProgressBar: true,
@@ -128,5 +128,4 @@ export default function useBouteille() {
         isLoading,
     }
 }
-
 

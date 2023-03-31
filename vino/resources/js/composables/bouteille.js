@@ -43,6 +43,7 @@ export default function useBouteille() {
 
         isLoading.value = true
         validationErrors.value = {}
+        
         console.log('Log de la bouteille dans la fonction storeBouteille', bouteille);
         axios.post('/api/bouteille', bouteille)
         .then(response => {

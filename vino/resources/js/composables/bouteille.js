@@ -62,6 +62,22 @@ export default function useBouteille() {
     }
 
 
+    const updateBouteille = async (bouteille) => {
+        isLoading.value = true
+        try {
+          const response = await axios.put(`/api/bouteilles/${bouteille.id}`, bouteille)
+          isLoading.value = false
+          return response.data
+        } catch (error) {
+          isLoading.value = false
+          if (error.response && error.response.status === 422) {
+            validationErrors.value = error.response.data.errors
+          } else {
+            throw error
+          }
+        }
+      }
+
     const deleteBouteille = async (id) => { 
         swal({
             title: 'Are you sure?',
@@ -107,29 +123,10 @@ export default function useBouteille() {
         getUneBouteille,
         deleteBouteille,
         storeBouteille,
+        updateBouteille,
         validationErrors, 
         isLoading,
     }
 }
 
-// const updateBouteille = async (mesBouteilles) => { 
-//     if(isLoading.value) return;
 
-//     isLoading.value = true
-//     validationErrors.value = {}
-
-//     axios.put('/api/bouteille/' + mesBouteilles.id, mesBouteilles)
-//     .then(response => {
-//         router.push({name: 'bouteille.index'})
-//         swal({
-//                 icon: 'success',
-//                 title : 'Modification Effecté Avec Succès'
-//             })
-//     })
-//     .catch(error =>{
-//         if(error.response?.data){
-//             validationErrors.value = error.response.data.errors
-//         }
-//     })
-//     .finally(() => isLoading.value = false)
-// }

@@ -84,6 +84,8 @@ class BouteilleController extends Controller
         $bouteille = Bouteille::create($request->validated());
 
         return new BouteilleResource($bouteille);
+        
+    
     }
 
     /**
@@ -107,7 +109,8 @@ class BouteilleController extends Controller
      */
     public function update(Request $request, Bouteille $bouteille)
     {
-        //
+        $bouteille->update($request->validated());
+        return new BouteilleResource($bouteille);
     }
 
     /**
@@ -133,4 +136,6 @@ class BouteilleController extends Controller
         $bouteille->save();
         return response()->json(['success' => true]);
     }
+
+    
 }

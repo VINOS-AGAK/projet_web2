@@ -21,29 +21,6 @@ class BouteilleController extends Controller
     {
         $user_id = Auth()->user()->id;
         
-       // $query = 'q';
-    
-        // $bouteilles = DB::table('bouteille__has__cellier')
-        //     ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
-        //     ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)
-
-        //     ->where(function($q) use ($query) {
-        //         $q->where('vino__bouteille.nom', 'LIKE', "%$query%")
-        //             ->orWhere('vino__bouteille.pays', 'LIKE', "%$query%")
-        //             ->orWhere('vino__bouteille.format', 'LIKE', "%$query%")
-        //             ->orWhere('vino__bouteille.prix_saq', 'LIKE', "%$query%");
-        //     })
-        //     ->select('bouteille__has__cellier.id', 
-        //             'vino__bouteille.nom', 
-        //             'vino__bouteille.description', 
-        //             'vino__bouteille.image', 
-        //             'vino__bouteille.prix_saq' , 
-        //             'vino__bouteille.pays' , 
-        //             'vino__bouteille.url_saq' , 
-        //             'vino__bouteille.format' , 
-        //             'vino__bouteille.vino__type_id' , 
-        //             'bouteille__has__cellier.created_at')
-        //     ->get();
         $bouteilles = DB::table('bouteille__has__cellier')
             ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
             ->where('bouteille__has__cellier.vino__cellier_id', '=', $user_id)

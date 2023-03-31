@@ -43,15 +43,31 @@
     width: 100%;
 }
 
-
-
 .ajouter-cellier__bouton:hover {
     transform: translateY(-2px);
     /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); */
     background-color: var(--primary-color);
 }
 
+/* ========================== button triage ====================*/
 
+.trier-container{
+    background-color:var(--accent-color);
+}
+
+.trier-liste{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    white-space: nowrap;
+    padding: var(--margin-small);
+}
+
+.trier-item{
+    padding: var(--margin-small);
+}
+
+/*============================ responsive =====================*/
 @media only screen and (min-width: 768px) {
     .ajouter-cellier {
         margin-bottom: 40px;

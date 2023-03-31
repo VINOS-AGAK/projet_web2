@@ -24,6 +24,15 @@ export default function useBouteille() {
             console.log(mesBouteilles.value);
         })
     }
+
+    const trierMesBouteilles = async (itemName) => {
+        axios.get('api/bouteille/{$itemName}')
+        .then(response=>{
+            mesBouteilles.value = response.data.data;
+           console.log(itemName)
+        })
+    }
+
     const getUneBouteille = async (id) => {
         axios.get('api/bouteille/' + id )
         .then(response=>{
@@ -126,6 +135,7 @@ export default function useBouteille() {
         updateBouteille,
         validationErrors, 
         isLoading,
+        trierMesBouteilles
     }
 }
 

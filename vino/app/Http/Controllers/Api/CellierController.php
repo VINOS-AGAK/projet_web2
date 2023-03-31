@@ -27,7 +27,15 @@ class CellierController extends Controller
     public function show(Cellier $cellier)
     {
         
-        return new CellierResource($cellier);
+        $id = $cellier->id;
+
+        $bouteilles = Cellier::select('vino__bouteille.*')
+            ->join('bouteille__has__cellier', 'vino__cellier.id', '=', 'bouteille__has__cellier.vino__cellier_id')
+            ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
+            ->where('vino__cellier.id', '=', $id)
+            ->get();
+
+        return ['data' => $bouteilles];
     }
 
     public function update(Cellier $cellier, StoreCellierRequest $request)

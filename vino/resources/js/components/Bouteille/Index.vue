@@ -18,7 +18,7 @@
     
         <h2 class="liste__titre" >{{ oneCellier.nom }}</h2>
         <article class="container">
-            <div class="card" v-for="bouteille in mesBouteilles" :key="bouteille.id" >
+            <div class="card" v-for="bouteille in oneCellier" :key="bouteille.id" >
                 <div class="card-body">
                     <img :src="bouteille.image" :alt="bouteille.nom">
                     <picture class="modal">
@@ -43,7 +43,7 @@
                 </div>         
             </div>
            
-            <div class="container"  v-if="mesBouteilles.length === 0">
+            <div class="container"  v-if="oneCellier.length === 0">
                 <ul>
                     <li class="text-danger">Aucune bouteilles disponible dans ce cellier</li>
                 </ul>
@@ -55,8 +55,8 @@
     
 <script>
 import useBouteille from '../../composables/bouteille'
-import { onMounted, getCurrentInstance } from 'vue'
 import useCellier from '../../composables/cellier'
+import { onMounted, getCurrentInstance } from 'vue'
 
 export default {
 
@@ -69,7 +69,7 @@ export default {
         const increment = async (id) => {
             axios.put('api/bouteille/' + id + '/increment')
                 .then(response => {
-                    getMesBouteilles();
+                    oneCellier();
                 })
                 .catch(error =>{
                     console.log(error.response.data.errors);
@@ -79,17 +79,17 @@ export default {
         const decrement = async (id) => {
             axios.put('api/bouteille/' + id + '/decrement')
                 .then(response => {
-                    getMesBouteilles();
+                    oneCellier();
                 })
                 .catch(error =>{
                     console.log(error.response.data.errors);
                 })
         }
 
-        onMounted(() => {
+        onMounted(async () => {
             console.log('le param id passe du cellier' ,$route.params.id);
             getMesBouteilles();
-            getOneCellier($route.params.id);
+            await getOneCellier($route.params.id);
             console.log(oneCellier);
 
         })
@@ -102,9 +102,9 @@ export default {
 
         return {
             mesBouteilles,
+            oneCellier,
             getMesBouteilles,
             deleteBouteille,
-            oneCellier,
             getOneCellier,
             increment,
             decrement,

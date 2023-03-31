@@ -1,10 +1,10 @@
 <template>
     <nav class="container-header">
-            <!-- Primary Navigation Menu -->
+        <!-- Primary Navigation Menu -->
         <div class="site-header">
             <div class="site-header-content">
                 <ul class="menu">
-                            <!-- Logo -->
+                    <!-- Logo -->
                     <li class="menu-item">
                         <a href="/Accueil">
                             <IconContainer>
@@ -45,7 +45,7 @@
                              </IconContainer>
                         </button>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -57,6 +57,7 @@
             <router-view></router-view>
         </div>
     </main>
+
 </template>
 
 <script>

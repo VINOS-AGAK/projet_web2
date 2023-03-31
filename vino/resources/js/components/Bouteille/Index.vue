@@ -1,5 +1,13 @@
 <template>
-    
+    <div class="trier-container">
+        <ul class="trier-liste">
+            <li class="trier-item">vin rouge</li>
+            <li class="trier-item">vin blanc</li>
+            <li class="trier-item">italie</li> 
+            <li class="trier-item">france</li>
+            <li class="trier-item">espagne</li>
+        </ul>
+    </div>
     <section class="liste-container">
         <div class="ajouter-cellier">      
             <router-link :to="{name: 'catalogue.index'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
@@ -43,8 +51,6 @@
                     <li class="text-danger">Aucune bouteilles disponible dans ce cellier</li>
                 </ul>
             </div>
-            
-    
         </article>
     </section>
 </template>

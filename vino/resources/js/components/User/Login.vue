@@ -7,6 +7,8 @@
 
             <form @submit.prevent="submitLogin">
 
+                <p v-if="loading">Loading...</p>
+
                 <p class="text-form">courriel</p>
                 <input v-model="loginForm.email" id="email" type="email" class="email" required autofocus
                     autocomplete="username">
@@ -51,7 +53,7 @@ import useAuth from '../../composables/auth'
 export default {
     setup() {
         const { loginForm, validationErrors, processing, submitLogin } = useAuth()
-        return { loginForm, validationErrors, processing, submitLogin }
+        return { loginForm, validationErrors, processing, submitLogin, loading: false }
     }
 }
 </script>

@@ -52,6 +52,7 @@ export default function useBouteille() {
 
         isLoading.value = true
         validationErrors.value = {}
+        
         console.log('Log de la bouteille dans la fonction storeBouteille', bouteille);
         axios.post('/api/bouteille', bouteille)
         .then(response => {
@@ -69,6 +70,22 @@ export default function useBouteille() {
         .finally(() => isLoading.value = false)
     }
 
+
+    const updateBouteille = async (bouteille) => {
+        isLoading.value = true
+        try {
+          const response = await axios.put(`/api/bouteilles/${bouteille.id}`, bouteille)
+          isLoading.value = false
+          return response.data
+        } catch (error) {
+          isLoading.value = false
+          if (error.response && error.response.status === 422) {
+            validationErrors.value = error.response.data.errors
+          } else {
+            throw error
+          }
+        }
+      }
 
     const deleteBouteille = async (id) => { 
         swal({
@@ -115,6 +132,7 @@ export default function useBouteille() {
         getUneBouteille,
         deleteBouteille,
         storeBouteille,
+        updateBouteille,
         validationErrors, 
         isLoading,
         trierMesBouteilles

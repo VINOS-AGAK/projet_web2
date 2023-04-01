@@ -34,7 +34,7 @@
             <div class="card-info-client">
               <p class="catalogue__card-count">{{ selectedProduct.prix_saq }}$</p>
           
-                <form @submit.prevent="storeBouteille(bouteille)">
+                <form @submit.prevent="storeBouteille(bouteille)" >
 
                 <div class="">
                   <label for="selectField">Choisir Cellier</label>
@@ -125,6 +125,7 @@
   import useBouteille from '../composables/bouteille'
   import { onMounted, ref, computed, watch, reactive } from 'vue'
   
+  
   export default {
     setup() {
       const { catalogue, getCatalogue, deleteCatalogue, isLoading, validationErrors } = useCatalogue()
@@ -134,13 +135,6 @@
       const selectedProduct = ref(null)
       onMounted(getCatalogue)
       onMounted(getCelliers)
-
-
-
-      const recommandons = computed(() =>{
-
-        return catalogue.value;
-      })
   
       const filteredCatalogue = computed(() => {
         if (searchTerm.value.length < 2) {
@@ -157,6 +151,7 @@
         }
       }
 
+      
         
       const clearSearch = () => {
       searchTerm.value = ''
@@ -171,6 +166,7 @@
         }
       })
 
+
       const bouteille = reactive ({
         vino__bouteille_id: '',
         vino__cellier_id: '',
@@ -183,7 +179,6 @@
         searchTerm,
         filteredCatalogue,
         selectedProduct,
-        recommandons,
         bouteille,
         mesCellier,
         getCatalogue,

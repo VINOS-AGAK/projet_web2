@@ -58,9 +58,29 @@ class BouteilleController extends Controller
      */
     public function store(StoreBouteilleRequest $request)
     {
-        $bouteille = Bouteille::create($request->validated());
+        // $bouteille = Bouteille::create($request->validated());
 
-        return new BouteilleResource($bouteille);
+        // return new BouteilleResource($bouteille);
+
+        $bouteille = Bouteille::where('vino__bouteille_id', $request->vino__bouteille_id)
+                                ->where('vino__cellier_id', $request->vino__cellier_id)
+                                ->first();
+
+        if ($bouteille) {
+            $bouteille->quantite += $request->quantite;
+        } else {
+            $bouteille = new Bouteille([
+            'vino__bouteille_id' => $request->vino__bouteille_id,
+            'vino__cellier_id' => $request->vino__cellier_id,
+            'quantite' => $request->quantite,
+            ]);
+        }
+
+        $bouteille->save();
+
+        return redirect()->back();
+        
+    
     }
 
     /**
@@ -84,7 +104,8 @@ class BouteilleController extends Controller
      */
     public function update(Request $request, Bouteille $bouteille)
     {
-        //
+        $bouteille->update($request->validated());
+        return new BouteilleResource($bouteille);
     }
 
     /**
@@ -110,4 +131,6 @@ class BouteilleController extends Controller
         $bouteille->save();
         return response()->json(['success' => true]);
     }
+
+    
 }

@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CatalogueController;
 use App\Http\Controllers\Api\CellierController;
-use App\Http\Controllers\Api\BouteilleHasCellierController;
 use App\Http\Controllers\Api\BouteilleController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
@@ -27,6 +26,9 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('bouteille', BouteilleController::class);
     Route::put('/bouteille/{bouteille}/increment', [BouteilleController::class, 'increment']);
     Route::put('/bouteille/{bouteille}/decrement', [BouteilleController::class, 'decrement']);
+    Route::post('/bouteille', [BouteilleController::class, 'store']);
+    
+    
 
     Route::get('/user', function (Request $request) {
         return $request->user();

@@ -29,7 +29,7 @@ class CellierController extends Controller
         
         $id = $cellier->id;
 
-        $bouteilles = Cellier::select('vino__bouteille.*')
+        $bouteilles = Cellier::select('vino__bouteille.*', 'bouteille__has__cellier.*')
             ->join('bouteille__has__cellier', 'vino__cellier.id', '=', 'bouteille__has__cellier.vino__cellier_id')
             ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
             ->where('vino__cellier.id', '=', $id)

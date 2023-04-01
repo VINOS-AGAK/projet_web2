@@ -32,12 +32,11 @@
                         <div class="card-info-client">
                             <p class="card-count"> {{ bouteille.prix_saq }} $</p>
                             <p class="card-rating"> {{ bouteille.quantite }} bouteille</p>
-                            <p class="card-rating"> &#9733;&#9733;&#9733;&#10025;</p>
                         </div> 
                         <div class="card-footer">
                               <button  class="card-btn_add " @click.prevent="increment(bouteille.id)" >+</button>    
-                              <button  class="card-btn_supp " @click.prevent="decrement(bouteille.id)">-</button>   
-                              <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer du cellier</button>   
+                              <button  class="card-btn_supp " @click.prevent="decrement(bouteille.id)" :disabled="bouteille.quantite < 1">-</button>   
+                              <!-- <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" :disabled="bouteille.quantite > 0">Supprimer du cellier</button>    -->
                         </div> 
                     </div> 
                 </div>         
@@ -62,7 +61,7 @@ export default {
 
     setup() {
         
-        const { mesBouteilles, getMesBouteilles,deleteBouteille, trierMesBouteilles } = useBouteille()
+        const { mesBouteilles, getMesBouteilles, deleteBouteille, trierMesBouteilles } = useBouteille()
         const { $route } = getCurrentInstance().proxy
         const { oneCellier, getOneCellier } = useCellier();
 
@@ -76,15 +75,45 @@ export default {
                 })
         }
 
+        // const decrement = async (id) => {
+        //     axios.put('api/bouteille/' + id + '/decrement')
+        //         .then(response => {
+        //             getOneCellier($route.params.id);
+        //         })
+        //         .catch(error =>{
+        //             console.log(error.response.data.errors);
+        //         })
+        // }
+
         const decrement = async (id) => {
-            axios.put('api/bouteille/' + id + '/decrement')
-                .then(response => {
-                    getOneCellier($route.params.id);
-                })
-                .catch(error =>{
-                    console.log(error.response.data.errors);
-                })
-        }
+    axios.put('api/bouteille/' + id + '/decrement')
+        .then(response => {
+            getOneCellier($route.params.id);
+            const bouteille = oneCellier.find(b => b.id === id);
+            if (bouteille && bouteille.quantite === 0) {
+                deleteMaBouteille(id);
+            }
+        })
+        .catch(error =>{
+            console.log(error.response.data.errors);
+        })
+
+        
+}
+
+const deleteMaBouteille = async (id) => {
+    axios.delete('api/bouteille/' + id)
+        .then(response => {
+            getMesBouteilles();
+            getOneCellier($route.params.id);
+        })
+        .catch(error =>{
+            console.log(error.response.data.errors);
+        })
+}
+
+
+
 
         onMounted(async () => {
             console.log('le param id passe du cellier' ,$route.params.id);
@@ -108,7 +137,7 @@ export default {
             getOneCellier,
             increment,
             decrement,
-            trierItem
+            trierItem,
         }
     }
 }

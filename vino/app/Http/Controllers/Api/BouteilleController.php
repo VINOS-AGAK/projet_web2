@@ -58,27 +58,27 @@ class BouteilleController extends Controller
      */
     public function store(StoreBouteilleRequest $request)
     {
-        $bouteille = Bouteille::create($request->validated());
+        // $bouteille = Bouteille::create($request->validated());
 
-        return new BouteilleResource($bouteille);
+        // return new BouteilleResource($bouteille);
 
-        // $bouteille = Bouteille::where('vino__bouteille_id', $request->vino__bouteille_id)
-        //                         ->where('vino__cellier_id', $request->vino__cellier_id)
-        //                         ->first();
+        $bouteille = Bouteille::where('vino__bouteille_id', $request->vino__bouteille_id)
+                                ->where('vino__cellier_id', $request->vino__cellier_id)
+                                ->first();
 
-        // if ($bouteille) {
-        //     $bouteille->quantite += $request->quantite;
-        // } else {
-        //     $bouteille = new Bouteille([
-        //     'vino__bouteille_id' => $request->vino__bouteille_id,
-        //     'vino__cellier_id' => $request->vino__cellier_id,
-        //     'quantite' => $request->quantite,
-        //     ]);
-        // }
+        if ($bouteille) {
+            $bouteille->quantite += $request->quantite;
+        } else {
+            $bouteille = new Bouteille([
+            'vino__bouteille_id' => $request->vino__bouteille_id,
+            'vino__cellier_id' => $request->vino__cellier_id,
+            'quantite' => $request->quantite,
+            ]);
+        }
 
-        // $bouteille->save();
+        $bouteille->save();
 
-        // return redirect()->back();
+        return redirect()->back();
         
     
     }
@@ -125,12 +125,22 @@ class BouteilleController extends Controller
         return response()->json(['success' => true]);
     }
 
-    public function decrement(Bouteille $bouteille)
-    {
-        $bouteille->quantite +=  -1;
-        $bouteille->save();
-        return response()->json(['success' => true]);
-    }
+    // public function decrement(Bouteille $bouteille)
+    // {
+    //     $bouteille->quantite +=  -1;
+    //     $bouteille->save();
+    //     return response()->json(['success' => true]);
+    // }
+    public function decrement(Bouteille $bouteille){
+        if ($bouteille->quantite > 1) {
+            $bouteille->quantite -= 1;
+            $bouteille->save();
+            return response()->json(['success' => true]);
+        } else {
+            $bouteille->delete();
+            return response()->noContent();
+        }
+    } 
 
     
 }

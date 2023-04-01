@@ -1,27 +1,23 @@
-import { ref, inject, reactive, getCurrentInstance } from 'vue';
-import { useRouter} from 'vue-router'
-import { onMounted } from "vue";
-import useAuth from "../composables/auth";
+import { ref, inject } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
 export default function useBouteille() {
     const router = useRouter();
+    const route = useRoute();
     let mesBouteilles = ref({});
     const uneBouteille = ref({});
     const validationErrors = ref ({});
     const isLoading = ref(false);
-    const { user } = useAuth();
     const swal = inject('$swal');
     const axios = require('axios');
-    const { $route } = getCurrentInstance().proxy
-    const cellier_id = $route.params.id
+    const routeParam = route.params.routeParam;
+
 
 
     const getMesBouteilles = async () => {
         axios.get('api/bouteille')
         .then(response=>{
             mesBouteilles.value = response.data.data;
-            //console.log('Mes Bouteilles');
-            console.log(mesBouteilles.value);
         })
     }
 
@@ -37,8 +33,6 @@ export default function useBouteille() {
         axios.get('api/bouteille/' + id )
         .then(response=>{
             uneBouteille.value = response.data.data;
-            console.log('une bouteille du cellier');
-            console.log(uneBouteille);
         })
     } 
 
@@ -53,10 +47,9 @@ export default function useBouteille() {
         isLoading.value = true
         validationErrors.value = {}
         
-        console.log('Log de la bouteille dans la fonction storeBouteille', bouteille);
         axios.post('/api/bouteille', bouteille)
         .then(response => {
-            router.push({name: 'bouteille.index'})
+            router.push({name: 'bouteille.index', params: {id: bouteille.vino__cellier_id} })
             swal({
                     icon : 'success',
                     title: 'bouteille Ajouté Avec Succès'
@@ -87,55 +80,19 @@ export default function useBouteille() {
         }
       }
 
-    const deleteBouteille = async (id) => { 
-        swal({
-            title: 'Êtes-vous sûr(e)?',
-            text: 'Vous ne pourrez pas annuler cette action !',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Oui, supprimez-le !',
-            confirmButtonColor: '#ef4444',
-            timer: 20000,
-            timerProgressBar: true,
-            reverseButtons: true
-        })
-        .then(result =>{
-            if (result.isConfirmed){
-                console.log(id);
 
-                axios.delete('/api/bouteille/' + id)
-                .then(response => {
-                   
-                    getMesBouteilles()
-                    router.push({name: 'bouteille.index'})
-                    swal({
-                            icon: 'success',
-                            title : 'Suppression Effecté Avec Succès'
-                        })
-                })
-                .catch(error =>{
-                    swal({
-                        icon: 'error',
-                        title : 'Une Erreur Est Arrivée'
-                    })
-                })
-            }
-
-        })
-
-    }
 
     return {
         mesBouteilles,
         uneBouteille,
+        validationErrors, 
+        routeParam,
+        isLoading,
         getMesBouteilles,
         getUneBouteille,
-        deleteBouteille,
         storeBouteille,
         updateBouteille,
-        validationErrors, 
-        isLoading,
-        trierMesBouteilles
+        trierMesBouteilles,
     }
 }
 

@@ -96,8 +96,6 @@
 
             onMounted(()=> {
                 getOneCatalogue(route.params.id)
-                console.log('une bouteille du catalogue dans edit');
-                console.log(oneCatalogue);
             })
     
             return { oneCatalogue, validationErrors, isLoading, updateCatalogue }

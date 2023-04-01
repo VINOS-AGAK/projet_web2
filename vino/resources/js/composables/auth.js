@@ -81,8 +81,6 @@ export default function useAuth() {
         axios.get('/api/user')
         .then(response => {
             loginUser(response)
-            console.log('user info');
-            console.log(response);
         })
     }
 

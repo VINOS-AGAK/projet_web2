@@ -56,15 +56,16 @@
 <script>
 import useBouteille from '../../composables/bouteille'
 import useCellier from '../../composables/cellier'
-import { onMounted, getCurrentInstance } from 'vue'
+import { onMounted, getCurrentInstance, inject } from 'vue'
 
 export default {
 
     setup() {
         
-        const { mesBouteilles, getMesBouteilles,deleteBouteille, trierMesBouteilles } = useBouteille()
+        const { mesBouteilles, getMesBouteilles, trierMesBouteilles } = useBouteille()
         const { $route } = getCurrentInstance().proxy
         const { oneCellier, getOneCellier } = useCellier();
+        const swal = inject('$swal');
 
         const increment = async (id) => {
             axios.put('api/bouteille/' + id + '/increment')
@@ -86,12 +87,43 @@ export default {
                 })
         }
 
+        const deleteBouteille = async (id) => { 
+        swal({
+            title: 'Êtes-vous sûr(e)?',
+            text: 'Vous ne pourrez pas annuler cette action !',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Oui, supprimez-le !',
+            confirmButtonColor: '#ef4444',
+            timer: 20000,
+            timerProgressBar: true,
+            reverseButtons: true
+        })
+            .then(result =>{
+                if (result.isConfirmed){
+                    axios.delete('/api/bouteille/' + id)
+                    // getOneCellier(routeParam)
+                    .then(response => {
+                        swal({
+                            icon: 'success',
+                            title : 'Suppression Effecté Avec Succès'
+                        })
+                        getOneCellier($route.params.id)
+                    })
+                    .catch(error =>{
+                        swal({
+                            icon: 'error',
+                            title : 'Une Erreur Est Arrivée'
+                        })
+                    })
+                }
+            })
+        }
+
         onMounted(async () => {
             console.log('le param id passe du cellier' ,$route.params.id);
             getMesBouteilles();
             await getOneCellier($route.params.id);
-            console.log(oneCellier);
-
         })
 
         const trierItem=(itemName)=>{

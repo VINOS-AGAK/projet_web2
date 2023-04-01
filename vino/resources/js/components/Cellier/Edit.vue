@@ -47,8 +47,6 @@ export default {
 
         onMounted(() => {
             getOneCellier(route.params.id)
-            console.log('une Cellier dans edit');
-            console.log(oneCellier);
         })
 
         return { oneCellier, validationErrors, isLoading, updateCellier }

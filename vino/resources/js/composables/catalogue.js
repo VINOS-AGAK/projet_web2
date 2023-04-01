@@ -16,8 +16,6 @@ export default function useCatalogue() {
         axios.get('api/catalogue')
         .then(response=>{
             catalogue.value = response.data.data;
-            //console.log('le catalogue');
-            console.log(catalogue.value);
         })
     }
     
@@ -25,8 +23,6 @@ export default function useCatalogue() {
         axios.get('api/catalogue/' + id )
         .then(response=>{
             oneCatalogue.value = response.data.data;
-            console.log('une bouteille du catalogue');
-            console.log(oneCatalogue);
         })
     } 
 

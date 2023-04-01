@@ -111,6 +111,7 @@ const routes = [
             component: BouteilleIndex,
             meta: { title: "Mes Bouteille"}
            }
+       
         ]
     }
 

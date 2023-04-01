@@ -69,7 +69,7 @@ export default {
         const increment = async (id) => {
             axios.put('api/bouteille/' + id + '/increment')
                 .then(response => {
-                    oneCellier();
+                    getOneCellier($route.params.id);
                 })
                 .catch(error =>{
                     console.log(error.response.data.errors);
@@ -79,7 +79,7 @@ export default {
         const decrement = async (id) => {
             axios.put('api/bouteille/' + id + '/decrement')
                 .then(response => {
-                    oneCellier();
+                    getOneCellier($route.params.id);
                 })
                 .catch(error =>{
                     console.log(error.response.data.errors);

@@ -26,6 +26,9 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('cellier', CellierController::class);
     Route::apiResource('bouteille', BouteilleController::class);
     Route::apiResource('BouteilleHasCellierController', BouteilleHasCellierController::class);
+
+    Route::put('/bouteille/{bouteille}', [BouteilleController::class, 'changeNote']);
+
     Route::put('/bouteille/{bouteille}/increment', [BouteilleController::class, 'increment']);
     Route::put('/bouteille/{bouteille}/decrement', [BouteilleController::class, 'decrement']);
     Route::post('/bouteille', [BouteilleController::class, 'store']);

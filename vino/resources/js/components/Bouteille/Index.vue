@@ -42,10 +42,8 @@
                         <div v-else-if="bouteille.notes && bouteille.notes == 1" class="card-count" >Ma note: &#9733;&#10025;&#10025;&#10025;&#10025;</div>
                         <div v-else class="card-count" >Aucun note</div>
 
-                        <form @submit.prevent='updateNote(bouteille)'>
+                        <form @submit.prevent='changeNote(bouteille)'>
                             <div>
-                                <p>Just info. bouteille__has__cellier id: {{ bouteille.id }} </p>
-                                <p>Just info. bouteille__has__cellier notes: {{ bouteille.notes }} </p>
                                 <label for="note-send" >Note 
                                     <input className="radio" v-model="bouteille.notes" type="radio" value="1" name="notes" />
                                     <input className="radio" v-model="bouteille.notes" type="radio" value="2" name="notes" />
@@ -58,7 +56,7 @@
                                 <button :disabled="isLoading" class="">
                                     <div v-show="isLoading" class=""></div>
                                     <span v-if="isLoading">Processing...</span>
-                                    <span v-else>Sauvegarder les changements</span>
+                                    <span class="card-btn_modif" v-else>Sauvegarder Note</span>
                                 </button>
                             </div>
                         </form>
@@ -89,15 +87,14 @@
 <script>
 import useBouteille from '../../composables/bouteille'
 import useCellier from '../../composables/cellier'
-import useBHC from '../../composables/bouteilleHasCellier.js'
 import { onMounted, getCurrentInstance } from 'vue'
+import axios from 'axios'
 
 export default {
 
     setup() {
         
-        const { mesBouteilles, getMesBouteilles, deleteBouteille, trierMesBouteilles } = useBouteille()
-        const { storeNote, updateNote, validationErrors, isLoading  } = useBHC()
+        const { mesBouteilles, getMesBouteilles, deleteBouteille, trierMesBouteilles, updateBouteille } = useBouteille()
         const { $route } = getCurrentInstance().proxy
         const { oneCellier, getOneCellier } = useCellier();
 
@@ -120,6 +117,16 @@ export default {
                     console.log(error.response.data.errors);
                 })
         }
+
+        const changeNote = async(bouteille) => {
+            console.log(bouteille);
+            console.log(bouteille.notes);
+            axios.put(`api/bouteille/${bouteille.id}`, {notes: bouteille.notes})
+            .then(response => {
+                getOneCellier($route.params.id);
+            })
+        }
+
 
         onMounted(async () => {
             console.log('le param id passe du cellier' ,$route.params.id);
@@ -144,8 +151,8 @@ export default {
             increment,
             decrement,
             trierItem,
-            storeNote,
-            updateNote
+            updateBouteille,
+            changeNote
         }
     }
 }

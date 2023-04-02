@@ -35,15 +35,26 @@
                         </div> 
 
                         <!-- Si vous ajouter une note dans DB vous alez le voir ici -->
-                        <div v-if="bouteille.notes && bouteille.notes == 5" class="card-count" >     Ma note: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div v-if="bouteille.notes && bouteille.notes == 4" class="card-count" >     Ma note: &#9733;&#9733;&#9733;&#9733;&#10025;</div>
+                        <div      v-if="bouteille.notes && bouteille.notes == 5" class="card-count" >Ma note: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div v-else-if="bouteille.notes && bouteille.notes == 4" class="card-count" >Ma note: &#9733;&#9733;&#9733;&#9733;&#10025;</div>
                         <div v-else-if="bouteille.notes && bouteille.notes == 3" class="card-count" >Ma note: &#9733;&#9733;&#9733;&#10025;&#10025;</div>
                         <div v-else-if="bouteille.notes && bouteille.notes == 2" class="card-count" >Ma note: &#9733;&#9733;&#10025;&#10025;&#10025;</div>
                         <div v-else-if="bouteille.notes && bouteille.notes == 1" class="card-count" >Ma note: &#9733;&#10025;&#10025;&#10025;&#10025;</div>
                         <div v-else class="card-count" >Aucun note</div>
 
+                        <div>
+                            <label for="note-send" >Note
+                                <input className="radio" type="radio" value="1" @click.prevent="addNote(1)" name="valeurNoteSend" id="" />
+                                <input className="radio" type="radio" value="2" @click.prevent="addNote(2)" name="valeurNoteSend" id="" />
+                                <input className="radio" type="radio" value="3" @click.prevent="addNote(3)" name="valeurNoteSend" id="" />
+                                <input className="radio" type="radio" value="4" @click.prevent="addNote(4)" name="valeurNoteSend" id="" />
+                                <input className="radio" type="radio" value="5" @click.prevent="addNote(5)" name="valeurNoteSend" id="note-send"/>
+                            </label>
+                            <button type="submit" value="submit">Envoye</button>
+                        </div>
+
                         <div class="card-footer">
-                              <button  class="card-btn_add " @click.prevent="increment(bouteille.id)" >+</button>    
+                              <button  class="card-btn_add  " @click.prevent="increment(bouteille.id)">+</button>    
                               <button  class="card-btn_supp " @click.prevent="decrement(bouteille.id)">-</button>   
                               <button  class="card-btn_modif" @click.prevent="showRate">Note</button>
                               <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer du cellier</button>   
@@ -69,13 +80,15 @@
 <script>
 import useBouteille from '../../composables/bouteille'
 import useCellier from '../../composables/cellier'
+import useCellier from '../../composables/bouteilleHasCellier'
 import { onMounted, getCurrentInstance } from 'vue'
 
 export default {
 
     setup() {
         
-        const { mesBouteilles, getMesBouteilles,deleteBouteille, trierMesBouteilles } = useBouteille()
+        const { mesBouteilles, getMesBouteilles, deleteBouteille, trierMesBouteilles } = useBouteille()
+        const { storeNote } = useBHC()
         const { $route } = getCurrentInstance().proxy
         const { oneCellier, getOneCellier } = useCellier();
 
@@ -121,7 +134,8 @@ export default {
             getOneCellier,
             increment,
             decrement,
-            trierItem
+            trierItem,
+            storeNote
         }
     }
 }

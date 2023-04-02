@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\CatalogueController;
 use App\Http\Controllers\Api\CellierController;
 use App\Http\Controllers\Api\BouteilleController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Api\BouteilleHasCellierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('catalogue', CatalogueController::class);
     Route::apiResource('cellier', CellierController::class);
     Route::apiResource('bouteille', BouteilleController::class);
+    Route::apiResource('BouteilleHasCellierController', BouteilleHasCellierController::class);
     Route::put('/bouteille/{bouteille}/increment', [BouteilleController::class, 'increment']);
     Route::put('/bouteille/{bouteille}/decrement', [BouteilleController::class, 'decrement']);
     Route::post('/bouteille', [BouteilleController::class, 'store']);

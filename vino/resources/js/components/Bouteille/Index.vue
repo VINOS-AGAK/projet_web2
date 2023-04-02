@@ -42,24 +42,33 @@
                         <div v-else-if="bouteille.notes && bouteille.notes == 1" class="card-count" >Ma note: &#9733;&#10025;&#10025;&#10025;&#10025;</div>
                         <div v-else class="card-count" >Aucun note</div>
 
-                        <div>
-                            <label for="note-send" >Note
-                                <input className="radio" type="radio" value="1" @click.prevent="addNote(1)" name="valeurNoteSend" id="" />
-                                <input className="radio" type="radio" value="2" @click.prevent="addNote(2)" name="valeurNoteSend" id="" />
-                                <input className="radio" type="radio" value="3" @click.prevent="addNote(3)" name="valeurNoteSend" id="" />
-                                <input className="radio" type="radio" value="4" @click.prevent="addNote(4)" name="valeurNoteSend" id="" />
-                                <input className="radio" type="radio" value="5" @click.prevent="addNote(5)" name="valeurNoteSend" id="note-send"/>
-                            </label>
-                            <button type="submit" value="submit">Envoye</button>
-                        </div>
+                        <form @submit.prevent='updateNote(bouteille)'>
+                            <div>
+                                <p>Just info. bouteille__has__cellier id: {{ bouteille.id }} </p>
+                                <p>Just info. bouteille__has__cellier notes: {{ bouteille.notes }} </p>
+                                <label for="note-send" >Note 
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="1" name="notes" />
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="2" name="notes" />
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="3" name="notes" />
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="4" name="notes" />
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="5" name="notes" id="note-send"/>
+                                </label>
+
+                                <!-- button -->
+                                <button :disabled="isLoading" class="">
+                                    <div v-show="isLoading" class=""></div>
+                                    <span v-if="isLoading">Processing...</span>
+                                    <span v-else>Sauvegarder les changements</span>
+                                </button>
+                            </div>
+                        </form>
 
                         <div class="card-footer">
                               <button  class="card-btn_add  " @click.prevent="increment(bouteille.id)">+</button>    
                               <button  class="card-btn_supp " @click.prevent="decrement(bouteille.id)">-</button>   
-                              <button  class="card-btn_modif" @click.prevent="showRate">Note</button>
+                              <!-- <button  class="card-btn_modif" @click.prevent="showRate">Note</button> -->
                               <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer du cellier</button>   
                         </div>
-                        
                     </div> 
                 </div>   
                 <!-- <div class="container-form ">
@@ -80,7 +89,7 @@
 <script>
 import useBouteille from '../../composables/bouteille'
 import useCellier from '../../composables/cellier'
-import useCellier from '../../composables/bouteilleHasCellier'
+import useBHC from '../../composables/bouteilleHasCellier.js'
 import { onMounted, getCurrentInstance } from 'vue'
 
 export default {
@@ -88,7 +97,7 @@ export default {
     setup() {
         
         const { mesBouteilles, getMesBouteilles, deleteBouteille, trierMesBouteilles } = useBouteille()
-        const { storeNote } = useBHC()
+        const { storeNote, updateNote, validationErrors, isLoading  } = useBHC()
         const { $route } = getCurrentInstance().proxy
         const { oneCellier, getOneCellier } = useCellier();
 
@@ -135,7 +144,8 @@ export default {
             increment,
             decrement,
             trierItem,
-            storeNote
+            storeNote,
+            updateNote
         }
     }
 }

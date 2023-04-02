@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\BouteilleHasCellierResource;
 use App\Models\BouteilleHasCellier;
 use Illuminate\Http\Request;
 
@@ -53,7 +54,8 @@ class BouteilleHasCellierController extends Controller
      */
     public function update(Request $request, BouteilleHasCellier $bouteilleHasCellier)
     {
-        //
+        $bouteilleHasCellier->update($request->validate());
+        return new BouteilleHasCellierResource($bouteilleHasCellier);
     }
 
     /**

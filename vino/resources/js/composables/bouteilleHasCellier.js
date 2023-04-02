@@ -5,15 +5,13 @@ import useAuth from "./auth";
 
 export default function useBHC() {
     const router = useRouter();
-    let mesBouteilles = ref({});
-    const uneBouteille = ref({});
+    let BouteilleHasCellier = ref({});
     const validationErrors = ref ({});
     const isLoading = ref(false);
-    const { user } = useAuth();
     const swal = inject('$swal');
     const axios = require('axios');
     const { $route } = getCurrentInstance().proxy
-    const cellier_id = $route.params.id
+    // const cellier_id = $route.params.id
 
     /**
      * Ajoute une bouteille dans le cellier choisi
@@ -43,63 +41,48 @@ export default function useBHC() {
         .finally(() => isLoading.value = false)
     }
 
-
-    const updateBouteille = async (bouteille) => {
-        isLoading.value = true
-        try {
-          const response = await axios.put(`/api/bouteilles/${bouteille.id}`, bouteille)
-          isLoading.value = false
-          return response.data
-        } catch (error) {
-          isLoading.value = false
-          if (error.response && error.response.status === 422) {
-            validationErrors.value = error.response.data.errors
-          } else {
-            throw error
-          }
+    const getOneBouteilleHasCellier = async (id) => {
+        console.log(id)
+        try{
+            const response = await axios.get('api/BouteilleHasCellierController/' + id )
+            oneBouteilleHasCellier.value = response.data.data;
+            console.log('un BouteilleHasCellier');
+            console.log(BouteilleHasCellier);
+            return oneCellier.value;
         }
-      }
+        catch (error){
+            console.error('Error fetching one BouteilleHasCellier', error);
+        }
+    } 
 
-    const deleteBouteille = async (id) => { 
-        swal({
-            title: 'Êtes-vous sûr(e)?',
-            text: 'Vous ne pourrez pas annuler cette action !',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Oui, supprimez-le !',
-            confirmButtonColor: '#ef4444',
-            timer: 20000,
-            timerProgressBar: true,
-            reverseButtons: true
+    const updateNote = async (bouteille) => { 
+        console.log('updateNote bouteille:');
+        console.log(bouteille);
+        console.log('=======================');
+        if (isLoading.value) return;
+
+        isLoading.value = true
+        validationErrors.value = {}
+
+        axios.put('/api/BouteilleHasCellierController/' + bouteille.id, bouteille)
+        .then(response => {
+            router.push({name: 'cellier.index'})
+            swal({
+                    icon: 'success',
+                    title : 'Modification de votre Note bouteille a ete effecté Avec Succès'
+                })
         })
-        .then(result =>{
-            if (result.isConfirmed){
-                console.log(id);
-
-                axios.delete('/api/bouteille/' + id)
-                .then(response => {
-                   
-                    getMesBouteilles()
-                    router.push({name: 'bouteille.index'})
-                    swal({
-                            icon: 'success',
-                            title : 'Suppression Effecté Avec Succès'
-                        })
-                })
-                .catch(error =>{
-                    swal({
-                        icon: 'error',
-                        title : 'Une Erreur Est Arrivée'
-                    })
-                })
+        .catch(error =>{
+            if(error.response?.data){
+                validationErrors.value = error.response.data.errors
             }
-
         })
-
+        .finally(() => isLoading.value = false)
     }
 
     return {
         storeNote,
+        updateNote
     }
 }
 

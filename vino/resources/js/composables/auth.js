@@ -15,12 +15,14 @@ export default function useAuth() {
     const router = useRouter();
     const swal = inject('$swal');
     const axios = require('axios');
+    let loading = true;
 
     const loginForm = reactive({
             email: '',
             password: '',
             remember: false
     })
+    
     const registerForm = reactive({
             name: '',
             email: '',
@@ -43,12 +45,12 @@ export default function useAuth() {
                     title: 'Usagé enregistré avec succès, veuillez vous connecter!',
                 });
             })
-        .catch(error => {
-            if (error.response?.data) {
-                validationErrors.value = error.response.data.errors;
-            }
-        })
-        .finally(() => isLoading.value = false);
+            .catch(error => {
+                if (error.response?.data) {
+                    validationErrors.value = error.response.data.errors;
+                }
+            })
+            .finally(() => isLoading.value = false);
     };
 
     const submitLogin = async () => {
@@ -80,10 +82,21 @@ export default function useAuth() {
     const getUser = () => {
         axios.get('/api/user')
         .then(response => {
+            loading = false;
             loginUser(response)
             console.log('user info');
             console.log(response);
         })
+        .catch(error => {
+            // console.error(error);
+            if (error.response?.data) {
+                validationErrors.value = error.response.data.errors;
+                if (error.response.status === 401) {
+                    // Stop the request if an Unauthorized response status code is received
+                    return;
+                }
+            }
+        });
     }
 
     const logout = async () => {

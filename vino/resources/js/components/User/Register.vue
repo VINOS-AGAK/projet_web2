@@ -7,6 +7,8 @@
 
             <form @submit.prevent="registerUser">
 
+                <p v-if="loading">Loading...</p>
+
                 <p class="text-form">nom</p>
                 <input v-model="registerForm.name" id="name" type="text" class="name" required autofocus>
 
@@ -57,7 +59,7 @@ import useAuth from '../../composables/auth'
 export default {
     setup() {
         const { registerForm, validationErrors, processing, registerUser } = useAuth()
-        return { registerForm, validationErrors, processing, registerUser }
+        return { registerForm, validationErrors, processing, registerUser, loading: false }
     }
 }
 </script>

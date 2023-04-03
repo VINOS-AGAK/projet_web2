@@ -36,7 +36,8 @@
                         <div class="card-footer">
                               <button  class="card-btn_add " @click.prevent="increment(bouteille.id)" >+</button>    
                               <button  class="card-btn_supp " @click.prevent="decrement(bouteille.id)" :disabled="bouteille.quantite < 1">-</button>   
-                              <!-- <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" :disabled="bouteille.quantite > 0">Supprimer du cellier</button>    -->
+                              <!-- <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" :disabled="bouteille.quantite > 1">Supprimer du cellier</button>    -->
+                              <button  class="card-btn_modif deleteModalBtn" value="" @click.prevent="deleteBouteille(bouteille.id)" >Supprimer du cellier</button>   
                         </div> 
                     </div> 
                 </div>         

@@ -15,7 +15,9 @@ use App\Http\Requests\StoreCellierRequest;
 class BouteilleController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Afficher une liste de bouteilles dans cellier.
+     *
+     * @return array
      */
     public function index()
     {
@@ -46,7 +48,7 @@ class BouteilleController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Montrez le formulaire pour créer une nouvelle ressource.
      */
     public function create()
     {
@@ -54,7 +56,10 @@ class BouteilleController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Stocker une bouteiile nouvellement créée dans le stockage.
+     *
+     * @param  \App\Http\Requests\StoreBouteilleRequest  $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreBouteilleRequest $request)
     {
@@ -84,7 +89,7 @@ class BouteilleController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Affiche la bouteiile spécifiée.
      */
     public function show(Bouteille $bouteille)
     {
@@ -92,7 +97,7 @@ class BouteilleController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Montrez le formulaire pour éditer la bouteiile .
      */
     public function edit(Bouteille $bouteille)
     {
@@ -100,8 +105,12 @@ class BouteilleController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     */
+    * Mettre à jour la bouteiile spécifiée dans le stockage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  \App\Models\Bouteille  $bouteille
+    * @return \Illuminate\Http\Response
+    */
     public function update(Request $request, Bouteille $bouteille)
     {
         $bouteille->update($request->validated());
@@ -109,8 +118,11 @@ class BouteilleController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     */
+    * Retirer la bouteiile spécifiée du stockage.
+    *
+    * @param  \App\Models\Bouteille  $bouteille
+    * @return \Illuminate\Http\Response
+    */
     public function destroy(Bouteille $bouteille)
     {
         
@@ -118,6 +130,12 @@ class BouteilleController extends Controller
         return response()->noContent();
     }
 
+    /**
+    * Incrémenter la quantité de la bouteille spécifiée dans le stockage.
+    *
+    * @param  \App\Models\Bouteille  $bouteille
+    * @return \Illuminate\Http\Response
+    */
     public function increment(Bouteille $bouteille)
     {
         $bouteille->quantite += 1;
@@ -131,6 +149,13 @@ class BouteilleController extends Controller
     //     $bouteille->save();
     //     return response()->json(['success' => true]);
     // }
+
+    /**
+    * Décrémenter la quantité de la bouteiile spécifiée en stockage.
+    *
+    * @param  \App\Models\Bouteille  $bouteille
+    * @return \Illuminate\Http\Response
+    */
     public function decrement(Bouteille $bouteille){
         if ($bouteille->quantite > 1) {
             $bouteille->quantite -= 1;

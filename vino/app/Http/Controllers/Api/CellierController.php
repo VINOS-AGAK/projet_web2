@@ -20,7 +20,9 @@ class CellierController extends Controller
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(){
+        // Obtient l'ID de l'utilisateur connecté.
         $user_id = Auth()->user()->id;
+        // Récupère tous les celliers de l'utilisateur connecté sous forme de ressources.
         $mesCellier = CellierResource::collection(Cellier::select()->where("vino__cellier.user_id", '=', $user_id)->get());
         return $mesCellier;
     }
@@ -33,6 +35,7 @@ class CellierController extends Controller
      */
     public function store(StoreCellierRequest $request)
     {
+        // Crée un nouveau cellier avec les données validées de la requête.
         $cellier = Cellier::create($request->validated());
 
         return new CellierResource($cellier);
@@ -46,9 +49,11 @@ class CellierController extends Controller
      */
     public function show(Cellier $cellier)
     {
-        
+        // Obtient l'ID du cellier spécifié.
         $id = $cellier->id;
+        
 
+        // Récupère toutes les bouteilles de vin pour le cellier spécifié sous forme de tableau associatif.
         $bouteilles = Cellier::select('vino__bouteille.*', 'bouteille__has__cellier.*')
             ->join('bouteille__has__cellier', 'vino__cellier.id', '=', 'bouteille__has__cellier.vino__cellier_id')
             ->join('vino__bouteille', 'bouteille__has__cellier.vino__bouteille_id', '=', 'vino__bouteille.id')
@@ -67,6 +72,7 @@ class CellierController extends Controller
      */
     public function update(Cellier $cellier, StoreCellierRequest $request)
     {
+        // Met à jour les données du cellier spécifié avec les données validées de la requête.
         $cellier->update($request->validated());
         
 
@@ -82,6 +88,7 @@ class CellierController extends Controller
      */
     public function destroy(Cellier $cellier)
     {
+        // Supprime le cellier spécifié de la base de données.
         $cellier->delete();
 
         return response()->noContent();

@@ -1,4 +1,6 @@
 <template>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <div class="trier-container">
         <ul class="trier-liste">
             <li class="trier-item" @click="trierItem('italie')">italie</li>
@@ -35,23 +37,28 @@
                         </div> 
 
                         <!-- Si vous ajouter une note dans DB vous alez le voir ici -->
-                        <div      v-if="bouteille.notes && bouteille.notes == 5" class="card-count" >Ma note: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 4" class="card-count" >Ma note: &#9733;&#9733;&#9733;&#9733;&#10025;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 3" class="card-count" >Ma note: &#9733;&#9733;&#9733;&#10025;&#10025;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 2" class="card-count" >Ma note: &#9733;&#9733;&#10025;&#10025;&#10025;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 1" class="card-count" >Ma note: &#9733;&#10025;&#10025;&#10025;&#10025;</div>
+                        <div      v-if="bouteille.notes && bouteille.notes == 5" class="card-stars" > &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div v-else-if="bouteille.notes && bouteille.notes == 4" class="card-stars" > &#9733;&#9733;&#9733;&#9733;&#10025;</div>
+                        <div v-else-if="bouteille.notes && bouteille.notes == 3" class="card-stars" > &#9733;&#9733;&#9733;&#10025;&#10025;</div>
+                        <div v-else-if="bouteille.notes && bouteille.notes == 2" class="card-stars" > &#9733;&#9733;&#10025;&#10025;&#10025;</div>
+                        <div v-else-if="bouteille.notes && bouteille.notes == 1" class="card-stars" > &#9733;&#10025;&#10025;&#10025;&#10025;</div>
                         <div v-else class="card-count" >Aucun note</div>
 
                         <form @submit.prevent='changeNote(bouteille)'>
                             <div>
-                                <label for="note-send" >Note 
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="1" name="notes" />
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="2" name="notes" />
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="3" name="notes" />
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="4" name="notes" />
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="5" name="notes" id="note-send"/>
-                                </label>
-
+                                <fieldset>
+                                    <legend>Note:</legend>
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="1" id="star1" name="rating" />
+                                    <label for="star1">1</label>
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="2" id="star2" name="rating" />
+                                    <label for="star2">2</label>
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="3" id="star3" name="rating" />
+                                    <label for="star3">3</label>
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="4" id="star4" name="rating" />
+                                    <label for="star4">4</label>
+                                    <input className="radio" v-model="bouteille.notes" type="radio" value="5" id="star5" name="rating" />
+                                    <label for="star5">5</label>
+                                </fieldset>
                                 <!-- button -->
                                 <button :disabled="isLoading" class="">
                                     <div v-show="isLoading" class=""></div>

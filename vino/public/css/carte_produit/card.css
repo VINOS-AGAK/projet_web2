@@ -136,7 +136,7 @@
     align-content: center;
 
   }
-
+  
   @media only screen and (min-width: 700px) {
     
     .card {
@@ -159,6 +159,11 @@
       font-size: var(--font-size-regular);
     }
 
+    .card-stars {
+      font-size: 40px;
+    }
+
+
     .card img {
       max-width: 170px;
     }
@@ -174,4 +179,39 @@
       font-weight: var(--font-weight-bold);
       width: 50px;
     }
+
+
+    /* ======================================== */
+
+    fieldset {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    fieldset label {
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.5rem;
+      margin: 0.25rem;
+      position: relative;
+    }
+    
+    fieldset label:before {
+      color: #ddd;
+      content: "\f005";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 0.5rem;
+    }
+    
+    fieldset input[type="radio"] {
+      display: none;
+    }
+    
+    fieldset input[type="radio"]:checked + label:before {
+      color: gold;
+    }
+
+    
   }

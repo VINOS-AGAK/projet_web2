@@ -16,12 +16,12 @@
 }
 
 .cellier__card-footer{
-    margin-top: 5px;
     display: flex;
+    justify-content: space-between;
     margin-left: 20%;
     margin-right: 20%;
-    justify-content: space-between;
-  }
+    margin-top: var(--margin-ex-small);
+}
 
 .ajouter-cellier {
     margin: 20px;
@@ -89,6 +89,11 @@
     .cellier__card-title{
         font-size: var( --font-size-medium);
         font-weight: var(--font-weight-heavy);
+    }
+    .cellier__card-footer{
+        margin-bottom: var(--margin-medium);
+        margin-left: 25%;
+        margin-right: 25%;
     }
 }
 

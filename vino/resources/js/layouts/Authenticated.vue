@@ -36,7 +36,7 @@
                     </li>
 
                     <li class="menu-item">
-                        <div class="menu-username">{{ user.name }}</div>
+                        <div v-if="user" class="menu-username">{{ user.name }}</div>
                         <button @click="logout" type="button" >
                             <IconContainer>
                                 <template #icon>

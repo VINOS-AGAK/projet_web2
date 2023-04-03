@@ -31,7 +31,7 @@ class Bouteille extends Model
                         ->withPivot([
                             'id',
                             'quantite',
-                            'note',
+                            'notes',
                             'created_at',
                             'updated_at'
                         ]);
@@ -40,7 +40,7 @@ class Bouteille extends Model
     public function users()
     {
         return $this->belongsToMany(User::class)
-                        ->withPivot('quantite', 'note')
+                        ->withPivot('quantite', 'notes')
                         ->withTimestamps();
     }
 }

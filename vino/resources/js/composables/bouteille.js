@@ -72,6 +72,9 @@ export default function useBouteille() {
 
 
     const updateBouteille = async (bouteille) => {
+        console.log('updateBouteille bouteille:');
+        console.log(bouteille);
+        console.log('=======================');
         isLoading.value = true
         try {
           const response = await axios.put(`/api/bouteilles/${bouteille.id}`, bouteille)

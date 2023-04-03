@@ -182,5 +182,11 @@ class BouteilleController extends Controller
         }
     } 
 
-    
+    public function changeNote(Bouteille $bouteille, Request $request)
+    {
+        // dd($request);
+        $bouteille->notes = $request->notes;
+        $bouteille->save();
+        return response()->json(['success' => true]);
+    }
 }

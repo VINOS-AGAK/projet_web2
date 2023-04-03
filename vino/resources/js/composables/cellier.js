@@ -88,7 +88,9 @@ export default function useCellier() {
 
         isLoading.value = true
         validationErrors.value = {}
-
+        console.log('updateCellier / cellier');
+        console.log(cellier);
+        console.log('==============================================');
         axios.put('/api/cellier/' + cellier.id, cellier)
         .then(response => {
             router.push({name: 'cellier.index'})

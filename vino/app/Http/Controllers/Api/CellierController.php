@@ -9,14 +9,28 @@ use App\Models\Cellier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Contrôleur pour gérer les opérations CRUD pour les celliers de l'utilisateur connecté.
+ */
 class CellierController extends Controller
 {
+     /**
+     * Affiche tous les celliers de l'utilisateur connecté.
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
     public function index(){
         $user_id = Auth()->user()->id;
         $mesCellier = CellierResource::collection(Cellier::select()->where("vino__cellier.user_id", '=', $user_id)->get());
         return $mesCellier;
     }
 
+    /**
+     * Crée un nouveau cellier pour l'utilisateur connecté.
+     *
+     * @param  StoreCellierRequest  $request
+     * @return CellierResource
+     */
     public function store(StoreCellierRequest $request)
     {
         $cellier = Cellier::create($request->validated());
@@ -24,6 +38,12 @@ class CellierController extends Controller
         return new CellierResource($cellier);
     }
 
+     /**
+     * Affiche les détails d'un cellier spécifique de l'utilisateur connecté.
+     *
+     * @param  Cellier  $cellier
+     * @return array
+     */
     public function show(Cellier $cellier)
     {
         
@@ -38,6 +58,13 @@ class CellierController extends Controller
         return ['data' => $bouteilles];
     }
 
+    /**
+     * Met à jour un cellier spécifique de l'utilisateur connecté.
+     *
+     * @param  Cellier  $cellier
+     * @param  StoreCellierRequest  $request
+     * @return CellierResource
+     */
     public function update(Cellier $cellier, StoreCellierRequest $request)
     {
         $cellier->update($request->validated());
@@ -47,6 +74,12 @@ class CellierController extends Controller
     }
 
 
+     /**
+     * Supprime un cellier spécifique de l'utilisateur connecté.
+     *
+     * @param  Cellier  $cellier
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Cellier $cellier)
     {
         $cellier->delete();

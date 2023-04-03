@@ -212,6 +212,27 @@
     fieldset input[type="radio"]:checked + label:before {
       color: gold;
     }
+    /* ======================================== */
 
-    
+    .stars-flex {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .stars-btn {
+      padding: 8px;
+    }
+
+
+    /* ======================================== */
+
+    .stars-btn {
+      cursor: pointer;
+      transition: all 1s ease-in-out;
+    }
+
+    .stars-btn:active {
+      transform: translateY(5px);
+      transition: 0.6s;
+    }
   }

@@ -95,6 +95,10 @@
         margin-left: 25%;
         margin-right: 25%;
     }
+
+    .cellier__card-footer .card-btn_modif, .card-btn_supp{
+        font-size: var(--font-size-medium);
+    }
 }
 
 @media only screen and (min-width: 960px){

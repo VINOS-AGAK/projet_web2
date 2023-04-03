@@ -120,8 +120,8 @@
   }
 
   .card-btn_delete{
-    padding-left: var(--padding-small);
-    padding-right: var(--padding-small);
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .card-btn_delete:disabled{
@@ -140,19 +140,38 @@
   @media only screen and (min-width: 700px) {
     
     .card {
-      max-width: 500px;
-      height: auto;
+      max-width: 550px;
+      height: 330px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .card-footer svg{
+      width: 15pt;
+      height: 15pt;
     }
 
     .card-title {
-      font-size: var(--font-size-default);
-    }
-
-    .card-subtitle{
-      font-size: var(--font-size-default);
-    }
-
-    .card-btn_modif, .card-btn_supp{
       font-size: var(--font-size-regular);
+    }
+
+    .card-subtitle, .card-count{
+      font-size: var(--font-size-regular);
+    }
+
+    .card img {
+      max-width: 170px;
+    }
+
+    .card-footer{
+      gap: 50px;
+      margin-left: 0px;
+     
+    }
+
+    .card-footer  .card-btn_modif, .card-btn_supp, .card-btn_add{
+      font-size: var(--font-size-medium);
+      font-weight: var(--font-weight-bold);
+      width: 50px;
     }
   }

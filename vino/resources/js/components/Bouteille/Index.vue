@@ -55,6 +55,7 @@
 </template>
     
 <script>
+
 import useBouteille from '../../composables/bouteille'
 import useCellier from '../../composables/cellier'
 import { onMounted, getCurrentInstance } from 'vue'
@@ -62,11 +63,15 @@ import { onMounted, getCurrentInstance } from 'vue'
 export default {
 
     setup() {
-        
+
+        // Utilise le module 'useBouteille' pour obtenir les bouteilles
         const { mesBouteilles, getMesBouteilles, deleteBouteille, trierMesBouteilles } = useBouteille()
+        // Obtient l'objet $route depuis l'instance en cours
         const { $route } = getCurrentInstance().proxy
+        // Utilise le module 'useCellier' pour obtenir un cellier
         const { oneCellier, getOneCellier } = useCellier();
 
+        // Incrémente la quantité d'une bouteille
         const increment = async (id) => {
             axios.put('api/bouteille/' + id + '/increment')
                 .then(response => {
@@ -87,36 +92,36 @@ export default {
         //         })
         // }
 
+        // Décrémente la quantité d'une bouteille
         const decrement = async (id) => {
-    axios.put('api/bouteille/' + id + '/decrement')
-        .then(response => {
-            getOneCellier($route.params.id);
-            const bouteille = oneCellier.find(b => b.id === id);
-            if (bouteille && bouteille.quantite === 0) {
-                deleteMaBouteille(id);
-            }
-        })
-        .catch(error =>{
-            console.log(error.response.data.errors);
-        })
+            axios.put('api/bouteille/' + id + '/decrement')
+                .then(response => {
+                    getOneCellier($route.params.id);
+                    const bouteille = oneCellier.find(b => b.id === id);
+                    if (bouteille && bouteille.quantite === 0) {
+                        deleteMaBouteille(id);
+                    }
+                })
+                .catch(error =>{
+                    console.log(error.response.data.errors);
+                })
 
         
-}
+        }
 
-const deleteMaBouteille = async (id) => {
-    axios.delete('api/bouteille/' + id)
-        .then(response => {
-            getMesBouteilles();
-            getOneCellier($route.params.id);
-        })
-        .catch(error =>{
-            console.log(error.response.data.errors);
-        })
-}
+        // Supprime une bouteille
+        const deleteMaBouteille = async (id) => {
+            axios.delete('api/bouteille/' + id)
+                .then(response => {
+                    getMesBouteilles();
+                    getOneCellier($route.params.id);
+                })
+                .catch(error =>{
+                    console.log(error.response.data.errors);
+                })
+        }
 
-
-
-
+        // Effectue les opérations suivantes lors de la création du composant
         onMounted(async () => {
             console.log('le param id passe du cellier' ,$route.params.id);
             getMesBouteilles();
@@ -130,7 +135,7 @@ const deleteMaBouteille = async (id) => {
             console.log('inside of trier item');
         }
         
-
+        // Retourne les données et les fonctions du composant
         return {
             mesBouteilles,
             oneCellier,

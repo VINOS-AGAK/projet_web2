@@ -39,21 +39,26 @@
 
 import useCellier from '../../composables/cellier';
 import useAuth from "../../composables/auth";
+// Import de la fonction "reactive" de Vue pour la création d'un objet réactif
 import { reactive } from "vue";
 
+// Récupération des informations de l'utilisateur courant grâce au hook "useAuth"
 const { user } = useAuth();
 
 export default {
 
     setup() {
+        // Création d'un objet "cellier" réactif avec les propriétés "user_id", "nom" et "description"
         const cellier = reactive({
             user_id: user.id,
             nom: '',
             description: ''
         })
 
+        // Récupération des fonctions et des données nécessaires pour la gestion du cellier grâce au hook "useCellier"
         const { storeCellier, validationErrors, isLoading } = useCellier()
 
+        // Retourne les données nécessaires pour la gestion du cellier
         return { cellier, storeCellier, validationErrors, isLoading }
     }
 }

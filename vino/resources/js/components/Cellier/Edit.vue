@@ -36,21 +36,26 @@
 </template>
     
 <script>
+// Import des hooks composables nécessaires pour la gestion du cellier
 import { onMounted, reactive } from "vue";
 import { useRoute } from 'vue-router';
 import useCellier from "../../composables/cellier.js";
 
 export default {
     setup() {
+        // Récupération des fonctions et des données nécessaires pour la gestion d'un cellier grâce au hook "useCellier"
         const { oneCellier, getOneCellier, updateCellier, validationErrors, isLoading } = useCellier()
+        // Récupération des informations de la route en cours grâce au hook "useRoute"
         const route = useRoute()
 
+        // Lorsque le composant est monté, récupération du cellier correspondant à l'ID de la route en cours grâce à la fonction "getOneCellier" et affichage de ses informations dans la console
         onMounted(() => {
             getOneCellier(route.params.id)
             console.log('une Cellier dans edit');
             console.log(oneCellier);
         })
 
+        // Retourne les données nécessaires pour l'édition du cellier
         return { oneCellier, validationErrors, isLoading, updateCellier }
     }
 }

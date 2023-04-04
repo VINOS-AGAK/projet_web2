@@ -55,10 +55,13 @@
 </template>
  
 <script>
+// Import du hook "useAuth" pour la gestion de l'authentification
 import useAuth from '../../composables/auth'
 export default {
     setup() {
+        // Récupération des fonctions et des données nécessaires pour l'inscription grâce au hook "useAuth"
         const { registerForm, validationErrors, processing, registerUser } = useAuth()
+        // Retourne les données nécessaires pour l'affichage du formulaire d'inscription
         return { registerForm, validationErrors, processing, registerUser, loading: false }
     }
 }

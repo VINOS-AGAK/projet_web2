@@ -49,6 +49,7 @@
 
 <script>
 
+// Import des hooks composables et des composants nécessaires pour la gestion des celliers
 import { onMounted, ref } from 'vue';
 import useCellier from '../../composables/cellier';
 import IconCellierLogo from '../icons/IconCellierLogo.vue';
@@ -60,18 +61,22 @@ import IconContainer from "../IconContainer.vue";
 export default {
 
     setup() {
+        // Récupération des fonctions et des données nécessaires pour la gestion des celliers grâce au hook "useCellier"
         const { mesCellier, getCelliers, deleteCellier} = useCellier()
         const selectedProduct = ref(null)
         const searchTerm = ref('')
+        // Lorsque le composant est monté, récupération des celliers grâce à la fonction "getCelliers"
         onMounted(getCelliers)
         
 
+        // Sélection d'un cellier dans la liste
         const selectProduct = () => {
             if (searchTerm.value !== '' && selectedProduct.value === null) {
                 selectedProduct = unCellier.id
             }
         }
 
+        // Retourne les données nécessaires pour la gestion des celliers et leur affichage
         return {
             mesCellier,
             getCelliers,
@@ -81,6 +86,8 @@ export default {
             
         }
     },
+
+    // Définition des composants utilisés dans ce composant
     components: {
     "IconContainer": IconContainer,
     "IconCellierLogo": IconCellierLogo,

@@ -7,20 +7,20 @@ use Illuminate\Foundation\Http\FormRequest;
 class StoreCatalogueRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Détermine si l'utilisateur est autorisé à effectuer cette requête.
      */
     public function authorize(): bool
     {
-        return true;
+        return true; // autorise l'utilisateur à effectuer cette requête
     }
-
     /**
-     * Get the validation rules that apply to the request.
+     * Récupère les règles de validation qui s'appliquent à la requête.
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
     public function rules(): array
     {
+        // Définit les règles de validation pour chaque champ de la requête
         return [
             'vino__type_id'=>'required',
             'nom'=>'required',

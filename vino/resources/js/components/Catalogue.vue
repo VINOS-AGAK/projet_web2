@@ -1,9 +1,10 @@
 <template>
 
   <header class="site-header">
+    <!-- Barre de recherche -->
     <form class="search" action="#" method="GET" @submit.prevent="selectProduct">
         <input type="search" v-model="searchTerm" autocomplete="off" list="catalogue-names" placeholder="rechercher un vin">
-        
+        <!-- Bouton de recherche -->
         <button type="submit" @click="clearSearch">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
             <path d="M19.3,5.7l-0.7-0.7L12,11.3L5.4,4.7L4.7,5.4L11.3,12L4.7,18.6l0.7,0.7L12,12.7l6.6,6.6l0.7-0.7L12.7,12L19.3,5.7z"/>
@@ -14,11 +15,13 @@
 
   <div class="liste-container">
 
+    <!-- Liste déroulante -->
     <datalist  id="catalogue-names">
       <option v-for="bouteille in filteredCatalogue.slice(0, 6)" :value="bouteille.nom">{{ bouteille.nom }}</option>
     </datalist>
 
     <section>
+      <!-- Carte de produit sélectionné -->
       <article v-if="selectedProduct" class="catalogue__card">
         <div class="catalogue__card-body">
           <img :src="selectedProduct.image" alt="img-bouteille">
@@ -34,9 +37,10 @@
             <div class="card-info-client">
               <p class="catalogue__card-count">{{ selectedProduct.prix_saq }}$</p>
           
-                <form @submit.prevent="storeBouteille(bouteille)">
+                <form @submit.prevent="storeBouteille(bouteille)" >
 
                 <div class="">
+                  <!-- Menu déroulant pour choisir le cellier -->
                   <label for="selectField">Choisir Cellier</label>
                   <select v-model="bouteille.vino__cellier_id" name="vino__cellier_id" id="selectField" class="">
                     <option value="" disabled>--Choisissez un cellier--</option>
@@ -45,11 +49,13 @@
                 </div>
 
                 <div>
+                  <!-- Champ de quantité -->
                   <label for="quantityField">Quantite</label>
                   <input v-model="bouteille.quantite" name="quantite" type="number" id="quantityField" class="" min="1" max="100">
                 </div>
 
                 <div>
+                  <!-- Case à cocher pour confirmer l'ajout -->
                   <label for="ajouter">Confirmation</label>
                   <input v-model="bouteille.vino__bouteille_id" type="radio" name="vino__bouteille_id" :value="selectedProduct.id" id="ajouter">
                 </div>
@@ -64,8 +70,9 @@
         </div>
       </article>
     </section>
-
-    <div   v-show="!selectedProduct" class="container-form">
+    
+    <!-- Section pour ajouter nouvelle bouteille -->
+    <section   v-show="!selectedProduct" class="container-form">
     
           <h2 class="catalogue_titre-section">Ajouter votre vin</h2>
 
@@ -113,35 +120,34 @@
             </button>
 
           </form>
-    </div>
+    </section>
   </div>
 </template> 
 
 
 <script>
 
+  // Import des composables nécessaires
   import useCatalogue from '../composables/catalogue'
   import useCellier from '../composables/cellier'
   import useBouteille from '../composables/bouteille'
   import { onMounted, ref, computed, watch, reactive } from 'vue'
   
+  
   export default {
     setup() {
+      // Utilisation des composables pour récupérer les données nécessaires
       const { catalogue, getCatalogue, deleteCatalogue, isLoading, validationErrors } = useCatalogue()
       const { mesCellier, getCelliers } = useCellier()
       const { storeBouteille } = useBouteille()
+      // Référence aux termes de recherche et produit sélectionné
       const searchTerm = ref('')
       const selectedProduct = ref(null)
+      // Appel à la fonction de récupération de catalogue et de celliers après la création de la vue
       onMounted(getCatalogue)
       onMounted(getCelliers)
-
-
-
-      const recommandons = computed(() =>{
-
-        return catalogue.value;
-      })
   
+      // Création d'un tableau filtré en fonction du terme de recherche
       const filteredCatalogue = computed(() => {
         if (searchTerm.value.length < 2) {
           return []
@@ -151,18 +157,21 @@
         })
       })
       
+      // Sélection du produit s'il n'y a pas de produit sélectionné et un terme de recherche existe
       const selectProduct = () => {
         if (searchTerm.value !== '' && selectedProduct.value === null) {
           selectedProduct.value = filteredCatalogue.value[0]
         }
       }
 
-        
+      
+      // Réinitialisation des termes de recherche et du produit sélectionné 
       const clearSearch = () => {
       searchTerm.value = ''
       selectedProduct.value = null
       }
 
+      // Observer les changements dans les termes de recherche et sélectionner le premier produit dans la liste filtrée
       watch(searchTerm, () => {
         if (filteredCatalogue.value.length > 0) {
           selectedProduct.value = filteredCatalogue.value[0]
@@ -171,19 +180,20 @@
         }
       })
 
+
+      // Définition d'un objet réactif pour stocker les données de bouteille
       const bouteille = reactive ({
         vino__bouteille_id: '',
         vino__cellier_id: '',
         quantite: '',
       })
       
-  
+      // Retour des variables et fonctions nécessaires au composant parent
       return {
         catalogue,
         searchTerm,
         filteredCatalogue,
         selectedProduct,
-        recommandons,
         bouteille,
         mesCellier,
         getCatalogue,

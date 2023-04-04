@@ -106,7 +106,7 @@ const routes = [
         component: AuthenticatedLayout,
         beforeEnter: auth,
         children: [
-            {path: '/bouteille',
+            {path: '/:id',
             name: 'bouteille.index',
             component: BouteilleIndex,
             meta: { title: "Mes Bouteille"}

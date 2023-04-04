@@ -1,21 +1,27 @@
+// Importation des fonctions de Vue.js et de Vue Router
 import { ref, inject, reactive, getCurrentInstance } from 'vue';
 import { useRouter} from 'vue-router'
 import { onMounted } from "vue";
 import useAuth from "../composables/auth";
 
+// Fonction qui permet d'utiliser bouteilles
 export default function useBouteille() {
+    // Déclaration des variables qui contiendront les données des bouteille
     const router = useRouter();
     let mesBouteilles = ref({});
     const uneBouteille = ref({});
     const validationErrors = ref ({});
     const isLoading = ref(false);
     const { user } = useAuth();
+    // Injection de la bibliothèque SweetAlert
     const swal = inject('$swal');
+    // Importation de la bibliothèque axios pour effectuer les requêtes HTTP
     const axios = require('axios');
     const { $route } = getCurrentInstance().proxy
     const cellier_id = $route.params.id
 
 
+    // Récupère toutes les bouteilles
     const getMesBouteilles = async () => {
         axios.get('api/bouteille')
         .then(response=>{
@@ -23,6 +29,7 @@ export default function useBouteille() {
         })
     }
 
+    // Trie les bouteilles
     const trierMesBouteilles = async (itemName, trier) => {
 
         axios.get('api/bouteille/')
@@ -45,6 +52,7 @@ export default function useBouteille() {
      
     }
 
+    // Récupère une bouteille
     const getUneBouteille = async (id) => {
         axios.get('api/bouteille/' + id )
         .then(response=>{
@@ -54,7 +62,7 @@ export default function useBouteille() {
         })
     } 
 
-        /**
+    /**
      * Ajoute une bouteille dans le cellier choisi
      * @param {object} cellier 
      * @returns 
@@ -64,6 +72,7 @@ export default function useBouteille() {
 
         isLoading.value = true
         validationErrors.value = {}
+        
         console.log('Log de la bouteille dans la fonction storeBouteille', bouteille);
         axios.post('/api/bouteille', bouteille)
         .then(response => {
@@ -82,6 +91,27 @@ export default function useBouteille() {
     }
 
 
+    // Met à jour une bouteille
+    const updateBouteille = async (bouteille) => {
+        console.log('updateBouteille bouteille:');
+        console.log(bouteille);
+        console.log('=======================');
+        isLoading.value = true
+        try {
+          const response = await axios.put(`/api/bouteilles/${bouteille.id}`, bouteille)
+          isLoading.value = false
+          return response.data
+        } catch (error) {
+          isLoading.value = false
+          if (error.response && error.response.status === 422) {
+            validationErrors.value = error.response.data.errors
+          } else {
+            throw error
+          }
+        }
+      }
+
+      // Supprime une bouteille
     const deleteBouteille = async (id) => { 
         swal({
             title: 'Êtes-vous sûr(e)?',
@@ -105,13 +135,13 @@ export default function useBouteille() {
                     router.push({name: 'bouteille.index'})
                     swal({
                             icon: 'success',
-                            title : 'Suppression Effecté Avec Succès'
+                            title : 'Suppression effectuée avec succès'
                         })
                 })
                 .catch(error =>{
                     swal({
                         icon: 'error',
-                        title : 'Une Erreur Est Arrivée'
+                        title : 'Une erreur est survenue'
                     })
                 })
             }
@@ -120,6 +150,7 @@ export default function useBouteille() {
 
     }
 
+    // Retourne les variables et fonctions nécessaires
     return {
         mesBouteilles,
         uneBouteille,
@@ -127,6 +158,7 @@ export default function useBouteille() {
         getUneBouteille,
         deleteBouteille,
         storeBouteille,
+        updateBouteille,
         validationErrors, 
         isLoading,
         trierMesBouteilles

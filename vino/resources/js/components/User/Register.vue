@@ -7,6 +7,8 @@
 
             <form @submit.prevent="registerUser">
 
+                <p v-if="loading">Loading...</p>
+
                 <p class="text-form">nom</p>
                 <input v-model="registerForm.name" id="name" type="text" class="name" required autofocus>
 
@@ -53,11 +55,14 @@
 </template>
  
 <script>
+// Import du hook "useAuth" pour la gestion de l'authentification
 import useAuth from '../../composables/auth'
 export default {
     setup() {
+        // Récupération des fonctions et des données nécessaires pour l'inscription grâce au hook "useAuth"
         const { registerForm, validationErrors, processing, registerUser } = useAuth()
-        return { registerForm, validationErrors, processing, registerUser }
+        // Retourne les données nécessaires pour l'affichage du formulaire d'inscription
+        return { registerForm, validationErrors, processing, registerUser, loading: false }
     }
 }
 </script>

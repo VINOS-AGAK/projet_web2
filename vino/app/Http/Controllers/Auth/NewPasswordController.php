@@ -12,10 +12,16 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
+/**
+ * Class-contrôleur pour la réinitialisation du mot de passe utilisateur.
+ */
 class NewPasswordController extends Controller
 {
-    /**
-     * Display the password reset view.
+     /**
+     * Affiche la vue de réinitialisation de mot de passe.
+     *
+     * @param Request $request Les données de la requête HTTP.
+     * @return View
      */
     public function create(Request $request): View
     {
@@ -23,9 +29,11 @@ class NewPasswordController extends Controller
     }
 
     /**
-     * Handle an incoming new password request.
+     * Traite une demande de nouveau mot de passe.
      *
      * @throws \Illuminate\Validation\ValidationException
+     * @param Request $request Les données de la requête HTTP.
+     * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
     {
@@ -35,9 +43,9 @@ class NewPasswordController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        // Here we will attempt to reset the user's password. If it is successful we
-        // will update the password on an actual user model and persist it to the
-        // database. Otherwise we will parse the error and return the response.
+        // Ici, nous allons tenter de réinitialiser le mot de passe de l'utilisateur. 
+        // Si cela réussit, nous mettrons à jour le mot de passe sur un véritable modèle d'utilisateur et le persisterons dans la base de données.
+        //  Sinon, nous analyserons l'erreur et renverrons la réponse.
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user) use ($request) {
@@ -50,9 +58,9 @@ class NewPasswordController extends Controller
             }
         );
 
-        // If the password was successfully reset, we will redirect the user back to
-        // the application's home authenticated view. If there is an error we can
-        // redirect them back to where they came from with their error message.
+        // Si le mot de passe a été réinitialisé avec succès, nous redirigerons l'utilisateur vers la vue d'accueil de l'application authentifiée.
+        //  S'il y a une erreur, nous pouvons les rediriger vers l'endroit d'où ils sont venus avec leur message d'erreur.
+         
         return $status == Password::PASSWORD_RESET
                     ? redirect()->route('login')->with('status', __($status))
                     : back()->withInput($request->only('email'))

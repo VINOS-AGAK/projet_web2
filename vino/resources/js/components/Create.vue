@@ -84,11 +84,13 @@
 </template>
     
     <script>
+    // Importation des modules
     import { onMounted, reactive} from "vue";
     import useCatalogue from "../composables/catalogue.js";
     
     export default {
         setup() {
+            // Création d'un objet réactif "catalogue"
             const catalogue = reactive ({
                 nom: '',
                 image: '',
@@ -102,8 +104,10 @@
                 vino__type_id: '',
             })
     
+            // Utilisation du module composable "catalogue"
             const { storeCatalogue, validationErrors, isLoading } = useCatalogue()
     
+            // Retourne les variables et fonctions nécessaires
             return { catalogue, storeCatalogue, validationErrors, isLoading }
         }
     }

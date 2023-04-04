@@ -114,11 +114,11 @@ export default function useCellier() {
      */
     const deleteCellier = async (id) => { 
         swal({
-            title: 'Vous êtes sûr??',
+            title: 'Êtes-vous sûr(e) ?',
             text: 'Vous ne pourrez pas annuler cette action !',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Oui, efface mon cellier!',
+            confirmButtonText: 'Oui, effacez mon cellier !',
             confirmButtonColor: '#ef4444',
             timer: 20000,
             timerProgressBar: true,
@@ -132,13 +132,13 @@ export default function useCellier() {
                     router.push({name: 'cellier.index'})
                     swal({
                             icon: 'success',
-                            title : 'Suppression effectuée avec Succès'
+                            title : 'Suppression effectuée avec succès'
                         })
                 })
                 .catch(error =>{
                     swal({
                         icon: 'error',
-                        title : 'Une Erreur Est Arrivée'
+                        title : 'Une erreur est survenue'
                     })
                 })
             }

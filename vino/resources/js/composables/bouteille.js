@@ -123,13 +123,13 @@ export default function useBouteille() {
                     router.push({name: 'bouteille.index'})
                     swal({
                             icon: 'success',
-                            title : 'Suppression Effecté Avec Succès'
+                            title : 'Suppression effectuée avec succès'
                         })
                 })
                 .catch(error =>{
                     swal({
                         icon: 'error',
-                        title : 'Une Erreur Est Arrivée'
+                        title : 'Une erreur est survenue'
                     })
                 })
             }

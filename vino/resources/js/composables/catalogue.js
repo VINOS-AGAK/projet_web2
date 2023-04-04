@@ -87,11 +87,11 @@ export default function useCatalogue() {
     // Fonction qui permet de supprimer un élément du catalogue
     const deleteCatalogue = async (id) => { 
         swal({
-            title: 'Are you sure?',
-            text: 'You won\'t be able to revert this action!',
+            title: 'Êtes-vous sûr ?',
+            text: 'Vous ne pourrez pas revenir en arrière !',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
+            confirmButtonText: 'Oui, supprimez-le !',
             confirmButtonColor: '#ef4444',
             timer: 20000,
             timerProgressBar: true,
@@ -105,13 +105,13 @@ export default function useCatalogue() {
                     router.push({name: 'catalogue.index'})
                     swal({
                             icon: 'success',
-                            title : 'Suppression Effecté Avec Succès'
+                            title : 'Suppression effectuée avec succès'
                         })
                 })
                 .catch(error =>{
                     swal({
                         icon: 'error',
-                        title : 'Une Erreur Est Arrivée'
+                        title : 'Une erreur est survenue'
                     })
                 })
             }

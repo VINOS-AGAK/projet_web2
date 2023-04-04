@@ -29,28 +29,18 @@ export default function useBouteille() {
         })
     }
 
-    // Trie les bouteilles
     const trierMesBouteilles = async (itemName, trier) => {
-
-        axios.get('api/bouteille/')
-        .then(response=>{
-
-        let  trier = response.data.data;
-        let bouteillesTrier= [];
- 
-            trier.forEach(bouteille => {
-                if (bouteille.pays == itemName){
-                    bouteillesTrier.push(bouteille);
-                }
-            });
+        const response = await axios.get('api/bouteille/');
+      
+        const bouteillesTrier = [];
+        response.data.data.forEach(bouteille => {
+          if (bouteille.pays == itemName) {
+            bouteillesTrier.push(bouteille);
+          }
+        });
         
-        console.log(bouteillesTrier);
-
-        })
-
-        console.log(trier);
-     
-    }
+        return bouteillesTrier;
+      };
 
     // Récupère une bouteille
     const getUneBouteille = async (id) => {

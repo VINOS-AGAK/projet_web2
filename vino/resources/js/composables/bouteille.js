@@ -20,17 +20,29 @@ export default function useBouteille() {
         axios.get('api/bouteille')
         .then(response=>{
             mesBouteilles.value = response.data.data;
-            //console.log('Mes Bouteilles');
-            console.log(mesBouteilles.value);
         })
     }
 
-    const trierMesBouteilles = async (itemName) => {
-        axios.get('api/bouteille/{$itemName}')
+    const trierMesBouteilles = async (itemName, trier) => {
+
+        axios.get('api/bouteille/')
         .then(response=>{
-            mesBouteilles.value = response.data.data;
-           console.log(itemName)
+
+        let  trier = response.data.data;
+        let bouteillesTrier= [];
+ 
+            trier.forEach(bouteille => {
+                if (bouteille.pays == itemName){
+                    bouteillesTrier.push(bouteille);
+                }
+            });
+        
+        console.log(bouteillesTrier);
+
         })
+
+        console.log(trier);
+     
     }
 
     const getUneBouteille = async (id) => {

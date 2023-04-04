@@ -1,17 +1,11 @@
-<template>
-    <div class="trier-container">
-        <ul class="trier-liste">
-            <li class="trier-item" @click="trierItem('italie')">italie</li>
-            <li class="trier-item" @click="trierItem('france')">france</li>
-            <li class="trier-item" @click="trierItem('espagne')">espagne</li>
-            <li class="trier-item" @click="trierItem('australie')">australie</li>
-            <li class="trier-item" @click="trierItem('canada')">canada</li>
-            <li class="trier-item" @click="trierItem('etats-unis')">etats-unis</li>
-            <li class="trier-item" @click="trierItem('allemagne')">allemagne</li>
-            <li class="trier-item" @click="trierItem('Arménie')">Arménie</li>
+<template >
+    <div class="trier-container" >
+        <ul class="trier-liste" >
+            <li class="trier-item" @click="trierItem(bouteille.pays)" v-for="bouteille in mesBouteilles" :key="bouteille.id">{{bouteille.pays}}</li>
         </ul>
     </div>
-    <section class="liste-container">
+
+    <section class="liste-container" v-if="trier==true">
         <div class="ajouter-cellier">      
             <router-link :to="{name: 'catalogue.index'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
         </div>
@@ -51,11 +45,16 @@
 
         </article>
     </section>
+
+    <section class="liste-container" v-else>
+        <h2>trier = true</h2>
+    </section>
 </template>
+
     
 <script>
 import useBouteille from '../../composables/bouteille'
-import { onMounted, getCurrentInstance } from 'vue'
+import { onMounted, getCurrentInstance, watch, ref } from 'vue'
 import useCellier from '../../composables/cellier'
 
 export default {
@@ -65,6 +64,7 @@ export default {
         const { mesBouteilles, getMesBouteilles,deleteBouteille, trierMesBouteilles } = useBouteille()
         const { $route } = getCurrentInstance().proxy
         const { oneCellier, getOneCellier } = useCellier();
+        let trier = ref(true);
 
         const increment = async (id) => {
             axios.put('api/bouteille/' + id + '/increment')
@@ -95,11 +95,17 @@ export default {
         })
 
         const trierItem=(itemName)=>{
-            trierMesBouteilles(itemName);
-            console.log('inside of trier item');
+            trier.value = false;
+            handleTrierChange(itemName);
         }
-        
 
+        const handleTrierChange = (itemName) => {
+            trierMesBouteilles(itemName,trier);
+        }
+
+        watch(() => trier, handleTrierChange);
+
+        
         return {
             mesBouteilles,
             getMesBouteilles,
@@ -108,7 +114,8 @@ export default {
             getOneCellier,
             increment,
             decrement,
-            trierItem
+            trierItem, 
+            trier
         }
     }
 }

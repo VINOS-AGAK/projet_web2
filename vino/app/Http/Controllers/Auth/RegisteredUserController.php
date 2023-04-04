@@ -18,7 +18,7 @@ class RegisteredUserController extends Controller
 {
 
     /**
-     * Display the registration view.
+     * Affiche la vue d'enregistrement.
      */
     public function create(): View
     {
@@ -26,7 +26,7 @@ class RegisteredUserController extends Controller
     }
 
     /**
-     * Handle an incoming registration request.
+     * Gère une demande d'enregistrement.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -38,6 +38,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+         // Créer un nouvel utilisateur
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -45,16 +46,20 @@ class RegisteredUserController extends Controller
         ]);
         $userId = $user->id;
 
+        // Créer un cellier par défaut pour le nouvel utilisateur
         Cellier::create([
             'nom' => "Cellier nom par defaut",
             'description' => "Cellier description par defaut",
             'user_id' => $userId
         ]);
 
+         // Déclencher l'événement 'Registered' pour l'utilisateur
         event(new Registered($user));
 
+         // Connecter l'utilisateur nouvellement enregistré
         Auth::login($user);
 
+        // Rediriger l'utilisateur vers la page d'accueil
         return redirect(RouteServiceProvider::HOME);
     }
 }

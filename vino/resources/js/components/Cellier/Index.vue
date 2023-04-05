@@ -19,6 +19,7 @@
                     <div class="cellier-info">
                         <div class="card-info-title">
                             <h3 class="cellier__card-title">{{ unCellier.nom}}</h3>
+                            
                             <p class="card-subtitle">{{ unCellier.description }}</p>
                         </div>
                         

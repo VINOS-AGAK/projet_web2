@@ -125,7 +125,7 @@
   }
 
   .card-btn_delete:disabled{
-    display: none;
+    visibility:hidden;
   }
 
   section.card-cellier{

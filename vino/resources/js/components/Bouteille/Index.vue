@@ -16,7 +16,8 @@
             <router-link :to="{name: 'catalogue.index'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
         </div>
     
-        <h2 class="liste__titre" >{{ oneCellier.nom }}</h2>
+        <h2 class="liste__titre" >{{ mesCellier.nom }}</h2>
+        
         <article class="container">
             <div class="card" v-for="bouteille in oneCellier" :key="bouteille.id" >
                 <div class="card-body">
@@ -44,7 +45,7 @@
 
                         <form @submit.prevent='changeNote(bouteille)'>
                             <div>
-                                <label for="note-send" >Note 
+                                <label for="note-send" class="card-count" >Note 
                                     <input className="radio" v-model="bouteille.notes" type="radio" value="1" name="notes" />
                                     <input className="radio" v-model="bouteille.notes" type="radio" value="2" name="notes" />
                                     <input className="radio" v-model="bouteille.notes" type="radio" value="3" name="notes" />
@@ -101,7 +102,8 @@ export default {
         // Obtient l'objet $route depuis l'instance en cours
         const { $route } = getCurrentInstance().proxy
         // Utilise le module 'useCellier' pour obtenir un cellier
-        const { oneCellier, getOneCellier } = useCellier();
+        const { mesCellier, getCelliers, oneCellier, getOneCellier } = useCellier();
+
 
         // Incrémente la quantité d'une bouteille
         const increment = async (id) => {
@@ -119,8 +121,9 @@ export default {
             axios.put('api/bouteille/' + id + '/decrement')
                 .then(response => {
                     getOneCellier($route.params.id);
-                    const bouteille = oneCellier.find(b => b.id === id);
-                    if (bouteille && bouteille.quantite === 0) {
+                    
+                    //const bouteille = oneCellier.find(b => b.id === id);
+                    if (oneCellier && oneCellier.quantite === 0) {
                         deleteMaBouteille(id);
                     }
                 })
@@ -143,6 +146,7 @@ export default {
                 })
         }
 
+          // Changer les notes
         const changeNote = async(bouteille) => {
             console.log(bouteille);
             console.log(bouteille.notes);
@@ -161,10 +165,12 @@ export default {
 
         })
 
+          // Trier une bouteille
         const trierItem=(itemName)=>{
             trierMesBouteilles(itemName);
             console.log('inside of trier item');
         }
+
         
         // Retourne les données et les fonctions du composant
         return {
@@ -176,8 +182,9 @@ export default {
             increment,
             decrement,
             trierItem,
-            changeNote
+            changeNote, mesCellier, getCelliers,
         }
     }
+    
 }
 </script>

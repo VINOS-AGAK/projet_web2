@@ -10,45 +10,39 @@
         <article class="container">
             <div class="card" v-for="unCellier in mesCellier" :key="unCellier.id">
                 <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
-                    <div class="card-body cellier__card-body">
+                    <div class="card-body">
+                        
+                        <section class="cellier-info">
+                            <h3 class="cellier__card-title">{{ unCellier.nom}}</h3>
+                            <p class="card-subtitle">{{ unCellier.description }}</p>
+                        </section>
 
-                        <IconContainer>
-                            <template #icon>
-                                <IconCellier/>
-                            </template>
-                        </IconContainer>
+                        <section class="section-icon">
+                            <IconContainer>
+                                <template #icon>
+                                    <IconCellier/>
+                                </template>
+                            </IconContainer>
+    
+                            <router-link class="" :to="{ name: 'cellier.edit', params: { id: unCellier.id }}">
+                                <IconContainer>
+                                    <template #icon>
+                                        <IconModifier/>
+                                    </template>
+                                </IconContainer>
+                            </router-link>
+            
+                            <button class="deleteModalBtn" @click.prevent="deleteCellier(unCellier.id)">
+                                <IconContainer>
+                                    <template #icon>
+                                        <IconSupprimer/>
+                                    </template>
+                                </IconContainer>
+                            </button>
+                        </section>
 
-                        <div class="cellier-info">
-
-                            <div class="card-info-title">
-                                <h3 class="cellier__card-title">{{ unCellier.nom}}</h3>
-                                <p class="card-subtitle">{{ unCellier.description }}</p>
-                            </div>
-
-                                <div class="card-info-client">
-
-                                    <div class="card-icon-container">
-                                        <router-link class="" :to="{ name: 'cellier.edit', params: { id: unCellier.id }}">
-                                            <IconContainer>
-                                                <template #icon>
-                                                    <IconModifier/>
-                                                </template>
-                                            </IconContainer>
-                                        </router-link>
-        
-                                        <button class="deleteModalBtn" @click.prevent="deleteCellier(unCellier.id)">
-                                            <IconContainer>
-                                                <template #icon>
-                                                    <IconSupprimer/>
-                                                </template>
-                                            </IconContainer>
-                                        </button>
-                                    </div>
-
-                                </div>
+  
                                 
-
-                        </div>
                     </div>
                 </router-link>
             </div>

@@ -4,7 +4,7 @@
             <h3 class="text-form">Editer mon cellier</h3>
 
             <!-- FORM Editer d'un cellier -->
-            <form @submit.prevent='updateCellier(oneCellier)'>
+            <form @submit.prevent='updateCellier(showCellier)'>
 
                 <div class="container-form">
 
@@ -44,32 +44,16 @@ import useCellier from "../../composables/cellier.js";
 export default {
     setup() {
         // Récupération des fonctions et des données nécessaires pour la gestion d'un cellier grâce au hook "useCellier"
-        const { oneCellier, updateCellier, validationErrors, isLoading } = useCellier()
+        const { showCellier, showOneCellier, updateCellier, validationErrors, isLoading} = useCellier()
         // Récupération des informations de la route en cours grâce au hook "useRoute"
         const route = useRoute()
-        
         showOneCellier()
 
         // Lorsque le composant est monté, récupération du cellier correspondant à l'ID de la route en cours grâce à la fonction "getOneCellier" et affichage de ses informations dans la console
         onMounted(() => {
-            getOneCellier(route.params.id)
+            showOneCellier(route.params.id)
             console.log('une Cellier dans edit');
-            console.log(oneCellier);
         })
-
-        const showOneCellier = async (cellier) => {
-        console.log(id)
-        try{
-            const response = await axios.get(`api/cellier/${cellier.id}` )
-            showCellier.value = response.data.data;
-            console.log('un cellier');
-            console.log(showCellier);
-            return showCellier.value;
-        }
-        catch (error){
-            console.error('Error fetching one cellier', error);
-        }
-    }
 
         // Retourne les données nécessaires pour l'édition du cellier
         return { showCellier, validationErrors, isLoading, updateCellier }

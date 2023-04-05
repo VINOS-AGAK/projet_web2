@@ -49,9 +49,10 @@
   }
 
   .card-title {
-    font-size: var(--font-size-small);
+    font-size: 1.2rem;
     margin: 0;
     color: var(--color-dark);
+    padding-top: 5px;
 
   }
 
@@ -132,6 +133,7 @@
   .card-btn_delete{
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 1px;
   }
 
   .card-btn_delete:disabled{
@@ -150,6 +152,13 @@
     background-color: rgb(214, 214, 214);
     justify-content: space-around;
     border-radius: 15px;
+    width: 200px;
+    height: 40px;
+  }
+
+  .container-counter{
+    display: flex;
+    padding-top: 10px;
   }
   
 

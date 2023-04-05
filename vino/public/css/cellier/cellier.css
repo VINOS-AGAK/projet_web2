@@ -61,11 +61,14 @@
     overflow: auto;
     white-space: nowrap;
     padding: var(--margin-small);
+    justify-content: space-around;
 }
 
 .trier-item{
     padding: var(--margin-small);
 }
+
+
 
 /*============================ responsive =====================*/
 @media only screen and (min-width: 768px) {

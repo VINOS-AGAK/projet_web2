@@ -10,47 +10,37 @@
         <article class="container">
             <div class="card" v-for="unCellier in mesCellier" :key="unCellier.id">
                 <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
-                    <div class="card-body cellier__card-body">
+                    <div class="card-body">
 
-                        <IconContainer>
-                            <template #icon>
-                                <IconCellierLogo/>
-                            </template>
-                        </IconContainer>
+                        <section class="cellier-info">
+                            <h3 class="cellier__card-title">{{ unCellier.nom}}</h3>
+                            <p class="card-subtitle">{{ unCellier.description }}</p>
+                        </section>
 
-                        <div class="cellier-info">
+                        <section class="section-icon">
+                            <IconContainer>
+                                <template #icon>
+                                    <IconCellier/>
+                                </template>
+                            </IconContainer>
+    
+                            <router-link class="" :to="{ name: 'cellier.edit', params: { id: unCellier.id }}">
+                                <IconContainer>
+                                    <template #icon>
+                                        <IconModifier/>
+                                    </template>
+                                </IconContainer>
+                            </router-link>
+            
+                            <button class="deleteModalBtn" @click.prevent="deleteCellier(unCellier.id)">
+                                <IconContainer>
+                                    <template #icon>
+                                        <IconSupprimer/>
+                                    </template>
+                                </IconContainer>
+                            </button>
+                        </section>
 
-                            <div class="card-info-title">
-                                <h3 class="cellier__card-title">{{ unCellier.nom}}</h3>
-                                <p class="card-subtitle">{{ unCellier.description }}</p>
-                            </div>
-
-                                <div class="card-info-client">
-
-                                    <p class="card-count"> bouteilles: 3 </p>
-
-                                    <div class="card-icon-container">
-                                        <router-link class="" :to="{ name: 'cellier.edit', params: { id: unCellier.id }}">
-                                            <IconContainer>
-                                                <template #icon>
-                                                    <IconModifier/>
-                                                </template>
-                                            </IconContainer>
-                                        </router-link>
-        
-                                        <button class="deleteModalBtn" @click.prevent="deleteCellier(unCellier.id)">
-                                            <IconContainer>
-                                                <template #icon>
-                                                    <IconSupprimer/>
-                                                </template>
-                                            </IconContainer>
-                                        </button>
-                                    </div>
-
-                                </div>
-                                
-
-                        </div>
                     </div>
                 </router-link>
             </div>
@@ -70,7 +60,7 @@
 // Import des hooks composables et des composants nécessaires pour la gestion des celliers
 import { onMounted, ref } from 'vue';
 import useCellier from '../../composables/cellier';
-import IconCellierLogo from '../icons/IconCellierLogo.vue';
+import IconCellier from '../icons/IconCellier.vue';
 import IconSupprimer from '../icons/IconSupprimer.vue';
 import IconModifier from '../icons/IconModifier.vue';
 import IconContainer from "../IconContainer.vue";
@@ -108,7 +98,7 @@ export default {
     // Définition des composants utilisés dans ce composant
     components: {
     "IconContainer": IconContainer,
-    "IconCellierLogo": IconCellierLogo,
+    "IconCellier": IconCellier,
     "IconSupprimer": IconSupprimer,
     "IconModifier": IconModifier,
 }

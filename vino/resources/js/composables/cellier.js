@@ -30,6 +30,20 @@ export default function useCellier() {
         })
     } 
     
+    const showOneCellier = async (id) => {
+        console.log(id)
+        try{
+            const response = await axios.get('api/cellier/' + id )
+            showCellier.value = response.data.data;
+            console.log('un cellier');
+            console.log(showCellier);
+            return showCellier.value;
+        }
+        catch (error){
+            console.error('Error fetching one cellier', error);
+        }
+    }
+
     /**
      * Afficher un Cellie de usager
      * @param {id} id 
@@ -46,11 +60,14 @@ export default function useCellier() {
         }
     } 
 
-    /**
+    const trierMonCellier = async (itemName, trier, id) => {
+        const response = await axios.get('api/bouteille/' + id);
+            /**
      * Afficher l'info du'n Cellie dans edit cellier
      * @param {*} id 
      * @returns {Array} showCellier
      */
+
     const showOneCellier = async (id) => {
         console.log('composable/cllier/ id de cellier')
         console.log(id)
@@ -65,6 +82,17 @@ export default function useCellier() {
             console.error('Error fetching one cellier', error);
         }
     }
+
+        let cellierTrier = [];
+        response.data.data.forEach(bouteille => {
+          if (bouteille.pays == itemName) {
+            cellierTrier.push(bouteille);
+          }
+        });
+        
+        return cellierTrier;
+      };
+
 
 
     /**
@@ -105,8 +133,7 @@ export default function useCellier() {
         isLoading.value = true
         validationErrors.value = {}
         console.log('updateCellier / cellier');
-        console.log(cellier);
-        console.log('==============================================');
+
         axios.put('/api/cellier/' + cellier.id, cellier)
         .then(response => {
             router.push({name: 'cellier.index'})
@@ -174,6 +201,7 @@ export default function useCellier() {
         storeCellier,
         updateCellier,
         deleteCellier,
-        showOneCellier
+        showOneCellier, 
+        trierMonCellier
     }
 }

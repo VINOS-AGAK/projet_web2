@@ -23,6 +23,7 @@ export default function useCatalogue() {
         axios.get('api/catalogue')
         .then(response=>{
             catalogue.value = response.data.data;
+
         })
     }
     

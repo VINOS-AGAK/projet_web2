@@ -27,8 +27,6 @@ export default function useCellier() {
         .then(response=>{
             mesCellier.value = response.data.data;
             mesCellier = mesCellier.value;
-            console.log('mes Cellier');
-            console.log(mesCellier);
         })
     } 
     
@@ -38,12 +36,9 @@ export default function useCellier() {
      * @returns {Array} oneCellier
      */
     const getOneCellier = async (id) => {
-        console.log(id)
         try{
             const response = await axios.get('api/cellier/' + id )
             oneCellier.value = response.data.data;
-            console.log('un cellier');
-            console.log(oneCellier);
             return oneCellier.value;
         }
         catch (error){

@@ -142,21 +142,22 @@
 
 import useBouteille from '../../composables/bouteille'
 import useCellier from '../../composables/cellier'
-import { onMounted, getCurrentInstance, watch, ref, computed } from 'vue'
+import { onMounted, getCurrentInstance, watch, ref, computed, inject } from 'vue'
 import axios from 'axios'
 
 export default {
 
     setup() {
-
         // Utilise le module 'useBouteille' pour obtenir les bouteilles
-        let { mesBouteilles, getMesBouteilles, deleteBouteille, trierMesBouteilles, bouteillesTrier, getPaysBouteilles } = useBouteille()
+        let { trierMesBouteilles, bouteillesTrier, getPaysBouteilles } = useBouteille()
         // Obtient l'objet $route depuis l'instance en cours
         const { $route } = getCurrentInstance().proxy
         // Utilise le module 'useCellier' pour obtenir un cellier
         const { oneCellier, getOneCellier } = useCellier();
+        const swal = inject('$swal');
         let trier = ref(true);
         const test = ref([]);
+
 
 
         // Incrémente la quantité d'une bouteille
@@ -197,6 +198,41 @@ export default {
                 })
         }
 
+
+        const deleteBouteille = async (id) => { 
+        swal({
+            title: 'Êtes-vous sûr(e)?',
+            text: 'Vous ne pourrez pas annuler cette action !',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Oui, supprimez-le !',
+            confirmButtonColor: '#ef4444',
+            timer: 20000,
+            timerProgressBar: true,
+            reverseButtons: true
+        })
+            .then(result =>{
+                if (result.isConfirmed){
+                    axios.delete('/api/bouteille/' + id)
+                    // getOneCellier(routeParam)
+                    .then(response => {
+                        swal({
+                            icon: 'success',
+                            title : 'Suppression Effecté Avec Succès'
+                        })
+                        getOneCellier($route.params.id)
+                    })
+                    .catch(error =>{
+                        swal({
+                            icon: 'error',
+                            title : 'Une Erreur Est Arrivée'
+                        })
+                    })
+                }
+            })
+        }
+
+
         const changeNote = async(bouteille) => {
             console.log(bouteille);
             console.log(bouteille.notes);
@@ -209,9 +245,7 @@ export default {
 
         onMounted(async () => {
             console.log('le param id passe du cellier' ,$route.params.id);
-            getMesBouteilles();
             await getOneCellier($route.params.id);
-
         })
 
         const trierItem=(itemName)=>{
@@ -229,9 +263,7 @@ export default {
         watch(() => trier, handleTrierChange);
 
         return {
-            mesBouteilles,
             oneCellier,
-            getMesBouteilles,
             deleteBouteille,
             getOneCellier,
             increment,

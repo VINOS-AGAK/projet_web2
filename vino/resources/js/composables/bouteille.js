@@ -1,6 +1,6 @@
 // Importation des fonctions de Vue.js et de Vue Router
 import { ref, inject, reactive, getCurrentInstance } from 'vue';
-import { useRouter} from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { onMounted } from "vue";
 import useAuth from "../composables/auth";
 
@@ -8,18 +8,18 @@ import useAuth from "../composables/auth";
 export default function useBouteille() {
     // Déclaration des variables qui contiendront les données des bouteille
     const router = useRouter();
+    const route = useRoute();
     let mesBouteilles = ref({});
     const uneBouteille = ref({});
     let bouteillesTrier = ref({});
     const validationErrors = ref ({});
     const isLoading = ref(false);
-    const { user } = useAuth();
+    
     // Injection de la bibliothèque SweetAlert
     const swal = inject('$swal');
     // Importation de la bibliothèque axios pour effectuer les requêtes HTTP
     const axios = require('axios');
-    const { $route } = getCurrentInstance().proxy
-    const cellier_id = $route.params.id
+    const routeParam = route.params.routeParam;
 
 
     // Récupère toutes les bouteilles
@@ -62,8 +62,6 @@ export default function useBouteille() {
         axios.get('api/bouteille/' + id )
         .then(response=>{
             uneBouteille.value = response.data.data;
-            console.log('une bouteille du cellier');
-            console.log(uneBouteille);
         })
     } 
 
@@ -78,10 +76,9 @@ export default function useBouteille() {
         isLoading.value = true
         validationErrors.value = {}
         bouteille.notes = 1;
-        console.log('Log de la bouteille dans la fonction storeBouteille', bouteille);
         axios.post('/api/bouteille', bouteille)
         .then(response => {
-            router.push({name: 'bouteille.index'})
+            router.push({name: 'bouteille.index', params: {id: bouteille.vino__cellier_id} })
             swal({
                     icon : 'success',
                     title: 'bouteille Ajouté Avec Succès'
@@ -116,56 +113,19 @@ export default function useBouteille() {
         }
       }
 
-      // Supprime une bouteille
-    const deleteBouteille = async (id) => { 
-        swal({
-            title: 'Êtes-vous sûr(e)?',
-            text: 'Vous ne pourrez pas annuler cette action !',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Oui, supprimez-le !',
-            confirmButtonColor: '#ef4444',
-            timer: 20000,
-            timerProgressBar: true,
-            reverseButtons: true
-        })
-        .then(result =>{
-            if (result.isConfirmed){
-                console.log(id);
-
-                axios.delete('/api/bouteille/' + id)
-                .then(response => {
-                   
-                    getMesBouteilles()
-                    router.push({name: 'bouteille.index'})
-                    swal({
-                            icon: 'success',
-                            title : 'Suppression effectuée avec succès'
-                        })
-                })
-                .catch(error =>{
-                    swal({
-                        icon: 'error',
-                        title : 'Une erreur est survenue'
-                    })
-                })
-            }
-
-        })
-
-    }
 
     // Retourne les variables et fonctions nécessaires
     return {
         mesBouteilles,
         uneBouteille,
+        validationErrors, 
+        routeParam,
+        isLoading,
         getMesBouteilles,
         getUneBouteille,
-        deleteBouteille,
         storeBouteille,
         updateBouteille,
         validationErrors, 
-        isLoading,
         trierMesBouteilles, 
         bouteillesTrier,
         getPaysBouteilles

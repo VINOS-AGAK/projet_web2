@@ -41,8 +41,8 @@ class CellierController extends Controller
         return new CellierResource($cellier);
     }
 
-     /**
-     * Affiche les détails d'un cellier spécifique de l'utilisateur connecté.
+    /**
+     * Affiche les détails des bouteille d'un cellier spécifique de l'utilisateur connecté.
      *
      * @param  Cellier  $cellier
      * @return array
@@ -61,6 +61,18 @@ class CellierController extends Controller
             ->get();
 
         return ['data' => $bouteilles];
+    }
+
+    /**
+     * Affiche les détails d'un cellier spécifique de l'utilisateur connecté.
+     *
+     * @param  Cellier  $cellier
+     * @return array
+     */
+    public function showOneCellier(Cellier $cellier)
+    {
+        return new CellierResource($cellier);
+        
     }
 
     /**

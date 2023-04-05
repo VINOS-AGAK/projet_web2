@@ -1,6 +1,6 @@
 .card {
     width: 100%;
-    height: 240px;
+    height: auto;
     border-radius: var(--border-radius-large);
     margin-top: var(--margin-small);
     padding: var(--padding-small);
@@ -9,8 +9,8 @@
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: rgba(249, 244, 204, 0.29);
-
   }
+
   .card-body{
     display: flex;
     flex-direction: row;
@@ -18,9 +18,6 @@
     margin-top: var(--margin-small);
   }
 
-  .card-body p {
-    margin-bottom: 5px;
-}
 
   .card img {
     width: 100%;
@@ -36,6 +33,19 @@
     gap: 10px;
     flex-grow: 1;
     margin-right:  var(--margin-small);
+  }
+
+  .card-info-client{
+    display: flex;
+    /* background-color: pink; */
+    justify-content: space-between;
+
+    
+  }
+
+  .card-icon-container{
+    display: flex;
+    justify-content: space-around;
   }
 
   .card-title {
@@ -58,10 +68,15 @@
   .card-subtitle {
     font-style: italic;
     color:var(--color-dark);
+    margin-botton: 0px;
   }
 
   .card-count {
     color: var(--color-dark);
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: var(--border-radius-ex-small);
+    padding-left: 10px;
   }
 
   .card-rating{
@@ -136,6 +151,58 @@
     align-content: center;
 
   }
+  
+
+  /* ======================================== */
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  fieldset label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0.25rem;
+    position: relative;
+  }
+  
+  fieldset label:before {
+    color: #ddd;
+    content: "\f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    /* margin-right: 0.5rem; */
+  }
+  
+  fieldset input[type="radio"] {
+    display: none;
+  }
+  
+  fieldset input[type="radio"]:checked + label:before {
+    color: gold;
+  }
+  /* ======================================== */
+  .stars-flex {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .stars-btn {
+    padding: 2px;
+  }
+  /* ======================================== */
+  .stars-btn {
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+  }
+
+  .stars-btn:active {
+    transform: translateY(5px);
+    transition: 0.6s;
+  }
+
 
   @media only screen and (min-width: 700px) {
     
@@ -159,6 +226,11 @@
       font-size: var(--font-size-regular);
     }
 
+    .card-stars {
+      font-size: 40px;
+    }
+
+
     .card img {
       max-width: 170px;
     }
@@ -174,4 +246,13 @@
       font-weight: var(--font-weight-bold);
       width: 50px;
     }
+
+    .stars-btn {
+      padding: 8px;
+    }
+
+    fieldset label {
+      font-size: 1.5rem;
+    }
+
   }

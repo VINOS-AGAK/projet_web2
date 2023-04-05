@@ -92,8 +92,6 @@ export default function useAuth() {
         .then(response => {
             loading = false;
             loginUser(response)
-            console.log('user info');
-            console.log(response);
         })
         .catch(error => {
             // console.error(error);

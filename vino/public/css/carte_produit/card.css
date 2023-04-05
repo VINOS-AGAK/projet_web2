@@ -151,6 +151,58 @@
     align-content: center;
 
   }
+  
+
+  /* ======================================== */
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  fieldset label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0.25rem;
+    position: relative;
+  }
+  
+  fieldset label:before {
+    color: #ddd;
+    content: "\f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    /* margin-right: 0.5rem; */
+  }
+  
+  fieldset input[type="radio"] {
+    display: none;
+  }
+  
+  fieldset input[type="radio"]:checked + label:before {
+    color: gold;
+  }
+  /* ======================================== */
+  .stars-flex {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .stars-btn {
+    padding: 2px;
+  }
+  /* ======================================== */
+  .stars-btn {
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+  }
+
+  .stars-btn:active {
+    transform: translateY(5px);
+    transition: 0.6s;
+  }
+
 
   @media only screen and (min-width: 700px) {
     
@@ -174,6 +226,11 @@
       font-size: var(--font-size-regular);
     }
 
+    .card-stars {
+      font-size: 40px;
+    }
+
+
     .card img {
       max-width: 170px;
     }
@@ -189,4 +246,13 @@
       font-weight: var(--font-weight-bold);
       width: 50px;
     }
+
+    .stars-btn {
+      padding: 8px;
+    }
+
+    fieldset label {
+      font-size: 1.5rem;
+    }
+
   }

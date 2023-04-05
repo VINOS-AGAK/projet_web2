@@ -10,14 +10,14 @@
 
                     <!-- Nom -->
                     <label class="text-form" for="cellierNom">Nom du cellier</label>
-                    <input class="input" v-model="oneCellier.nom" type="text" name="cellierNom" id="cellierNom">
+                    <input class="input" v-model="showCellier.nom" type="text" name="cellierNom" id="cellierNom">
                     <div class="text-red">
                         <div v-for="message in validationErrors?.nom">{{ message }}</div>
                     </div>
 
                     <!-- Description -->
                     <label class="text-form" for="cellierDescription">Description du cellier</label>
-                    <input class="input" v-model="oneCellier.description" type="text" name="cellierDescription" id="cellierDescription">
+                    <input class="input" v-model="showCellier.description" type="text" name="cellierDescription" id="cellierDescription">
                     <div class="text-red">
                         <div v-for="message in validationErrors?.description">{{ message }}</div>
                     </div>
@@ -44,9 +44,11 @@ import useCellier from "../../composables/cellier.js";
 export default {
     setup() {
         // Récupération des fonctions et des données nécessaires pour la gestion d'un cellier grâce au hook "useCellier"
-        const { oneCellier, getOneCellier, updateCellier, validationErrors, isLoading } = useCellier()
+        const { oneCellier, updateCellier, validationErrors, isLoading } = useCellier()
         // Récupération des informations de la route en cours grâce au hook "useRoute"
         const route = useRoute()
+        
+        showOneCellier()
 
         // Lorsque le composant est monté, récupération du cellier correspondant à l'ID de la route en cours grâce à la fonction "getOneCellier" et affichage de ses informations dans la console
         onMounted(() => {
@@ -55,8 +57,22 @@ export default {
             console.log(oneCellier);
         })
 
+        const showOneCellier = async (cellier) => {
+        console.log(id)
+        try{
+            const response = await axios.get(`api/cellier/${cellier.id}` )
+            showCellier.value = response.data.data;
+            console.log('un cellier');
+            console.log(showCellier);
+            return showCellier.value;
+        }
+        catch (error){
+            console.error('Error fetching one cellier', error);
+        }
+    }
+
         // Retourne les données nécessaires pour l'édition du cellier
-        return { oneCellier, validationErrors, isLoading, updateCellier }
+        return { showCellier, validationErrors, isLoading, updateCellier }
     }
 }
 </script>

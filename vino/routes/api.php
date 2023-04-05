@@ -7,7 +7,6 @@ use App\Http\Controllers\Api\CellierController;
 use App\Http\Controllers\Api\BouteilleController;
 use App\Http\Controllers\Api\PaysController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Api\BouteilleHasCellierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +25,8 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('catalogue', CatalogueController::class);
     Route::apiResource('cellier', CellierController::class);
     Route::apiResource('bouteille', BouteilleController::class);
-    Route::apiResource('BouteilleHasCellierController', BouteilleHasCellierController::class);
+
+    // Route::get('/cellier/{cellier}', [CellierController::class, 'showOneCellier']);
 
     Route::put('/bouteille/{bouteille}', [BouteilleController::class, 'changeNote']);
 

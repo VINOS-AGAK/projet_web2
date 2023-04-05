@@ -61,6 +61,7 @@
     overflow: auto;
     white-space: nowrap;
     padding: var(--margin-small);
+    justify-content: space-around;
 }
 
 .trier-item{

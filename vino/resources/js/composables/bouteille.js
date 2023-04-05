@@ -30,18 +30,6 @@ export default function useBouteille() {
         })
     }
 
-    const getPaysBouteilles = async () => {
-        const response = await axios.get('api/bouteille');
-        const paysList = [];
-        
-        response.data.data.forEach(bouteille => {
-          if (!paysList.includes(bouteille.pays)) {
-            paysList.push(bouteille.pays);
-          }
-        });
-        console.log(paysList);
-        return paysList;
-      }
 
       const trierMesBouteilles = async (itemName, trier) => {
         const response = await axios.get('api/bouteille/');
@@ -167,8 +155,7 @@ export default function useBouteille() {
         validationErrors, 
         isLoading,
         trierMesBouteilles, 
-        bouteillesTrier,
-        getPaysBouteilles
+        bouteillesTrier
     }
 }
 

@@ -14,7 +14,7 @@
 
                         <IconContainer>
                             <template #icon>
-                                <IconCellierLogo/>
+                                <IconCellier/>
                             </template>
                         </IconContainer>
 
@@ -26,8 +26,6 @@
                             </div>
 
                                 <div class="card-info-client">
-
-                                    <p class="card-count"> bouteilles: 3 </p>
 
                                     <div class="card-icon-container">
                                         <router-link class="" :to="{ name: 'cellier.edit', params: { id: unCellier.id }}">
@@ -70,7 +68,7 @@
 // Import des hooks composables et des composants nécessaires pour la gestion des celliers
 import { onMounted, ref } from 'vue';
 import useCellier from '../../composables/cellier';
-import IconCellierLogo from '../icons/IconCellierLogo.vue';
+import IconCellier from '../icons/IconCellier.vue';
 import IconSupprimer from '../icons/IconSupprimer.vue';
 import IconModifier from '../icons/IconModifier.vue';
 import IconContainer from "../IconContainer.vue";
@@ -108,7 +106,7 @@ export default {
     // Définition des composants utilisés dans ce composant
     components: {
     "IconContainer": IconContainer,
-    "IconCellierLogo": IconCellierLogo,
+    "IconCellier": IconCellier,
     "IconSupprimer": IconSupprimer,
     "IconModifier": IconModifier,
 }

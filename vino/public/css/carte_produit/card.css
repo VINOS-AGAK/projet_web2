@@ -73,7 +73,6 @@
 
   .card-count {
     color: var(--color-dark);
-    border: 2px solid black;
     padding: 10px;
     border-radius: var(--border-radius-ex-small);
     padding-left: 10px;

@@ -2,8 +2,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <div class="trier-container" >
         <ul class="trier-liste" >
-            <li class="trier-item" @click="trierItem(bouteille.pays)" v-for="bouteille in mesBouteilles" :key="bouteille.id">
-                {{bouteille.pays}}
+            <li class="trier-item"  v-for="bouteille in oneCellier" :key="bouteille.id">
+                <span @click="trierItem(bouteille.pays)">{{bouteille.pays}}</span>
             </li>
         </ul>
     </div>
@@ -216,6 +216,7 @@ export default {
 
         const trierItem=(itemName)=>{
             trier.value = false;
+            console.log(itemName);
             handleTrierChange(itemName);
         }
 
@@ -244,6 +245,7 @@ export default {
             test,
         }
     }, 
+
  
 }
 </script>

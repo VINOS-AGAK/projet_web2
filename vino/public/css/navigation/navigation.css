@@ -101,10 +101,10 @@ div.container-header{
   background-color: var(--accent-color);
   display: flex;
   justify-content: space-between;
+
 }
 
 .menu-item{
-  padding: 10px;
   align-self: center;
   display: flex;
 }

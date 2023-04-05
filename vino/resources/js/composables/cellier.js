@@ -65,6 +65,19 @@ export default function useCellier() {
         }
     } 
 
+    const trierMonCellier = async (itemName, trier, id) => {
+        const response = await axios.get('api/bouteille/' + id);
+        
+        let cellierTrier = [];
+        response.data.data.forEach(bouteille => {
+          if (bouteille.pays == itemName) {
+            cellierTrier.push(bouteille);
+          }
+        });
+        
+        return cellierTrier;
+      };
+
 
 
     /**
@@ -174,6 +187,7 @@ export default function useCellier() {
         storeCellier,
         updateCellier,
         deleteCellier,
-        showOneCellier
+        showOneCellier, 
+        trierMonCellier
     }
 }

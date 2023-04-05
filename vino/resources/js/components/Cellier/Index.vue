@@ -30,9 +30,9 @@
 
             </router-link>
                 <div class="cellier__card-footer">
-                    <router-link class="card-btn_modif " :to="{ name: 'cellier.edit', params: { id: unCellier.id }}">
+                    <!-- <router-link class="card-btn_modif " :to="{ name: 'cellier.edit', params: { id: unCellier.id }}">
                         Modifier
-                    </router-link>
+                    </router-link> -->
                     <button class="card-btn_supp deleteModalBtn" @click.prevent="deleteCellier(unCellier.id)">-</button>
                 </div>
             </div>

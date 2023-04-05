@@ -30,18 +30,32 @@ export default function useBouteille() {
         })
     }
 
-    const trierMesBouteilles = async (itemName, trier) => {
+    const getPaysBouteilles = async () => {
+        const response = await axios.get('api/bouteille');
+        const paysList = [];
+        
+        response.data.data.forEach(bouteille => {
+          if (!paysList.includes(bouteille.pays)) {
+            paysList.push(bouteille.pays);
+          }
+        });
+        console.log(paysList);
+        return paysList;
+      }
+
+      const trierMesBouteilles = async (itemName, trier) => {
         const response = await axios.get('api/bouteille/');
-      
-        const bouteillesTrier = [];
+        
+        const bouteillesTrier = new Set();
         response.data.data.forEach(bouteille => {
           if (bouteille.pays == itemName) {
-            bouteillesTrier.push(bouteille);
+            bouteillesTrier.add(bouteille);
           }
         });
         
-        return bouteillesTrier;
+        return Array.from(bouteillesTrier);
       };
+      
 
     // Récupère une bouteille
     const getUneBouteille = async (id) => {
@@ -153,7 +167,8 @@ export default function useBouteille() {
         validationErrors, 
         isLoading,
         trierMesBouteilles, 
-        bouteillesTrier
+        bouteillesTrier,
+        getPaysBouteilles
     }
 }
 

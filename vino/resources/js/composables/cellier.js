@@ -8,6 +8,7 @@ export default function useCellier() {
 
     let mesCellier = ref({});
     const oneCellier = ref({});
+    const showCellier = ref({});
     const router = useRouter();
     const { user } = useAuth();
     const validationErrors = ref ({});
@@ -30,6 +31,20 @@ export default function useCellier() {
             console.log(mesCellier);
         })
     } 
+    
+    // const showOneCellier = async (id) => {
+    //     console.log(id)
+    //     try{
+    //         const response = await axios.get('api/cellier/' + id )
+    //         showCellier.value = response.data.data;
+    //         console.log('un cellier');
+    //         console.log(showCellier);
+    //         return showCellier.value;
+    //     }
+    //     catch (error){
+    //         console.error('Error fetching one cellier', error);
+    //     }
+    // }
 
     /**
      * Afficher un Cellie de usager
@@ -49,6 +64,7 @@ export default function useCellier() {
             console.error('Error fetching one cellier', error);
         }
     } 
+
 
 
     /**
@@ -152,10 +168,12 @@ export default function useCellier() {
         isLoading,
         user,
         validationErrors,
+        showCellier,
         getOneCellier,
         getCelliers,
         storeCellier,
         updateCellier,
         deleteCellier,
+        showOneCellier
     }
 }

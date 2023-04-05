@@ -1,4 +1,6 @@
 <template>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <div class="trier-container">
         <ul class="trier-liste">
             <li class="trier-item" @click="trierItem('italie')">italie</li>
@@ -33,33 +35,56 @@
                             <p class="card-count"> {{ bouteille.prix_saq }} $</p>
                             <p class="card-count"> {{ bouteille.quantite }} bouteille</p>
                         </div> 
+                        
+                        <div>
+                            <div  class="stars-flex">
+                                <legend></legend>
+                                <form @submit.prevent='changeNote(bouteille)'>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="1" :id="'star'+bouteille.id+1" name="rating" />
+                                            <label :for="'star'+bouteille.id+1">1</label>
+                                        </button>
+                                    </fieldset>
+                                </form>
 
-                        <!-- Si vous ajouter une note dans DB vous alez le voir ici -->
-                        <div      v-if="bouteille.notes && bouteille.notes == 5" class="card-count" >Ma note: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 4" class="card-count" >Ma note: &#9733;&#9733;&#9733;&#9733;&#10025;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 3" class="card-count" >Ma note: &#9733;&#9733;&#9733;&#10025;&#10025;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 2" class="card-count" >Ma note: &#9733;&#9733;&#10025;&#10025;&#10025;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 1" class="card-count" >Ma note: &#9733;&#10025;&#10025;&#10025;&#10025;</div>
-                        <div v-else class="card-count" >Aucun note</div>
+                                <form @submit.prevent='changeNote(bouteille)'>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="2" :id="'star'+bouteille.id+2" name="rating" />
+                                            <label :for="'star'+bouteille.id+2" >2</label>
+                                        </button>
+                                    </fieldset>
+                                </form>
 
-                        <form @submit.prevent='changeNote(bouteille)'>
-                            <div>
-                                <label for="note-send" >Note 
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="1" name="notes" />
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="2" name="notes" />
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="3" name="notes" />
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="4" name="notes" />
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="5" name="notes" id="note-send"/>
-                                </label>
+                                <form @submit.prevent='changeNote(bouteille)'>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="3" :id="'star'+bouteille.id+3" name="rating" />
+                                            <label :for="'star'+bouteille.id+3" >3</label>
+                                        </button>
+                                    </fieldset>
+                                </form>
 
-                                <!-- button -->
-                                <button :disabled="isLoading" class="">
-                                    <div v-show="isLoading" class=""></div>
-                                    <span v-if="isLoading">Processing...</span>
-                                    <span class="card-btn_modif" v-else>Sauvegarder Note</span>
-                                </button>
+                                <form @submit.prevent='changeNote(bouteille)'>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="4" :id="'star'+bouteille.id+4" name="rating" />
+                                            <label :for="'star'+bouteille.id+4" >4</label>
+                                        </button>
+                                    </fieldset>
+                                </form>
+
+                                <form @submit.prevent='changeNote(bouteille)'>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="5" :id="'star'+bouteille.id+5" name="rating" />
+                                            <label :for="'star'+bouteille.id+5" >5</label>
+                                        </button>
+                                    </fieldset>
+                                </form>
                             </div>
-                        </form>
+                        </div>
 
                         <div class="card-footer">
                               <button  class="card-btn_add " @click.prevent="increment(bouteille.id)" >+</button>    

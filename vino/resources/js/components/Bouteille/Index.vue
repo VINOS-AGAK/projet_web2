@@ -76,8 +76,12 @@
     </section>
 
     <section class="liste-container" v-else>
-        <h2>trier = true</h2>
+        <h2>trier = false</h2>
+        <div class="card" v-for="bouteille in test" :key="bouteille.id" >
+            <h2>{{ bouteille.nom }}</h2>
+        </div>
     </section>
+
 </template>
 
     
@@ -93,12 +97,13 @@ export default {
     setup() {
 
         // Utilise le module 'useBouteille' pour obtenir les bouteilles
-        const { mesBouteilles, getMesBouteilles, deleteBouteille, trierMesBouteilles } = useBouteille()
+        const { mesBouteilles, getMesBouteilles, deleteBouteille, trierMesBouteilles, bouteillesTrier } = useBouteille()
         // Obtient l'objet $route depuis l'instance en cours
         const { $route } = getCurrentInstance().proxy
         // Utilise le module 'useCellier' pour obtenir un cellier
         const { oneCellier, getOneCellier } = useCellier();
         let trier = ref(true);
+        const test = ref([]);
 
 
         // Incrémente la quantité d'une bouteille
@@ -162,9 +167,10 @@ export default {
         }
 
         const handleTrierChange = async(itemName) => {
-
-            let test = await trierMesBouteilles(itemName,trier);
-            console.log(test);
+            bouteillesTrier = await trierMesBouteilles(itemName,trier);
+            console.log(bouteillesTrier);
+            test.value = bouteillesTrier;
+            return test;
         }
 
         watch(() => trier, handleTrierChange);
@@ -177,9 +183,13 @@ export default {
             getOneCellier,
             increment,
             decrement,
-            trierItem, 
+            trierItem,
+            bouteillesTrier,
+            trierMesBouteilles,
             trier,
-            changeNote
+            changeNote,
+            test
+
         }
     }
 }

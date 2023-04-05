@@ -10,6 +10,7 @@ export default function useBouteille() {
     const router = useRouter();
     let mesBouteilles = ref({});
     const uneBouteille = ref({});
+    let bouteillesTrier = ref({});
     const validationErrors = ref ({});
     const isLoading = ref(false);
     const { user } = useAuth();
@@ -151,7 +152,8 @@ export default function useBouteille() {
         updateBouteille,
         validationErrors, 
         isLoading,
-        trierMesBouteilles
+        trierMesBouteilles, 
+        bouteillesTrier
     }
 }
 

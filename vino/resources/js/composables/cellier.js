@@ -32,20 +32,6 @@ export default function useCellier() {
         })
     } 
     
-    // const showOneCellier = async (id) => {
-    //     console.log(id)
-    //     try{
-    //         const response = await axios.get('api/cellier/' + id )
-    //         showCellier.value = response.data.data;
-    //         console.log('un cellier');
-    //         console.log(showCellier);
-    //         return showCellier.value;
-    //     }
-    //     catch (error){
-    //         console.error('Error fetching one cellier', error);
-    //     }
-    // }
-
     /**
      * Afficher un Cellie de usager
      * @param {id} id 
@@ -65,6 +51,25 @@ export default function useCellier() {
         }
     } 
 
+    /**
+     * Afficher l'info du'n Cellie dans edit cellier
+     * @param {*} id 
+     * @returns {Array} showCellier
+     */
+    const showOneCellier = async (id) => {
+        console.log('composable/cllier/ id de cellier')
+        console.log(id)
+        try{
+            const response = await axios.get('api/cellier-modifier/' + id )
+            showCellier.value = response.data.data;
+        console.log('showCellier info d\'un cellier');
+        console.log(showCellier);
+            return showCellier.value;
+        }
+        catch (error){
+            console.error('Error fetching one cellier', error);
+        }
+    }
 
 
     /**

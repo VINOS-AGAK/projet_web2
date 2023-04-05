@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('cellier', CellierController::class);
     Route::apiResource('bouteille', BouteilleController::class);
 
-    // Route::get('/cellier/{cellier}', [CellierController::class, 'showOneCellier']);
+    Route::get('/cellier-modifier/{cellier}', [CellierController::class, 'showOneCellier']);
 
     Route::put('/bouteille/{bouteille}', [BouteilleController::class, 'changeNote']);
 

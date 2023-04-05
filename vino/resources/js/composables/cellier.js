@@ -32,19 +32,19 @@ export default function useCellier() {
         })
     } 
     
-    // const showOneCellier = async (id) => {
-    //     console.log(id)
-    //     try{
-    //         const response = await axios.get('api/cellier/' + id )
-    //         showCellier.value = response.data.data;
-    //         console.log('un cellier');
-    //         console.log(showCellier);
-    //         return showCellier.value;
-    //     }
-    //     catch (error){
-    //         console.error('Error fetching one cellier', error);
-    //     }
-    // }
+    const showOneCellier = async (id) => {
+        console.log(id)
+        try{
+            const response = await axios.get('api/cellier/' + id )
+            showCellier.value = response.data.data;
+            console.log('un cellier');
+            console.log(showCellier);
+            return showCellier.value;
+        }
+        catch (error){
+            console.error('Error fetching one cellier', error);
+        }
+    }
 
     /**
      * Afficher un Cellie de usager

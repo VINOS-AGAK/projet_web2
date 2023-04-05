@@ -1,0 +1,125 @@
+
+.cellier-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    margin-right: var(--margin-small);
+    margin-left: 20px;
+}
+
+.cellier__card-title{
+    font-size: var(--font-size-regular);
+    font-weight: var(--font-weight-medium);
+    margin: 0;
+    color: var(--color-dark);
+}
+
+.cellier__card-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: var(--margin-ex-small);
+}
+
+.ajouter-cellier {
+    margin: 20px;
+}
+.ajouter-cellier__bouton {
+    display: inline-block;
+    padding: 16px 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: var(--border-radius-small);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+}
+
+.ajouter-cellier__bouton:hover {
+    transform: translateY(-2px);
+    /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); */
+    background-color: var(--primary-color);
+}
+
+/* ========================== button triage ====================*/
+
+.trier-container{
+    background-color:var(--accent-color);
+}
+
+.trier-liste{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    white-space: nowrap;
+    padding: var(--margin-small);
+    justify-content: space-around;
+}
+
+.trier-item{
+    padding: var(--margin-small);
+}
+
+
+
+/*============================ responsive =====================*/
+@media only screen and (min-width: 768px) {
+    .ajouter-cellier {
+        margin-bottom: 40px;
+        margin-left: 60%;
+    }
+
+    .ajouter-cellier__bouton {
+        width: auto;
+        display: inline-block;
+        padding: 10px 30px;
+        margin-right: 20px;
+        font-size: var(--font-size-default);
+    }
+
+    .cellier__card-body svg{
+        width: 200px;
+        height: 200px;
+    }
+    .cellier__card-title{
+        font-size: var( --font-size-medium);
+        font-weight: var(--font-weight-heavy);
+    }
+    .cellier__card-footer{
+        margin-bottom: var(--margin-medium);
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .cellier__card-footer .card-btn_modif, .card-btn_supp{
+        font-size: var(--font-size-medium);
+    }
+}
+
+@media only screen and (min-width: 960px){
+    .ajouter-cellier {
+       
+        margin-left: 70%;
+    }
+    .ajouter-cellier__bouton {
+    
+        font-size: var(--font-size-regular);
+       
+    }
+
+}
+
+@media only screen and (min-width: 1200px){
+    .ajouter-cellier {
+       
+        margin-left: 80%;
+    }
+}

@@ -1,0 +1,27 @@
+ .liste-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: var(--color-white);
+
+
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .liste__titre{
+    margin-top: var(--margin-medium);
+    text-align: center;
+    font-size: var(--font-size-medium);
+  }
+  @media only screen and (min-width: 700px) {
+    .container {
+      justify-content: space-evenly;
+    }
+    
+  }
+
+  

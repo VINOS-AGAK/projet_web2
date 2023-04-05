@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CatalogueController;
 use App\Http\Controllers\Api\CellierController;
 use App\Http\Controllers\Api\BouteilleController;
+use App\Http\Controllers\Api\PaysController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
@@ -41,3 +42,4 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 });
 
 Route::apiResource('user', RegisteredUserController::class)->only(['store']);
+

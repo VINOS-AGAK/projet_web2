@@ -10,6 +10,7 @@ export default function useBouteille() {
     const router = useRouter();
     let mesBouteilles = ref({});
     const uneBouteille = ref({});
+    let bouteillesTrier = ref({});
     const validationErrors = ref ({});
     const isLoading = ref(false);
     const { user } = useAuth();
@@ -26,19 +27,35 @@ export default function useBouteille() {
         axios.get('api/bouteille')
         .then(response=>{
             mesBouteilles.value = response.data.data;
-            //console.log('Mes Bouteilles');
-            console.log(mesBouteilles.value);
         })
     }
 
-    // Trie les bouteilles
-    const trierMesBouteilles = async (itemName) => {
-        axios.get('api/bouteille/{$itemName}')
-        .then(response=>{
-            mesBouteilles.value = response.data.data;
-           console.log(itemName)
-        })
-    }
+    const getPaysBouteilles = async () => {
+        const response = await axios.get('api/bouteille');
+        const paysList = [];
+        
+        response.data.data.forEach(bouteille => {
+          if (!paysList.includes(bouteille.pays)) {
+            paysList.push(bouteille.pays);
+          }
+        });
+        console.log(paysList);
+        return paysList;
+      }
+
+      const trierMesBouteilles = async (itemName, trier) => {
+        const response = await axios.get('api/bouteille/');
+        
+        const bouteillesTrier = new Set();
+        response.data.data.forEach(bouteille => {
+          if (bouteille.pays == itemName) {
+            bouteillesTrier.add(bouteille);
+          }
+        });
+        
+        return Array.from(bouteillesTrier);
+      };
+      
 
     // Récupère une bouteille
     const getUneBouteille = async (id) => {
@@ -149,7 +166,9 @@ export default function useBouteille() {
         updateBouteille,
         validationErrors, 
         isLoading,
-        trierMesBouteilles
+        trierMesBouteilles, 
+        bouteillesTrier,
+        getPaysBouteilles
     }
 }
 

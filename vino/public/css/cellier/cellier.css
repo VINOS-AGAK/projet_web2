@@ -2,7 +2,7 @@
 .cellier-info{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     flex-grow: 1;
     margin-right: var(--margin-small);
     margin-left: 20px;

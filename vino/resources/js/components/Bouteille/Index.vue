@@ -35,73 +35,55 @@
                             <p class="card-count"> {{ bouteille.prix_saq }} $</p>
                             <p class="card-count"> {{ bouteille.quantite }} bouteille</p>
                         </div> 
-
-                        <!-- Si vous ajouter une note dans DB vous alez le voir ici -->
-                        <!-- <div      v-if="bouteille.notes && bouteille.notes == 5" class="card-stars" > &#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 4" class="card-stars" > &#9733;&#9733;&#9733;&#9733;&#10025;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 3" class="card-stars" > &#9733;&#9733;&#9733;&#10025;&#10025;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 2" class="card-stars" > &#9733;&#9733;&#10025;&#10025;&#10025;</div>
-                        <div v-else-if="bouteille.notes && bouteille.notes == 1" class="card-stars" > &#9733;&#10025;&#10025;&#10025;&#10025;</div>
-                        <div v-else class="card-count" >Aucun note</div> -->
-
-                        <!-- <form @submit.prevent='changeNote(bouteille)'>
-                            <div>
-                                <fieldset>
-                                    <legend>Note:</legend>
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="1" id="star1" name="rating" />
-                                    <label for="star1">1</label>
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="2" id="star2" name="rating" />
-                                    <label for="star2">2</label>
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="3" id="star3" name="rating" />
-                                    <label for="star3">3</label>
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="4" id="star4" name="rating" />
-                                    <label for="star4">4</label>
-                                    <input className="radio" v-model="bouteille.notes" type="radio" value="5" id="star5" name="rating" />
-                                    <label for="star5">5</label>
-                                </fieldset>
-                                <button :disabled="isLoading" class="">
-                                    <div v-show="isLoading" class=""></div>
-                                    <span v-if="isLoading">Processing...</span>
-                                    <span class="card-btn_modif" v-else>Sauvegarder Note</span>
-                                </button>
-                            </div>
-                        </form> -->
-
+                        
                         <div>
-                            <fieldset  class="stars-flex">
+                            <div  class="stars-flex">
                                 <legend></legend>
                                 <form @submit.prevent='changeNote(bouteille)'>
-                                    <button class="stars-btn">
-                                        <input className="radio" v-model="bouteille.notes" type="radio" value="1" id="star1" name="rating" />
-                                        <label for="star1">1</label>
-                                    </button>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="1" :id="'star'+bouteille.id+1" name="rating" />
+                                            <label :for="'star'+bouteille.id+1">1</label>
+                                        </button>
+                                    </fieldset>
                                 </form>
 
                                 <form @submit.prevent='changeNote(bouteille)'>
-                                    <button class="stars-btn">
-                                        <input className="radio" v-model="bouteille.notes" type="radio" value="2" id="star2" name="rating" />
-                                        <label for="star2">2</label>
-                                    </button>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="2" :id="'star'+bouteille.id+2" name="rating" />
+                                            <label :for="'star'+bouteille.id+2" >2</label>
+                                        </button>
+                                    </fieldset>
                                 </form>
+
                                 <form @submit.prevent='changeNote(bouteille)'>
-                                    <button class="stars-btn">
-                                        <input className="radio" v-model="bouteille.notes" type="radio" value="3" id="star3" name="rating" />
-                                        <label for="star3">3</label>
-                                    </button>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="3" :id="'star'+bouteille.id+3" name="rating" />
+                                            <label :for="'star'+bouteille.id+3" >3</label>
+                                        </button>
+                                    </fieldset>
                                 </form>
+
                                 <form @submit.prevent='changeNote(bouteille)'>
-                                    <button class="stars-btn">
-                                        <input className="radio" v-model="bouteille.notes" type="radio" value="4" id="star4" name="rating" />
-                                        <label for="star4">4</label>
-                                    </button>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="4" :id="'star'+bouteille.id+4" name="rating" />
+                                            <label :for="'star'+bouteille.id+4" >4</label>
+                                        </button>
+                                    </fieldset>
                                 </form>
+
                                 <form @submit.prevent='changeNote(bouteille)'>
-                                    <button class="stars-btn">
-                                        <input className="radio" v-model="bouteille.notes" type="radio" value="5" id="star5" name="rating" />
-                                        <label for="star5">5</label>
-                                    </button>
+                                    <fieldset>
+                                        <button class="stars-btn">
+                                            <input class="radio" v-model="bouteille.notes" type="radio" value="5" :id="'star'+bouteille.id+5" name="rating" />
+                                            <label :for="'star'+bouteille.id+5" >5</label>
+                                        </button>
+                                    </fieldset>
                                 </form>
-                            </fieldset>
+                            </div>
                         </div>
 
                         <div class="card-footer">

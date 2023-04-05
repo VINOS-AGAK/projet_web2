@@ -85,7 +85,7 @@ class BouteilleController extends Controller
             'vino__bouteille_id' => $request->vino__bouteille_id,
             'vino__cellier_id' => $request->vino__cellier_id,
             'quantite' => $request->quantite,
-            'notes' => 1,
+            'notes' => $request->notes,
             ]);
         }
 

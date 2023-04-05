@@ -8,13 +8,14 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class BouteilleResource extends JsonResource
 {
     /**
-     * Transform the resource into an array.
+     * Convertit la ressource en tableau associatif.
      *
-     * @return array<string, mixed>
+     * @param Request $request La requête HTTP.
+     * @return array Le tableau associatif qui représente la ressource.
      */
     public function toArray(Request $request): array
     {
-       
+        // Retourne un tableau qui représente la bouteille, avec ses propriétés correspondantes.
        return [
         'id' => $this->bouteille__has__cellier_id,
         'vino__bouteille_id'=> $this->bouteille__has__cellier_vino__bouteille_id,

@@ -1,19 +1,28 @@
-import { ref, inject } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+// Importation des fonctions de Vue.js et de Vue Router
+import { ref, inject, reactive, getCurrentInstance } from 'vue';
+import { useRouter, useRoute } from 'vue-router'
+import { onMounted } from "vue";
+import useAuth from "../composables/auth";
 
+// Fonction qui permet d'utiliser bouteilles
 export default function useBouteille() {
+    // Déclaration des variables qui contiendront les données des bouteille
     const router = useRouter();
     const route = useRoute();
     let mesBouteilles = ref({});
     const uneBouteille = ref({});
+    let bouteillesTrier = ref({});
     const validationErrors = ref ({});
     const isLoading = ref(false);
+    
+    // Injection de la bibliothèque SweetAlert
     const swal = inject('$swal');
+    // Importation de la bibliothèque axios pour effectuer les requêtes HTTP
     const axios = require('axios');
     const routeParam = route.params.routeParam;
 
 
-
+    // Récupère toutes les bouteilles
     const getMesBouteilles = async () => {
         axios.get('api/bouteille')
         .then(response=>{
@@ -21,14 +30,34 @@ export default function useBouteille() {
         })
     }
 
-    const trierMesBouteilles = async (itemName) => {
-        axios.get('api/bouteille/{$itemName}')
-        .then(response=>{
-            mesBouteilles.value = response.data.data;
-           console.log(itemName)
-        })
-    }
+    const getPaysBouteilles = async () => {
+        const response = await axios.get('api/bouteille');
+        const paysList = [];
+        
+        response.data.data.forEach(bouteille => {
+          if (!paysList.includes(bouteille.pays)) {
+            paysList.push(bouteille.pays);
+          }
+        });
+        console.log(paysList);
+        return paysList;
+      }
 
+      const trierMesBouteilles = async (itemName, trier) => {
+        const response = await axios.get('api/bouteille/');
+        
+        const bouteillesTrier = new Set();
+        response.data.data.forEach(bouteille => {
+          if (bouteille.pays == itemName) {
+            bouteillesTrier.add(bouteille);
+          }
+        });
+        
+        return Array.from(bouteillesTrier);
+      };
+      
+
+    // Récupère une bouteille
     const getUneBouteille = async (id) => {
         axios.get('api/bouteille/' + id )
         .then(response=>{
@@ -36,7 +65,7 @@ export default function useBouteille() {
         })
     } 
 
-        /**
+    /**
      * Ajoute une bouteille dans le cellier choisi
      * @param {object} cellier 
      * @returns 
@@ -46,7 +75,7 @@ export default function useBouteille() {
 
         isLoading.value = true
         validationErrors.value = {}
-        
+        bouteille.notes = 1;
         axios.post('/api/bouteille', bouteille)
         .then(response => {
             router.push({name: 'bouteille.index', params: {id: bouteille.vino__cellier_id} })
@@ -64,7 +93,11 @@ export default function useBouteille() {
     }
 
 
+    // Met à jour une bouteille
     const updateBouteille = async (bouteille) => {
+        console.log('updateBouteille bouteille:');
+        console.log(bouteille);
+        console.log('=======================');
         isLoading.value = true
         try {
           const response = await axios.put(`/api/bouteilles/${bouteille.id}`, bouteille)
@@ -81,7 +114,7 @@ export default function useBouteille() {
       }
 
 
-
+    // Retourne les variables et fonctions nécessaires
     return {
         mesBouteilles,
         uneBouteille,
@@ -92,7 +125,10 @@ export default function useBouteille() {
         getUneBouteille,
         storeBouteille,
         updateBouteille,
-        trierMesBouteilles,
+        validationErrors, 
+        trierMesBouteilles, 
+        bouteillesTrier,
+        getPaysBouteilles
     }
 }
 

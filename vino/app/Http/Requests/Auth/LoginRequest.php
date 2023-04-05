@@ -12,15 +12,17 @@ use Illuminate\Validation\ValidationException;
 class LoginRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Détermine si l'utilisateur est autorisé à effectuer cette requête.
+     *
+     * @return bool
      */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
+     /**
+     * Obtenez les règles de validation qui s'appliquent à la requête.
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
@@ -31,9 +33,8 @@ class LoginRequest extends FormRequest
             'password' => ['required', 'string'],
         ];
     }
-
     /**
-     * Attempt to authenticate the request's credentials.
+     * Tente d'authentifier les informations d'identification de la requête.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -41,6 +42,8 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
+         // Utilise la méthode attempt() d'Auth pour tenter d'authentifier l'utilisateur.
+        // Si l'authentification échoue, le compteur de taux de requête est incrémenté et une exception de validation est levée.
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
@@ -49,20 +52,24 @@ class LoginRequest extends FormRequest
             ]);
         }
 
+        // Si l'authentification réussit, le compteur de taux de requête est effacé.
         RateLimiter::clear($this->throttleKey());
     }
 
-    /**
-     * Ensure the login request is not rate limited.
+     /**
+     * Assurez-vous que la requête de connexion n'est pas limitée par le taux de requête.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
     public function ensureIsNotRateLimited(): void
     {
+        // Vérifie si le taux de requête est trop élevé pour cette demande.
+        // Si ce n'est pas le cas, la méthode retourne simplement.
         if (! RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
             return;
         }
 
+        // Si le taux de requête est trop élevé, l'événement Lockout est déclenché et une exception de validation est levée avec un message d'erreur correspondant.
         event(new Lockout($this));
 
         $seconds = RateLimiter::availableIn($this->throttleKey());
@@ -75,8 +82,10 @@ class LoginRequest extends FormRequest
         ]);
     }
 
-    /**
-     * Get the rate limiting throttle key for the request.
+     /**
+     * Obtenez la clé de limitation du taux de requête pour la demande.
+     *
+     * @return string
      */
     public function throttleKey(): string
     {

@@ -7,10 +7,16 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
+/**
+ * Class-contrôleur pour l'envoi de notifications de vérification d'adresse e-mail.
+ */
 class EmailVerificationNotificationController extends Controller
 {
     /**
-     * Send a new email verification notification.
+     * Envoie une nouvelle notification de vérification d'e-mail.
+     *
+     * @param Request $request Les données de la requête HTTP.
+     * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
     {

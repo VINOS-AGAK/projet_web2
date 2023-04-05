@@ -85,19 +85,25 @@
     </template>
     
     <script>
+    // Importation des modules Vue
     import { onMounted, reactive} from "vue";
     import { useRoute } from 'vue-router';
     import useCatalogue from "../composables/catalogue.js";
     
+    // Exportation du module Vue
     export default {
+        // Configuration du module Vue
         setup() {
+            // Utilisation du module composable "catalogue"
             const { oneCatalogue, getOneCatalogue, updateCatalogue, validationErrors, isLoading } = useCatalogue()
             const route = useRoute()
 
+            // À la fin de la phase de montage du composant
             onMounted(()=> {
                 getOneCatalogue(route.params.id)
             })
     
+            // Retourne les variables et fonctions nécessaires
             return { oneCatalogue, validationErrors, isLoading, updateCatalogue }
         }
     }

@@ -7,6 +7,8 @@
 
             <form @submit.prevent="submitLogin">
 
+                <p v-if="loading">Loading...</p>
+
                 <p class="text-form">courriel</p>
                 <input v-model="loginForm.email" id="email" type="email" class="email" required autofocus
                     autocomplete="username">
@@ -47,11 +49,20 @@
 </template>
  
 <script>
+// Import du hook "useAuth" pour la gestion de l'authentification
 import useAuth from '../../composables/auth'
 export default {
     setup() {
+        // Récupération des fonctions et des données nécessaires pour l'authentification grâce au hook "useAuth"
         const { loginForm, validationErrors, processing, submitLogin } = useAuth()
-        return { loginForm, validationErrors, processing, submitLogin }
+        // Retourne les données nécessaires pour l'affichage du formulaire de connexion
+        return { 
+            loginForm, 
+            validationErrors, 
+            processing, 
+            submitLogin, 
+            loading: false // Ajout d'une propriété "loading" initialisée à "false"
+        }
     }
 }
 </script>

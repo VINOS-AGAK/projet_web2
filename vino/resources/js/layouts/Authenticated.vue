@@ -36,7 +36,7 @@
                     </li>
 
                     <li class="menu-item">
-                        <div class="menu-username">{{ user.name }}</div>
+                        <div v-if="user" class="menu-username">{{ user.name }}</div>
                         <button @click="logout" type="button" >
                             <IconContainer>
                                 <template #icon>
@@ -63,6 +63,7 @@
 <script>
 import { onMounted } from "vue";
 import useAuth from "../composables/auth";
+// Importation du composant Icons
 import IconLogo from '../components/icons/IconLogo.vue';
 import IconProfil from '../components/icons/IconProfil.vue';
 import IconCellier from '../components/icons/IconCellier.vue';
@@ -74,16 +75,20 @@ import IconContainer from "../components/IconContainer.vue";
 export default { 
 
     setup() {
+        // Utilisation du composant composable useAuth pour récupérer les informations utilisateur
         const { user, processing, logout, getUser } = useAuth()
 
+        // Appel de la méthode getUser au chargement de la page
         onMounted(getUser)
         return { user, processing, logout }
     },
     computed: {
+         // Définition d'un calcul de propriété pour récupérer le titre de la page courante
         currentPageTitle() {
             return this.$route.meta.title;
         }
     },
+    // Définition des composants pour les utiliser dans le template
     components: {
         'IconContainer': IconContainer,
         'IconLogo': IconLogo,

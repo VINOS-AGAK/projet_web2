@@ -8,10 +8,16 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
+/**
+ * Class-contrôleur pour l'affichage de la page de vérification d'adresse e-mail.
+ */
 class EmailVerificationPromptController extends Controller
 {
     /**
-     * Display the email verification prompt.
+     * Affiche la page de vérification d'e-mail.
+     *
+     * @param Request $request Les données de la requête HTTP.
+     * @return RedirectResponse|View
      */
     public function __invoke(Request $request): RedirectResponse|View
     {

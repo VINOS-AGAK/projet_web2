@@ -67,7 +67,27 @@ export default function useCellier() {
 
     const trierMonCellier = async (itemName, trier, id) => {
         const response = await axios.get('api/bouteille/' + id);
-        
+            /**
+     * Afficher l'info du'n Cellie dans edit cellier
+     * @param {*} id 
+     * @returns {Array} showCellier
+     */
+    
+    const showOneCellier = async (id) => {
+        console.log('composable/cllier/ id de cellier')
+        console.log(id)
+        try{
+            const response = await axios.get('api/cellier-modifier/' + id )
+            showCellier.value = response.data.data;
+        console.log('showCellier info d\'un cellier');
+        console.log(showCellier);
+            return showCellier.value;
+        }
+        catch (error){
+            console.error('Error fetching one cellier', error);
+        }
+    }
+
         let cellierTrier = [];
         response.data.data.forEach(bouteille => {
           if (bouteille.pays == itemName) {

@@ -145,7 +145,7 @@ import useBouteille from '../../composables/bouteille'
 import useCellier from '../../composables/cellier'
 import IconContainer from "../IconContainer.vue";
 import IconSupprimer from '../icons/IconSupprimer.vue';
-import { onMounted, getCurrentInstance, watch, ref, computed } from 'vue'
+import { onMounted, getCurrentInstance, watch, ref, computed, inject } from 'vue'
 import axios from 'axios'
 
 export default {

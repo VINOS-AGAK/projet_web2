@@ -50,11 +50,8 @@
 
   .card-title {
     font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
     margin: 0;
-    font-family: var(--font-third);
     color: var(--color-dark);
-    margin-bottom: var(--margin-small);
 
   }
 
@@ -73,9 +70,7 @@
 
   .card-count {
     color: var(--color-dark);
-    padding: 10px;
     border-radius: var(--border-radius-ex-small);
-    padding-left: 10px;
   }
 
   .card-rating{

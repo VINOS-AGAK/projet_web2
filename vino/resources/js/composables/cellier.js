@@ -72,7 +72,7 @@ export default function useCellier() {
      * @param {*} id 
      * @returns {Array} showCellier
      */
-    
+
     const showOneCellier = async (id) => {
         console.log('composable/cllier/ id de cellier')
         console.log(id)
@@ -138,8 +138,7 @@ export default function useCellier() {
         isLoading.value = true
         validationErrors.value = {}
         console.log('updateCellier / cellier');
-        console.log(cellier);
-        console.log('==============================================');
+
         axios.put('/api/cellier/' + cellier.id, cellier)
         .then(response => {
             router.push({name: 'cellier.index'})

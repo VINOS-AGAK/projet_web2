@@ -11,7 +11,7 @@
             <div class="card" v-for="unCellier in mesCellier" :key="unCellier.id">
                 <router-link :to="{ name: 'bouteille.index', params: { id: unCellier.id } }">
                     <div class="card-body">
-                        
+
                         <section class="cellier-info">
                             <h3 class="cellier__card-title">{{ unCellier.nom}}</h3>
                             <p class="card-subtitle">{{ unCellier.description }}</p>
@@ -41,8 +41,6 @@
                             </button>
                         </section>
 
-  
-                                
                     </div>
                 </router-link>
             </div>

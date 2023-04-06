@@ -52,7 +52,6 @@ export default {
         // Lorsque le composant est monté, récupération du cellier correspondant à l'ID de la route en cours grâce à la fonction "getOneCellier" et affichage de ses informations dans la console
         onMounted(() => {
             showOneCellier(route.params.id)
-            console.log('une Cellier dans edit');
         })
 
         // Retourne les données nécessaires pour l'édition du cellier

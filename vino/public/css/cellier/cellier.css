@@ -58,7 +58,7 @@
 .trier-liste{
     display: flex;
     flex-direction: row;
-    overflow: auto;
+    overflow-x: auto;
     white-space: nowrap;
     padding: var(--margin-small);
 }
@@ -66,6 +66,8 @@
 .trier-item{
     padding: var(--margin-small);
 }
+
+
 
 /*============================ responsive =====================*/
 @media only screen and (min-width: 768px) {

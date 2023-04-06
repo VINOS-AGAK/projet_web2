@@ -49,12 +49,10 @@
   }
 
   .card-title {
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
+    font-size: 1.2rem;
     margin: 0;
-    font-family: var(--font-third);
     color: var(--color-dark);
-    margin-bottom: var(--margin-small);
+    padding-top: 5px;
 
   }
 
@@ -68,15 +66,12 @@
   .card-subtitle {
     font-style: italic;
     color:var(--color-dark);
-    margin-botton: 0px;
+    margin-bottom: 0px;
   }
 
   .card-count {
     color: var(--color-dark);
-    border: 2px solid black;
-    padding: 10px;
     border-radius: var(--border-radius-ex-small);
-    padding-left: 10px;
   }
 
   .card-rating{
@@ -106,7 +101,7 @@
   }
 
 
-  .card-btn_supp, .card-btn_add, .card-btn_modif, .card-btn_delete {
+  .card-btn_supp, .card-btn_add, .card-btn_modif{
     border-radius: var(--border-radius-ex-small);
     box-shadow: 0px 0px 2px var(--color-dark); 
     padding: 5px;
@@ -117,7 +112,8 @@
 
   .card-btn_add{
     background-color: var( --color-white);
-    width: 40px;
+    width: auto;
+    height: auto;
     font-weight: var(--font-weight-bold);
     color: var(--color-dark);
   }
@@ -129,7 +125,7 @@
    
   }
 
-  .card-btn_modif, .card-btn_delete{
+  .card-btn_modif {
     background-color: var(--accent-color);
     /* width: 30%; */
   }
@@ -137,6 +133,7 @@
   .card-btn_delete{
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 1px;
   }
 
   .card-btn_delete:disabled{
@@ -144,12 +141,24 @@
   }
 
   section.card-cellier{
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
+  }
 
+  .count-bouteilles{
+    display: flex;
+    background-color: rgb(214, 214, 214);
+    justify-content: space-around;
+    border-radius: 15px;
+    width: 200px;
+    height: 40px;
+  }
+
+  .container-counter{
+    display: flex;
+    padding-top: 10px;
   }
   
 
@@ -173,15 +182,17 @@
     content: "\f005";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    /* margin-right: 0.5rem; */
+    font-size: 10px;
   }
   
   fieldset input[type="radio"] {
     display: none;
+    font-size: 10px;
   }
   
   fieldset input[type="radio"]:checked + label:before {
     color: gold;
+    font-size: 10px;
   }
   /* ======================================== */
   .stars-flex {

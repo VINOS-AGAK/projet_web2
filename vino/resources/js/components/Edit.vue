@@ -101,8 +101,6 @@
             // À la fin de la phase de montage du composant
             onMounted(()=> {
                 getOneCatalogue(route.params.id)
-                console.log('une bouteille du catalogue dans edit');
-                console.log(oneCatalogue);
             })
     
             // Retourne les variables et fonctions nécessaires

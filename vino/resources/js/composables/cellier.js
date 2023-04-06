@@ -31,9 +31,12 @@ export default function useCellier() {
     } 
     
     const showOneCellier = async (id) => {
+        console.log(id)
         try{
             const response = await axios.get('api/cellier/' + id )
             showCellier.value = response.data.data;
+            console.log('un cellier');
+            console.log(showCellier);
             return showCellier.value;
         }
         catch (error){
@@ -58,23 +61,19 @@ export default function useCellier() {
     } 
 
     const trierMonCellier = async (itemName, trier, id) => {
-        const response = await axios.get('api/bouteille/' + id);
-            /**
-     * Afficher l'info du'n Cellie dans edit cellier
-     * @param {*} id 
-     * @returns {Array} showCellier
-     */
 
-    const showOneCellier = async (id) => {
-        try{
-            const response = await axios.get('api/cellier-modifier/' + id )
-            showCellier.value = response.data.data;
-            return showCellier.value;
+        const response = await axios.get('api/bouteille/' + id);
+        const showOneCellier = async (id) => {
+
+            try{
+                const response = await axios.get('api/cellier-modifier/' + id )
+                showCellier.value = response.data.data;
+                return showCellier.value;
+            }
+            catch (error){
+                console.error('Error fetching one cellier', error);
+            }
         }
-        catch (error){
-            console.error('Error fetching one cellier', error);
-        }
-    }
 
         let cellierTrier = [];
         response.data.data.forEach(bouteille => {
@@ -84,6 +83,7 @@ export default function useCellier() {
         });
         
         return cellierTrier;
+        
       };
 
 
@@ -125,6 +125,7 @@ export default function useCellier() {
 
         isLoading.value = true
         validationErrors.value = {}
+        console.log('updateCellier / cellier');
 
         axios.put('/api/cellier/' + cellier.id, cellier)
         .then(response => {

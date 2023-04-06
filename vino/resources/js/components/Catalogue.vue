@@ -74,11 +74,11 @@
     <!-- Section pour ajouter nouvelle bouteille -->
     <section   v-show="!selectedProduct" class="container-form">
       <div class="ajouter-cellier">
-        <button class="ajouter-cellier__bouton">Ajouter votre vin</button>
+        <button @click="toggleForm" class="ajouter-cellier__bouton">Ajouter votre vin</button>
       </div>
     
 
-          <form @submit.prevent='storeCatalogueAndBouteille(newCatalogue, bouteille)' class="ajouter-nouveau-vino">
+          <form v-show="showForm" @submit.prevent='storeCatalogueAndBouteille(newCatalogue, bouteille)' class="ajouter-nouveau-vino">
 
             <p class="text-form">Type:</p>
             <input v-model="newCatalogue.vino__type_id" id="catalogue-type" type="number" min="1" max="2" class="number">
@@ -202,7 +202,13 @@
       url_img: '',
       format: '',
       vino__type_id: '',
-  })
+      })
+
+      const showForm = ref(false); // Create a ref to control the form visibility
+
+    const toggleForm = () => {
+      showForm.value = !showForm.value; // Toggle the form visibility when the button is clicked
+    };
       // Appel à la fonction de récupération de catalogue et de celliers après la création de la vue
       onMounted(getCatalogue)
       onMounted(getCelliers)
@@ -277,6 +283,8 @@
         selectedProduct,
         bouteille,
         mesCellier,
+        showForm,
+        toggleForm,
         getCatalogue,
         deleteCatalogue,
         selectProduct,

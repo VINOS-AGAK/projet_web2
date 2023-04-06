@@ -32,6 +32,7 @@
   
   .catalogue__card input[type="radio"] {
     margin-right: 0.5rem;
+    margin-top: 12px;
   }
   
   .catalogue__card button[type="submit"] {
@@ -50,6 +51,10 @@
     background-color: #fed240;
   }
 
+  .container-confirmation{
+    display: flex;
+    padding-top: 10px;
+  }
   
   
   /* Styles for phone-sized displays */
@@ -58,8 +63,8 @@
     
     .catalogue__card label{
       font-weight: var(--font-weight-medium); 
-      margin-bottom: var(--padding-ex-small);
-      margin-top: var(--padding-ex-small);
+      margin-bottom: var(--padding-small);
+      margin-top: var(--padding-small);
       font-size: var(--font-size-small);
     }
   

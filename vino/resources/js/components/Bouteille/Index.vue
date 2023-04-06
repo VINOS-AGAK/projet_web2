@@ -77,7 +77,6 @@
                         </div>
 
                         <div class="container-counter">
-
                                 <section class="count-bouteilles">
                                     <button  class="" @click.prevent="decrement    (bouteille.id)" :disabled="bouteille.quantite < 1">-</button>
                                     <p class=""> {{ bouteille.quantite }}</p>
@@ -91,7 +90,6 @@
                                         </template>
                                     </IconContainer>
                                 </button>
-
                         </div>
 
                     </section>

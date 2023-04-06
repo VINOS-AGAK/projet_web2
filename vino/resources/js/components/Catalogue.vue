@@ -25,7 +25,6 @@
       <article v-if="selectedProduct" class="catalogue__card">
         <div class="catalogue__card-body">
           <img :src="selectedProduct.image" alt="img-bouteille">
-          <picture class="modal"><img :src="selectedProduct.image" alt="img-bouteille"></picture>
           <div class="catalogue__card-info">
 
             <div class="card-info-title">
@@ -36,43 +35,45 @@
 
             <div class="card-info-client">
               <p class="catalogue__card-count">{{ selectedProduct.prix_saq }}$</p>
-          
-                <form @submit.prevent="storeBouteille(bouteille)" >
-
-                <div class="">
-                  <!-- Menu déroulant pour choisir le cellier -->
-                  <label for="selectField">Choisir Cellier</label>
-                  <select v-model="bouteille.vino__cellier_id" name="vino__cellier_id" id="selectField" class="">
-                    <option value="" disabled>--Choisissez un cellier--</option>
-                    <option  v-for="cellier in mesCellier" :value="cellier.id" >{{ cellier.nom }}</option>
-                  </select>
-                </div>
-
-                <div>
-                  <!-- Champ de quantité -->
-                  <label for="quantityField">Quantite</label>
-                  <input v-model="bouteille.quantite" name="quantite" type="number" id="quantityField" class="" min="1" max="100">
-                </div>
-
-                <div>
-                  <!-- Case à cocher pour confirmer l'ajout -->
-                  <label for="ajouter">Confirmation</label>
-                  <input v-model="bouteille.vino__bouteille_id" type="radio" name="vino__bouteille_id" :value="selectedProduct.id" id="ajouter">
-                </div>
-
-                <button type="submit" class="btn">Ajouter</button>
-
-              </form>
-
-              
             </div>
+
           </div>
+
         </div>
+
+        <form @submit.prevent="storeBouteille(bouteille)" class="catalogue-form" >
+
+          <!-- Menu déroulant pour choisir le cellier -->
+
+            <label for="selectField" class="">Choisir Cellier</label>
+            <select v-model="bouteille.vino__cellier_id" name="vino__cellier_id" id="selectField" class="">
+              <option value="" disabled>--Choisissez un cellier--</option>
+              <option  v-for="cellier in mesCellier" :value="cellier.id" >{{ cellier.nom }}</option>
+            </select>
+
+            <!-- Champ de quantité -->
+            <label for="quantityField">Quantite</label>
+            <input v-model="bouteille.quantite" name="quantite" type="number" id="quantityField" class="input" min="1" max="100">
+
+
+          <!-- Case à cocher pour confirmer l'ajout -->
+          <section class="container-confirmation">
+            <label for="ajouter" class="">Confirmation</label>
+            <input v-model="bouteille.vino__bouteille_id" type="radio" name="vino__bouteille_id" :value="selectedProduct.id" id="ajouter" class="input">
+          </section>
+
+          <button type="submit" class="btn">Ajouter</button>
+
+        </form>
+
       </article>
+
     </section>
+
+  </div>
     
     <!-- Section pour ajouter nouvelle bouteille -->
-    <section   v-show="!selectedProduct" class="container-form">
+    <section   v-show="!selectedProduct">
     
           <h2 class="catalogue_titre-section">Ajouter votre vin</h2>
 
@@ -121,7 +122,7 @@
 
           </form>
     </section>
-  </div>
+
 </template> 
 
 

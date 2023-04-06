@@ -10,6 +10,7 @@
     </div>
 
 </template> 
+
  <script>
  // Import du hook "useCatalogue" pour la gestion du catalogue de bouteilles
   import useCatalogue from '../composables/catalogue'

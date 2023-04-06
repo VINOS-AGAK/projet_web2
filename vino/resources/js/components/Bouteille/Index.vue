@@ -13,7 +13,7 @@
             <router-link :to="{name: 'catalogue.index'}" class="ajouter-cellier__bouton">Ajouter nouvelle bouteille</router-link>
         </div>
     
-        <h2 class="liste__titre" >{{ mesCellier.nom }}</h2>
+        <!-- <h2 class="liste__titre" >{{ mesCellier.nom }}</h2> -->
         
         <article class="container">
             <div class="card" v-for="bouteille in oneCellier" :key="bouteille.id" >

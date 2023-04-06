@@ -36,28 +36,31 @@ export default function useCatalogue() {
     } 
 
     // Fonction qui permet de sauvegarder un élément du catalogue
-    const storeCatalogue = async (catalogue) => { 
-        if(isLoading.value) return;
-
-        isLoading.value = true
-        validationErrors.value = {}
-
-        axios.post('/api/catalogue', catalogue)
-        .then(response => {
-            router.push({name: 'catalogue.index'})
-            swal({
-                    icon : 'success',
-                    title: 'Bouteille Ajouté Avec Succès'
-                })
-        })
-        .catch(error =>{
-            if(error.response?.data){
-                validationErrors.value = error.response.data.errors
-            }
-        })
-        .finally(() => isLoading.value = false)
-    }
-
+    const storeCatalogue = async (catalogue) => {
+        if (isLoading.value) return;
+      
+        isLoading.value = true;
+        validationErrors.value = {};
+      
+        try {
+          const response = await axios.post('/api/catalogue', catalogue);
+      
+          router.push({ name: 'catalogue.index' });
+          swal({
+            icon: 'success',
+            title: 'Bouteille Ajouté Avec Succès',
+          });
+      
+          return response; // Return the response object
+        } catch (error) {
+          if (error.response?.data) {
+            validationErrors.value = error.response.data.errors;
+          }
+        } finally {
+          isLoading.value = false;
+        }
+      };
+      
     // Fonction qui permet de mettre à jour un élément du catalogue
     const updateCatalogue = async (catalogue) => { 
         if(isLoading.value) return;

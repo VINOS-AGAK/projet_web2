@@ -73,7 +73,6 @@ export default function useCellier() {
             catch (error){
                 console.error('Error fetching one cellier', error);
             }
-        }
 
         let cellierTrier = [];
         response.data.data.forEach(bouteille => {

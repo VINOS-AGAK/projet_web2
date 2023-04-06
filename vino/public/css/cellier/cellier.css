@@ -58,10 +58,9 @@
 .trier-liste{
     display: flex;
     flex-direction: row;
-    overflow: auto;
+    overflow-x: auto;
     white-space: nowrap;
     padding: var(--margin-small);
-    justify-content: space-around;
 }
 
 .trier-item{

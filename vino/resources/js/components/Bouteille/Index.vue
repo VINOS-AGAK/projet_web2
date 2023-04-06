@@ -293,8 +293,6 @@ export default {
 
 
         const changeNote = async(bouteille) => {
-            console.log(bouteille);
-            console.log(bouteille.notes);
             axios.put(`api/bouteille/${bouteille.id}`, {notes: bouteille.notes})
             .then(response => {
                 getOneCellier($route.params.id);
@@ -303,19 +301,16 @@ export default {
 
 
         onMounted(async () => {
-            console.log('le param id passe du cellier' ,$route.params.id);
             await getOneCellier($route.params.id);
         })
 
         const trierItem=(itemName)=>{
             trier.value = false;
-            console.log(itemName);
             handleTrierChange(itemName);
         }
 
         const handleTrierChange = async(itemName) => {
             bouteillesTrier = await trierMesBouteilles(itemName,trier);
-            console.log(bouteillesTrier);
             test.value = bouteillesTrier;
             return test;
         }

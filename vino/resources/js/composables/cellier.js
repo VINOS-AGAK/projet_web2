@@ -15,8 +15,8 @@ export default function useCellier() {
     const isLoading = ref(false);
     const swal = inject('$swal');
     const axios = require('axios');
-
-
+    
+    
     /**
      * Affiche les cellires de usager
      * @param {object} cellier 
@@ -43,7 +43,7 @@ export default function useCellier() {
             console.error('Error fetching one cellier', error);
         }
     }
-
+    
     /**
      * Afficher un Cellie de usager
      * @param {id} id 
@@ -59,12 +59,12 @@ export default function useCellier() {
             console.error('Error fetching one cellier', error);
         }
     } 
-
+    
     const trierMonCellier = async (itemName, trier, id) => {
-
+    
         const response = await axios.get('api/bouteille/' + id);
         const showOneCellier = async (id) => {
-
+    
             try{
                 const response = await axios.get('api/cellier-modifier/' + id )
                 showCellier.value = response.data.data;
@@ -73,7 +73,7 @@ export default function useCellier() {
             catch (error){
                 console.error('Error fetching one cellier', error);
             }
-
+    
         let cellierTrier = [];
         response.data.data.forEach(bouteille => {
           if (bouteille.pays == itemName) {
@@ -84,9 +84,9 @@ export default function useCellier() {
         return cellierTrier;
         
       };
-
-
-
+    
+    }
+    
     /**
      * Cree un Cellie de usager
      * @param {object} cellier 
@@ -94,10 +94,10 @@ export default function useCellier() {
      */
     const storeCellier = async (cellier) => { 
         if (isLoading.value) return;
-
+    
         isLoading.value = true
         validationErrors.value = {}
-
+    
         axios.post('/api/cellier', cellier)
         .then(response => {
             router.push({name: 'cellier.index'})
@@ -113,7 +113,7 @@ export default function useCellier() {
         })
         .finally(() => isLoading.value = false)
     }
-
+    
     /**
      * Modifier un Cellie de usager
      * @param {object} cellier
@@ -121,11 +121,11 @@ export default function useCellier() {
      */
     const updateCellier = async (cellier) => { 
         if (isLoading.value) return;
-
+    
         isLoading.value = true
         validationErrors.value = {}
         console.log('updateCellier / cellier');
-
+    
         axios.put('/api/cellier/' + cellier.id, cellier)
         .then(response => {
             router.push({name: 'cellier.index'})
@@ -141,8 +141,8 @@ export default function useCellier() {
         })
         .finally(() => isLoading.value = false)
     }
-
-
+    
+    
     /**
      * Efface un Cellie de usager
      * @param {id} id 
@@ -179,8 +179,8 @@ export default function useCellier() {
             }
         })
     }
-
-
+    
+    
     return {
         mesCellier,
         oneCellier,
@@ -196,4 +196,6 @@ export default function useCellier() {
         showOneCellier, 
         trierMonCellier
     }
+    
 }
+

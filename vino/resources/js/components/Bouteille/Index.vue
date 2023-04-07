@@ -235,8 +235,9 @@ export default {
             axios.put('api/bouteille/' + id + '/decrement')
                 .then(response => {
                     getOneCellier($route.params.id);
-                    const bouteille = oneCellier.find(b => b.id === id);
-                    if (bouteille && bouteille.quantite === 0) {
+                    
+                    //const bouteille = oneCellier.find(b => b.id === id);
+                    if (oneCellier && oneCellier.quantite === 0) {
                         deleteMaBouteille(id);
                     }
                 })
@@ -304,6 +305,7 @@ export default {
             await getOneCellier($route.params.id);
         })
 
+          // Trier une bouteille
         const trierItem=(itemName)=>{
             trier.value = false;
             handleTrierChange(itemName);

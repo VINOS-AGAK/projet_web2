@@ -23,6 +23,7 @@
     width: 100%;
     max-width: 130px;
     object-fit: cover;
+    margin-left: -15px;
 
   }
   
@@ -137,7 +138,7 @@
   }
 
   .card-btn_delete:disabled{
-    display: none;
+    visibility:hidden;
   }
 
   section.card-cellier{
@@ -152,7 +153,7 @@
     background-color: rgb(214, 214, 214);
     justify-content: space-around;
     border-radius: 15px;
-    width: 200px;
+    width: 150px;
     height: 40px;
   }
 
@@ -198,6 +199,7 @@
   .stars-flex {
     display: flex;
     flex-direction: row;
+    margin-left: -5px;
   }
 
   .stars-btn {

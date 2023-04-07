@@ -10,3 +10,5 @@ password: 123456
 
 lien de site: https://vinoagak.alexandrucandu.ca/cellier
 
+modele de la base de donner: https://github.com/VINOS-AGAK/projet_web2/vino/MDL-vinodb.png
+
